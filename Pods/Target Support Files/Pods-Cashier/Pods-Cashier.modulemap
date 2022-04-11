@@ -1,0 +1,6 @@
+module Pods_Cashier {
+  umbrella header "Pods-Cashier-umbrella.h"
+
+  export *
+  module * { export * }
+}
