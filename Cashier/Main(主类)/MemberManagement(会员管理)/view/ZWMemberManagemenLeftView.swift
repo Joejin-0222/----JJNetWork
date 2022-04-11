@@ -18,7 +18,7 @@ class ZWMemberManagemenLeftView: UIView {
         return label
     }()
     //
-    lazy var newCreatBtn : UIButton = {
+    @objc lazy var newCreatBtn : UIButton = {
         let Btn = UIButton()
         Btn.setTitle("+新建会员卡", for: .normal)
         Btn.setTitleColor(MainColor, for: .normal)
@@ -43,6 +43,7 @@ class ZWMemberManagemenLeftView: UIView {
         }
         //
         self.addSubview(newCreatBtn)
+        newCreatBtn.addTarget(self, action: #selector(newCreatBtnClick), for: .touchUpInside)
         newCreatBtn.cornerRadius(cornerRadius: 20*WidthW, borderColor: MainColor, borderWidth: 1)
         newCreatBtn.snp.makeConstraints { make in
             make.right.equalTo(self.snp.right).offset(-28*WidthW)
@@ -65,6 +66,19 @@ class ZWMemberManagemenLeftView: UIView {
         }
         
         return self
+    }
+    
+    @objc func newCreatBtnClick(){
+        print("=====点击了新建会员卡")
+        
+        let alertView = ZWnewCreatBtnTanKuang(title: "", message: "", cancelButtonTitle: "", sureButtonTitle: "",x:0, y: 0, width:( ScreenWidth), height: ScreenHeight)
+
+        alertView.show()
+  
+        //获取点击事件
+        alertView.clickIndexClosure { (index) in
+            print("点击了第" + "\(index)" + "个按钮")
+        }
     }
     
 }

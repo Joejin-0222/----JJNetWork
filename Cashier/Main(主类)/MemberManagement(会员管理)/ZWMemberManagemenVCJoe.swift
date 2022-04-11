@@ -10,7 +10,7 @@ import UIKit
 class ZWMemberManagemenVCJoe: ZWRootViewControllerJoe {
   
     var leftView : ZWMemberManagemenLeftView  =  ZWMemberManagemenLeftView()
-    
+    var rightView : ZWMemberManagemenRightView  =  ZWMemberManagemenRightView()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,7 +18,7 @@ class ZWMemberManagemenVCJoe: ZWRootViewControllerJoe {
     }
    
     func sehzhiUI(){
-        
+        //
         self.view.addSubview(leftView.initView())
         leftView.snp.makeConstraints { make in
             make.left.equalTo(self.view.snp.left)
@@ -26,8 +26,15 @@ class ZWMemberManagemenVCJoe: ZWRootViewControllerJoe {
             make.right.equalTo(self.rightline.snp.left)
             make.bottom.equalTo(self.view.snp.bottom)
         }
+        //
         
-        
+        self.view.addSubview(rightView.initView())
+        rightView.snp.makeConstraints { make in
+            make.left.equalTo(self.rightline.snp.right)
+            make.top.equalTo(self.view.snp.top)
+            make.right.equalTo(self.view.snp.right)
+            make.bottom.equalTo(self.view.snp.bottom)
+        }
     }
     
     

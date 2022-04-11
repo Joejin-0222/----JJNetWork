@@ -29,6 +29,9 @@
 		0431FCDA27D88BFB00778DE6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD727D88BFB00778DE6 /* API.swift */; };
 		0431FCDB27D88BFB00778DE6 /* ZHFNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD827D88BFB00778DE6 /* ZHFNetWork.swift */; };
 		0431FCDC27D88BFB00778DE6 /* NSString-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD927D88BFB00778DE6 /* NSString-Extension.swift */; };
+		043A59032803CFE900E1D607 /* ZWMemberManagemenRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A59022803CFE900E1D607 /* ZWMemberManagemenRightView.swift */; };
+		043A590528040A1E00E1D607 /* ZWnewCreatBtnTanKuang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A590428040A1E00E1D607 /* ZWnewCreatBtnTanKuang.swift */; };
+		043A5909280423A700E1D607 /* ZWOrderQueryLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A5908280423A700E1D607 /* ZWOrderQueryLeftView.swift */; };
 		043C5FD227D8784600F881CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C5FD127D8784600F881CB /* LoginViewController.swift */; };
 		043C5FD627D878AC00F881CB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C5FD527D878AC00F881CB /* LoginView.swift */; };
 		043C5FD827D878D900F881CB /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C5FD727D878D900F881CB /* LoginModel.swift */; };
@@ -141,6 +144,9 @@
 		0431FCD727D88BFB00778DE6 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		0431FCD827D88BFB00778DE6 /* ZHFNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHFNetWork.swift; sourceTree = "<group>"; };
 		0431FCD927D88BFB00778DE6 /* NSString-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString-Extension.swift"; sourceTree = "<group>"; };
+		043A59022803CFE900E1D607 /* ZWMemberManagemenRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenRightView.swift; sourceTree = "<group>"; };
+		043A590428040A1E00E1D607 /* ZWnewCreatBtnTanKuang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWnewCreatBtnTanKuang.swift; sourceTree = "<group>"; };
+		043A5908280423A700E1D607 /* ZWOrderQueryLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQueryLeftView.swift; sourceTree = "<group>"; };
 		043C5FD127D8784600F881CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		043C5FD527D878AC00F881CB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		043C5FD727D878D900F881CB /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -364,6 +370,8 @@
 			children = (
 				042926F02800451200A3D1F8 /* ZWMemberManagemenLeftView.swift */,
 				042926F228004B7600A3D1F8 /* ZWMemberManagemenLeftCell.swift */,
+				043A59022803CFE900E1D607 /* ZWMemberManagemenRightView.swift */,
+				043A590428040A1E00E1D607 /* ZWnewCreatBtnTanKuang.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -385,6 +393,21 @@
 				0444682527DAED0E000444FD /* header.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		043A59062804238E00E1D607 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				043A5908280423A700E1D607 /* ZWOrderQueryLeftView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		043A59072804239200E1D607 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		043C5FCE27D8780B00F881CB /* Controller */ = {
@@ -694,6 +717,8 @@
 		048684B527D8364A00D6A878 /* OrderTracking(订单查询) */ = {
 			isa = PBXGroup;
 			children = (
+				043A59072804239200E1D607 /* model */,
+				043A59062804238E00E1D607 /* view */,
 				04E3644727F45DF20007B91A /* ZWOrderQueryViewControllerJoe.swift */,
 			);
 			path = "OrderTracking(订单查询)";
@@ -1080,6 +1105,7 @@
 				043C5FD827D878D900F881CB /* LoginModel.swift in Sources */,
 				0444686027E02B2E000444FD /* MainRootController.swift in Sources */,
 				04E3647227F467860007B91A /* LTTableView.swift in Sources */,
+				043A59032803CFE900E1D607 /* ZWMemberManagemenRightView.swift in Sources */,
 				046B5E7427F3FA4A000BB30D /* SelectStoreModelZJ.swift in Sources */,
 				04E3646F27F467860007B91A /* LTVCExtension.swift in Sources */,
 				0406E1F027FEDDA900E5A948 /* ZWCommoditySettingsCell.swift in Sources */,
@@ -1140,6 +1166,7 @@
 				0449923027F842B600DB5410 /* ZWRootViewControllerJoe.swift in Sources */,
 				04E3643B27F438680007B91A /* ZWLeftItemViewJoe.swift in Sources */,
 				04E3647527F467860007B91A /* LTSimpleManager.swift in Sources */,
+				043A5909280423A700E1D607 /* ZWOrderQueryLeftView.swift in Sources */,
 				0431FCDA27D88BFB00778DE6 /* API.swift in Sources */,
 				0444682A27DED565000444FD /* UserInfo.swift in Sources */,
 				046B4E1427F54C4000710D02 /* ZWEnterBackgroundVCJoe.swift in Sources */,
@@ -1147,6 +1174,7 @@
 				04CA37A627F6C76D00E620E5 /* ZWCheckSementCellJoe.swift in Sources */,
 				0486847C27D833D100D6A878 /* AppDelegate.swift in Sources */,
 				04CA37AC27F6E9B600E620E5 /* Cache+User.swift in Sources */,
+				043A590528040A1E00E1D607 /* ZWnewCreatBtnTanKuang.swift in Sources */,
 				042926EB2800163500A3D1F8 /* ZWStaffHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1307,15 +1335,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 39B5633G4H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cashier/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Cashier;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeLeft;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
@@ -1331,7 +1360,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Cashier/OCHeaderDoc/OC_Swift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1341,15 +1370,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 39B5633G4H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cashier/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Cashier;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeLeft;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
@@ -1365,7 +1395,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Cashier/OCHeaderDoc/OC_Swift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

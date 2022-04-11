@@ -13,6 +13,8 @@ protocol SementSelectClickDelegate : NSObjectProtocol{
 
 class ZWCheckSementViewJoe: UIView {
     
+    
+    var IsHiddenFenGeLine : Bool = false //是否隐藏分割线
     var YesNetWork : Bool = false //是否网络数据
     var SementModel = ZWCheckSementModelJoe()
     var dataAarry  : NSArray? = []
@@ -90,10 +92,17 @@ extension ZWCheckSementViewJoe:UICollectionViewDataSource ,UICollectionViewDeleg
         }
         //隐藏最后一个分割线
         if indexPath.row == (self.dataAarry?.count ?? 0) - 1{
+            
             cell.verticalView.isHidden = true
         }else {
-            cell.verticalView.isHidden = false
+            if IsHiddenFenGeLine == true {
+                cell.verticalView.isHidden = true
+            }else{
+                cell.verticalView.isHidden = false
+            }
         }
+        
+        
         return cell
     }
     //最小 item 间距
