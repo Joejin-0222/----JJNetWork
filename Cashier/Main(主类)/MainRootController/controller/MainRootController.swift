@@ -35,7 +35,7 @@ class MainRootController: UIViewController {
     private lazy var layout: LTLayout = {
         let layout = LTLayout()
         layout.bottomLineHeight = 2.0
-        layout.titleFont = UIFont.systemFont(ofSize: 13)
+        layout.titleFont = UIFont.systemFont(ofSize: 13*WidthW)
         layout.bottomLineCornerRadius = 1.0
         layout.lrMargin = 20;
         layout.sliderHeight = 0 //设置 item head 高度为0
@@ -49,7 +49,7 @@ class MainRootController: UIViewController {
         //        let statusBarH = UIApplication.shared.statusBarFrame.size.height
         let Y: CGFloat = 0
         //        let H: CGFloat = glt_iphoneX ? (view.bounds.height - Y - 34) : view.bounds.height - Y
-        return CGRect(x: 150*WidthW, y: Y, width: view.bounds.width - 150*WidthW, height: ScreenHeight)
+        return CGRect(x: LeftItemWidth*WidthW, y: Y, width: view.bounds.width - LeftItemWidth*WidthW, height: ScreenHeight)
     }
     
     private lazy var simpleManager: LTSimpleManager = {
@@ -86,8 +86,10 @@ class MainRootController: UIViewController {
             make.left.equalTo(0)
             make.top.equalTo(0)
             make.height.equalTo(ScreenHeight)
-            make.width.equalTo(150*WidthW)
+            make.width.equalTo(LeftItemWidth*WidthW)
         }
+        
+        print("=======LeftItemWidth*WidthW = \(128*WidthW)")
         //
         //右边 scroview主视图
         self.automaticallyAdjustsScrollViewInsets = false

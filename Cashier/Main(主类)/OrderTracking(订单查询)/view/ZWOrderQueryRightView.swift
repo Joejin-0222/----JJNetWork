@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ZWOrderQueryLeftView: UIView {
+class ZWOrderQueryRightView: UIView {
     
     var dataArray : NSArray = ["库存盘点","门店要货","本店调出"]
     
@@ -31,7 +31,7 @@ class ZWOrderQueryLeftView: UIView {
         TableView.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top).offset(0*WidthW)
             make.left.equalTo(self.snp.left)
-            make.width.equalTo(525*WidthW)
+            make.right.equalTo(self.snp.right)
             make.bottom.equalTo(self.snp.bottom).offset(0*WidthW)
         }
         
@@ -41,7 +41,7 @@ class ZWOrderQueryLeftView: UIView {
 
 }
 
-extension ZWOrderQueryLeftView : UITableViewDelegate {
+extension ZWOrderQueryRightView : UITableViewDelegate {
     
     func  tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("=====\(indexPath.row)")
@@ -49,7 +49,7 @@ extension ZWOrderQueryLeftView : UITableViewDelegate {
     }
 }
 
-extension ZWOrderQueryLeftView : UITableViewDataSource{
+extension ZWOrderQueryRightView : UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return  1
@@ -57,18 +57,18 @@ extension ZWOrderQueryLeftView : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return dataArray.count
+        return 6//dataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let  cell:ZWLeftTableviewCell =  ZWLeftTableviewCell.createWithTableViewCell(tableView: tableView) as! ZWLeftTableviewCell
-        cell.contentImageView.image = UIImage.init(named: self.dataArray[indexPath.row] as! String)
+        let  cell:ZWOrderQueryRightCellJoe =  ZWOrderQueryRightCellJoe.createWithTableViewCell(tableView: tableView) as! ZWOrderQueryRightCellJoe
+//        cell.contentImageView.image = UIImage.init(named: self.dataArray[indexPath.row] as! String)
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140*WidthW
+        return 158*WidthW
     }
     
     

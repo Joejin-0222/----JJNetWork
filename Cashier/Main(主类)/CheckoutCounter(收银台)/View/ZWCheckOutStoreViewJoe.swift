@@ -12,6 +12,11 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
     
     var dataAarry  : NSArray = []
     
+    
+    //loading
+    let loadingView = ZWLoadingTanKuangView(x:0, y: 0, width:( ScreenWidth), height: ScreenHeight)
+ 
+    
     //顶部搜索和个人信息view
     var TopSeachAndUserView : ZWCheckOutTopView = ZWCheckOutTopView()
     
@@ -94,6 +99,8 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
             make.height.equalTo(104*WidthW)
             make.right.equalTo(self.snp.right)
         }
+
+//           loadingView.show()
         return self
     }
     //分类

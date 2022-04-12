@@ -18,38 +18,28 @@ class ZWnewCreatBtnTanKuang: UIView {
         return label
     }()
     
-    //rightline
-    lazy var rightline : UIView = {
+    //backView
+    lazy var backView : UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.init(hex: "E6E9EB")
+        view.backgroundColor = UIColor.init(hex: "ffffff")
         
         return view
     }()
+    //显示和输入框
+    var LabelAndTextField :  ZWnewLabelAndTextField = ZWnewLabelAndTextField()
     
-      typealias clickAlertClosure = (_ index: Int) -> Void //声明闭包，点击按钮传值
-      //把申明的闭包设置成属性
-      var clickClosure: clickAlertClosure?
-      //为闭包设置调用函数
-      func clickIndexClosure(_ closure:clickAlertClosure?){
-          //将函数指针赋值给myClosure闭包
-          clickClosure = closure
-      }
-      
-      let bgView = UIView() //白色框动画控件
-   
-      
-      let cancelBtn = UIButton() //取消按钮
-      let DeleteBtn = UIButton() //删除按钮
-      let sureBtn = UIButton() //确定按钮
-      let JieSuanBtn = UIButton() //结算按钮
-      let Bgtap = UITapGestureRecognizer() //点击手势
-      
+    
+    
+    let bgView = UIView() //白色框动画控件
+    
+    let cancelBtn = UIButton() //取消按钮
+    
     
     init(title: String?, message: String?, cancelButtonTitle: String?, sureButtonTitle: String?,x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat ) {
         super.init(frame: CGRect(x: x, y: y, width: width, height: height))
-      
+        
         createAlertView()
-      
+        
     }
     
     //MARK:创建
@@ -58,7 +48,7 @@ class ZWnewCreatBtnTanKuang: UIView {
         //布局
         self.frame = CGRect(x: x, y: y, width: ScreenWidth, height: ScreenHeight)
         self.backgroundColor = UIColor.darkGray.withAlphaComponent(0.5)
-    
+        
         //spring动画白底(弹出主体)
         
         let bgviewWidth = LeftItemWidth+OrderRightViewWidth+OrderTabelViewWidth
@@ -75,21 +65,7 @@ class ZWnewCreatBtnTanKuang: UIView {
             make.width.equalTo(160*WidthW)
             make.height.equalTo(60*WidthW)
         }
-    
-        
-//        //
-//        //右边分割线
-//        bgView.addSubview(rightline)
-//        rightline.snp.makeConstraints { make in
-//            make.bottom.equalTo(self.bgView.snp.bottom)
-//            make.top.equalTo(self.bgView.snp.top)
-//            make.left.equalTo((  OrderTabelViewWidth) *  WidthW)
-//            make.width.equalTo(1.5*WidthW)
-//        }
-//
-        
         //取消按钮 返回按钮
-        //        let btnWith = (width - 30) / 2
         cancelBtn.frame = CGRect(x: 63*WidthW, y: 70*WidthW, width: 92*WidthW, height: 92*WidthW)
         //        cancelBtn.backgroundColor = UIColor.gray
         cancelBtn.setTitleColor(UIColor.white, for: .normal)
@@ -100,7 +76,19 @@ class ZWnewCreatBtnTanKuang: UIView {
         cancelBtn.setImage(UIImage.init(named: "返回"), for: .normal)
         cancelBtn.addTarget(self, action: #selector(clickBtnAction(sender:)), for: .touchUpInside)
         bgView.addSubview(cancelBtn)
-       
+        
+        //
+        backView.backgroundColor = UIColor.white
+        bgView.addSubview(backView)
+        backView.snp.makeConstraints { make in
+            make.bottom.equalTo(self.bgView.snp.bottom).offset(-482*WidthW)
+            make.top.equalTo(self.titleLabel.snp.top).offset(166*WidthW)
+            make.left.equalTo(self.bgView.snp.left).offset(325*WidthW)
+            make.right.equalTo(self.bgView.snp.right).offset(-325*WidthW)
+        }
+        //
+//        backView.addSubview(LabelAndTextField.initView())
+        
         
     }
     
@@ -111,9 +99,7 @@ class ZWnewCreatBtnTanKuang: UIView {
     
     //MARK:按键的对应的方法
     @objc func clickBtnAction( sender : UIButton) {
-        if (clickClosure != nil) {
-            clickClosure!(sender.tag)
-        }
+        
         dismiss()
     }
     //MARK:消失
@@ -141,5 +127,5 @@ class ZWnewCreatBtnTanKuang: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
- 
+    
 }

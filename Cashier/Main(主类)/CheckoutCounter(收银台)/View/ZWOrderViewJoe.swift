@@ -10,10 +10,10 @@ protocol OrderWayTypeSelectDelegate : NSObjectProtocol{
     func SelectOrderWayTypeClick(IndexPath:Int)
 }
 enum OrderWayType : Int {
-       case 挂单 = 0
-       case 取单
-       case 整单优惠
-       case 预定
+    case 挂单 = 0
+    case 取单
+    case 整单优惠
+    case 预定
 }
 
 class ZWOrderViewJoe: UIView {
@@ -38,6 +38,21 @@ class ZWOrderViewJoe: UIView {
         
         return view
     }()
+    //topline
+    lazy var topLineView : UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.init(hex: "E6E9EB")
+        
+        return view
+    }()
+    
+    //topview
+    lazy var topView : UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        return view
+    }()
+    var weighView : ZWOrderWeighView = ZWOrderWeighView()
     
     //tableview
     lazy var TableView:UITableView = {
@@ -57,7 +72,7 @@ class ZWOrderViewJoe: UIView {
     lazy var allOrderCancelBtn : UIButton = {
         let Btn = UIButton()
         Btn.backgroundColor = UIColor.init(hex: "#FE4B48")
-        Btn.setTitle("整单取消", for: .normal)
+        Btn.setTitle("抹零收款", for: .normal)
         Btn.titleLabel?.font = UIFont.systemFont(ofSize: 24*WidthW)
         return Btn
     }()
@@ -72,7 +87,7 @@ class ZWOrderViewJoe: UIView {
         let label = UILabel()
         label.text = "￥"
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 20*WidthW)
+        label.font = UIFont.systemFont(ofSize: 18*WidthW)
         label.textColor = UIColor.init(hex: "#ffffff")
         return label
     }()
@@ -81,7 +96,7 @@ class ZWOrderViewJoe: UIView {
         let label = UILabel()
         label.text = "12.99"
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 26*WidthW)
+        label.font = UIFont.systemFont(ofSize: 28*WidthW)
         label.textColor = UIColor.init(hex: "#ffffff")
         return label
     }()
@@ -222,14 +237,36 @@ class ZWOrderViewJoe: UIView {
             make.width.equalTo(192*WidthW)
             make.height.equalTo(48*WidthW)
         }
-        
+        //顶部分割线
+        self.addSubview(topLineView)
+        topLineView.snp.makeConstraints { make in
+            make.left.equalTo(self.snp.left)
+            make.top.equalTo(LogoImage.snp.bottom).offset(28*WidthW)
+            make.height.equalTo(1.5*WidthW)
+            make.width.equalTo(OrderTabelViewWidth*WidthW)
+        }
+        //称重底部view
+//        self.addSubview(topView)
+//        topView.snp.makeConstraints { make in
+//            make.top.equalTo(topLineView.snp.bottom).offset(0*WidthW)
+//            make.left.equalTo(self.snp.left)
+//            make.right.equalTo(self.snp.right)
+//            make.height.equalTo(127*WidthW)
+//        }
+//        topView.addSubview(weighView.initView())
+//        weighView.snp.makeConstraints { make in
+//            make.top.equalTo(topView.snp.top).offset(0*WidthW)
+//            make.left.equalTo(topView.snp.left)
+//            make.right.equalTo(topView.snp.right)
+//            make.bottom.equalTo(topView.snp.bottom)
+//        }
         //
         self.addSubview(TableView)
         TableView.backgroundColor =  UIColor.white
         TableView.isScrollEnabled = true
         TableView.separatorStyle = .none
         TableView.snp.makeConstraints { make in
-            make.top.equalTo(LogoImage.snp.bottom).offset(20*WidthW)
+            make.top.equalTo(topLineView.snp.bottom).offset(0*WidthW)
             make.left.equalTo(self.snp.left)
             make.width.equalTo(525*WidthW)
             make.bottom.equalTo(self.snp.bottom).offset(-200*WidthW)
@@ -243,36 +280,28 @@ class ZWOrderViewJoe: UIView {
             make.height.equalTo(46*WidthW)
         }
         //
+        BottomView.cornerRadius(cornerRadius: 40*WidthW)
         self.addSubview(BottomView)
+        BottomView.backgroundColor = UIColor.red
         BottomView.snp.makeConstraints { make in
             make.height.equalTo(80*WidthW)
             make.left.equalTo(self.snp.left).offset(6*WidthW)
-            make.width.equalTo(525*WidthW)
-            //            make.right.equalTo(self.TableView.snp.right).offset(-6*WidthW)
+            make.width.equalTo(368*WidthW)
             make.bottom.equalTo(self.snp.bottom).offset(-24*WidthW)
         }
-        //
-        BottomView.addSubview(allOrderCancelBtn)
-        allOrderCancelBtn.snp.makeConstraints { make in
-            make.height.equalTo(BottomView.snp.height)
-            make.left.equalTo(0)
-            make.width.equalTo(156*WidthW)
-        }
-        //        allOrderCancelBtn.setRoundCorners(corners: [.topLeft, .topRight], with: 20*WidthW)
-        //        allOrderCancelBtn.cornerRadius(cornerRadius: 30*WidthW)
-        
-        
+
         //
         BottomView.addSubview(AllOrderView)
         AllOrderView.snp.makeConstraints { make in
             make.height.equalTo(BottomView.snp.height)
-            make.left.equalTo(allOrderCancelBtn.snp.right).offset(4*WidthW)
-            make.width.equalTo(217*WidthW)
+            make.left.equalTo(BottomView.snp.left).offset(0*WidthW)
+            make.width.equalTo(232*WidthW)
         }
+      
         AllOrderView.addSubview(Label01)
         Label01.snp.makeConstraints { make in
             make.top.equalTo(5*WidthW)
-            make.left.equalTo(AllOrderView.snp.left).offset(24*WidthW)
+            make.left.equalTo(AllOrderView.snp.left).offset(25*WidthW)
             make.width.equalTo(18*WidthW)
             make.height.equalTo(40*WidthW)
         }
@@ -287,8 +316,7 @@ class ZWOrderViewJoe: UIView {
         Label03.snp.makeConstraints { make in
             make.top.equalTo(Label02.snp.bottom)
             make.left.equalTo(AllOrderView.snp.left).offset(24*WidthW)
-            make.width.equalTo(136*WidthW)
-            //            make.bottom.equalTo(self.snp.bottom).offset(1*WidthW)
+            make.right.equalTo(AllOrderView.snp.right).offset(-24*WidthW)
         }
         
         //提交支付 收款
@@ -296,8 +324,21 @@ class ZWOrderViewJoe: UIView {
         payBtn.snp.makeConstraints { make in
             make.height.equalTo(BottomView.snp.height)
             make.left.equalTo(AllOrderView.snp.right)
-            make.right.equalTo(TableView.snp.right)
+            make.width.equalTo(136*WidthW)
         }
+        
+        //
+        self.addSubview(allOrderCancelBtn)
+        allOrderCancelBtn.snp.makeConstraints { make in
+            make.top.equalTo(payBtn.snp.top)
+            make.height.equalTo(payBtn.snp.height)
+            make.left.equalTo(payBtn.snp.right).offset(8*WidthW)
+            make.right.equalTo(TableView.snp.right).offset(-8*WidthW)
+        }
+        allOrderCancelBtn.cornerRadius(cornerRadius: 16*WidthW)
+
+
+        
         //右边操作加减 等view
         self.addSubview(operationView)
         operationView.snp.makeConstraints { make in
@@ -342,7 +383,7 @@ class ZWOrderViewJoe: UIView {
             make.width.equalTo(132*WidthW)
             make.height.equalTo(54*WidthW)
         }
-       
+        
         //加减底层view
         addAndReduceView.cornerRadius(cornerRadius: 54*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 1)
         operationView.addSubview(addAndReduceView)
@@ -427,12 +468,12 @@ class ZWOrderViewJoe: UIView {
     @objc func orderBtnClick(sender : UIButton){
         print("======sender=\(sender.tag)")
         self.delegate?.SelectOrderWayTypeClick(IndexPath: sender.tag)
+        //
         let alertView = ZWQuDanTanKuangView(title: "", message: "", cancelButtonTitle: "", sureButtonTitle: "",x:0, y: 0, width:( ScreenWidth), height: ScreenHeight)
         alertView.dataAarry =   ["收银台取单","小程序取单"]
-        self.isUserInteractionEnabled = true
-        alertView.isUserInteractionEnabled = true
+        
         alertView.show()
-  
+        
         //获取点击事件
         alertView.clickIndexClosure { (index) in
             print("点击了第" + "\(index)" + "个按钮")
@@ -450,6 +491,7 @@ extension ZWOrderViewJoe : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let  cell:ZWOrderCellJoe =  ZWOrderCellJoe.createWithTableViewCell(tableView: tableView) as! ZWOrderCellJoe
+        cell.selectionStyle = .none
         
         return cell
     }

@@ -75,10 +75,7 @@ class ZWMemberManagemenLeftView: UIView {
 
         alertView.show()
   
-        //获取点击事件
-        alertView.clickIndexClosure { (index) in
-            print("点击了第" + "\(index)" + "个按钮")
-        }
+     
     }
     
 }

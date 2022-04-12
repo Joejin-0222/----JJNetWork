@@ -42,10 +42,9 @@ class ZWLeftItemViewJoe: UIView {
     func initView() -> UIView {
         self.dataAarry = ["leftItemLogo","收银台","订单查询","会员管理","员工交班","商品库存","数据对账","切换店铺","","收银设置","进入后台"]
         
-        self.frame = CGRect.init(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight)
         self.backgroundColor =  UIColor.init(hex: "#FE4B48")
         
-        flowLayout.itemSize = CGSize(width: 472*WidthW, height: (ScreenHeight - 40*WidthW)/CGFloat(self.dataAarry.count) )
+        flowLayout.itemSize = CGSize(width: LeftItemWidth*WidthW, height: (ScreenHeight - 20*WidthW)/CGFloat(self.dataAarry.count) )
         flowLayout.sectionInset = UIEdgeInsets(top: 15*WidthW, left:0, bottom: 0, right:0)
         
         self.addSubview(collectionView)
@@ -55,7 +54,7 @@ class ZWLeftItemViewJoe: UIView {
             make.top.equalTo(0)
             make.left.equalTo(self.snp.left)
             make.width.equalTo(self.snp.width)
-            make.bottom.equalTo(self.snp.bottom).offset(-25*WidthW)
+            make.bottom.equalTo(self.snp.bottom).offset(0*WidthW)
         }
         //默认选中第一行
         DispatchQueue.main.async {
@@ -78,6 +77,7 @@ extension ZWLeftItemViewJoe:UICollectionViewDataSource {
         
         if indexPath.row == 0{
             cell.LeftItemLabel.text = ""
+//            cell.indexPath = indexPath
         }else{
             cell.LeftItemLabel.text = (self.dataAarry [indexPath.row] as! String)
         }

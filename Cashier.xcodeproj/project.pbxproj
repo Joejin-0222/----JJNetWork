@@ -31,7 +31,7 @@
 		0431FCDC27D88BFB00778DE6 /* NSString-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD927D88BFB00778DE6 /* NSString-Extension.swift */; };
 		043A59032803CFE900E1D607 /* ZWMemberManagemenRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A59022803CFE900E1D607 /* ZWMemberManagemenRightView.swift */; };
 		043A590528040A1E00E1D607 /* ZWnewCreatBtnTanKuang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A590428040A1E00E1D607 /* ZWnewCreatBtnTanKuang.swift */; };
-		043A5909280423A700E1D607 /* ZWOrderQueryLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A5908280423A700E1D607 /* ZWOrderQueryLeftView.swift */; };
+		043A5909280423A700E1D607 /* ZWOrderQueryRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */; };
 		043C5FD227D8784600F881CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C5FD127D8784600F881CB /* LoginViewController.swift */; };
 		043C5FD627D878AC00F881CB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C5FD527D878AC00F881CB /* LoginView.swift */; };
 		043C5FD827D878D900F881CB /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C5FD727D878D900F881CB /* LoginModel.swift */; };
@@ -60,6 +60,12 @@
 		046B4E1427F54C4000710D02 /* ZWEnterBackgroundVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E1327F54C4000710D02 /* ZWEnterBackgroundVCJoe.swift */; };
 		046B4E1627F560B600710D02 /* ZWOrderCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E1527F560B600710D02 /* ZWOrderCellJoe.swift */; };
 		046B5E7427F3FA4A000BB30D /* SelectStoreModelZJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B5E7327F3FA4A000BB30D /* SelectStoreModelZJ.swift */; };
+		0480B93B280506D600C5670B /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 0480B93A280506D600C5670B /* loading.json */; };
+		0480B93E280508B700C5670B /* ZWLoadingTanKuangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B93D280508B700C5670B /* ZWLoadingTanKuangView.swift */; };
+		0480B940280511FF00C5670B /* ZWLoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B93F280511FF00C5670B /* ZWLoadingHUD.swift */; };
+		0480B942280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B941280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift */; };
+		0480B94428054FDE00C5670B /* ZWnewLabelAndTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B94328054FDE00C5670B /* ZWnewLabelAndTextField.swift */; };
+		0480B946280559E700C5670B /* ZWOrderWeighView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B945280559E700C5670B /* ZWOrderWeighView.swift */; };
 		0486847C27D833D100D6A878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486847B27D833D100D6A878 /* AppDelegate.swift */; };
 		0486847E27D833D100D6A878 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486847D27D833D100D6A878 /* DocumentBrowserViewController.swift */; };
 		0486848027D833D100D6A878 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486847F27D833D100D6A878 /* DocumentViewController.swift */; };
@@ -68,6 +74,7 @@
 		048BD21A27FD327A00FFC9FF /* APIModelJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BD21927FD327A00FFC9FF /* APIModelJoe.swift */; };
 		048BD21C27FD441D00FFC9FF /* ZWQuDanTanKuangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BD21B27FD441D00FFC9FF /* ZWQuDanTanKuangView.swift */; };
 		04A9DB0A27F30C2E0036C603 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9DB0927F30C2E0036C603 /* ProgressHUD.swift */; };
+		04ACE14528059B71001356D4 /* ZWOrderQuerySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACE14428059B71001356D4 /* ZWOrderQuerySearchView.swift */; };
 		04CA379A27F5B0C400E620E5 /* ZWCheckOutStoreViewJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA379927F5B0C400E620E5 /* ZWCheckOutStoreViewJoe.swift */; };
 		04CA379C27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA379B27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift */; };
 		04CA37A027F5C18400E620E5 /* UIView+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA379F27F5C18400E620E5 /* UIView+Corners.swift */; };
@@ -146,7 +153,7 @@
 		0431FCD927D88BFB00778DE6 /* NSString-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString-Extension.swift"; sourceTree = "<group>"; };
 		043A59022803CFE900E1D607 /* ZWMemberManagemenRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenRightView.swift; sourceTree = "<group>"; };
 		043A590428040A1E00E1D607 /* ZWnewCreatBtnTanKuang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWnewCreatBtnTanKuang.swift; sourceTree = "<group>"; };
-		043A5908280423A700E1D607 /* ZWOrderQueryLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQueryLeftView.swift; sourceTree = "<group>"; };
+		043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQueryRightView.swift; sourceTree = "<group>"; };
 		043C5FD127D8784600F881CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		043C5FD527D878AC00F881CB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		043C5FD727D878D900F881CB /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -176,6 +183,12 @@
 		046B4E1527F560B600710D02 /* ZWOrderCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderCellJoe.swift; sourceTree = "<group>"; };
 		046B5E7227F31C0B000BB30D /* OC_Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OC_Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		046B5E7327F3FA4A000BB30D /* SelectStoreModelZJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStoreModelZJ.swift; sourceTree = "<group>"; };
+		0480B93A280506D600C5670B /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		0480B93D280508B700C5670B /* ZWLoadingTanKuangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWLoadingTanKuangView.swift; sourceTree = "<group>"; };
+		0480B93F280511FF00C5670B /* ZWLoadingHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWLoadingHUD.swift; sourceTree = "<group>"; };
+		0480B941280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQueryRightCellJoe.swift; sourceTree = "<group>"; };
+		0480B94328054FDE00C5670B /* ZWnewLabelAndTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWnewLabelAndTextField.swift; sourceTree = "<group>"; };
+		0480B945280559E700C5670B /* ZWOrderWeighView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderWeighView.swift; sourceTree = "<group>"; };
 		0486847827D833D100D6A878 /* Cashier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0486847B27D833D100D6A878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0486847D27D833D100D6A878 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +201,7 @@
 		048BD21927FD327A00FFC9FF /* APIModelJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModelJoe.swift; sourceTree = "<group>"; };
 		048BD21B27FD441D00FFC9FF /* ZWQuDanTanKuangView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWQuDanTanKuangView.swift; sourceTree = "<group>"; };
 		04A9DB0927F30C2E0036C603 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		04ACE14428059B71001356D4 /* ZWOrderQuerySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQuerySearchView.swift; sourceTree = "<group>"; };
 		04CA379927F5B0C400E620E5 /* ZWCheckOutStoreViewJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckOutStoreViewJoe.swift; sourceTree = "<group>"; };
 		04CA379B27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckOutStoreCellJoe.swift; sourceTree = "<group>"; };
 		04CA379F27F5C18400E620E5 /* UIView+Corners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Corners.swift"; sourceTree = "<group>"; };
@@ -372,6 +386,7 @@
 				042926F228004B7600A3D1F8 /* ZWMemberManagemenLeftCell.swift */,
 				043A59022803CFE900E1D607 /* ZWMemberManagemenRightView.swift */,
 				043A590428040A1E00E1D607 /* ZWnewCreatBtnTanKuang.swift */,
+				0480B94328054FDE00C5670B /* ZWnewLabelAndTextField.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -386,6 +401,7 @@
 		0431FCDD27D88E5400778DE6 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0480B93C2805089000C5670B /* Loading(加载弹框) */,
 				04E3643C27F43B6D0007B91A /* Hue */,
 				04A9DB0827F30C2E0036C603 /* HUD */,
 				0444682727DB1C7F000444FD /* Toast.swift */,
@@ -398,7 +414,9 @@
 		043A59062804238E00E1D607 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				043A5908280423A700E1D607 /* ZWOrderQueryLeftView.swift */,
+				043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */,
+				0480B941280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift */,
+				04ACE14428059B71001356D4 /* ZWOrderQuerySearchView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -456,6 +474,7 @@
 			children = (
 				04E3644327F45A4D0007B91A /* ZWOrderViewJoe.swift */,
 				046B4E1527F560B600710D02 /* ZWOrderCellJoe.swift */,
+				0480B945280559E700C5670B /* ZWOrderWeighView.swift */,
 				048BD21B27FD441D00FFC9FF /* ZWQuDanTanKuangView.swift */,
 				0406E1E927FED5A700E5A948 /* ZWTanKuangTableViewCell.swift */,
 				04CA379927F5B0C400E620E5 /* ZWCheckOutStoreViewJoe.swift */,
@@ -554,14 +573,14 @@
 			path = OCHeaderDoc;
 			sourceTree = "<group>";
 		};
-		047C5E9E27F2EB1F0066F47C /* ChooseStore */ = {
+		047C5E9E27F2EB1F0066F47C /* ChooseStore(选择店铺) */ = {
 			isa = PBXGroup;
 			children = (
 				047C5EA127F2EB3D0066F47C /* model */,
 				047C5EA027F2EB320066F47C /* controller */,
 				047C5E9F27F2EB2E0066F47C /* view */,
 			);
-			path = ChooseStore;
+			path = "ChooseStore(选择店铺)";
 			sourceTree = "<group>";
 		};
 		047C5E9F27F2EB2E0066F47C /* view */ = {
@@ -589,6 +608,23 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		0480B939280506C600C5670B /* JsonSource */ = {
+			isa = PBXGroup;
+			children = (
+				0480B93A280506D600C5670B /* loading.json */,
+			);
+			path = JsonSource;
+			sourceTree = "<group>";
+		};
+		0480B93C2805089000C5670B /* Loading(加载弹框) */ = {
+			isa = PBXGroup;
+			children = (
+				0480B93D280508B700C5670B /* ZWLoadingTanKuangView.swift */,
+				0480B93F280511FF00C5670B /* ZWLoadingHUD.swift */,
+			);
+			path = "Loading(加载弹框)";
+			sourceTree = "<group>";
+		};
 		0486846F27D833D100D6A878 = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +648,7 @@
 		0486847A27D833D100D6A878 /* Cashier */ = {
 			isa = PBXGroup;
 			children = (
+				0480B939280506C600C5670B /* JsonSource */,
 				04CA37A927F6E9B600E620E5 /* Cache */,
 				04CA379627F58FFC00E620E5 /* Extension */,
 				046B5E6E27F3109F000BB30D /* OCHeaderDoc */,
@@ -633,7 +670,7 @@
 			children = (
 				0444685E27E02AE9000444FD /* MainRootController */,
 				048684B727D836CE00D6A878 /* Login(登录) */,
-				047C5E9E27F2EB1F0066F47C /* ChooseStore */,
+				047C5E9E27F2EB1F0066F47C /* ChooseStore(选择店铺) */,
 				048684B627D8366800D6A878 /* CheckoutCounter(收银台) */,
 				048684B527D8364A00D6A878 /* OrderTracking(订单查询) */,
 				048684B427D8362600D6A878 /* MemberManagement(会员管理) */,
@@ -1034,6 +1071,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0486848727D833D200D6A878 /* Assets.xcassets in Resources */,
+				0480B93B280506D600C5670B /* loading.json in Resources */,
 				042926E327FFD83500A3D1F8 /* ZWTanKuangCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1093,6 +1131,7 @@
 				046B4E1127F54BFE00710D02 /* ZWSwitchStoreVCJoe.swift in Sources */,
 				0449923227F84E7400DB5410 /* ZWCashierSettingItemCell.swift in Sources */,
 				04E3644427F45A4D0007B91A /* ZWOrderViewJoe.swift in Sources */,
+				0480B940280511FF00C5670B /* ZWLoadingHUD.swift in Sources */,
 				04E3646927F467860007B91A /* LTPageScrollView.swift in Sources */,
 				04E3646B27F467860007B91A /* LTAdvancedManager.swift in Sources */,
 				04E3646727F467860007B91A /* LTLivePlayLoopsListView.swift in Sources */,
@@ -1129,6 +1168,7 @@
 				042926ED28001C8A00A3D1F8 /* ZWStaffShiftRightView.swift in Sources */,
 				046B4E0827F54ACC00710D02 /* ZWStaffShiftVCJoe.swift in Sources */,
 				04CA37AD27F6E9B600E620E5 /* Cache.swift in Sources */,
+				0480B94428054FDE00C5670B /* ZWnewLabelAndTextField.swift in Sources */,
 				04E3646D27F467860007B91A /* LTDispatchQueue.swift in Sources */,
 				04E3644627F45D8A0007B91A /* ZWCashierViewControllerJoe.swift in Sources */,
 				046B4E0E27F54BC300710D02 /* ZWDataReconciliationVCJoe.swift in Sources */,
@@ -1139,7 +1179,9 @@
 				04E3647327F467860007B91A /* LTPageTitleItemType.swift in Sources */,
 				04E3646A27F467860007B91A /* LTLayout.swift in Sources */,
 				0406E1F927FEEF6500E5A948 /* ZWLeftTableviewView.swift in Sources */,
+				0480B93E280508B700C5670B /* ZWLoadingTanKuangView.swift in Sources */,
 				04E3647027F467860007B91A /* UIView+LTExtension.swift in Sources */,
+				0480B946280559E700C5670B /* ZWOrderWeighView.swift in Sources */,
 				0431FCDC27D88BFB00778DE6 /* NSString-Extension.swift in Sources */,
 				04E3647127F467860007B91A /* LTScrollExtension.swift in Sources */,
 				0444682827DB1C7F000444FD /* Toast.swift in Sources */,
@@ -1158,6 +1200,7 @@
 				04A9DB0A27F30C2E0036C603 /* ProgressHUD.swift in Sources */,
 				0406E1E627FE8F7200E5A948 /* ZWHeaderView.swift in Sources */,
 				0449922A27F7FC3200DB5410 /* ZWCheckOutTopView.swift in Sources */,
+				0480B942280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift in Sources */,
 				043C5FD627D878AC00F881CB /* LoginView.swift in Sources */,
 				042926E7280002A400A3D1F8 /* ZWStaffShiftLeftView.swift in Sources */,
 				0431FCDB27D88BFB00778DE6 /* ZHFNetWork.swift in Sources */,
@@ -1166,8 +1209,9 @@
 				0449923027F842B600DB5410 /* ZWRootViewControllerJoe.swift in Sources */,
 				04E3643B27F438680007B91A /* ZWLeftItemViewJoe.swift in Sources */,
 				04E3647527F467860007B91A /* LTSimpleManager.swift in Sources */,
-				043A5909280423A700E1D607 /* ZWOrderQueryLeftView.swift in Sources */,
+				043A5909280423A700E1D607 /* ZWOrderQueryRightView.swift in Sources */,
 				0431FCDA27D88BFB00778DE6 /* API.swift in Sources */,
+				04ACE14528059B71001356D4 /* ZWOrderQuerySearchView.swift in Sources */,
 				0444682A27DED565000444FD /* UserInfo.swift in Sources */,
 				046B4E1427F54C4000710D02 /* ZWEnterBackgroundVCJoe.swift in Sources */,
 				04E3644827F45DF20007B91A /* ZWOrderQueryViewControllerJoe.swift in Sources */,
@@ -1344,8 +1388,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Cashier;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1379,8 +1423,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Cashier;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

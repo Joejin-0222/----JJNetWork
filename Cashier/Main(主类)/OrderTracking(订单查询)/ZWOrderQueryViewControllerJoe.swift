@@ -7,11 +7,13 @@
 
 import UIKit
 
-class ZWOrderQueryViewControllerJoe: UIViewController {
+class ZWOrderQueryViewControllerJoe: ZWRootViewControllerJoe {
     //顶部 分段选择器
     let SementView : ZWCheckSementViewJoe = ZWCheckSementViewJoe()
     //
-    let leftView :  ZWOrderQueryLeftView = ZWOrderQueryLeftView()
+    let RightView :  ZWOrderQueryRightView = ZWOrderQueryRightView()
+    //分段选择底部view
+    let SementBottomView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,27 +25,36 @@ class ZWOrderQueryViewControllerJoe: UIViewController {
     func shezhiUI(){
         
         //
+        SementBottomView.cornerRadius(cornerRadius: 34*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 1)
+        self.view.addSubview(SementBottomView)
+        SementBottomView.snp.makeConstraints { make in
+            make.left.equalTo(self.rightline.snp.right).offset(64*WidthW)
+            make.top.equalTo(self.view.snp.top).offset(108*WidthW)
+            make.height.equalTo(68*WidthW)
+            make.right.equalTo(self.view.snp.right).offset(-115*WidthW)
+        }
+        //
         SementView.delegate = self//遵守点击分段选择代理
         SementView.YesNetWork = false //是网络数据
-        SementView.IsHiddenFenGeLine = true //隐藏分割线
-        self.view.addSubview(SementView.initView())
+        SementView.IsHiddenFenGeLine = false //隐藏分割线
+        SementBottomView.addSubview(SementView.initView())
         SementView.snp.makeConstraints { make in
-            make.left.equalTo(self.view.snp.left).offset(0*WidthW)
-            make.top.equalTo(self.view.snp.top).offset(100*WidthW)
-            make.height.equalTo(72*WidthW)
-            make.right.equalTo(self.view.snp.right)
+            make.left.equalTo(self.SementBottomView.snp.left).offset(10*WidthW)
+            make.top.equalTo(self.SementBottomView.snp.top).offset(0*WidthW)
+            make.height.equalTo(68*WidthW)
+            make.right.equalTo(self.SementBottomView.snp.right).offset(-10*WidthW)
         }
         SementView.dataAarry =  ["全部","新订单","进行中","退款单","取消单","待配送","已完成"]
-        SementView.columnNum =  12 //设置为
+        SementView.columnNum =  7 //设置为
         self.SementView.ReloadData()
         
         //
-        self.view.addSubview(leftView.initView())
-        leftView.snp.makeConstraints { make in
-            make.left.equalTo(self.view.snp.left).offset(0*WidthW)
-            make.top.equalTo(SementView.snp.bottom).offset(10*WidthW)
+        self.view.addSubview(RightView.initView())
+        RightView.snp.makeConstraints { make in
+            make.left.equalTo(self.SementView.snp.left).offset(0*WidthW)
+            make.top.equalTo(SementView.snp.bottom).offset(27*WidthW)
             make.bottom.equalTo(self.view.snp.bottom)
-            make.width.equalTo((OrderTabelViewWidth+OrderRightViewWidth)*WidthW)
+            make.right.equalTo(self.view.snp.right).offset(-72*WidthW)
         }
         
     }

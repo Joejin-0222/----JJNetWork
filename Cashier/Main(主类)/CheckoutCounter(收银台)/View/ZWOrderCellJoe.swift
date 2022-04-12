@@ -73,8 +73,12 @@ class ZWOrderCellJoe: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
+         
+            if selected {
+                self.backgroundColor = UIColor.init(hex: "#FEE6E5")
+            }else {
+                self.backgroundColor = UIColor.white
+            }
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

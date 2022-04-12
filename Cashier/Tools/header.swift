@@ -8,6 +8,8 @@
 import UIKit
 
 import SkeletonView
+import Lottie
+
 
 let userDefault = UserDefaults.standard
 
@@ -33,7 +35,7 @@ let ScreenWidth = UIScreen.main.bounds.size.width
 let HeighH = ScreenHeight/1080
 let WidthW = ScreenWidth/1920
 
-let LeftItemWidth : CGFloat = 150
+let LeftItemWidth : CGFloat = 128
 
 let OrderTabelViewWidth : CGFloat  = 525
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ZWCashierViewControllerJoe: UIViewController ,OrderWayTypeSelectDelegate{
+class ZWCashierViewControllerJoe: ZWRootViewControllerJoe ,OrderWayTypeSelectDelegate{
 
     var orderView : ZWOrderViewJoe  = ZWOrderViewJoe()  //订单 view
     var StoreView : ZWCheckOutStoreViewJoe = ZWCheckOutStoreViewJoe()//右半边商品view
@@ -18,11 +18,11 @@ class ZWCashierViewControllerJoe: UIViewController ,OrderWayTypeSelectDelegate{
 
         self.view.backgroundColor = UIColor.white
         
-        self.SetUI()
+        self.initSetUI()
     }
     
     
-    func SetUI(){
+    func initSetUI(){
         //订单 view
         orderView.delegate = self
         self.view.addSubview(orderView.initView())

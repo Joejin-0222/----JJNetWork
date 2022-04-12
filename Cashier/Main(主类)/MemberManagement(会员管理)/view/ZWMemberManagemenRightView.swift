@@ -29,11 +29,12 @@ class ZWMemberManagemenRightView: UIView {
         return view
     }()
     //搜索输入框
-    lazy var Textfield : UITextField = {
-        let textfield = UITextField()
+    lazy var Textfield : UILabel = {
+        let textfield = UILabel()
 //        textfield.isEditing = false
-        textfield.placeholder = "输入会员码搜索"
+        textfield.text = "输入会员码搜索"
         textfield.font = UIFont.systemFont(ofSize: 28*WidthW)
+        textfield.textColor = UIColor.init(hex: "#C8C9CC")
         return textfield
     }()
     
@@ -173,6 +174,7 @@ class ZWMemberManagemenRightView: UIView {
     @objc func DeleteBtnClick(){
         showStr = ""
         self.Textfield.text = ""
+        Textfield.text = "输入会员码搜索"
     }
     //搜索点击方法
     @objc func searchBtnClick(){
