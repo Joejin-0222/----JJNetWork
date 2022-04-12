@@ -12,5 +12,6 @@ target 'Cashier' do
   #    pod 'Defaults'#持久化
   pod 'PINCache'              # https://github.com/pinterest/PINCache
   pod 'JXSegmentedView' #分段选择
+  pod 'Reusable' #cell的创建
 #  pod 'Spring' #git => ‘https://github.com/MengTo/Spring.git’
 end
