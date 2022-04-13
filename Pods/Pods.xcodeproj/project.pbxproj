@@ -1171,7 +1171,7 @@
 		3460B9488ED43D802D9F9EF1D0DAB706 /* Plugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Plugin.swift; path = Sources/Moya/Plugin.swift; sourceTree = "<group>"; };
 		34B2F4EF732145C39D501281DCD2C95A /* UIResponder+JKFirstResponder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIResponder+JKFirstResponder.m"; path = "JKCategories/UIKit/UIResponder/UIResponder+JKFirstResponder.m"; sourceTree = "<group>"; };
 		350B4A5FCC9FF28918BAD25457805B4A /* SkeletonView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SkeletonView-umbrella.h"; sourceTree = "<group>"; };
-		350DC075F1D9AB865399AA765E151FF3 /* Pods-Cashier */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-Cashier"; path = "libPods-Cashier.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		350DC075F1D9AB865399AA765E151FF3 /* libPods-Cashier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cashier.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		351FC863CBC933B7178598616E39FEB0 /* NSDictionary+JKXML.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+JKXML.m"; path = "JKCategories/Foundation/NSDictionary/NSDictionary+JKXML.m"; sourceTree = "<group>"; };
 		3523144FEEEBBC6F5D1CE497D4172948 /* CompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompositionLayer.swift; path = "lottie-swift/src/Private/LayerContainers/CompLayers/CompositionLayer.swift"; sourceTree = "<group>"; };
 		353FB1C24B9A81C709EC276A70E8F139 /* Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Sources/Mappable.swift; sourceTree = "<group>"; };
@@ -1541,7 +1541,7 @@
 		9D46BD6C7BD0B4D2AAAC73696C92EFB6 /* SkeletonMultilinesLayerConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonMultilinesLayerConfig.swift; path = SkeletonViewCore/Sources/Internal/SkeletonConfigs/SkeletonMultilinesLayerConfig.swift; sourceTree = "<group>"; };
 		9D62BF81179058DFD4008D219DDEE7A8 /* UIView+JKNib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+JKNib.h"; path = "JKCategories/UIKit/UIView/UIView+JKNib.h"; sourceTree = "<group>"; };
 		9D73BDAD9F14D42628C1E606C6DFDBD3 /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomDateFormatTransform.swift; path = Source/CustomDateFormatTransform.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E2BAA27C11B948B14C73E025CD29EAF /* UIColor+JKModify.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+JKModify.m"; path = "JKCategories/UIKit/UIColor/UIColor+JKModify.m"; sourceTree = "<group>"; };
 		9E31EC952C99D87B539DB60F7390DAC4 /* EnumTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumTransform.swift; path = Source/EnumTransform.swift; sourceTree = "<group>"; };
 		9EA87E22025DFD5EB69F535E1CD19419 /* UICollectionView+CollectionSkeleton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+CollectionSkeleton.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/UICollectionView+CollectionSkeleton.swift"; sourceTree = "<group>"; };
@@ -2275,7 +2275,6 @@
 				429001721ECA76FAD5F352BC1CAA4F8F /* MBProgressHUD.m */,
 				582731B1A207DD53841569C85490BC81 /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -2345,7 +2344,6 @@
 				0FAE6B81FADE4397494D6B9205B98605 /* UIView+Transitions.swift */,
 				36CB0C5D192081ED1F7CA32874DABE69 /* Support Files */,
 			);
-			name = SkeletonView;
 			path = SkeletonView;
 			sourceTree = "<group>";
 		};
@@ -2389,7 +2387,6 @@
 				B3960029F69572326D2386686B88C913 /* Core */,
 				AE10B16D21B6A45B85CB9D5542C60463 /* Support Files */,
 			);
-			name = Moya;
 			path = Moya;
 			sourceTree = "<group>";
 		};
@@ -2451,7 +2448,6 @@
 				7BF897C27AF00DB6D5D3499813521482 /* URLTransform.swift */,
 				273C9E8C2A8781B45ACC2DA1A552CAED /* Support Files */,
 			);
-			name = HandyJSON;
 			path = HandyJSON;
 			sourceTree = "<group>";
 		};
@@ -2666,7 +2662,6 @@
 				696D62A9C5C39A13A302829CF2BBD77E /* Support Files */,
 				8AE5B1D23976DC78A53A1660A63AAA41 /* UIKit */,
 			);
-			name = JKCategories;
 			path = JKCategories;
 			sourceTree = "<group>";
 		};
@@ -2869,7 +2864,6 @@
 				9324A59ED0CD39B3F7EED5E8EC1EAE87 /* UILayoutSupport+Extensions.swift */,
 				9F1E22D4E01AC6997A6E2531F0030892 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -2932,7 +2926,6 @@
 				246E2C108968882F7177DEBB9B9980FC /* Validation.swift */,
 				5CA282876EB7182806C0656573328902 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -2970,7 +2963,6 @@
 				FAD0512B9436245D924FF18000DDF074 /* Core */,
 				1A7B3237252C3EE8F591BDFD0C7960F4 /* Support Files */,
 			);
-			name = PINCache;
 			path = PINCache;
 			sourceTree = "<group>";
 		};
@@ -3094,7 +3086,6 @@
 				FB4A7B58EE641E07E6D18B8DDC70D6EA /* PINOperationTypes.h */,
 				2040CD710699EDEAF47CC3498D66C296 /* Support Files */,
 			);
-			name = PINOperation;
 			path = PINOperation;
 			sourceTree = "<group>";
 		};
@@ -3303,7 +3294,6 @@
 				846366245080AE182788FFFC64E14310 /* IQUIViewController+Additions.swift */,
 				213F925CED212DC7FFF3CD595273F778 /* Support Files */,
 			);
-			name = IQKeyboardManagerSwift;
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
@@ -3355,7 +3345,6 @@
 				FCF6E1A31F814F7960468E190A5F9799 /* JXSegmentedViewTool.swift */,
 				771882A6488B125EB72B7B3DC41512ED /* Support Files */,
 			);
-			name = JXSegmentedView;
 			path = JXSegmentedView;
 			sourceTree = "<group>";
 		};
@@ -3446,7 +3435,7 @@
 				B9084FE779702931E8DF1D00A2D725FB /* ObjectMapper */,
 				6320170E5A5A268B11CAE15D4EF6A9E3 /* PINCache */,
 				22C347595B1851A1E5B0A3762BB18EC9 /* PINOperation */,
-				350DC075F1D9AB865399AA765E151FF3 /* Pods-Cashier */,
+				350DC075F1D9AB865399AA765E151FF3 /* libPods-Cashier.a */,
 				CDC8C1E54D1F3A8B5CAC89FFFF6A3F80 /* SkeletonView */,
 				979486118B3E90C08386079D57962701 /* SnapKit */,
 			);
@@ -3550,7 +3539,6 @@
 				94A4C4FC74C80222BF586680AEE0A554 /* URLTransform.swift */,
 				6594D756960342D43F81F0BF4EC07F28 /* Support Files */,
 			);
-			name = ObjectMapper;
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
@@ -3689,7 +3677,6 @@
 				A9383A03ACDEC32BBC977BDEF58F3012 /* VectorsExtensions.swift */,
 				57A83125E516E246E0A15BA60F5B7017 /* Support Files */,
 			);
-			name = "lottie-ios";
 			path = "lottie-ios";
 			sourceTree = "<group>";
 		};
@@ -4230,7 +4217,7 @@
 			);
 			name = "Pods-Cashier";
 			productName = "Pods-Cashier";
-			productReference = 350DC075F1D9AB865399AA765E151FF3 /* Pods-Cashier */;
+			productReference = 350DC075F1D9AB865399AA765E151FF3 /* libPods-Cashier.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		82B0A41D3031FF27D78E17B0A9A46FB0 /* MBProgressHUD */ = {
