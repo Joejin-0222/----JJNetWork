@@ -41,6 +41,9 @@
 		043E9A8828057591000B3BBF /* DRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9A8728057591000B3BBF /* DRightView.swift */; };
 		043E9A8A280575B9000B3BBF /* DRRightTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9A89280575B9000B3BBF /* DRRightTCell.swift */; };
 		043E9A8C28058ECD000B3BBF /* DRHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9A8B28058ECD000B3BBF /* DRHeaderView.swift */; };
+		043E9A8E28065E52000B3BBF /* DRRightheaderTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9A8D28065E52000B3BBF /* DRRightheaderTCell.swift */; };
+		043E9A902806BCD3000B3BBF /* basePopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9A8F2806BCD3000B3BBF /* basePopView.swift */; };
+		043E9A922806C369000B3BBF /* testPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9A912806C369000B3BBF /* testPopView.swift */; };
 		0444682627DAED0E000444FD /* header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682527DAED0E000444FD /* header.swift */; };
 		0444682827DB1C7F000444FD /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682727DB1C7F000444FD /* Toast.swift */; };
 		0444682A27DED565000444FD /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682927DED565000444FD /* UserInfo.swift */; };
@@ -162,6 +165,9 @@
 		043E9A8728057591000B3BBF /* DRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRightView.swift; sourceTree = "<group>"; };
 		043E9A89280575B9000B3BBF /* DRRightTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRRightTCell.swift; sourceTree = "<group>"; };
 		043E9A8B28058ECD000B3BBF /* DRHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRHeaderView.swift; sourceTree = "<group>"; };
+		043E9A8D28065E52000B3BBF /* DRRightheaderTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRRightheaderTCell.swift; sourceTree = "<group>"; };
+		043E9A8F2806BCD3000B3BBF /* basePopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basePopView.swift; sourceTree = "<group>"; };
+		043E9A912806C369000B3BBF /* testPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testPopView.swift; sourceTree = "<group>"; };
 		0444682527DAED0E000444FD /* header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = header.swift; sourceTree = "<group>"; };
 		0444682727DB1C7F000444FD /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		0444682927DED565000444FD /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -455,6 +461,8 @@
 				043E9A8728057591000B3BBF /* DRightView.swift */,
 				043E9A89280575B9000B3BBF /* DRRightTCell.swift */,
 				043E9A8B28058ECD000B3BBF /* DRHeaderView.swift */,
+				043E9A8D28065E52000B3BBF /* DRRightheaderTCell.swift */,
+				043E9A912806C369000B3BBF /* testPopView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -471,6 +479,7 @@
 			isa = PBXGroup;
 			children = (
 				043E9A85280562D7000B3BBF /* baseTableViewCell.swift */,
+				043E9A8F2806BCD3000B3BBF /* basePopView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1133,6 +1142,7 @@
 				046B4E0B27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift in Sources */,
 				0406E1DE27FE84FE00E5A948 /* ZWHeaderViewCell.swift in Sources */,
 				046B4E1127F54BFE00710D02 /* ZWSwitchStoreVCJoe.swift in Sources */,
+				043E9A8E28065E52000B3BBF /* DRRightheaderTCell.swift in Sources */,
 				0449923227F84E7400DB5410 /* ZWCashierSettingItemCell.swift in Sources */,
 				04E3644427F45A4D0007B91A /* ZWOrderViewJoe.swift in Sources */,
 				04E3646927F467860007B91A /* LTPageScrollView.swift in Sources */,
@@ -1202,6 +1212,7 @@
 				0444683A27DEEA7F000444FD /* SelectStoreViewController.swift in Sources */,
 				043E9A8128055779000B3BBF /* DRLeftTCell.swift in Sources */,
 				04CA37A427F69C8F00E620E5 /* ZWCheckSementViewJoe.swift in Sources */,
+				043E9A922806C369000B3BBF /* testPopView.swift in Sources */,
 				04A9DB0A27F30C2E0036C603 /* ProgressHUD.swift in Sources */,
 				0406E1E627FE8F7200E5A948 /* ZWHeaderView.swift in Sources */,
 				0449922A27F7FC3200DB5410 /* ZWCheckOutTopView.swift in Sources */,
@@ -1218,6 +1229,7 @@
 				0444682A27DED565000444FD /* UserInfo.swift in Sources */,
 				046B4E1427F54C4000710D02 /* ZWEnterBackgroundVCJoe.swift in Sources */,
 				043E9A8C28058ECD000B3BBF /* DRHeaderView.swift in Sources */,
+				043E9A902806BCD3000B3BBF /* basePopView.swift in Sources */,
 				04E3644827F45DF20007B91A /* ZWOrderQueryViewControllerJoe.swift in Sources */,
 				04CA37A627F6C76D00E620E5 /* ZWCheckSementCellJoe.swift in Sources */,
 				0486847C27D833D100D6A878 /* AppDelegate.swift in Sources */,

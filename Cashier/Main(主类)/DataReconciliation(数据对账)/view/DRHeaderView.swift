@@ -43,11 +43,11 @@ class DRHeaderView: UIView {
         button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22*WidthW)
         return button
-        
     }()
 //    右边按钮点击事件
     @objc func tapButton(sender: UIButton) {
-        
+        print("打印按钮点击事件")
+        let popview: UIView = testPopView().initView()
     }
     func initView() -> UIView{
         //红色的view
@@ -73,7 +73,6 @@ class DRHeaderView: UIView {
             make.height.equalTo(40*HeighH)
             make.width.equalTo(150*WidthW)
         }
-                
         return self
     }
 

@@ -1,14 +1,14 @@
 //
-//  DRRightTCell.swift
+//  DRRightheaderTCell.swift
 //  Cashier
 //
-//  Created by mac on 2022/4/12.
+//  Created by mac on 2022/4/13.
 //
 
 import UIKit
 
-class DRRightTCell: baseTableViewCell {
-    
+class DRRightheaderTCell: baseTableViewCell {
+
     lazy var backView:UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.init(hex: "#FFFFFF")
@@ -23,13 +23,21 @@ class DRRightTCell: baseTableViewCell {
         return label
     }()
     
-    lazy var middleL: UILabel = {
+    lazy var middleLeftL: UILabel = {
         let label = UILabel()
         label.text = "20000.00"
         label.textColor = UIColor.init(hex: "#323233")
         label.font = UIFont.systemFont(ofSize: 21*WidthW)
         return label
     }()
+    lazy var middleRightL: UILabel = {
+        let label = UILabel()
+        label.text = "20000.00"
+        label.textColor = UIColor.init(hex: "#323233")
+        label.font = UIFont.systemFont(ofSize: 21*WidthW)
+        return label
+    }()
+    
     lazy var rightL: UILabel = {
         let label = UILabel()
         label.text = "5%"
@@ -42,15 +50,10 @@ class DRRightTCell: baseTableViewCell {
         let img = UIImageView()
         imageView?.contentMode = .scaleAspectFit
         img.image = UIImage(named: "dr_up")
-        img.isHidden = true
         return img
     }()
-    lazy var rightImgView: UIImageView = {
-        let img = UIImageView()
-        imageView?.contentMode = .scaleAspectFit
-        img.image = UIImage(named: "编组 36")
-        return img
-    }()
+    
+    
     
     lazy var lineView: UIView = {
         let view = UIView()
@@ -63,46 +66,38 @@ class DRRightTCell: baseTableViewCell {
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
         }
         
-        self.backView.addSubview(rightImgView)
-        rightImgView.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.width.height.equalTo(20*WidthW)
-            make.left.equalTo(self.backView.snp.left).offset(40*WidthW)
-        }
-        
         self.backView.addSubview(leftL)
         leftL.snp.makeConstraints { make in
             make.centerY.equalTo(self.backView.snp.centerY).offset(0)
             make.left.equalTo(self.backView.snp.left).offset(40*WidthW)
-//            make.width.equalTo(200*WidthW)
             make.height.equalTo(self.backView)
         }
-        
-        self.backView.addSubview(middleL)
-        middleL.snp.makeConstraints { make in
-//            make.width.equalTo(200*WidthW)
+        self.backView.addSubview(middleLeftL)
+        middleLeftL.snp.makeConstraints { make in
             make.height.equalTo(self.backView.snp.height).offset(0)
-            make.centerX.equalTo(self.backView.snp.centerX).multipliedBy(1)
-            make.centerY.equalTo(self.backView.snp.centerY).offset(0)
+            make.centerX.equalToSuperview().multipliedBy(0.7)
+            make.centerY.equalToSuperview()
+        }
+        self.backView.addSubview(middleRightL)
+        middleRightL.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.centerX.equalToSuperview().multipliedBy(1.2)
+            make.height.equalToSuperview()
         }
         
         self.backView.addSubview(rightL)
         rightL.snp.makeConstraints { make in
             make.centerY.equalTo(self.backView.snp.centerY).offset(0)
             make.right.equalTo(self.backView.snp.right).offset(-70*WidthW)
-//            make.width.equalTo(100*WidthW)
             make.height.equalTo(self.backView)
         }
         
-       
-        
-        self.backView.addSubview(imgView)
-        imgView.snp.makeConstraints { make in
-            make.centerY.equalTo(self.backView.snp.centerY).offset(0)
-            make.width.height.equalTo(20*WidthW);
-            make.left.equalTo(self.rightL.snp.right).offset(10*WidthW)
-        }
-        
+//        self.backView.addSubview(imgView)
+//        imgView.snp.makeConstraints { make in
+//            make.centerY.equalTo(self.backView.snp.centerY).offset(0)
+//            make.width.height.equalTo(20*WidthW);
+//            make.left.equalTo(self.rightL.snp.right).offset(10*WidthW)
+//        }
         
         self.backView.addSubview(lineView)
         lineView.snp.makeConstraints { make in
@@ -112,6 +107,8 @@ class DRRightTCell: baseTableViewCell {
             make.height.equalTo(2*HeighH)
         }
     }
+    
+    
     
 
     override func awakeFromNib() {
@@ -125,18 +122,6 @@ class DRRightTCell: baseTableViewCell {
         // Configure the view for the selected state
     }
     
-    
-    var isShow: Bool?{
-        didSet{
-            guard let isShow = isShow else{ return }
-            self.rightImgView.isHidden = isShow
-            if !isShow{
-                leftL.snp.updateConstraints { make in
-                    make.left.equalToSuperview().offset(80*WidthW)
-                }
-            }
-        }
-    }
     var isTopCell:Bool?{
         didSet{
             guard let isTopCell = isTopCell else {
@@ -144,8 +129,6 @@ class DRRightTCell: baseTableViewCell {
             }
             if isTopCell{
                 self.backView.backgroundColor = UIColor.init(hex: "#F3F3F5")
-            }else{
-                self.backView.backgroundColor = UIColor.init(hex: "ffffff")
             }
         }
     }
@@ -155,9 +138,11 @@ class DRRightTCell: baseTableViewCell {
                 return
             }
             self.leftL.text = dataDict["leftStr"] as? String
-            self.middleL.text = dataDict["middleStr"] as? String
+            self.middleLeftL.text = dataDict["middleStr"] as? String
+            self.middleRightL.text = dataDict["middleRightStr"] as? String
             self.rightL.text = dataDict["rightStr"] as? String
             
         }
     }
+ 
 }

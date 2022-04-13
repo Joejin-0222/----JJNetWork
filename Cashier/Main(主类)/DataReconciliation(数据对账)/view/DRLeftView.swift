@@ -6,12 +6,15 @@
 //
 
 import UIKit
+typealias tapIndexBlock = (Int) -> ()
 
 class DRLeftView: UIView {
 
     var dataArray: NSArray = ["经营数据","财务报表","商品报表","会员报表"]
     var imgArray: NSArray = ["dr_01","dr_02","dr_03","dr_04"]
     var selectedArray: NSMutableArray = [1,0,0,0]
+    var tapIndexBlock : tapIndexBlock?
+    
     
     lazy var tableView:UITableView = {
         let tView = UITableView(frame: .zero, style: .grouped)
@@ -57,6 +60,7 @@ extension DRLeftView :UITableViewDelegate{
         }
         
         tableView.reloadData()
+        tapIndexBlock!(indexPath.row)
      
     }
 }
