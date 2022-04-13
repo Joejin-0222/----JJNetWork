@@ -89,6 +89,8 @@ class ZWCheckOutTopView: UIView {
             make.width.height.equalTo(120*WidthW)
             make.centerY.equalTo(self.snp.centerY)
         }
+        self.nameLabel.text = Cache.user?.nickname
+        
         //消息
         self.addSubview(MessageImage)
         MessageImage.snp.makeConstraints { make in

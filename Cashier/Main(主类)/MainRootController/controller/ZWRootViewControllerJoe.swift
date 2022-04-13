@@ -51,7 +51,8 @@ class ZWRootViewControllerJoe: UIViewController {
     //
     lazy var nameLabel : UILabel = {
         let label = UILabel()
-        label.text = "My nickname"
+        label.text =  "My nickname"
+     
         label.font = UIFont.systemFont(ofSize: 20*WidthW)
         label.textColor = UIColor.init(hex: "#232733")
         return label
@@ -137,6 +138,8 @@ class ZWRootViewControllerJoe: UIViewController {
             make.width.height.equalTo(120*WidthW)
             make.centerY.equalTo(headImageBtn.snp.centerY)
         }
+        self.nameLabel.text = Cache.user?.nickname
+        
         //消息
         self.view.addSubview(MessageImage)
         MessageImage.snp.makeConstraints { make in

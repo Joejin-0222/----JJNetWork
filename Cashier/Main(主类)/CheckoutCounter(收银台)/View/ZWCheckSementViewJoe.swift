@@ -12,8 +12,13 @@ protocol SementSelectClickDelegate : NSObjectProtocol{
 }
 
 class ZWCheckSementViewJoe: UIView {
-    
-    
+    var cornerRadius : CGFloat = 0.00 //圆角大小
+    var selectBackgroundColor : UIColor = UIColor.clear //选中后的背景色
+    var BackgroundColor : UIColor = UIColor.clear //背景色
+    var textFont : CGFloat = 24.00 //字体大小
+    var SelectTextColor : String = "#323233" //选中字体颜色
+    var TextColor : String = "#969799" //字体颜色
+    var IsHiddenIndicator : Bool = false //是否显示指示器
     var IsHiddenFenGeLine : Bool = false //是否隐藏分割线
     var YesNetWork : Bool = false //是否网络数据
     var SementModel = ZWCheckSementModelJoe()
@@ -34,7 +39,7 @@ class ZWCheckSementViewJoe: UIView {
         myflowLayout.sectionHeadersPinToVisibleBounds = false // 头部悬浮
         myflowLayout.minimumLineSpacing = 0
         myflowLayout.minimumInteritemSpacing = 0
-        myflowLayout.sectionInset = UIEdgeInsets(top: 0, left: 13*WidthW, bottom: 0, right: 0)
+        myflowLayout.sectionInset = UIEdgeInsets(top: 0, left: 1*WidthW, bottom: 0, right: 0)
         myflowLayout.scrollDirection = .horizontal
         self.CollectionView.collectionViewLayout = myflowLayout
         self.CollectionView.delegate = self
@@ -44,12 +49,14 @@ class ZWCheckSementViewJoe: UIView {
         CollectionView.showsHorizontalScrollIndicator = false
         self.addSubview(self.CollectionView)
         CollectionView.backgroundColor = UIColor.clear
+       
         CollectionView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.top).offset(0)
-            make.left.equalTo(self.snp.left).offset(13*WidthW)
-            make.right.equalTo(self.snp.right).offset(-13*WidthW)
-            make.bottom.equalTo(self.snp.bottom).offset(0*WidthW)
+            make.top.equalTo(self.snp.top).offset(1*WidthW)
+            make.left.equalTo(self.snp.left).offset(1*WidthW)
+            make.right.equalTo(self.snp.right).offset(-1*WidthW)
+            make.bottom.equalTo(self.snp.bottom).offset(-1*WidthW)
         }
+        CollectionView.cornerRadius(cornerRadius: cornerRadius, borderColor: UIColor.clear, borderWidth: 1)
         //默认选中第一行
         DispatchQueue.main.async {
             let indexpath = IndexPath.init(row: self.selectIndex , section: 0)
@@ -85,10 +92,16 @@ extension ZWCheckSementViewJoe:UICollectionViewDataSource ,UICollectionViewDeleg
     
         if  self.selectIndex == indexPath.row {
             cell.IndicatorView.isHidden = false
-            cell.TitleLabel.textColor = UIColor.init(hex: "#323233")
+            cell.TitleLabel.textColor = UIColor.init(hex: SelectTextColor)
+            //cell的背景色
+            cell.backgroundColor = selectBackgroundColor
+            
         }else{
-            cell.TitleLabel.textColor = UIColor.init(hex: "#969799")
+            cell.TitleLabel.textColor = UIColor.init(hex: TextColor)
             cell.IndicatorView.isHidden = true
+            //cell的背景色
+            cell.backgroundColor = BackgroundColor
+            
         }
         //隐藏最后一个分割线
         if indexPath.row == (self.dataAarry?.count ?? 0) - 1{
@@ -101,7 +114,16 @@ extension ZWCheckSementViewJoe:UICollectionViewDataSource ,UICollectionViewDeleg
                 cell.verticalView.isHidden = false
             }
         }
-        
+        //是否显示指示器
+        if IsHiddenIndicator {
+            cell.IndicatorView.backgroundColor = UIColor.clear
+        }else{
+            cell.IndicatorView.backgroundColor = MainColor
+        }
+      
+        //字体大小
+        cell.TitleLabel.font = UIFont.systemFont(ofSize: textFont*WidthW)
+       
         
         return cell
     }
@@ -121,7 +143,7 @@ extension ZWCheckSementViewJoe:UICollectionViewDataSource ,UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
        
-        return CGSize(width:( self.CollectionView.width - 30) / columnNum, height: self.CollectionView.height)
+        return CGSize(width:( self.CollectionView.width - 1) / columnNum, height: self.CollectionView.height)
        
     }
     

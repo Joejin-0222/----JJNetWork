@@ -135,6 +135,7 @@ class ZWQuDanTanKuangView: UIView ,SementSelectClickDelegate{
             make.height.equalTo(72*WidthW)
         }
         //
+        TwoSementView.cornerRadius = 36*WidthW//圆角大小
         TwoSementView.delegate = self//遵守点击分段选择代理
         TwoSementView.YesNetWork = false //是网络数据
         TwoSementView.columnNum =  8 //设置为 8列

@@ -12,6 +12,8 @@ class ZWOrderQueryViewControllerJoe: ZWRootViewControllerJoe {
     let SementView : ZWCheckSementViewJoe = ZWCheckSementViewJoe()
     //
     let RightView :  ZWOrderQueryRightView = ZWOrderQueryRightView()
+    //
+    let LefttView :  ZWOrderQueryLeftView = ZWOrderQueryLeftView()
     //分段选择底部view
     let SementBottomView = UIView()
     
@@ -24,7 +26,16 @@ class ZWOrderQueryViewControllerJoe: ZWRootViewControllerJoe {
     
     func shezhiUI(){
         
-        //
+        //左边view
+        self.view.addSubview(LefttView.initView())
+        LefttView.snp.makeConstraints { make in
+            make.left.equalTo(self.view.snp.left).offset(0*WidthW)
+            make.top.equalTo(self.topLineView.snp.bottom).offset(0*WidthW)
+            make.bottom.equalTo(self.view.snp.bottom)
+            make.right.equalTo(self.rightline.snp.left).offset(0*WidthW)
+        }
+        
+        //右边view
         SementBottomView.cornerRadius(cornerRadius: 34*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 1)
         self.view.addSubview(SementBottomView)
         SementBottomView.snp.makeConstraints { make in

@@ -14,9 +14,9 @@ class ZWLeftItemCellJoe: UICollectionViewCell {
         let view = UIView()
         view.backgroundColor = MainColor
         view.layer.masksToBounds = true
-//        view.layer.cornerRadius = 1
-//        view.layer.borderWidth = 1
-//        view.layer.borderColor = UIColor (red: 235/255, green: 237/255, blue: 240/255, alpha: 1).cgColor
+        //        view.layer.cornerRadius = 1
+        //        view.layer.borderWidth = 1
+        //        view.layer.borderColor = UIColor (red: 235/255, green: 237/255, blue: 240/255, alpha: 1).cgColor
         return view
     }()
     
@@ -28,17 +28,16 @@ class ZWLeftItemCellJoe: UICollectionViewCell {
         return view
     }()
     
-  
+    
     lazy var LeftItemLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 22*WidthW)
         label.textColor = UIColor.init(hex: "#FFFFFF")
-//        label.backgroundColor = UIColor.blue
+        //        label.backgroundColor = UIColor.blue
         return label
     }()
     
-//    var indexPath = IndexPath()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,9 +50,12 @@ class ZWLeftItemCellJoe: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+
+    
     func setupUI(){
-       
-     
+        
+        
         //地图view
         self.addSubview(LeftItemView)
         LeftItemView.snp.makeConstraints { make in
@@ -62,29 +64,18 @@ class ZWLeftItemCellJoe: UICollectionViewCell {
             make.height.equalTo(self.snp.height)
             make.width.equalTo(self.contentView.snp.width)
         }
-    
+        
         //标题图标
         
         LeftItemView.addSubview(LeftItemIcon)
         
-//        if indexPath.row == 0{
-//            LeftItemIcon.snp.makeConstraints { make in
-//                make.top.equalTo(16*WidthW)
-//                make.centerX.equalTo(self.contentView.snp.centerX)
-//                make.width.height.equalTo(62*WidthW)
-//            }
-//        }else{
-            LeftItemIcon.snp.makeConstraints { make in
-                make.top.equalTo(16*WidthW)
-                make.centerX.equalTo(self.contentView.snp.centerX)
-                make.width.height.equalTo(56*WidthW)
-//            }
+        LeftItemIcon.snp.makeConstraints { make in
+            make.top.equalTo(16*WidthW)
+            make.centerX.equalTo(self.contentView.snp.centerX)
+            make.width.height.equalTo(56*WidthW)
         }
         
-     
-        print("====\(56*WidthW)")
         
-          
         //标题
         LeftItemView.addSubview(LeftItemLabel)
         LeftItemLabel.snp.makeConstraints { make in
@@ -93,7 +84,7 @@ class ZWLeftItemCellJoe: UICollectionViewCell {
             make.top.equalTo(LeftItemIcon.snp.bottom).offset(8*WidthW)
             make.width.equalTo(150*WidthW)
         }
-      
+        
     }
-   
+    
 }

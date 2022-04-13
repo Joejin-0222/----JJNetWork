@@ -88,6 +88,8 @@ class MainRootController: UIViewController {
             make.height.equalTo(ScreenHeight)
             make.width.equalTo(LeftItemWidth*WidthW)
         }
+      
+        
         
         print("=======LeftItemWidth*WidthW = \(128*WidthW)")
         //
@@ -182,8 +184,8 @@ extension MainRootController: LeftItemDelegate{
     // 06. 实现代理方法
     func ItemSelectIndexPathClick(IndexPath: Int, ItemName: String) {
      
-        print("中监听到了按钮点击=====\(IndexPath-1)==name=\(ItemName) == \(self.viewControllers[IndexPath-1])")
-        simpleManager.scrollToIndex(index: IndexPath-1)
+        print("中监听到了按钮点击=====\(IndexPath)==name=\(ItemName) == \(self.viewControllers[IndexPath])")
+        simpleManager.scrollToIndex(index: IndexPath)
     }
     
 }

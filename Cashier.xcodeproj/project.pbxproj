@@ -75,6 +75,7 @@
 		048BD21C27FD441D00FFC9FF /* ZWQuDanTanKuangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BD21B27FD441D00FFC9FF /* ZWQuDanTanKuangView.swift */; };
 		04A9DB0A27F30C2E0036C603 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9DB0927F30C2E0036C603 /* ProgressHUD.swift */; };
 		04ACE14528059B71001356D4 /* ZWOrderQuerySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACE14428059B71001356D4 /* ZWOrderQuerySearchView.swift */; };
+		04ACE14728066E5C001356D4 /* ZWOrderQueryLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACE14628066E5C001356D4 /* ZWOrderQueryLeftView.swift */; };
 		04CA379A27F5B0C400E620E5 /* ZWCheckOutStoreViewJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA379927F5B0C400E620E5 /* ZWCheckOutStoreViewJoe.swift */; };
 		04CA379C27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA379B27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift */; };
 		04CA37A027F5C18400E620E5 /* UIView+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA379F27F5C18400E620E5 /* UIView+Corners.swift */; };
@@ -202,6 +203,7 @@
 		048BD21B27FD441D00FFC9FF /* ZWQuDanTanKuangView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWQuDanTanKuangView.swift; sourceTree = "<group>"; };
 		04A9DB0927F30C2E0036C603 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		04ACE14428059B71001356D4 /* ZWOrderQuerySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQuerySearchView.swift; sourceTree = "<group>"; };
+		04ACE14628066E5C001356D4 /* ZWOrderQueryLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQueryLeftView.swift; sourceTree = "<group>"; };
 		04CA379927F5B0C400E620E5 /* ZWCheckOutStoreViewJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckOutStoreViewJoe.swift; sourceTree = "<group>"; };
 		04CA379B27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckOutStoreCellJoe.swift; sourceTree = "<group>"; };
 		04CA379F27F5C18400E620E5 /* UIView+Corners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Corners.swift"; sourceTree = "<group>"; };
@@ -406,7 +408,6 @@
 				04A9DB0827F30C2E0036C603 /* HUD */,
 				0444682727DB1C7F000444FD /* Toast.swift */,
 				0444682927DED565000444FD /* UserInfo.swift */,
-				0444682527DAED0E000444FD /* header.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -417,6 +418,7 @@
 				043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */,
 				0480B941280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift */,
 				04ACE14428059B71001356D4 /* ZWOrderQuerySearchView.swift */,
+				04ACE14628066E5C001356D4 /* ZWOrderQueryLeftView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -784,6 +786,7 @@
 		048684BA27D838DD00D6A878 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				0444682527DAED0E000444FD /* header.swift */,
 				0431FCD727D88BFB00778DE6 /* API.swift */,
 				0431FCD827D88BFB00778DE6 /* ZHFNetWork.swift */,
 				048BD21927FD327A00FFC9FF /* APIModelJoe.swift */,
@@ -1175,6 +1178,7 @@
 				0406E1FB27FEF17600E5A948 /* ZWLeftTableviewCell.swift in Sources */,
 				0486847E27D833D100D6A878 /* DocumentBrowserViewController.swift in Sources */,
 				0444685B27E02624000444FD /* CashierSettingModel.swift in Sources */,
+				04ACE14728066E5C001356D4 /* ZWOrderQueryLeftView.swift in Sources */,
 				0406E1E127FE893D00E5A948 /* ZWStoreManagementVC.swift in Sources */,
 				04E3647327F467860007B91A /* LTPageTitleItemType.swift in Sources */,
 				04E3646A27F467860007B91A /* LTLayout.swift in Sources */,

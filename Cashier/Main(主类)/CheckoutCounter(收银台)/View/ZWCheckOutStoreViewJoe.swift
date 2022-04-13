@@ -71,7 +71,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
             make.top.equalTo(self.snp.top).offset(112*WidthW)
             make.height.equalTo(68*WidthW)
         }
-        
+        SementView.IsHiddenIndicator = false //是否显示指示器
         SementView.delegate = self//遵守点击分段选择代理
         SementView.YesNetWork = true //是网络数据
         SementView.columnNum = 6 //设置为两列

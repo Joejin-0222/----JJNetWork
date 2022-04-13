@@ -20,7 +20,7 @@ class ZWLeftItemViewJoe: UIView {
       
     
     var dataAarry  : NSArray = []
-    private var selectIndex:Int=1   //    记录点击了第几行
+    private var selectIndex:Int=0   //    记录点击了第几行
     
     lazy var flowLayout:UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -39,19 +39,53 @@ class ZWLeftItemViewJoe: UIView {
         view.delegate = self
         return view
     }()
+    //
+    lazy var LogoView: UIView = {
+        let view = UIView()
+        return view
+    }()
+    lazy var LeftItemIcon: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage.init(named: "leftItemLogo")
+        view.isUserInteractionEnabled = true
+        view.contentMode = .scaleAspectFill
+        return view
+    }()
+   
+    
+    
     func initView() -> UIView {
-        self.dataAarry = ["leftItemLogo","收银台","订单查询","会员管理","员工交班","商品库存","数据对账","切换店铺","","收银设置","进入后台"]
+        self.dataAarry = ["收银台","订单查询","会员管理","员工交班","商品库存","数据对账","切换店铺","","收银设置","进入后台"]
         
         self.backgroundColor =  UIColor.init(hex: "#FE4B48")
         
-        flowLayout.itemSize = CGSize(width: LeftItemWidth*WidthW, height: (ScreenHeight - 20*WidthW)/CGFloat(self.dataAarry.count) )
-        flowLayout.sectionInset = UIEdgeInsets(top: 15*WidthW, left:0, bottom: 0, right:0)
+        //
+    
+        //标题图标
+        self.addSubview(LogoView)
+        LogoView.snp.makeConstraints { make in
+            make.left.equalTo(self.snp.left)
+            make.top.equalTo(self.snp.top)
+            make.width.height.equalTo(LeftItemWidth*WidthW)
+        }
+        LogoView.backgroundColor = MainColor
+        //
+        LogoView.addSubview(LeftItemIcon)
+        LeftItemIcon.snp.makeConstraints { make in
+            make.centerX.equalTo(LogoView.snp.centerX)
+            make.centerY.equalTo(LogoView.snp.centerY)
+            make.width.height.equalTo(82*WidthW)
+        }
+        
+        //
+        flowLayout.itemSize = CGSize(width: LeftItemWidth*WidthW, height: (ScreenHeight - LeftItemWidth*WidthW)/CGFloat(self.dataAarry.count) )
+        flowLayout.sectionInset = UIEdgeInsets(top: 0*WidthW, left:0, bottom: 0, right:0)
         
         self.addSubview(collectionView)
         collectionView.backgroundColor =  UIColor.init(hex: "#FE4B48")
         collectionView.isScrollEnabled = false
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(0)
+            make.top.equalTo(LogoView.snp.bottom)
             make.left.equalTo(self.snp.left)
             make.width.equalTo(self.snp.width)
             make.bottom.equalTo(self.snp.bottom).offset(0*WidthW)
@@ -75,12 +109,11 @@ extension ZWLeftItemViewJoe:UICollectionViewDataSource {
         
         //        let model : SelectStoreModelZJ =  self.dataAarry[indexPath.row] as! SelectStoreModelZJ;
         
-        if indexPath.row == 0{
-            cell.LeftItemLabel.text = ""
-//            cell.indexPath = indexPath
-        }else{
+//        if indexPath.row == 0{
+//            cell.LeftItemLabel.text = ""
+//        }else{
             cell.LeftItemLabel.text = (self.dataAarry [indexPath.row] as! String)
-        }
+//        }
         
         if  self.selectIndex == indexPath.row {
             cell.LeftItemIcon.image =  UIImage.init(named: "\(self.dataAarry [indexPath.row] as! String)select" )
@@ -97,7 +130,7 @@ extension ZWLeftItemViewJoe:UICollectionViewDataSource {
 }
 extension ZWLeftItemViewJoe: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 || indexPath.row == 8 {
+        if indexPath.row == 7 {
             
         }else{
             self.selectIndex=indexPath.row
