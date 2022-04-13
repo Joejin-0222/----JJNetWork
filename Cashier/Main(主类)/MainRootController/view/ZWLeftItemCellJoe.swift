@@ -14,18 +14,12 @@ class ZWLeftItemCellJoe: UICollectionViewCell {
         let view = UIView()
         view.backgroundColor = MainColor
         view.layer.masksToBounds = true
+        //        view.layer.cornerRadius = 1
+        //        view.layer.borderWidth = 1
+        //        view.layer.borderColor = UIColor (red: 235/255, green: 237/255, blue: 240/255, alpha: 1).cgColor
         return view
     }()
-    //
     
-    lazy var backImage: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage.init(named: "选中背景")
-        view.isUserInteractionEnabled = true
-        view.contentMode = .scaleToFill
-        return view
-    }()
-    //
     lazy var LeftItemIcon: UIImageView = {
         let view = UIImageView()
         view.image = UIImage.init(named: "收银台")
@@ -70,20 +64,13 @@ class ZWLeftItemCellJoe: UICollectionViewCell {
             make.height.equalTo(self.snp.height)
             make.width.equalTo(self.contentView.snp.width)
         }
-        LeftItemView.addSubview(backImage)
-        backImage.snp.makeConstraints { make in
-            make.left.equalTo(self.snp.left)
-            make.right.equalTo(self.snp.right)
-            make.top.equalTo(self.snp.top).offset(-5*WidthW)
-            make.bottom.equalTo(self.snp.bottom).offset(5*WidthW)
-            make.width.equalTo(self.contentView.snp.width)
-        }
         
         //标题图标
+        
         LeftItemView.addSubview(LeftItemIcon)
+        
         LeftItemIcon.snp.makeConstraints { make in
-//            make.top.equalTo(10*WidthW)
-            make.centerY.equalTo(self.contentView.snp.centerY).offset(-16*WidthW)
+            make.top.equalTo(16*WidthW)
             make.centerX.equalTo(self.contentView.snp.centerX)
             make.width.height.equalTo(56*WidthW)
         }
@@ -94,7 +81,7 @@ class ZWLeftItemCellJoe: UICollectionViewCell {
         LeftItemLabel.snp.makeConstraints { make in
             make.centerX.equalTo(self.contentView.snp.centerX)
             make.height.equalTo(30*WidthW)
-            make.top.equalTo(LeftItemIcon.snp.bottom).offset(3*WidthW)
+            make.top.equalTo(LeftItemIcon.snp.bottom).offset(8*WidthW)
             make.width.equalTo(150*WidthW)
         }
         

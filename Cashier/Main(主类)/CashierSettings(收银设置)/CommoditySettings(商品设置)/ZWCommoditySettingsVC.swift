@@ -77,6 +77,23 @@ extension ZWCommoditySettingsVC : UITableViewDataSource{
         
         cell.content01.text = arr[indexPath.row] as? String
         
+        cell.contentView.isHidden = true
+        if indexPath.section == 0{
+            if indexPath.row == 2{
+                cell.typeIndex = 1
+            }else{
+                cell.typeIndex = 0
+            }
+        }
+        
+        if indexPath.section == 1{
+            if indexPath.row == 0 {
+                cell.typeIndex = 3
+            }else{
+                cell.typeIndex = 2
+            }
+        }
+        
         return cell
     }
     
