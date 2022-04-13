@@ -9,6 +9,9 @@ import UIKit
 
 class ZWOrderShouKuanTanKuang: UIView ,SementSelectClickDelegate{
     
+    //中间 显示 内容
+    fileprivate let CollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout())
+    
     var dataAarry  : NSArray? = []
 
     //顶部 分段选择器
@@ -59,7 +62,7 @@ class ZWOrderShouKuanTanKuang: UIView ,SementSelectClickDelegate{
         self.backgroundColor = UIColor.darkGray.withAlphaComponent(0.5)
   
         //spring动画白底(弹出主体)
-        bgView.frame = CGRect(x: (LeftItemWidth + OrderRightViewWidth + OrderTabelViewWidth)*WidthW, y: 0, width: ScreenWidth, height: height)//设置大小及其位置
+        bgView.frame = CGRect(x: (LeftItemWidth + OrderRightViewWidth + OrderTabelViewWidth)*WidthW, y: 0, width: ScreenWidth - (LeftItemWidth + OrderRightViewWidth + OrderTabelViewWidth)*WidthW, height: height)//设置大小及其位置
         bgView.backgroundColor = UIColor.init(hex: "#F3F3F5")//背景色
         bgView.layer.cornerRadius = 0
         bgView.clipsToBounds = true
@@ -103,9 +106,31 @@ class ZWOrderShouKuanTanKuang: UIView ,SementSelectClickDelegate{
             make.width.equalTo(216*WidthW)
             make.height.equalTo(64*WidthW)
         }
-        
+        //
+        self.initCollectionView()
     }
-    
+    func initCollectionView(){
+        //
+        let myflowLayout = UICollectionViewFlowLayout()
+        myflowLayout.sectionHeadersPinToVisibleBounds = false // 头部悬浮
+        myflowLayout.minimumLineSpacing = 1
+        myflowLayout.minimumInteritemSpacing = 0
+        myflowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        myflowLayout.scrollDirection = .horizontal
+        self.CollectionView.collectionViewLayout = myflowLayout
+        self.CollectionView.delegate = self
+        self.CollectionView.dataSource = self
+        CollectionView.isScrollEnabled = false
+        CollectionView.register(ZWCheckOutStoreCellJoe.self, forCellWithReuseIdentifier: "ZWCheckOutStoreCellJoe")
+        
+        self.addSubview(self.CollectionView)
+        CollectionView.snp.makeConstraints { make in
+            make.top.equalTo(testSementView.snp.bottom).offset(0*HeighH)
+            make.left.equalTo(testSementView.snp.left)
+            make.right.equalTo(testSementView.snp.right)
+            make.bottom.equalTo(self.snp.bottom).offset(-220*HeighH)
+        }
+    }
     
     func SelectIndexPathClick(IndexPath: Int, model: ZWCheckSementModelJoe) {
         
@@ -146,3 +171,40 @@ class ZWOrderShouKuanTanKuang: UIView ,SementSelectClickDelegate{
     
    }
 
+extension ZWOrderShouKuanTanKuang:UICollectionViewDataSource ,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return  4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ZWCheckOutStoreCellJoe", for: indexPath) as! ZWCheckOutStoreCellJoe
+   
+        return cell
+    }
+    //最小 item 间距
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 5;
+    }
+    
+    //最小行间距
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 5;
+    }
+    
+    //item 的尺寸
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        return CGSize(width: bgView.width , height: ScreenHeight - 220*WidthW)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("=============点击了 第 \(indexPath.row) 商品")
+    }
+    
+    
+    
+    
+}
