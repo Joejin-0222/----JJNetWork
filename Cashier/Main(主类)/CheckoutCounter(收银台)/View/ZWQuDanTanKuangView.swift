@@ -149,9 +149,6 @@ class ZWQuDanTanKuangView: UIView ,SementSelectClickDelegate{
         TwoSementView.dataAarry =  ["16:19:10","16:19:10","16:19:10","16:19:10","16:19:10","16:19:10","16:19:10","16:19:10","16:19:10","16:19:10","16:19:10"]
         self.TwoSementView.ReloadData()
         
-        
-        
-        
         //取单按钮
         //        sureBtn.backgroundColor = MainColor
         sureBtn.setTitle("取单", for: .normal)
@@ -262,7 +259,7 @@ class ZWQuDanTanKuangView: UIView ,SementSelectClickDelegate{
         }
         
     }
-    
+   
     
     func SelectIndexPathClick(IndexPath: Int, model: ZWCheckSementModelJoe) {
         
