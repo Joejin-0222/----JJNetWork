@@ -42,7 +42,7 @@ class DRRightTCell: baseTableViewCell {
         let img = UIImageView()
         imageView?.contentMode = .scaleAspectFit
         img.image = UIImage(named: "dr_up")
-        img.isHidden = true
+//        img.isHidden = true
         return img
     }()
     lazy var rightImgView: UIImageView = {

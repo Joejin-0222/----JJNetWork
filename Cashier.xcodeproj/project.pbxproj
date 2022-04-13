@@ -504,12 +504,12 @@
 			isa = PBXGroup;
 			children = (
 				043E9A9E2806DBBD000B3BBF /* DRLeftView.swift */,
-				043E9A9F2806DBBD000B3BBF /* DRHeaderView.swift */,
-				043E9AA02806DBBD000B3BBF /* DRRightTCell.swift */,
-				043E9AA12806DBBD000B3BBF /* testPopView.swift */,
 				043E9AA22806DBBD000B3BBF /* DRLeftTCell.swift */,
 				043E9AA32806DBBD000B3BBF /* DRightView.swift */,
+				043E9AA02806DBBD000B3BBF /* DRRightTCell.swift */,
+				043E9A9F2806DBBD000B3BBF /* DRHeaderView.swift */,
 				043E9AA42806DBBD000B3BBF /* DRRightheaderTCell.swift */,
+				043E9AA12806DBBD000B3BBF /* testPopView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
