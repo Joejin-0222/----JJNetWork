@@ -14,7 +14,5 @@ target 'Cashier' do
   pod 'JXSegmentedView' #分段选择
   #  pod 'Spring' #git => ‘https://github.com/MengTo/Spring.git’
   pod 'lottie-ios'
-  pod 'Reusable' #cell的创建
-#  pod 'Spring' #git => ‘https://github.com/MengTo/Spring.git’
-
+  
 end

@@ -117,12 +117,16 @@ extension ZWLeftItemViewJoe:UICollectionViewDataSource {
         
         if  self.selectIndex == indexPath.row {
             cell.LeftItemIcon.image =  UIImage.init(named: "\(self.dataAarry [indexPath.row] as! String)select" )
-            cell.LeftItemView.backgroundColor = UIColor.white
+//            cell.LeftItemView.backgroundColor = UIColor.white
             cell.LeftItemLabel.textColor = UIColor.init(hex: "#FE4B48")
+            cell.backImage.isHidden = false
         }else{
+                   
+                    
             cell.LeftItemIcon.image =  UIImage.init(named: self.dataAarry [indexPath.row] as! String)
             cell.LeftItemView.backgroundColor = UIColor.init(hex: "#FE4B48")
             cell.LeftItemLabel.textColor = UIColor.white
+            cell.backImage.isHidden = true
         }
         
         return cell

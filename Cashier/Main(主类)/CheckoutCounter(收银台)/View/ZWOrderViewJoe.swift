@@ -326,6 +326,7 @@ class ZWOrderViewJoe: UIView {
             make.left.equalTo(AllOrderView.snp.right)
             make.width.equalTo(136*WidthW)
         }
+        payBtn.addTarget(self, action: #selector(payBtnClick), for: .touchUpInside)
         
         //
         self.addSubview(allOrderCancelBtn)
@@ -445,6 +446,17 @@ class ZWOrderViewJoe: UIView {
         }
         return self
     }
+    //收款点击方法
+    @objc func payBtnClick(){
+        print("=====点击了收款按钮")
+        //
+        let alertView = ZWOrderShouKuanTanKuang(x:0, y: 0, width:( ScreenWidth), height: ScreenHeight)
+//        alertView.dataAarry =   ["收银台取单","小程序取单"]
+        
+        alertView.show()
+    }
+    
+    
     @objc func addBtnClick(){
         numIndex += 1
         self.shownumLabel.text = "\(numIndex)"
@@ -482,7 +494,10 @@ class ZWOrderViewJoe: UIView {
     
 }
 extension ZWOrderViewJoe: UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        self.selectIndex=indexPath.row
+//        self.TableView.reloadData()
+    }
 }
 extension ZWOrderViewJoe : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -492,6 +507,7 @@ extension ZWOrderViewJoe : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let  cell:ZWOrderCellJoe =  ZWOrderCellJoe.createWithTableViewCell(tableView: tableView) as! ZWOrderCellJoe
         cell.selectionStyle = .none
+      
         
         return cell
     }

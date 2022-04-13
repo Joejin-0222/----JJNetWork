@@ -20,7 +20,7 @@ class ZWOrderCellJoe: UITableViewCell {
     }()
     lazy var closeIcon: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage.init(named: "关闭")
+        view.image = UIImage.init(named: "首页删除")
         view.isUserInteractionEnabled = true
         view.contentMode = .scaleAspectFill
         return view
@@ -73,19 +73,23 @@ class ZWOrderCellJoe: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-         
-            if selected {
-                self.backgroundColor = UIColor.init(hex: "#FEE6E5")
-            }else {
-                self.backgroundColor = UIColor.white
-            }
+        
+        if selected {
+            self.backgroundColor = UIColor.init(hex: "#FEE6E5")
+            self.closeIcon.isHidden = false
+        }else {
+            self.backgroundColor = UIColor.white
+            
+            self.closeIcon.isHidden = true
+        }
+        
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         let WIDTH = 525/4*WidthW
         
-       //标题
+        //标题
         self.addSubview(self.content01)
         self.content01.snp.makeConstraints { make in
             make.left.equalTo(28*WidthW)
@@ -127,7 +131,7 @@ class ZWOrderCellJoe: UITableViewCell {
             make.top.equalTo(self.content01.snp.bottom).offset(40*WidthW)
             make.width.equalTo(WIDTH)
         }
-      
+        
         
         //
         self.addSubview(self.LineView)

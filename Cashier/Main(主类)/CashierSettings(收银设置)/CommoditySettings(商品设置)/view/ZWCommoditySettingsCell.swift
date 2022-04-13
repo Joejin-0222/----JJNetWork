@@ -35,76 +35,9 @@ class ZWCommoditySettingsCell: UITableViewCell {
         // 设置控件开关按钮颜色
         switchBtn.thumbTintColor = UIColor.white
         switchBtn.isOn = true
-        switchBtn.addTarget(self, action: #selector(switchBtnClick(_:)), for: .valueChanged)
         return switchBtn
     }()
-    
-    @objc func switchBtnClick(_ sender:UISwitch){
-        sender.isOn = !sender.isOn
-        sender.isOn = sender.isOn ? false : true
-        print("switchBtn")
-    }
-    
-    lazy var leftBtn: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "路径"), for: .normal)
-        button.setTitle("SKU", for: .normal)
-        button.setImage(UIImage(named: "图标"), for: .selected)
-        button.setTitleColor(UIColor.init(hex: "#323233"), for: .normal)
-        button.addTarget(self, action: #selector(SKUBtnAction(_:)), for: .touchUpInside)
-//        button.isHidden = true
-        button.isSelected = true
-        button.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        return button
-    }()
-    
-    lazy var rightBtn: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "路径"), for: .normal)
-        button.setTitle("SPU", for: .normal)
-        button.setImage(UIImage(named: "图标"), for: .selected)
-        button.setTitleColor(UIColor.init(hex: "#323233"), for: .normal)
-        button.addTarget(self, action: #selector(SPUBtnAction(_:)), for: .touchUpInside)
-//        button.isHidden = true
-        button.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        return button
-    }()
    
-    @objc func SKUBtnAction( _ btn: UIButton){
-        print("SKUBtnAction")
-        btn.isSelected = !btn.isSelected
-        
-        rightBtn.isSelected = !btn.isSelected
-        
-    }
-    @objc func SPUBtnAction(_ sender: UIButton){
-        print("SPUBtnAction")
-        sender.isSelected = !sender.isSelected
-        
-        leftBtn.isSelected = !sender.isSelected
-    }
-    
-    
-    lazy var redL: UILabel = {
-        let label = UILabel()
-        label.text = "立即更新"
-        label.textColor = UIColor.init(hex: "#FE4B48")
-        label.font = UIFont.systemFont(ofSize: 20*WidthW)
-        label.isUserInteractionEnabled = true
-        return label
-    }()
-    
-   
-    
-    lazy var timeL: UILabel = {
-        let label = UILabel()
-        label.text = "最近更新于56分钟前"
-        label.textColor = UIColor.init(hex: "#969799")
-        label.font = UIFont.systemFont(ofSize: 20*WidthW)
-        return label
-    }()
-    
-    
     lazy var LineView : UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.init(hex: "#E6E8EB")
@@ -153,49 +86,6 @@ class ZWCommoditySettingsCell: UITableViewCell {
              make.right.equalTo(BackView.snp.right).offset(-36*WidthW)
          }
         
-        //右边按钮SUP
-        BackView.addSubview(self.rightBtn)
-        rightBtn.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.right.equalToSuperview().offset(-40*WidthW)
-            make.width.equalTo(150*WidthW)
-            make.height.equalTo(30*WidthW)
-        }
-        //左边的按钮SKP
-        BackView.addSubview(self.leftBtn)
-        leftBtn.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.right.equalTo(rightBtn.snp.left).offset(10*WidthW)
-            make.width.equalTo(150*WidthW)
-            make.height.equalTo(30*WidthW)
-        }
-        
-
-        
-        BackView.addSubview(self.redL)
-        redL.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.right.equalToSuperview().offset(-40*WidthW)
-//            make.width.equalTo(100*WidthW)
-            make.height.equalTo(30*WidthW)
-        }
-        
-        BackView.addSubview(self.timeL)
-        timeL.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.right.equalTo(redL.snp.left).offset(-20*WidthW)
-//            make.width.equalTo(100*WidthW)
-            make.height.equalTo(30*WidthW)
-        }
-
-        
-        let tap = UITapGestureRecognizer.init(target: self, action: #selector(upDataClick(_:)))
-
-        redL.addGestureRecognizer(tap)
-    }
-    @objc func upDataClick (_ r:UITapGestureRecognizer){
-       print("upDataClick")
-        
     }
     @objc func SwitchBtnClick(sender:UISwitch){
         if sender.isOn {
@@ -221,44 +111,4 @@ class ZWCommoditySettingsCell: UITableViewCell {
         }
         return cell!
     }
-    
-    var typeIndex: Int?{
-        didSet{
-            guard let typeIndex = typeIndex else { return }
-            if typeIndex == 0{//swicth
-                SwitchBtn.isHidden = false
-                leftBtn.isHidden = true
-                rightBtn.isHidden = true
-                redL.isHidden = true
-                timeL.isHidden = true
-            }else if typeIndex == 1 {//按钮展示
-                
-                SwitchBtn.isHidden = true
-                leftBtn.isHidden = false
-                rightBtn.isHidden = false
-                redL.isHidden = true
-                timeL.isHidden = true
-                
-            }else if typeIndex == 2 {//只有一个label
-                SwitchBtn.isHidden = true
-                leftBtn.isHidden = true
-                rightBtn.isHidden = true
-                redL.isHidden = false
-                timeL.isHidden = true
-                
-            }else{//两个label
-                SwitchBtn.isHidden = true
-                leftBtn.isHidden = true
-                rightBtn.isHidden = true
-                redL.isHidden = false
-                timeL.isHidden = false
-                
-            }
-        }
-        
-        
-    }
-    
-    
-    
 }
