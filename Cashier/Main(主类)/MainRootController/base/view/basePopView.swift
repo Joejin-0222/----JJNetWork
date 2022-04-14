@@ -36,7 +36,6 @@ class basePopView: UIView {
     func initView()->UIView{
                 
         self.tag = 1012;
-        delegate.window?.addSubview(self)
         self.frame = CGRect(x: 0,y: 0,width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
         
         self.backgroundColor = UIColor.init(hex: "#131314").alpha(0.65)
@@ -59,10 +58,22 @@ class basePopView: UIView {
         
         return self
     }
+    /** 指定视图实现方法 */
+    func show() {
+        
+        delegate.window?.addSubview(self)
+
+        UIView.animate(withDuration: 0.25, animations: { () -> Void in
+            self.alpha = 1
+        })
+    }
+    
     //可以重写方法，配置view
     func configUI(){
         
     }
+    
+
     
     //点击背景色直接删除
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ZWOrderShouKuanTanKuang: UIView ,SementSelectClickDelegate{
+class ZWOrderShouKuanTanKuang: basePopView ,SementSelectClickDelegate{
     
     private var selectIndex:Int = 0   //    记录点击了第几个
     //中间 显示 内容
@@ -32,31 +32,24 @@ class ZWOrderShouKuanTanKuang: UIView ,SementSelectClickDelegate{
         Btn.setTitle("取单收款", for: .normal)
         Btn.titleLabel?.font = UIFont.systemFont(ofSize: 28*WidthW)
         Btn.setTitleColor(MainColor, for: .normal)
-        Btn.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
+        Btn.addTarget(self, action: #selector(closeBtnClick), for: .touchUpInside)
         return Btn
     }()
     
-    typealias clickAlertClosure = (_ index: Int) -> Void //声明闭包，点击按钮传值
-    //把申明的闭包设置成属性
-    var clickClosure: clickAlertClosure?
-    //为闭包设置调用函数
-    func clickIndexClosure(_ closure:clickAlertClosure?){
-        //将函数指针赋值给myClosure闭包
-        clickClosure = closure
-    }
-    
     let bgView = UIView() //白色框动画控件
    
-    
-    
-    init(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat ) {
-        super.init(frame: CGRect(x: x, y: y, width: width, height: height))
-  
-        createAlertView()
+    override func configUI() {
+        self.createAlertView()
     }
     
     //MARK:创建
     func createAlertView() {
+        
+        self.backView.snp.updateConstraints { make in
+            make.center.equalToSuperview()
+            make.width.equalTo(0*WidthW)
+            make.height.equalTo(0*HeighH)
+        }
         
         //布局
         self.frame = CGRect(x: x, y: y, width: ScreenWidth, height: ScreenHeight)
@@ -124,6 +117,8 @@ class ZWOrderShouKuanTanKuang: UIView ,SementSelectClickDelegate{
         self.CollectionView.dataSource = self
         CollectionView.isScrollEnabled = false
         CollectionView.backgroundColor = UIColor.clear
+        CollectionView.isPagingEnabled = true
+        CollectionView.showsHorizontalScrollIndicator = false
         CollectionView.register(ZWSaoMaShouKuanCollectionCellJoe.self, forCellWithReuseIdentifier: "ZWSaoMaShouKuanCollectionCellJoe")
         CollectionView.register(ZWVipCollectionViewJoe.self, forCellWithReuseIdentifier: "ZWVipCollectionViewJoe")
         CollectionView.register(ZWCashCollectionViewJoe.self, forCellWithReuseIdentifier: "ZWCashCollectionViewJoe")
@@ -146,40 +141,9 @@ class ZWOrderShouKuanTanKuang: UIView ,SementSelectClickDelegate{
     func scrollcollview(index: Int){
         let indexpath = IndexPath.init(row: index , section: 0)
         self.CollectionView.scrollToItem(at: indexpath, at: UICollectionView.ScrollPosition.left, animated: false)
+
     }
     
-    //MARK:按键的对应的方法
-    @objc func clickBtnAction( sender : UIButton) {
-        if (clickClosure != nil) {
-            clickClosure!(sender.tag)
-        }
-        dismiss()
-    }
-    //MARK:消失
-    @objc func dismiss() {
-        UIView.animate(withDuration: 0.25, animations: { () -> Void in
-            self.bgView.alpha = 0
-            self.alpha = 0
-        }, completion: { (finish) -> Void in
-            if finish {
-                self.removeFromSuperview()
-            }
-        })
-    }
-    /** 指定视图实现方法 */
-    func show() {
-        let wind = UIApplication.shared.keyWindow
-        self.alpha = 0
-        
-        wind?.addSubview(self)
-        UIView.animate(withDuration: 0.25, animations: { () -> Void in
-            self.alpha = 1
-        })
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
    }
 

@@ -368,7 +368,7 @@ class ZWOrderViewJoe: UIView {
         operationView.addSubview(operationline01)
         operationline01.snp.makeConstraints { make in
             make.top.equalTo(operationView.snp.top)
-            make.left.equalTo(operationView.snp.left).offset(3*WidthW)
+            make.left.equalTo(operationView.snp.left).offset(1*WidthW)
             make.width.equalTo(3*WidthW)
             make.bottom.equalTo(operationView.snp.bottom)
         }
@@ -376,7 +376,7 @@ class ZWOrderViewJoe: UIView {
         operationView.addSubview(operationline02)
         operationline02.snp.makeConstraints { make in
             make.top.equalTo(0)
-            make.right.equalTo(operationView.snp.right).offset(-3*WidthW)
+            make.right.equalTo(operationView.snp.right).offset(-1*WidthW)
             make.width.equalTo(3*WidthW)
             make.height.equalTo(operationView.snp.height)
         }
@@ -483,11 +483,8 @@ class ZWOrderViewJoe: UIView {
     //收款点击方法
     @objc func payBtnClick(){
         print("=====点击了收款按钮")
-        //
-        let alertView = ZWOrderShouKuanTanKuang(x:0, y: 0, width:( ScreenWidth), height: ScreenHeight)
-//        alertView.dataAarry =   ["收银台取单","小程序取单"]
-        
-        alertView.show()
+        let popview: ZWOrderShouKuanTanKuang = ZWOrderShouKuanTanKuang().initView() as! ZWOrderShouKuanTanKuang
+        popview.show()
     }
     
     

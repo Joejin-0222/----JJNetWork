@@ -47,7 +47,8 @@ class DRHeaderView: UIView {
 //    右边按钮点击事件
     @objc func tapButton(sender: UIButton) {
         print("打印按钮点击事件")
-        let popview: UIView = testPopView().initView()
+        let popview: testPopView = testPopView().initView() as! testPopView
+        popview.show()
     }
     func initView() -> UIView{
         //红色的view
