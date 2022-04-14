@@ -8,7 +8,8 @@
 import UIKit
 
 class basePopView: UIView {
-    
+    var flag:Bool = false
+    //承接子视图的view
     lazy var backView:UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white
@@ -16,6 +17,7 @@ class basePopView: UIView {
         return view
         
     }()
+    //关闭按钮
     lazy var closeBtn: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(named: "icon关闭"), for: .normal)
@@ -23,6 +25,7 @@ class basePopView: UIView {
         return btn
     }()
     let delegate  = UIApplication.shared.delegate as! AppDelegate
+    //关闭按钮的方法
     @objc func closeBtnClick(){
         self.alpha = 0;
         self.isHidden = true
@@ -51,15 +54,41 @@ class basePopView: UIView {
             make.right.equalTo(backView.snp.right).offset(-10*WidthW)
             make.width.height.equalTo(50*WidthW)
         }
-        
-        
-    
+       
         self.configUI()
         
         return self
     }
-    
+    //可以重写方法，配置view
     func configUI(){
         
     }
+    
+    //点击背景色直接删除
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        for touch:AnyObject in touches{
+
+            //获取用户点击的坐标
+
+            var point = (touch as AnyObject).location(in: self)
+
+            //将用户点击的点坐标，从self.view.layer转换到mV.View.layer的点坐标
+
+            point = backView.layer.convert(point, from: self.layer)
+
+            print("point\(point)")
+
+            let point2 = backView.layer.convert(point, to: self.layer)
+
+            print("point2\(point2)")
+
+            if backView.layer.contains(point ){
+                print(1)
+            }else{
+                self.closeBtnClick()
+            }
+        }
+    }
+
 }

@@ -10,6 +10,7 @@ import UIKit
 protocol SementSelectClickDelegate : NSObjectProtocol{
     func SelectIndexPathClick(IndexPath:Int,model:ZWCheckSementModelJoe)
 }
+typealias selectIndexPathBlock = (_ index: Int) -> Void
 
 class ZWCheckSementViewJoe: UIView {
     var cornerRadius : CGFloat = 0.00 //圆角大小
@@ -27,6 +28,7 @@ class ZWCheckSementViewJoe: UIView {
     var rowNum : CGFloat = 2 //行 默认为2
     // 03. 声明代理属性 (注:使用weak修饰, 该协议需要继承NSObjectProtocol基协议, 且注意代理名称是否重复)
     weak var delegate: SementSelectClickDelegate?
+    var selectIndexPathBlock : selectIndexPathBlock?
     
     private var selectIndex:Int = 0   //    记录点击了第几行
     fileprivate let CollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout())
@@ -161,6 +163,11 @@ extension ZWCheckSementViewJoe:UICollectionViewDataSource ,UICollectionViewDeleg
                 let model : ZWCheckSementModelJoe  = ZWCheckSementModelJoe()
                 // 04. 执行代理
                 delegate?.SelectIndexPathClick(IndexPath: indexPath.row,model: model)
+
+                if selectIndexPathBlock != nil {
+                    selectIndexPathBlock!(indexPath.row)
+                }
+
             }
           
         }

@@ -45,6 +45,7 @@
 		043E9AAA2806DBBD000B3BBF /* DRLeftTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AA22806DBBD000B3BBF /* DRLeftTCell.swift */; };
 		043E9AAB2806DBBD000B3BBF /* DRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AA32806DBBD000B3BBF /* DRightView.swift */; };
 		043E9AAC2806DBBD000B3BBF /* DRRightheaderTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AA42806DBBD000B3BBF /* DRRightheaderTCell.swift */; };
+		043E9AAF2807F48B000B3BBF /* ZWSuccessionTCellKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AAE2807F48B000B3BBF /* ZWSuccessionTCellKB.swift */; };
 		0444682627DAED0E000444FD /* header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682527DAED0E000444FD /* header.swift */; };
 		0444682827DB1C7F000444FD /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682727DB1C7F000444FD /* Toast.swift */; };
 		0444682A27DED565000444FD /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682927DED565000444FD /* UserInfo.swift */; };
@@ -182,6 +183,7 @@
 		043E9AA22806DBBD000B3BBF /* DRLeftTCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRLeftTCell.swift; sourceTree = "<group>"; };
 		043E9AA32806DBBD000B3BBF /* DRightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRightView.swift; sourceTree = "<group>"; };
 		043E9AA42806DBBD000B3BBF /* DRRightheaderTCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRRightheaderTCell.swift; sourceTree = "<group>"; };
+		043E9AAE2807F48B000B3BBF /* ZWSuccessionTCellKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWSuccessionTCellKB.swift; sourceTree = "<group>"; };
 		0444682527DAED0E000444FD /* header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = header.swift; sourceTree = "<group>"; };
 		0444682727DB1C7F000444FD /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		0444682927DED565000444FD /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 		042926E42800027600A3D1F8 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				043E9AAD2807F432000B3BBF /* righView */,
 				042926E6280002A400A3D1F8 /* ZWStaffShiftLeftView.swift */,
 				042926E82800051400A3D1F8 /* ZWStaffShiftOneCell.swift */,
 				042926EA2800163500A3D1F8 /* ZWStaffHeaderView.swift */,
@@ -520,6 +523,14 @@
 				043E9AA12806DBBD000B3BBF /* testPopView.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		043E9AAD2807F432000B3BBF /* righView */ = {
+			isa = PBXGroup;
+			children = (
+				043E9AAE2807F48B000B3BBF /* ZWSuccessionTCellKB.swift */,
+			);
+			path = righView;
 			sourceTree = "<group>";
 		};
 		0444685227E02469000444FD /* Controller */ = {
@@ -1281,6 +1292,7 @@
 				04E3643627F402040007B91A /* RootModel.swift in Sources */,
 				0406E1EA27FED5A700E5A948 /* ZWTanKuangTableViewCell.swift in Sources */,
 				043E9AAB2806DBBD000B3BBF /* DRightView.swift in Sources */,
+				043E9AAF2807F48B000B3BBF /* ZWSuccessionTCellKB.swift in Sources */,
 				043E9AAC2806DBBD000B3BBF /* DRRightheaderTCell.swift in Sources */,
 				0444686227E02E4F000444FD /* iconButtonView.swift in Sources */,
 				04CA37A227F5D0F400E620E5 /* UIView+MDExtension.swift in Sources */,
