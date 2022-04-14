@@ -8,7 +8,7 @@
 import UIKit
 
 class basePopView: UIView {
-    
+    var flag:Bool = false
     lazy var backView:UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white
@@ -51,15 +51,42 @@ class basePopView: UIView {
             make.right.equalTo(backView.snp.right).offset(-10*WidthW)
             make.width.height.equalTo(50*WidthW)
         }
-        
-        
+       
     
         self.configUI()
         
         return self
     }
-    
+
     func configUI(){
         
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        for touch:AnyObject in touches{
+
+                //获取用户点击的坐标
+
+                var point = (touch as AnyObject).location(in: self)
+
+                //将用户点击的点坐标，从self.view.layer转换到mV.View.layer的点坐标
+
+                point = backView.layer.convert(point, from: self.layer)
+
+                print("point\(point)")
+
+                let point2 = backView.layer.convert(point, to: self.layer)
+
+                print("point2\(point2)")
+
+                if backView.layer.contains(point ){
+
+                    print(1)
+
+                }else{
+                    self.closeBtnClick()
+                }
+        }
+    }
+
 }
