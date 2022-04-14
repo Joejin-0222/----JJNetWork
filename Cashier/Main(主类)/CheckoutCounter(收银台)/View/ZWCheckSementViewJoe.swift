@@ -70,10 +70,7 @@ class ZWCheckSementViewJoe: UIView {
     func ReloadData(){
         self.CollectionView.reloadData()
     }
-    func scrollcollview(index: Int){
-        let indexpath = IndexPath.init(row: index , section: 0)
-        self.CollectionView.scrollToItem(at: indexpath, at: UICollectionView.ScrollPosition.left, animated: false)
-    }
+   
   
 }
 extension ZWCheckSementViewJoe:UICollectionViewDataSource ,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{

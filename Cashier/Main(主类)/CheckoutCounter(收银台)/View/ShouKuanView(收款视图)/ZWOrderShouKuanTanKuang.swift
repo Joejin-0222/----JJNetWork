@@ -45,27 +45,21 @@ class ZWOrderShouKuanTanKuang: basePopView ,SementSelectClickDelegate{
     //MARK:创建
     func createAlertView() {
         
-        self.backView.snp.updateConstraints { make in
-            make.center.equalToSuperview()
-            make.width.equalTo(0*WidthW)
-            make.height.equalTo(0*HeighH)
+        self.backView.snp.remakeConstraints { make in
+            make.left.equalTo((LeftItemWidth + OrderRightViewWidth + OrderTabelViewWidth)*WidthW)
+            make.width.equalTo(500*WidthW)
+            make.height.equalTo(ScreenHeight)
         }
-        
-        //布局
-        self.frame = CGRect(x: x, y: y, width: ScreenWidth, height: ScreenHeight)
-        self.backgroundColor = UIColor.darkGray.withAlphaComponent(0.5)
-  
         //spring动画白底(弹出主体)
         bgView.frame = CGRect(x: (LeftItemWidth + OrderRightViewWidth + OrderTabelViewWidth)*WidthW, y: 0, width: ScreenWidth - (LeftItemWidth + OrderRightViewWidth + OrderTabelViewWidth)*WidthW, height: height)//设置大小及其位置
         bgView.backgroundColor = UIColor.init(hex: "#F3F3F5")//背景色
         bgView.layer.cornerRadius = 0
         bgView.clipsToBounds = true
      
-        
         self.addSubview(bgView)
         bgView.isUserInteractionEnabled = true
      
-       
+
         //一级分类
         testSementView.IsScrollEnabled = false //不让滚动
         testSementView.delegate = self//遵守点击分段选择代理
@@ -117,7 +111,6 @@ class ZWOrderShouKuanTanKuang: basePopView ,SementSelectClickDelegate{
         self.CollectionView.dataSource = self
         CollectionView.isScrollEnabled = false
         CollectionView.backgroundColor = UIColor.clear
-        CollectionView.isPagingEnabled = true
         CollectionView.showsHorizontalScrollIndicator = false
         CollectionView.register(ZWSaoMaShouKuanCollectionCellJoe.self, forCellWithReuseIdentifier: "ZWSaoMaShouKuanCollectionCellJoe")
         CollectionView.register(ZWVipCollectionViewJoe.self, forCellWithReuseIdentifier: "ZWVipCollectionViewJoe")
