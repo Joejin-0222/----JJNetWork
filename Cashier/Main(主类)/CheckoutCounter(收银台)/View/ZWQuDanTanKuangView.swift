@@ -9,7 +9,7 @@ import UIKit
 import SkeletonView
 
 //import Spring
-class ZWQuDanTanKuangView: UIView ,SementSelectClickDelegate{
+class ZWQuDanTanKuangView: basePopView ,SementSelectClickDelegate{
     
     private var selectIndex:Int = 0   //    记录点击了第几行
     var dataAarry  : NSArray? = []
@@ -59,9 +59,6 @@ class ZWQuDanTanKuangView: UIView ,SementSelectClickDelegate{
         clickClosure = closure
     }
     
-    
-    let Screen_width = UIScreen.main.bounds.size.width
-    let Screen_height = UIScreen.main.bounds.size.height
     let bgView = UIView() //白色框动画控件
    
     let cancelBtn = UIButton() //取消按钮
@@ -69,24 +66,19 @@ class ZWQuDanTanKuangView: UIView ,SementSelectClickDelegate{
     let sureBtn = UIButton() //确定按钮
     let JieSuanBtn = UIButton() //结算按钮
     
-    
-    
-    init(title: String?, message: String?, cancelButtonTitle: String?, sureButtonTitle: String?,x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat ) {
-        super.init(frame: CGRect(x: x, y: y, width: width, height: height))
   
-        
-        createAlertView()
-        
-        
+    override func configUI() {
+        self.createAlertView()
     }
     
     //MARK:创建
     func createAlertView() {
         
-        //布局
-        self.frame = CGRect(x: x, y: y, width: ScreenWidth, height: ScreenHeight)
-        self.backgroundColor = UIColor.darkGray.withAlphaComponent(0.5)
-  
+        self.backView.snp.remakeConstraints { make in
+            make.left.equalTo((LeftItemWidth + OrderRightViewWidth + OrderTabelViewWidth)*WidthW)
+            make.width.equalTo(ScreenWidth - (LeftItemWidth + OrderRightViewWidth + OrderTabelViewWidth)*WidthW)
+            make.height.equalTo(ScreenHeight)
+        }
         //spring动画白底(弹出主体)
         bgView.frame = CGRect(x: (LeftItemWidth + OrderRightViewWidth + OrderTabelViewWidth)*WidthW, y: 0, width: ScreenWidth, height: height)//设置大小及其位置
         bgView.backgroundColor = UIColor.init(hex: "#F3F3F5")//背景色
@@ -98,7 +90,6 @@ class ZWQuDanTanKuangView: UIView ,SementSelectClickDelegate{
         bgView.isUserInteractionEnabled = true
      
         //取消按钮 返回按钮
-        //        let btnWith = (width - 30) / 2
         cancelBtn.frame = CGRect(x: 63*WidthW, y: 70*WidthW, width: 92*WidthW, height: 92*WidthW)
         //        cancelBtn.backgroundColor = UIColor.gray
         cancelBtn.setTitleColor(UIColor.white, for: .normal)
@@ -107,7 +98,7 @@ class ZWQuDanTanKuangView: UIView ,SementSelectClickDelegate{
         cancelBtn.clipsToBounds = true
         cancelBtn.tag = 1
         cancelBtn.setImage(UIImage.init(named: "返回"), for: .normal)
-        cancelBtn.addTarget(self, action: #selector(clickBtnAction(sender:)), for: .touchUpInside)
+        cancelBtn.addTarget(self, action: #selector(closeBtnClick), for: .touchUpInside)
         bgView.addSubview(cancelBtn)
         //一级分类
         testSementView.delegate = self//遵守点击分段选择代理
@@ -260,45 +251,15 @@ class ZWQuDanTanKuangView: UIView ,SementSelectClickDelegate{
         
     }
    
+    @objc func clickBtnAction(sender: UIButton){
+        
+    }
     
     func SelectIndexPathClick(IndexPath: Int, model: ZWCheckSementModelJoe) {
         
     }
     
-    //MARK:按键的对应的方法
-    @objc func clickBtnAction( sender : UIButton) {
-        if (clickClosure != nil) {
-            clickClosure!(sender.tag)
-        }
-        dismiss()
-    }
-    //MARK:消失
-    @objc func dismiss() {
-        UIView.animate(withDuration: 0.25, animations: { () -> Void in
-            self.bgView.alpha = 0
-            self.alpha = 0
-        }, completion: { (finish) -> Void in
-            if finish {
-                self.removeFromSuperview()
-            }
-        })
-    }
-    /** 指定视图实现方法 */
-    func show() {
-        let wind = UIApplication.shared.keyWindow
-        self.alpha = 0
-        
-        wind?.addSubview(self)
-        UIView.animate(withDuration: 0.25, animations: { () -> Void in
-            self.alpha = 1
-        })
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
+ 
     func setCollectionview(){
         //
         let myflowLayout = UICollectionViewFlowLayout()

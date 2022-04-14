@@ -19,16 +19,17 @@ class ZWCheckSementCellJoe : UICollectionViewCell {
         return label
     }()
     
-    lazy var IndicatorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.init(hex: "#FE4B48")
+    lazy var IndicatorView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage.init(named: "指示器图")
+//        view.backgroundColor = UIColor.init(hex: "#FE4B48")//#E6E8EB
         
         return view
     }()
     lazy var verticalView : UIView = {
       
         let view = UIView()
-        view.backgroundColor = UIColor.init(hex: "#969799")
+        view.backgroundColor = UIColor.init(hex: "#E6E8EB")
         
         return view
     }()
@@ -58,7 +59,7 @@ class ZWCheckSementCellJoe : UICollectionViewCell {
         self.addSubview(IndicatorView)
         IndicatorView.snp.makeConstraints { make in
             make.centerX.equalTo(TitleLabel.snp.centerX)
-            make.height.equalTo(6*WidthW)
+//            make.height.equalTo(6*WidthW)
             make.width.equalTo(48*WidthW)
             make.bottom.equalTo(TitleLabel.snp.bottom)
         }
@@ -67,7 +68,7 @@ class ZWCheckSementCellJoe : UICollectionViewCell {
         verticalView.snp.makeConstraints { make in
             make.centerY.equalTo(TitleLabel.snp.centerY)
             make.height.equalTo(24*WidthW)
-            make.width.equalTo(1*WidthW)
+            make.width.equalTo(2*WidthW)
             make.right.equalTo(self.snp.right)
         }
     }

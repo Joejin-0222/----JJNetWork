@@ -83,21 +83,21 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
             make.right.equalTo(self.snp.right)
         }
         
-        //
-        CollectionView.snp.makeConstraints { make in
-            make.top.equalTo(SenmentBottomView.snp.bottom).offset(24*HeighH)
-            make.left.equalTo(SenmentBottomView.snp.left)
-            make.right.equalTo(SenmentBottomView.snp.right)
-            make.bottom.equalTo(self.snp.bottom).offset(-104*HeighH)
-        }
+       
         //添加底部view
-        BottomView.cornerRadius(cornerRadius: 0*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 1)
         self.addSubview(BottomView.initView())
         BottomView.snp.makeConstraints { make in
             make.left.equalTo(self.snp.left)
             make.bottom.equalTo(self.snp.bottom)
             make.height.equalTo(104*WidthW)
             make.right.equalTo(self.snp.right)
+        }
+        //
+        CollectionView.snp.makeConstraints { make in
+            make.top.equalTo(SenmentBottomView.snp.bottom).offset(24*HeighH)
+            make.left.equalTo(SenmentBottomView.snp.left)
+            make.right.equalTo(SenmentBottomView.snp.right)
+            make.bottom.equalTo(BottomView.snp.top).offset(0*HeighH)
         }
 
 //           loadingView.show()
@@ -171,19 +171,19 @@ extension ZWCheckOutStoreViewJoe:UICollectionViewDataSource ,UICollectionViewDel
     //最小 item 间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 5;
+        return 5*WidthW;
     }
     
     //最小行间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 5;
+        return 10*WidthW;
     }
     
     //item 的尺寸
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        return CGSize(width:( self.SenmentBottomView.width - 30) / 5, height: self.SenmentBottomView.width / 5 + 76*WidthW)
+        return CGSize(width:( self.SenmentBottomView.width - 26*WidthW) / 5, height: self.SenmentBottomView.width / 5 + 76*WidthW)
     }
     
     

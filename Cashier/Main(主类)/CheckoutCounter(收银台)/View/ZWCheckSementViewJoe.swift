@@ -122,7 +122,7 @@ extension ZWCheckSementViewJoe:UICollectionViewDataSource ,UICollectionViewDeleg
         if IsHiddenIndicator {
             cell.IndicatorView.backgroundColor = UIColor.clear
         }else{
-            cell.IndicatorView.backgroundColor = MainColor
+//            cell.IndicatorView.backgroundColor = MainColor
         }
       
         //字体大小

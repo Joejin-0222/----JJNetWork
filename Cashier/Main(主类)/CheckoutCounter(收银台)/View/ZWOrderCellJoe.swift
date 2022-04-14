@@ -13,7 +13,7 @@ class ZWOrderCellJoe: UITableViewCell {
     lazy var content01: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 24*WidthW)
+        label.font = UIFont.systemFont(ofSize: 27*WidthW)
         label.textColor = UIColor.init(hex: "#323233")
         label.text = "小溪柏油蛋糕"
         return label

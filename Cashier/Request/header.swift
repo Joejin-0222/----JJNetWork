@@ -39,7 +39,7 @@ let LeftItemWidth : CGFloat = 128
 
 let OrderTabelViewWidth : CGFloat  = 525
 
-let OrderRightViewWidth  : CGFloat  = 148
+let OrderRightViewWidth  : CGFloat  = 152
 
 let MainColor = UIColor.init(hex: "#FE4B48")//主色
 let StandingPColor = UIColor.init(hex: "#EBEDF0")//站位色

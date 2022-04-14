@@ -18,7 +18,7 @@ class ZWCheckOutTopView: UIView {
     lazy var nameLabel : UILabel = {
         let label = UILabel()
         label.text = "My nickname"
-        label.font = UIFont.systemFont(ofSize: 20*WidthW)
+        label.font = UIFont.init(name: "PingFangSC-Medium", size: 22*WidthW)//UIFont.systemFont(ofSize: 20*WidthW)
         label.textColor = UIColor.init(hex: "#232733")
         return label
     }()
@@ -89,7 +89,7 @@ class ZWCheckOutTopView: UIView {
             make.width.height.equalTo(120*WidthW)
             make.centerY.equalTo(self.snp.centerY)
         }
-        self.nameLabel.text = Cache.user?.nickname
+        self.nameLabel.text = Cache.user?.nickname ?? "Aio17004"
         
         //消息
         self.addSubview(MessageImage)

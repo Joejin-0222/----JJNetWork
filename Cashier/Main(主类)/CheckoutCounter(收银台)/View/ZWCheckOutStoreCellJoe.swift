@@ -12,10 +12,10 @@ class ZWCheckOutStoreCellJoe: UICollectionViewCell {
     lazy var storeView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white
-        view.layer.masksToBounds = true
-        view.layer.cornerRadius = 6*HeighH
-        view.layer.borderWidth = 2
-        view.layer.borderColor = UIColor (red: 235/255, green: 237/255, blue: 240/255, alpha: 1).cgColor
+//        view.layer.masksToBounds = true
+//        view.layer.cornerRadius = 6*HeighH
+//        view.layer.borderWidth = 2
+//        view.layer.borderColor = UIColor (red: 235/255, green: 237/255, blue: 240/255, alpha: 1).cgColor
         return view
     }()
     
@@ -33,7 +33,7 @@ class ZWCheckOutStoreCellJoe: UICollectionViewCell {
         let label = UILabel()
         label.textAlignment = .left
         label.text = "栗栗小熊柏油蛋糕"
-        label.font = UIFont.systemFont(ofSize: 18*WidthW)
+        label.font = UIFont.systemFont(ofSize: 22*WidthW)
         return label
     }()
     //库存
@@ -41,7 +41,7 @@ class ZWCheckOutStoreCellJoe: UICollectionViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.text = "库存:100"
-        label.font = UIFont.systemFont(ofSize: 14*WidthW)
+        label.font = UIFont.systemFont(ofSize: 16*WidthW)
         label.textColor = UIColor.init(hex: "#969799")
         return label
     }()
@@ -50,7 +50,7 @@ class ZWCheckOutStoreCellJoe: UICollectionViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.text = "￥18.22"
-        label.font = UIFont.systemFont(ofSize: 18*WidthW)
+        label.font = UIFont.systemFont(ofSize: 20*WidthW)
         label.textColor = UIColor.init(hex: "#323232")
         return label
     }()
@@ -75,6 +75,7 @@ class ZWCheckOutStoreCellJoe: UICollectionViewCell {
     
     func setupUI(){
         //
+        storeView.cornerRadius(cornerRadius: 12*WidthW, borderColor: LineColor, borderWidth: 1)
         self.addSubview(storeView)
         storeView.snp.makeConstraints { make in
             make.left.equalTo(0)
@@ -97,7 +98,7 @@ class ZWCheckOutStoreCellJoe: UICollectionViewCell {
             make.left.equalTo(storeIcon.snp.left).offset(10*WidthW)
             make.right.equalTo(storeIcon.snp.right).offset(-10*WidthW)
             make.height.equalTo(25*HeighH)
-            make.top.equalTo(storeIcon.snp.bottom).offset(10*WidthW)
+            make.top.equalTo(storeIcon.snp.bottom).offset(5*WidthW)
         }
         //
         self.addSubview(KuCunLabel)
@@ -105,7 +106,7 @@ class ZWCheckOutStoreCellJoe: UICollectionViewCell {
             make.left.equalTo(storeIcon.snp.left).offset(10*WidthW)
             //            make.right.equalTo(storeIcon.snp.right).offset(-10*WidthW)
             make.height.equalTo(25*HeighH)
-            make.top.equalTo(TitleLabel.snp.bottom).offset(10*WidthW)
+            make.top.equalTo(TitleLabel.snp.bottom).offset(6*WidthW)
         }
         //
         self.addSubview(PriceLabel)
@@ -113,7 +114,7 @@ class ZWCheckOutStoreCellJoe: UICollectionViewCell {
             //            make.left.equalTo(storeIcon.snp.left).offset(10*WidthW)
             make.right.equalTo(storeIcon.snp.right).offset(-10*WidthW)
             make.height.equalTo(25*HeighH)
-            make.top.equalTo(TitleLabel.snp.bottom).offset(10*WidthW)
+            make.top.equalTo(TitleLabel.snp.bottom).offset(6*WidthW)
         }
         
     }

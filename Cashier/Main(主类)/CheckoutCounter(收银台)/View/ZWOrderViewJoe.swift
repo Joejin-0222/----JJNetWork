@@ -73,7 +73,7 @@ class ZWOrderViewJoe: UIView {
         let Btn = UIButton()
         Btn.backgroundColor = UIColor.init(hex: "#FE4B48")
         Btn.setTitle("抹零收款", for: .normal)
-        Btn.titleLabel?.font = UIFont.systemFont(ofSize: 24*WidthW)
+        Btn.titleLabel?.font = UIFont(name: "PingFangSC-Medium", size: 26*WidthW)
         return Btn
     }()
     //所有价格信息view
@@ -87,25 +87,25 @@ class ZWOrderViewJoe: UIView {
         let label = UILabel()
         label.text = "￥"
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 18*WidthW)
+        label.font = UIFont.systemFont(ofSize: 22*WidthW)
         label.textColor = UIColor.init(hex: "#ffffff")
         return label
     }()
     //12.99
     lazy var Label02 : UILabel = {
         let label = UILabel()
-        label.text = "12.99"
+        label.text = "372.99"
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 28*WidthW)
+        label.font = UIFont(name: "PingFangSC-Medium", size: 32*WidthW) //UIFont.systemFont(ofSize: 28*WidthW)
         label.textColor = UIColor.init(hex: "#ffffff")
         return label
     }()
     //共计 ===
     lazy var Label03 : UILabel = {
         let label = UILabel()
-        label.text = "共计107件，已优惠:￥10.00"
+        label.text = "共107件,优惠:-1000.00"
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 13*WidthW)
+        label.font = UIFont.systemFont(ofSize: 16*WidthW)
         label.textColor = UIColor.init(hex: "#ffffff")
         return label
     }()
@@ -116,6 +116,7 @@ class ZWOrderViewJoe: UIView {
         Btn.backgroundColor = UIColor.init(hex: "#FFD726")
         Btn.setTitle("收款", for: .normal)
         Btn.titleLabel?.font = UIFont.systemFont(ofSize: 28*WidthW)
+        Btn.titleLabel?.font = UIFont(name: "PingFangSC-Semibold", size: 34*WidthW)
         Btn.setTitleColor(UIColor.init(hex: "#5C2B00"), for: .normal)
         return Btn
     }()
@@ -219,7 +220,8 @@ class ZWOrderViewJoe: UIView {
     //加
     lazy var addBtn : UIButton = {
         let Btn = UIButton()
-        Btn.setTitle("+", for: .normal)
+//        Btn.setTitle("+", for: .normal)
+        Btn.setImage(UIImage.init(named: "订单加"), for: .normal)
         Btn.titleLabel?.font = UIFont.systemFont(ofSize: 38*WidthW)
         Btn.setTitleColor(UIColor.init(hex: "#323233"), for: .normal)
         return Btn
@@ -236,7 +238,8 @@ class ZWOrderViewJoe: UIView {
     //减
     lazy var ReduceBtn : UIButton = {
         let Btn = UIButton()
-        Btn.setTitle("-", for: .normal)
+//        Btn.setTitle("-", for: .normal)
+        Btn.setImage(UIImage.init(named: "订单减"), for: .normal)
         Btn.titleLabel?.font = UIFont.systemFont(ofSize: 38*WidthW)
         Btn.setTitleColor(UIColor.init(hex: "#323233"), for: .normal)
         return Btn
@@ -299,7 +302,7 @@ class ZWOrderViewJoe: UIView {
         self.addSubview(BottomView)
         BottomView.backgroundColor = UIColor.red
         BottomView.snp.makeConstraints { make in
-            make.height.equalTo(80*WidthW)
+            make.height.equalTo(84*WidthW)
             make.left.equalTo(self.snp.left).offset(6*WidthW)
             make.width.equalTo(368*WidthW)
             make.bottom.equalTo(self.snp.bottom).offset(-24*WidthW)
@@ -315,7 +318,7 @@ class ZWOrderViewJoe: UIView {
       
         AllOrderView.addSubview(Label01)
         Label01.snp.makeConstraints { make in
-            make.top.equalTo(5*WidthW)
+//            make.top.equalTo(5*WidthW)
             make.left.equalTo(AllOrderView.snp.left).offset(25*WidthW)
             make.width.equalTo(18*WidthW)
             make.height.equalTo(40*WidthW)
@@ -323,7 +326,7 @@ class ZWOrderViewJoe: UIView {
         AllOrderView.addSubview(Label02)
         Label02.snp.makeConstraints { make in
             make.top.equalTo(5*WidthW)
-            make.left.equalTo(Label01.snp.right)
+            make.left.equalTo(Label01.snp.right).offset(2*WidthW)
             make.right.equalTo(AllOrderView.snp.right).offset(-24*WidthW)
             make.bottom.equalTo(Label01.snp.bottom)
         }
@@ -369,15 +372,15 @@ class ZWOrderViewJoe: UIView {
         operationline01.snp.makeConstraints { make in
             make.top.equalTo(operationView.snp.top)
             make.left.equalTo(operationView.snp.left).offset(1*WidthW)
-            make.width.equalTo(3*WidthW)
+            make.width.equalTo(2*WidthW)
             make.bottom.equalTo(operationView.snp.bottom)
         }
         //右边线
         operationView.addSubview(operationline02)
         operationline02.snp.makeConstraints { make in
             make.top.equalTo(0)
-            make.right.equalTo(operationView.snp.right).offset(-1*WidthW)
-            make.width.equalTo(3*WidthW)
+            make.right.equalTo(operationView.snp.right).offset(0*WidthW)
+            make.width.equalTo(2*WidthW)
             make.height.equalTo(operationView.snp.height)
         }
         
@@ -387,7 +390,7 @@ class ZWOrderViewJoe: UIView {
         operationView.addSubview(YuDingBtn)
         YuDingBtn.snp.makeConstraints { make in
             make.bottom.equalTo(self.snp.bottom).offset(-96*WidthW)
-            make.left.equalTo(8*WidthW)
+            make.left.equalTo(10*WidthW)
             make.width.equalTo(132*WidthW)
             make.height.equalTo(54*WidthW)
         }
@@ -396,7 +399,7 @@ class ZWOrderViewJoe: UIView {
         operationView.addSubview(AllOrderYouHuiBtn)
         AllOrderYouHuiBtn.snp.makeConstraints { make in
             make.bottom.equalTo(YuDingBtn.snp.top).offset(-20*WidthW)
-            make.left.equalTo(8*WidthW)
+            make.left.equalTo(10*WidthW)
             make.width.equalTo(132*WidthW)
             make.height.equalTo(54*WidthW)
         }
@@ -405,7 +408,7 @@ class ZWOrderViewJoe: UIView {
         operationView.addSubview(QuDanBtn)
         QuDanBtn.snp.makeConstraints { make in
             make.bottom.equalTo(AllOrderYouHuiBtn.snp.top).offset(-20*WidthW)
-            make.left.equalTo(8*WidthW)
+            make.left.equalTo(10*WidthW)
             make.width.equalTo(132*WidthW)
             make.height.equalTo(54*WidthW)
         }
@@ -414,7 +417,7 @@ class ZWOrderViewJoe: UIView {
         operationView.addSubview(GuaDanBtn)
         GuaDanBtn.snp.makeConstraints { make in
             make.bottom.equalTo(QuDanBtn.snp.top).offset(-20*WidthW)
-            make.left.equalTo(8*WidthW)
+            make.left.equalTo(10*WidthW)
             make.width.equalTo(132*WidthW)
             make.height.equalTo(54*WidthW)
         }
@@ -483,7 +486,7 @@ class ZWOrderViewJoe: UIView {
     //收款点击方法
     @objc func payBtnClick(){
         print("=====点击了收款按钮")
-        let popview: ZWOrderShouKuanTanKuang = ZWOrderShouKuanTanKuang().initView() as! ZWOrderShouKuanTanKuang
+        let popview: ZWOrderShouKuanTanKuangJoe = ZWOrderShouKuanTanKuangJoe().initView() as! ZWOrderShouKuanTanKuangJoe
         popview.show()
     }
     
@@ -509,18 +512,33 @@ class ZWOrderViewJoe: UIView {
     }
     // 预定 取单等点击操作
     @objc func orderBtnClick(sender : UIButton){
-        print("======sender=\(sender.tag)")
+        
         self.delegate?.SelectOrderWayTypeClick(IndexPath: sender.tag)
-        //
-        let alertView = ZWQuDanTanKuangView(title: "", message: "", cancelButtonTitle: "", sureButtonTitle: "",x:0, y: 0, width:( ScreenWidth), height: ScreenHeight)
-        alertView.dataAarry =   ["收银台取单","小程序取单"]
         
-        alertView.show()
-        
-        //获取点击事件
-        alertView.clickIndexClosure { (index) in
-            print("点击了第" + "\(index)" + "个按钮")
+        print("======sender=\(sender.tag)")
+        let adType = OrderWayType.init(rawValue: sender.tag)
+        switch adType {
+        case .挂单:
+            
+            break
+        case .取单:
+            
+            let alertView : ZWQuDanTanKuangView = ZWQuDanTanKuangView().initView() as! ZWQuDanTanKuangView
+            alertView.dataAarry =   ["收银台取单","小程序取单"]
+            alertView.show()
+           
+            break
+        case .整单优惠:
+            let popOrderHouHuiView  : ZWOrderYouHuiPopViewJoe =  ZWOrderYouHuiPopViewJoe().initView() as! ZWOrderYouHuiPopViewJoe
+            popOrderHouHuiView.show()
+            break
+        case .预定:
+            
+            break
+        default:
+            break
         }
+        
     }
     
 }
@@ -538,7 +556,7 @@ extension ZWOrderViewJoe : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let  cell:ZWOrderCellJoe =  ZWOrderCellJoe.createWithTableViewCell(tableView: tableView) as! ZWOrderCellJoe
         cell.selectionStyle = .none
-      
+//        cell.closeIcon.add
         
         return cell
     }

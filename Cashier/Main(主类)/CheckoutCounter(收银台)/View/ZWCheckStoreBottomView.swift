@@ -46,6 +46,17 @@ class ZWCheckStoreBottomView: UIView {
             let indexpath = IndexPath.init(row: self.selectIndex , section: 0)
             self.CollectionView.selectItem(at: indexpath, animated: false, scrollPosition: UICollectionView.ScrollPosition.top)
         }
+        //分割线view
+        let lineView = UIView()
+        lineView.backgroundColor = LineColor
+        self.addSubview(lineView)
+        lineView.snp.makeConstraints { make in
+            make.left.equalTo(self.snp.left)
+            make.right.equalTo(self.snp.right)
+            make.top.equalTo(self.snp.top)
+            make.height.equalTo(2*WidthW)
+        }
+        
         
         return self
     }
@@ -62,6 +73,8 @@ extension ZWCheckStoreBottomView:UICollectionViewDataSource ,UICollectionViewDel
         //        let model : SelectStoreModelZJ =  self.dataAarry[indexPath.row] as! SelectStoreModelZJ;
         //        cell.storeLabel.text =  model.sname
         cell.TitleLabel.text = self.dataArray[indexPath.row] as? String
+        cell.TitleLabel.font = UIFont.systemFont(ofSize: 26*WidthW)
+        cell.TitleLabel.textColor = UIColor.init(hex: "#323233")
         if  self.selectIndex == indexPath.row {
             cell.IndicatorView.isHidden = true
         }else{

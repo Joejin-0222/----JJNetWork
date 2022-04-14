@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ZWOrderShouKuanTanKuang: basePopView ,SementSelectClickDelegate{
+class ZWOrderShouKuanTanKuangJoe: basePopView ,SementSelectClickDelegate{
     
     private var selectIndex:Int = 0   //    记录点击了第几个
     //中间 显示 内容
@@ -47,7 +47,7 @@ class ZWOrderShouKuanTanKuang: basePopView ,SementSelectClickDelegate{
         
         self.backView.snp.remakeConstraints { make in
             make.left.equalTo((LeftItemWidth + OrderRightViewWidth + OrderTabelViewWidth)*WidthW)
-            make.width.equalTo(500*WidthW)
+            make.width.equalTo(ScreenWidth - (LeftItemWidth + OrderRightViewWidth + OrderTabelViewWidth)*WidthW)
             make.height.equalTo(ScreenHeight)
         }
         //spring动画白底(弹出主体)
@@ -140,7 +140,7 @@ class ZWOrderShouKuanTanKuang: basePopView ,SementSelectClickDelegate{
     
    }
 
-extension ZWOrderShouKuanTanKuang:UICollectionViewDataSource ,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+extension ZWOrderShouKuanTanKuangJoe:UICollectionViewDataSource ,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return  4
     }
@@ -186,8 +186,5 @@ extension ZWOrderShouKuanTanKuang:UICollectionViewDataSource ,UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("=============点击了 第 \(indexPath.row) 商品")
     }
-    
-    
-    
     
 }
