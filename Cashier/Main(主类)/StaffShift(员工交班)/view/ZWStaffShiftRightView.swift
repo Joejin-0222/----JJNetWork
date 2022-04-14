@@ -9,7 +9,7 @@ import UIKit
 
 class ZWStaffShiftRightView: UIView, SementSelectClickDelegate {
    
-    
+    var index:Int?
     lazy var lineView : UIView = {
        let view = UIView()
         view.backgroundColor = MainColor
@@ -77,11 +77,17 @@ class ZWStaffShiftRightView: UIView, SementSelectClickDelegate {
         TableView.backgroundColor =  UIColor.white
         TableView.isScrollEnabled = true
         TableView.separatorStyle = .none
+        TableView.register(cellType: ZWSuccessionTCellKB.self)
         TableView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(30*WidthW)
             make.left.equalTo(lineView.snp.left).offset(0*WidthW)
             make.right.equalTo(self.snp.right).offset(-68*WidthW)
             make.bottom.equalTo(self.snp.bottom).offset(-84*WidthW)
+        }
+        //没有model的时候用闭包传值过来的
+        self.sementView.selectIndexPathBlock = {
+            self.index = $0
+            print(self.index!)
         }
         
         return self
@@ -113,23 +119,32 @@ extension ZWStaffShiftRightView : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let  cell:ZWStaffShiftOneCell =  ZWStaffShiftOneCell.createWithTableViewCell(tableView: tableView) as! ZWStaffShiftOneCell
-//        cell.contentImageView.image = UIImage.init(named: self.dataArray[indexPath.row] as! String)
+//        let  cell:ZWStaffShiftOneCell =  ZWStaffShiftOneCell.createWithTableViewCell(tableView: tableView) as! ZWStaffShiftOneCell
+////        cell.contentImageView.image = UIImage.init(named: self.dataArray[indexPath.row] as! String)
+//        let arr: NSArray = self.dataArray[indexPath.section] as! NSArray
+//
+//        cell.content1.text = arr[indexPath.row] as? String
+//
+//        if indexPath.section == 0 {
+//            cell.BackView.backgroundColor = UIColor.init(hex: "#F3F3F5")
+//        }else{//#FEF9D5
+//            cell.BackView.backgroundColor = UIColor.init(hex: "#F3F3F5")
+//        }
+//        cell.selectionStyle = .none
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ZWSuccessionTCellKB.self)
         let arr: NSArray = self.dataArray[indexPath.section] as! NSArray
-            
-        cell.content1.text = arr[indexPath.row] as? String
         
-        if indexPath.section == 0 {
-            cell.BackView.backgroundColor = UIColor.init(hex: "#F3F3F5")
-        }else{//#FEF9D5
-            cell.BackView.backgroundColor = UIColor.init(hex: "#F3F3F5")
-        }
-        cell.selectionStyle = .none
+        cell.leftL.text = arr[indexPath.row] as? String
+        if indexPath.row == 0 {
+           cell.backView.backgroundColor = UIColor.init(hex: "#F3F3F5")
+       }else{//#FEF9D5
+           cell.backView.backgroundColor = UIColor.white
+       }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 64*WidthW
+        return 100*WidthW
     }
     
     
