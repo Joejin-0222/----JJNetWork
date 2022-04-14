@@ -60,9 +60,10 @@ class ZWOrderCellJoe: UITableViewCell {
         label.text = "￥13.72"
         return label
     }()
-    lazy var LineView : UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.init(hex: "#E6E8EB")
+    lazy var LineView : UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage.init(named: "首页虚线")
+//        view.backgroundColor = UIColor.init(hex: "#E6E8EB")
         return view
     }()
     
@@ -131,14 +132,14 @@ class ZWOrderCellJoe: UITableViewCell {
             make.top.equalTo(self.content01.snp.bottom).offset(40*WidthW)
             make.width.equalTo(WIDTH)
         }
-        
+        print("=========\(OrderTabelViewWidth*WidthW)")
         
         //
         self.addSubview(self.LineView)
         self.LineView.snp.makeConstraints { make in
             make.left.equalTo(28*WidthW)
             make.right.equalTo(self.contentView.snp.right).offset(-28*WidthW)
-            make.height.equalTo(1*WidthW)
+            make.height.equalTo(2*WidthW)
             make.bottom.equalTo(self.contentView.snp.bottom)
         }
         

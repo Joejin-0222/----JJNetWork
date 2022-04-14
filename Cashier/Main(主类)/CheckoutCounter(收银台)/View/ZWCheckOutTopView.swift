@@ -11,7 +11,7 @@ class ZWCheckOutTopView: UIView {
     //
     lazy var headImageBtn : UIButton = {
         let image = UIButton()
-        image.setImage(UIImage.init(named: "vip"), for: .normal)
+        image.setImage(UIImage.init(named: "aodio"), for: .normal)
         return image
     }()
     //
@@ -50,9 +50,9 @@ class ZWCheckOutTopView: UIView {
     //
     lazy var goodNameBtn : UIButton = {
         let btn = UIButton()
-        btn.backgroundColor = UIColor.init(hex: "#DEDFE5")
-        btn.setTitle("商品名称", for: .normal)
-        btn.setImage(UIImage.init(named: "down"), for: .normal)
+//        btn.backgroundColor = UIColor.init(hex: "#DEDFE5")
+//        btn.setTitle("商品名称", for: .normal)
+        btn.setImage(UIImage.init(named: "首页搜索"), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18*WidthW)
         btn.setTitleColor(UIColor.init(hex: "#3B4152"), for: .normal)
         
@@ -68,8 +68,8 @@ class ZWCheckOutTopView: UIView {
     //搜索输入框
     lazy var Textfield : UITextField = {
         let textfield = UITextField()
-        textfield.placeholder = "请输入商品名称、商品码"
-        textfield.font = UIFont.systemFont(ofSize: 20*WidthW)
+        textfield.placeholder = "输入商品名称，商品码，条形码或自编码"
+        textfield.font = UIFont.systemFont(ofSize: 22*WidthW)
         return textfield
     }()
     func initView() -> UIView {
@@ -79,7 +79,7 @@ class ZWCheckOutTopView: UIView {
         headImageBtn.addTarget(self, action: #selector(headImageBtnClick), for: .touchUpInside)
         headImageBtn.snp.makeConstraints { make in
             make.right.equalTo(self.snp.right)
-            make.width.height.equalTo(48*WidthW)
+            make.width.height.equalTo(56*WidthW)
             make.centerY.equalTo(self.snp.centerY)
         }
         //用户名
@@ -119,22 +119,23 @@ class ZWCheckOutTopView: UIView {
             make.centerY.equalTo(self.snp.centerY)
         }
         //搜索view
-        SearchView.cornerRadius(cornerRadius: 30*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 1)
+        SearchView.cornerRadius(cornerRadius: 32*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 1)
         self.addSubview(SearchView)
         SearchView.snp.makeConstraints { make in
             make.left.equalTo(self.snp.left).offset(0*WidthW)
             make.right.equalTo(DateLabel.snp.left).offset(-80*WidthW)
-            make.height.equalTo(60*WidthW)
+            make.height.equalTo(64*WidthW)
             make.centerY.equalTo(self.snp.centerY)
         }
         //
-        goodNameBtn.setImageAndTitle(imageName: "down", title: "商品名称", type: .PositionRight, Space: 1)
+//        goodNameBtn.setImageAndTitle(imageName: "down", title: "商品名称", type: .PositionRight, Space: 1)
         SearchView.addSubview(goodNameBtn)
         goodNameBtn.snp.makeConstraints { make in
-            make.left.equalTo(SearchView.snp.left)
-            make.top.equalTo(self.snp.top)
-            make.bottom.equalTo(self.snp.bottom)
-            make.width.equalTo(140*WidthW)
+            make.left.equalTo(SearchView.snp.left).offset(6*WidthW)
+            make.centerY.equalTo(self.snp.centerY)
+//            make.top.equalTo(self.snp.top)
+//            make.bottom.equalTo(self.snp.bottom)
+            make.width.height.equalTo(54*WidthW)
         }
         goodNameBtn.addTarget(self, action: #selector(goodNameBtnClick), for: .touchUpInside)
         
@@ -148,7 +149,7 @@ class ZWCheckOutTopView: UIView {
         //
         SearchView.addSubview(Textfield)
         Textfield.snp.makeConstraints { make in
-            make.left.equalTo(goodNameBtn.snp.right).offset(13*WidthW)
+            make.left.equalTo(goodNameBtn.snp.right).offset(8*WidthW)
             make.top.equalTo(self.snp.top)
             make.bottom.equalTo(self.snp.bottom)
             make.right.equalTo(SaoMaBtn.snp.left).offset(-10*WidthW)

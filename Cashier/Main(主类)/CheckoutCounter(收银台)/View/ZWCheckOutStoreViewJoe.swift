@@ -58,7 +58,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
         TopSeachAndUserView.snp.makeConstraints { make in
             make.left.equalTo(self.snp.left).offset(24*WidthW)
             make.right.equalTo(self.snp.right).offset(-24*WidthW)
-            make.top.equalTo(self.snp.top).offset(0*WidthW)
+            make.top.equalTo(self.snp.top).offset(8*WidthW)
             make.height.equalTo(96*WidthW)
         }
         

@@ -371,7 +371,7 @@ class ZWOrderViewJoe: UIView {
         operationView.addSubview(operationline01)
         operationline01.snp.makeConstraints { make in
             make.top.equalTo(operationView.snp.top)
-            make.left.equalTo(operationView.snp.left).offset(1*WidthW)
+            make.left.equalTo(operationView.snp.left).offset(0.5*WidthW)
             make.width.equalTo(2*WidthW)
             make.bottom.equalTo(operationView.snp.bottom)
         }
@@ -380,7 +380,7 @@ class ZWOrderViewJoe: UIView {
         operationline02.snp.makeConstraints { make in
             make.top.equalTo(0)
             make.right.equalTo(operationView.snp.right).offset(0*WidthW)
-            make.width.equalTo(2*WidthW)
+            make.width.equalTo(1.5*WidthW)
             make.height.equalTo(operationView.snp.height)
         }
         
@@ -423,13 +423,15 @@ class ZWOrderViewJoe: UIView {
         }
         
         //加减底层view
-        addAndReduceView.cornerRadius(cornerRadius: 54*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 1)
+        let  reduceHeight : CGFloat = 232
+        let  reduceWidth : CGFloat = 116
+        addAndReduceView.cornerRadius(cornerRadius: 58*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 1)
         operationView.addSubview(addAndReduceView)
         addAndReduceView.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top).offset(102*WidthW)
             make.centerX.equalTo(operationView.snp.centerX)
-            make.width.equalTo(108*WidthW)
-            make.height.equalTo(220*WidthW)
+            make.width.equalTo(reduceWidth*WidthW)
+            make.height.equalTo(reduceHeight*WidthW)
         }
         //改价
         operationView.addSubview(UpDataPriceBtn)
@@ -440,22 +442,22 @@ class ZWOrderViewJoe: UIView {
         }
         addAndReduceView.addSubview(addAndReduceLine01)
         addAndReduceLine01.snp.makeConstraints { make in
-            make.bottom.equalTo(addAndReduceView.snp.top).offset(220/3*WidthW)
-            make.width.equalTo(108*WidthW)
+            make.bottom.equalTo(addAndReduceView.snp.top).offset(reduceHeight/3*WidthW)
+            make.width.equalTo(reduceWidth*WidthW)
             make.height.equalTo(1*WidthW)
         }
         addAndReduceView.addSubview(addAndReduceLine02)
         addAndReduceLine02.snp.makeConstraints { make in
-            make.bottom.equalTo(addAndReduceView.snp.top).offset(220*2/3*WidthW)
-            make.width.equalTo(108*WidthW)
+            make.bottom.equalTo(addAndReduceView.snp.top).offset(reduceHeight*2/3*WidthW)
+            make.width.equalTo(reduceWidth*WidthW)
             make.height.equalTo(1*WidthW)
         }
         //加
         addAndReduceView.addSubview(addBtn)
         addBtn.snp.makeConstraints { make in
-            make.top.equalTo(addAndReduceView.snp.top)
-            make.width.equalTo(108*WidthW)
-            make.height.equalTo(220/3*WidthW)
+            make.top.equalTo(addAndReduceView.snp.top).offset(4*WidthW)
+            make.width.equalTo(reduceWidth*WidthW)
+            make.height.equalTo(reduceHeight/3*WidthW)
         }
         addBtn.addTarget(self, action: #selector(addBtnClick), for: .touchUpInside)
         
@@ -463,15 +465,15 @@ class ZWOrderViewJoe: UIView {
         addAndReduceView.addSubview(shownumLabel)
         shownumLabel.snp.makeConstraints { make in
             make.top.equalTo(addAndReduceLine01.snp.top)
-            make.width.equalTo(108*WidthW)
-            make.height.equalTo(220/3*WidthW)
+            make.width.equalTo(reduceWidth*WidthW)
+            make.height.equalTo(reduceHeight/3*WidthW)
         }
         //减
         addAndReduceView.addSubview(ReduceBtn)
         ReduceBtn.snp.makeConstraints { make in
             make.top.equalTo(addAndReduceLine02.snp.top)
-            make.width.equalTo(108*WidthW)
-            make.height.equalTo(220/3*WidthW)
+            make.width.equalTo(reduceWidth*WidthW)
+            make.height.equalTo(reduceHeight/3*WidthW)
         }
         ReduceBtn.addTarget(self, action: #selector(ReduceBtnClick), for: .touchUpInside)
         
