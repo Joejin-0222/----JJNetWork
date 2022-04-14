@@ -19,6 +19,7 @@ class ZWCheckSementViewJoe: UIView {
     var textFont : CGFloat = 24.00 //字体大小
     var SelectTextColor : String = "#323233" //选中字体颜色
     var TextColor : String = "#969799" //字体颜色
+    var IsScrollEnabled : Bool = false //是否滚动
     var IsHiddenIndicator : Bool = false //是否显示指示器
     var IsHiddenFenGeLine : Bool = false //是否隐藏分割线
     var YesNetWork : Bool = false //是否网络数据
@@ -51,7 +52,7 @@ class ZWCheckSementViewJoe: UIView {
         CollectionView.showsHorizontalScrollIndicator = false
         self.addSubview(self.CollectionView)
         CollectionView.backgroundColor = UIColor.clear
-       
+        CollectionView.isScrollEnabled = IsScrollEnabled//是否可以滚动
         CollectionView.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top).offset(1*WidthW)
             make.left.equalTo(self.snp.left).offset(1*WidthW)
