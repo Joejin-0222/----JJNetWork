@@ -48,16 +48,13 @@ class ZWSuccessionTCellKB: baseTableViewCell {
         let dBtn = UIButton()
         dBtn.setTitleColor(UIColor.init(hex: "#FE4B48"), for: .normal)
         dBtn.titleLabel?.font = UIFont.systemFont(ofSize: 20*WidthW)
-        dBtn.setTitle("明细", for: .normal)
-        dBtn.setImage(UIImage(named: "编组"), for: .normal)
-//        dBtn.setImageAndTitle(imageName: "编组", title: "明细", type: .PositionRight, Space: 5*WidthW)
-        dBtn.addTarget(self, action: #selector(detailBtnClick), for: .touchUpInside)
+//        dBtn.setTitle("明细", for: .normal)
+//        dBtn.setImage(UIImage(named: "编组"), for: .normal)
+        dBtn.setImageAndTitle(imageName: "编组", title: "明细", type: .PositionRight, Space: 5*WidthW)
         return dBtn
     }()
     
-    @objc func detailBtnClick(sender: UIButton){
-        print("sender")
-    }
+   
     
     lazy var rightL: UILabel = {
         let label = UILabel()
@@ -68,7 +65,7 @@ class ZWSuccessionTCellKB: baseTableViewCell {
     }()
     
     override func configUI() {
-        self.addSubview(self.backView)
+        self.contentView.addSubview(self.backView)
         self.backView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
         }
