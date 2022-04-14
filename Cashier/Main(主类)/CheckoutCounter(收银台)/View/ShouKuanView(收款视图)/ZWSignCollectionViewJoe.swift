@@ -8,6 +8,7 @@
 import UIKit
 
 class ZWSignCollectionViewJoe: UICollectionViewCell {
+    
     var numDataArray : NSArray = ["建设银行支付","农业银行支付","招商银行支付","建设银行支付","农业银行支付","招商银行支付"]
     
     //item 标题

@@ -74,6 +74,7 @@ class ZWOrderShouKuanTanKuang: UIView ,SementSelectClickDelegate{
      
        
         //一级分类
+        testSementView.IsScrollEnabled = false //不让滚动
         testSementView.delegate = self//遵守点击分段选择代理
         testSementView.YesNetWork = false //是网络数据
         testSementView.SelectTextColor =  "#FE4B48"
