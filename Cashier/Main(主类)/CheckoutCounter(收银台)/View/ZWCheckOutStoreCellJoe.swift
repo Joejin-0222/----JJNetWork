@@ -13,7 +13,7 @@ class ZWCheckOutStoreCellJoe: UICollectionViewCell {
         let view = UIView()
         view.backgroundColor = UIColor.white
         view.layer.masksToBounds = true
-        view.layer.cornerRadius = 5*HeighH
+        view.layer.cornerRadius = 6*HeighH
         view.layer.borderWidth = 2
         view.layer.borderColor = UIColor (red: 235/255, green: 237/255, blue: 240/255, alpha: 1).cgColor
         return view

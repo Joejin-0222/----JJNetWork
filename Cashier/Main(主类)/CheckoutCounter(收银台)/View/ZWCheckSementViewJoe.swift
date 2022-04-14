@@ -158,8 +158,9 @@ extension ZWCheckSementViewJoe:UICollectionViewDataSource ,UICollectionViewDeleg
                 // 04. 执行代理
                 delegate?.SelectIndexPathClick(IndexPath: indexPath.row,model: model)
             }else {
+                let model : ZWCheckSementModelJoe  = ZWCheckSementModelJoe()
                 // 04. 执行代理
-//                delegate?.SelectIndexPathClick(IndexPath: indexPath.row,  model: <#ZWCheckSementModelJoe?#>)
+                delegate?.SelectIndexPathClick(IndexPath: indexPath.row,model: model)
             }
           
         }

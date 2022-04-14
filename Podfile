@@ -15,5 +15,5 @@ target 'Cashier' do
   #  pod 'Spring' #git => ‘https://github.com/MengTo/Spring.git’
   pod 'lottie-ios'
   pod 'Reusable'
-  
+  pod 'Kingfisher' #图片缓存
 end

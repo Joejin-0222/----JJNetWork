@@ -1,9 +1,8 @@
 //
 //  NSString-Extension.swift
-//  Fattykitchen
+//  Cashier
 //
-//  Created by 张海峰 on 2017/8/30.
-//  Copyright © 2017年 张海峰. All rights reserved.
+//  Created by IOS FOR MAC on 2022/3/31.
 //
 
 import Foundation

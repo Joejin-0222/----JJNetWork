@@ -97,7 +97,7 @@ class MainRootController: UIViewController {
         self.automaticallyAdjustsScrollViewInsets = false
         self.view.addSubview(simpleManager)
         simpleManagerConfig()
-//        simpleManager.scrollToIndex(index:3)
+//        simpleManager.scrollToIndex(index:4)
         
     }
     

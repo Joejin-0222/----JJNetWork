@@ -125,6 +125,21 @@ class ZWOrderViewJoe: UIView {
         view.backgroundColor =  UIColor.init(hex: "#F3F3F5")
         return view
     }()
+    
+    //左边线
+    lazy var operationline01 : UIView = {
+        let view = UIView()
+        view.backgroundColor =  LineColor
+        return view
+    }()
+    
+    //右边线
+    lazy var operationline02 : UIView = {
+        let view = UIView()
+        view.backgroundColor =  LineColor
+        return view
+    }()
+    
     //预定
     lazy var YuDingBtn : UIButton = {
         let Btn = UIButton()
@@ -348,6 +363,25 @@ class ZWOrderViewJoe: UIView {
             make.right.equalTo(self.snp.right)
             make.height.equalTo(self.snp.height)
         }
+        //左边线
+//        operationline01.backgroundColor = UIColor.red
+        operationView.addSubview(operationline01)
+        operationline01.snp.makeConstraints { make in
+            make.top.equalTo(operationView.snp.top)
+            make.left.equalTo(operationView.snp.left).offset(3*WidthW)
+            make.width.equalTo(3*WidthW)
+            make.bottom.equalTo(operationView.snp.bottom)
+        }
+        //右边线
+        operationView.addSubview(operationline02)
+        operationline02.snp.makeConstraints { make in
+            make.top.equalTo(0)
+            make.right.equalTo(operationView.snp.right).offset(-3*WidthW)
+            make.width.equalTo(3*WidthW)
+            make.height.equalTo(operationView.snp.height)
+        }
+        
+        
         //预定
         YuDingBtn.cornerRadius(cornerRadius: 27*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 1)
         operationView.addSubview(YuDingBtn)

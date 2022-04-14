@@ -107,8 +107,6 @@ class CashierSettingViewController: ZWRootViewControllerJoe ,CashierSetItemSelec
         default:
             break
         }
-        
-        
         simpleManager.scrollToIndex(index: TempIndex)
     }
 }

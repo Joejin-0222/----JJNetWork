@@ -1,9 +1,8 @@
 //
 //  UIView+MDExtension.swift
-//  Swift-Base
+//  Cashier
 //
-//  Created by 卢荫豪 on 2019/5/12.
-//  Copyright © 2019 时代漫游. All rights reserved.
+//  Created by IOS FOR MAC on 2022/3/31.
 //
 
 import UIKit

@@ -105,7 +105,6 @@ class ZWTanKuangTableViewCell: UITableViewCell {
             make.left.equalTo(content01.snp.left)
         }
         
-    
     }
     
     required init?(coder: NSCoder) {

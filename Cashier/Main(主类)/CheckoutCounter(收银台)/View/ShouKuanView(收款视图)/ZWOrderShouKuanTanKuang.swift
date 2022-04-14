@@ -9,6 +9,7 @@ import UIKit
 
 class ZWOrderShouKuanTanKuang: UIView ,SementSelectClickDelegate{
     
+    private var selectIndex:Int = 0   //    记录点击了第几个
     //中间 显示 内容
     fileprivate let CollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout())
     
@@ -76,7 +77,7 @@ class ZWOrderShouKuanTanKuang: UIView ,SementSelectClickDelegate{
         testSementView.delegate = self//遵守点击分段选择代理
         testSementView.YesNetWork = false //是网络数据
         testSementView.SelectTextColor =  "#FE4B48"
-        testSementView.columnNum = 5 //设置为两列
+        testSementView.columnNum = 4 //设置为两列
         testSementView.IsHiddenFenGeLine = true //是否显示分割xian
         bgView.addSubview(testSementView.initView())
         testSementView.snp.makeConstraints { make in
@@ -85,7 +86,7 @@ class ZWOrderShouKuanTanKuang: UIView ,SementSelectClickDelegate{
             make.height.equalTo(92*WidthW)
             make.right.equalTo(self.snp.right).offset(-30*WidthW)
         }
-        testSementView.dataAarry =  ["扫码收款","现金收款","现金收款","会员卡收款","标记收款"]
+        testSementView.dataAarry =  ["扫码收款","现金收款","会员卡收款","标记收款"]
         self.testSementView.ReloadData()
         testSementView.backgroundColor = UIColor.init(hex: "#F3F3F5")//背景色
         
@@ -121,19 +122,29 @@ class ZWOrderShouKuanTanKuang: UIView ,SementSelectClickDelegate{
         self.CollectionView.delegate = self
         self.CollectionView.dataSource = self
         CollectionView.isScrollEnabled = false
-        CollectionView.register(ZWCheckOutStoreCellJoe.self, forCellWithReuseIdentifier: "ZWCheckOutStoreCellJoe")
+        CollectionView.backgroundColor = UIColor.clear
+        CollectionView.register(ZWSaoMaShouKuanCollectionCellJoe.self, forCellWithReuseIdentifier: "ZWSaoMaShouKuanCollectionCellJoe")
+        CollectionView.register(ZWVipCollectionViewJoe.self, forCellWithReuseIdentifier: "ZWVipCollectionViewJoe")
+        CollectionView.register(ZWCashCollectionViewJoe.self, forCellWithReuseIdentifier: "ZWCashCollectionViewJoe")
+        CollectionView.register(ZWSignCollectionViewJoe.self, forCellWithReuseIdentifier: "ZWSignCollectionViewJoe")
         
         self.addSubview(self.CollectionView)
         CollectionView.snp.makeConstraints { make in
             make.top.equalTo(testSementView.snp.bottom).offset(0*HeighH)
-            make.left.equalTo(testSementView.snp.left)
-            make.right.equalTo(testSementView.snp.right)
+            make.left.equalTo(bgView.snp.left).offset(0*WidthW)
+            make.right.equalTo(bgView.snp.right).offset(0*WidthW)
             make.bottom.equalTo(self.snp.bottom).offset(-220*HeighH)
         }
+        
     }
     
     func SelectIndexPathClick(IndexPath: Int, model: ZWCheckSementModelJoe) {
-        
+        self.scrollcollview(index: IndexPath)
+    }
+    
+    func scrollcollview(index: Int){
+        let indexpath = IndexPath.init(row: index , section: 0)
+        self.CollectionView.scrollToItem(at: indexpath, at: UICollectionView.ScrollPosition.left, animated: false)
     }
     
     //MARK:按键的对应的方法
@@ -177,9 +188,23 @@ extension ZWOrderShouKuanTanKuang:UICollectionViewDataSource ,UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ZWCheckOutStoreCellJoe", for: indexPath) as! ZWCheckOutStoreCellJoe
+       
+        if indexPath.row == 0{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ZWSaoMaShouKuanCollectionCellJoe", for: indexPath) as! ZWSaoMaShouKuanCollectionCellJoe
+            return cell
+        }else if indexPath.row == 1{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ZWCashCollectionViewJoe", for: indexPath) as! ZWCashCollectionViewJoe
+            return cell
+        }else if indexPath.row == 2{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ZWVipCollectionViewJoe", for: indexPath) as! ZWVipCollectionViewJoe
+            return cell
+        }else if indexPath.row == 3{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ZWSignCollectionViewJoe", for: indexPath) as! ZWSignCollectionViewJoe
+            return cell
+        }
+        
    
-        return cell
+        return UICollectionViewCell()
     }
     //最小 item 间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
