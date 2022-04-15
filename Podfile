@@ -16,4 +16,5 @@ target 'Cashier' do
   pod 'lottie-ios'
   pod 'Reusable'
   pod 'Kingfisher' #图片缓存
+  pod 'HandyScanner'#二维码扫码
 end

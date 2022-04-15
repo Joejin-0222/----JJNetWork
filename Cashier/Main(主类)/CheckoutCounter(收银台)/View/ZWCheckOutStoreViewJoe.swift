@@ -10,9 +10,10 @@ import UIKit
 class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
    
     
+    var CategoriesDataAarry  : NSArray = []//分段选择数据
     var dataAarry  : NSArray = []
-    
-    
+    //更多分类弹框
+    var popMoreCategoriesView = ZWMoreCategoriesPopView()
     //loading
     let loadingView = ZWLoadingTanKuangView(x:0, y: 0, width:( ScreenWidth), height: ScreenHeight)
  
@@ -71,6 +72,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
             make.top.equalTo(self.snp.top).offset(112*WidthW)
             make.height.equalTo(68*WidthW)
         }
+        SementView.IsScrollEnabled = true //可滚动
         SementView.IsHiddenIndicator = false //是否显示指示器
         SementView.delegate = self//遵守点击分段选择代理
         SementView.YesNetWork = true //是网络数据
@@ -115,9 +117,10 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
     }
     //点击了更多分类
     @objc func moreBtnClick(){
-        
-        let popView : ZWMoreCategoriesPopView = ZWMoreCategoriesPopView().initView() as! ZWMoreCategoriesPopView
-        popView.show()
+        //更多分类弹框
+        popMoreCategoriesView = ZWMoreCategoriesPopView().initView() as! ZWMoreCategoriesPopView
+        popMoreCategoriesView.show()
+        popMoreCategoriesView.dataAarry = self.CategoriesDataAarry
     }
     
     
@@ -133,7 +136,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
             let tempArray = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
             self.SementView.dataAarry = tempArray
             self.SementView.ReloadData()
-          
+            self.CategoriesDataAarry = tempArray//更多分类数据
             
             ProgressHUD.showSuccesshTips(message: "请求成功!")
         } error1: { statusCode in

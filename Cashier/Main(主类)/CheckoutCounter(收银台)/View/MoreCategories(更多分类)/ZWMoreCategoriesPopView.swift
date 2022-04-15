@@ -8,6 +8,7 @@
 import UIKit
 
 class ZWMoreCategoriesPopView: basePopView {
+    var dataAarry  : NSArray? = []
     //
     lazy var bottomView : UIView = {
        let view = UIView()
@@ -79,8 +80,11 @@ class ZWMoreCategoriesPopView: basePopView {
             make.centerX.equalTo(bottomView.snp.centerX)
             make.height.equalTo(48*WidthW)
         }
+        PutAwayBtn.addTarget(self, action: #selector(closeBtnClick), for: .touchUpInside)
 
     }
+  
+    
     override func layoutSubviews() {
         bottomView.setRoundCorners(corners: [.bottomLeft,.bottomRight], with: 10)
     }
@@ -89,7 +93,7 @@ class ZWMoreCategoriesPopView: basePopView {
 }
 extension ZWMoreCategoriesPopView:UICollectionViewDataSource ,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  18
+        return  self.dataAarry?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -98,12 +102,13 @@ extension ZWMoreCategoriesPopView:UICollectionViewDataSource ,UICollectionViewDe
             if  self.selectIndex == indexPath.row {
                 cell.backView.backgroundColor = UIColor.init(hex: "#FEEBEA")
                 cell.TitleLabel.textColor = MainColor
-                
             }else{
                 cell.backView.backgroundColor = UIColor.init(hex: "#ffffff")
                 cell.TitleLabel.textColor = UIColor.init(hex: "#323233")
-                
             }
+        let model : ZWCheckSementModelJoe =  self.dataAarry![indexPath.row] as! ZWCheckSementModelJoe;
+        cell.TitleLabel.text =  model.name
+        
         return cell
     }
     //最小 item 间距

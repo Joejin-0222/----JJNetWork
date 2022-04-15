@@ -89,11 +89,11 @@ class basePopView: UIView {
 
             point = backView.layer.convert(point, from: self.layer)
 
-            print("point\(point)")
+//            print("point\(point)")
 
             let point2 = backView.layer.convert(point, to: self.layer)
 
-            print("point2\(point2)")
+//            print("point2\(point2)")
 
             if backView.layer.contains(point ){
                 print(1)

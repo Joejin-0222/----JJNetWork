@@ -574,7 +574,7 @@ extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
         let subView =  UIView()
         subView.frame = CGRect(x: 24*WidthW, y: 18*HeighH, width: 172*WidthW, height: 52*HeighH)
         footview.addSubview(subView)
-        subView.cornerRadius(cornerRadius: 10*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 2*WidthW)
+        subView.cornerRadius(cornerRadius: 8*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 2*WidthW)
         let Btn = UIButton()
         subView.addSubview(Btn)
         Btn.setImage(UIImage.init(named: "整单取消"), for: .normal)

@@ -184,15 +184,6 @@ class ZWRootViewControllerJoe: UIViewController {
         Cache(rawValue: "isAutoSettedCurrencyKey")?.clear()
         Cache(rawValue: "cookieKey")?.clear()
     }
-    
-    @objc func goodNameBtnClick(){
-        let alertView = ZWChooseGoodsClassTanKuangView(title: "协议", message: "。", cancelButtonTitle: "取 消", sureButtonTitle: "确 定",x: (150+525+148+24)*WidthW, y: (24+60)*WidthW, width: 200 * WidthW, height: 200 * WidthW)
-//        alertView.dismiss()
-        alertView.show()
-        //获取点击事件
-        alertView.clickIndexClosure { (index) in
-            print("点击了第" + "\(index)" + "个按钮")
-        }
-    }
+
 
 }

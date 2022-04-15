@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.5.0)
   - HandyJSON (5.0.2)
+  - HandyScanner (0.2.9)
   - IQKeyboardManagerSwift (6.5.9)
   - JKCategories (1.9.3):
     - JKCategories/CoreData (= 1.9.3)
@@ -141,6 +142,7 @@ PODS:
   - JKCategories/UIKit/UIViewController (1.9.3)
   - JKCategories/UIKit/UIWindow (1.9.3)
   - JXSegmentedView (1.3.0)
+  - Kingfisher (6.3.1)
   - lottie-ios (3.2.3)
   - MBProgressHUD (1.2.0)
   - Moya (14.0.0):
@@ -166,9 +168,11 @@ PODS:
 
 DEPENDENCIES:
   - HandyJSON
+  - HandyScanner
   - IQKeyboardManagerSwift (~> 6.5.9)
   - JKCategories (~> 1.9.3)
   - JXSegmentedView
+  - Kingfisher
   - lottie-ios
   - MBProgressHUD
   - Moya (~> 14.0.0)
@@ -182,9 +186,11 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - HandyJSON
+    - HandyScanner
     - IQKeyboardManagerSwift
     - JKCategories
     - JXSegmentedView
+    - Kingfisher
     - lottie-ios
     - MBProgressHUD
     - Moya
@@ -198,9 +204,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  HandyScanner: 50e6151b4a3fd0d025fec29f4ad463d87e63067b
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   JKCategories: c995567f04ff98680313f56544e6cb62d3152733
   JXSegmentedView: fec0d335355b6e019c494fe2e030bde8a36d2df6
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
@@ -211,6 +219,6 @@ SPEC CHECKSUMS:
   SkeletonView: 915a80ecc2b6421ab7ac0f0212321c0cc1406472
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 228fec0d88ab4fc5c68a2606bb875af72d348195
+PODFILE CHECKSUM: 4297de1c062e0ef1027859ea2b41fd913b918119
 
 COCOAPODS: 1.11.2

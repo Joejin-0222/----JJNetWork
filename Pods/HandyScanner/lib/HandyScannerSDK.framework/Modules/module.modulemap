@@ -1,0 +1,4 @@
+framework module HandyScannerSDK {
+  header "HandyScannerSDK-Swift.h"
+  requires objc
+}

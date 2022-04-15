@@ -6,6 +6,7 @@
 //
 
 import UIKit
+//import HandyScannerSDK
 
 class ZWCheckOutTopView: UIView {
     //
@@ -133,8 +134,6 @@ class ZWCheckOutTopView: UIView {
         goodNameBtn.snp.makeConstraints { make in
             make.left.equalTo(SearchView.snp.left).offset(6*WidthW)
             make.centerY.equalTo(self.snp.centerY)
-//            make.top.equalTo(self.snp.top)
-//            make.bottom.equalTo(self.snp.bottom)
             make.width.height.equalTo(54*WidthW)
         }
         goodNameBtn.addTarget(self, action: #selector(goodNameBtnClick), for: .touchUpInside)
@@ -146,6 +145,7 @@ class ZWCheckOutTopView: UIView {
             make.centerY.equalTo(self.snp.centerY)
             make.width.height.equalTo(40*WidthW)
         }
+        SaoMaBtn.addTarget(self, action: #selector(SaoMaBtnClick), for: .touchUpInside)
         //
         SearchView.addSubview(Textfield)
         Textfield.snp.makeConstraints { make in
@@ -158,8 +158,12 @@ class ZWCheckOutTopView: UIView {
         
         return self
     }
+    //点击了二维码扫码 开始扫码
+    @objc func SaoMaBtnClick(){
+        self.viewContainingController()?.navigationController?.pushViewController(ZWScanQRCodeVCJoe(), animated: false)
+    }
     
-    
+    //
     @objc func headImageBtnClick(){
         self.clear()
         let vc = LoginViewController()
@@ -176,13 +180,8 @@ class ZWCheckOutTopView: UIView {
     }
     
     @objc func goodNameBtnClick(){
-        let alertView = ZWChooseGoodsClassTanKuangView(title: "协议", message: "。", cancelButtonTitle: "取 消", sureButtonTitle: "确 定",x: (150+525+148+24)*WidthW, y: (24+60)*WidthW, width: 200 * WidthW, height: 200 * WidthW)
-//        alertView.dismiss()
-        alertView.show()
-        //获取点击事件
-        alertView.clickIndexClosure { (index) in
-            print("点击了第" + "\(index)" + "个按钮")
-        }
+    
+        
     }
     
 }

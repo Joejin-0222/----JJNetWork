@@ -72,6 +72,7 @@
 		0449923027F842B600DB5410 /* ZWRootViewControllerJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922F27F842B600DB5410 /* ZWRootViewControllerJoe.swift */; };
 		0449923227F84E7400DB5410 /* ZWCashierSettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449923127F84E7400DB5410 /* ZWCashierSettingItemCell.swift */; };
 		0469F7E228090A9E0072CD1E /* ZWMoreCategoriesCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7E128090A9E0072CD1E /* ZWMoreCategoriesCellJoe.swift */; };
+		0469F7EF2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7EE2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift */; };
 		046B4E0527F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0427F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift */; };
 		046B4E0827F54ACC00710D02 /* ZWStaffShiftVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0727F54ACC00710D02 /* ZWStaffShiftVCJoe.swift */; };
 		046B4E0B27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0A27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift */; };
@@ -221,6 +222,7 @@
 		0449922F27F842B600DB5410 /* ZWRootViewControllerJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRootViewControllerJoe.swift; sourceTree = "<group>"; };
 		0449923127F84E7400DB5410 /* ZWCashierSettingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCashierSettingItemCell.swift; sourceTree = "<group>"; };
 		0469F7E128090A9E0072CD1E /* ZWMoreCategoriesCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMoreCategoriesCellJoe.swift; sourceTree = "<group>"; };
+		0469F7EE2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWScanQRCodeVCJoe.swift; sourceTree = "<group>"; };
 		046B4E0427F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenVCJoe.swift; sourceTree = "<group>"; };
 		046B4E0727F54ACC00710D02 /* ZWStaffShiftVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWStaffShiftVCJoe.swift; sourceTree = "<group>"; };
 		046B4E0A27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCommodityStocksVCJoe.swift; sourceTree = "<group>"; };
@@ -617,6 +619,7 @@
 				04CA37A527F6C76D00E620E5 /* ZWCheckSementCellJoe.swift */,
 				04CA37A727F6D8EE00E620E5 /* ZWCheckStoreBottomView.swift */,
 				0449922D27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift */,
+				0469F7E3280941810072CD1E /* Scan(扫码) */,
 				04ACE15828084796001356D4 /* MoreCategories(更多分类) */,
 				04ACE1552808109A001356D4 /* OrderYouHui(整单优惠) */,
 				04ACE14A2807C9BF001356D4 /* ShouKuanView(收款视图) */,
@@ -660,6 +663,14 @@
 				0444686127E02E4F000444FD /* iconButtonView.swift */,
 			);
 			path = MainRootController;
+			sourceTree = "<group>";
+		};
+		0469F7E3280941810072CD1E /* Scan(扫码) */ = {
+			isa = PBXGroup;
+			children = (
+				0469F7EE2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift */,
+			);
+			path = "Scan(扫码)";
 			sourceTree = "<group>";
 		};
 		046B4E0627F54AB500710D02 /* controller */ = {
@@ -1303,6 +1314,7 @@
 				04E3646727F467860007B91A /* LTLivePlayLoopsListView.swift in Sources */,
 				04CA379C27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift in Sources */,
 				043C5FD227D8784600F881CB /* LoginViewController.swift in Sources */,
+				0469F7EF2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift in Sources */,
 				04ACE14E2807CC59001356D4 /* ZWSaoMaShouKuanCollectionCellJoe.swift in Sources */,
 				04E3646827F467860007B91A /* LTPageView.swift in Sources */,
 				04E3646E27F467860007B91A /* LTTableViewProtocal.swift in Sources */,
@@ -1567,6 +1579,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5416062036BD2689E7573FBD /* Pods-Cashier.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7,
+					arm64,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1602,6 +1619,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9912E4D14BBD7B296AF08220 /* Pods-Cashier.release.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7,
+					arm64,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
