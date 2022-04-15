@@ -63,6 +63,7 @@
 		0449922E27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922D27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift */; };
 		0449923027F842B600DB5410 /* ZWRootViewControllerJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922F27F842B600DB5410 /* ZWRootViewControllerJoe.swift */; };
 		0449923227F84E7400DB5410 /* ZWCashierSettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449923127F84E7400DB5410 /* ZWCashierSettingItemCell.swift */; };
+		0469F7E228090A9E0072CD1E /* ZWMoreCategoriesCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7E128090A9E0072CD1E /* ZWMoreCategoriesCellJoe.swift */; };
 		046B4E0527F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0427F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift */; };
 		046B4E0827F54ACC00710D02 /* ZWStaffShiftVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0727F54ACC00710D02 /* ZWStaffShiftVCJoe.swift */; };
 		046B4E0B27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0A27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift */; };
@@ -203,6 +204,7 @@
 		0449922D27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWChooseGoodsClassTanKuangView.swift; sourceTree = "<group>"; };
 		0449922F27F842B600DB5410 /* ZWRootViewControllerJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRootViewControllerJoe.swift; sourceTree = "<group>"; };
 		0449923127F84E7400DB5410 /* ZWCashierSettingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCashierSettingItemCell.swift; sourceTree = "<group>"; };
+		0469F7E128090A9E0072CD1E /* ZWMoreCategoriesCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMoreCategoriesCellJoe.swift; sourceTree = "<group>"; };
 		046B4E0427F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenVCJoe.swift; sourceTree = "<group>"; };
 		046B4E0727F54ACC00710D02 /* ZWStaffShiftVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWStaffShiftVCJoe.swift; sourceTree = "<group>"; };
 		046B4E0A27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCommodityStocksVCJoe.swift; sourceTree = "<group>"; };
@@ -905,6 +907,7 @@
 			isa = PBXGroup;
 			children = (
 				04ACE159280847CD001356D4 /* ZWMoreCategoriesPopView.swift */,
+				0469F7E128090A9E0072CD1E /* ZWMoreCategoriesCellJoe.swift */,
 			);
 			path = "MoreCategories(更多分类)";
 			sourceTree = "<group>";
@@ -1336,6 +1339,7 @@
 				043E9AA72806DBBD000B3BBF /* DRHeaderView.swift in Sources */,
 				04E3647627F467860007B91A /* LTFollowMoveView.swift in Sources */,
 				04E3644227F43CCC0007B91A /* ZWLeftItemCellJoe.swift in Sources */,
+				0469F7E228090A9E0072CD1E /* ZWMoreCategoriesCellJoe.swift in Sources */,
 				0449923027F842B600DB5410 /* ZWRootViewControllerJoe.swift in Sources */,
 				04E3643B27F438680007B91A /* ZWLeftItemViewJoe.swift in Sources */,
 				04E3647527F467860007B91A /* LTSimpleManager.swift in Sources */,

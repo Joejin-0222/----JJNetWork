@@ -58,7 +58,7 @@ Space ：图片文字之间的间距
             break;
         case .PositionRight:
             imageEdgeInsets = UIEdgeInsets(top: 0, left: labelWidth+space+25*WidthW, bottom: 0, right: -labelWidth-space/2.0);
-            labelEdgeInsets = UIEdgeInsets(top: 0, left: -imageWith-space/2.0 - 25*WidthW, bottom: 0, right: imageWith+space/2.0);
+            labelEdgeInsets = UIEdgeInsets(top: 0, left: -imageWith-space/2.0 - 50*WidthW, bottom: 0, right: imageWith+space/2.0);
             break;
         }
         

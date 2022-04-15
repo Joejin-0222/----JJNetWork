@@ -18,18 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = .white
     
-        let token =  userDefault.value(forKey: "token") ?? ""
-        if token as! String != "" {
+//        let token =  userDefault.value(forKey: "token") ?? ""
+//        if token as! String != "" {
             let vc = MainRootController()
             let nav = UINavigationController(rootViewController: vc)
             self.window?.rootViewController = nav
             self.window?.makeKeyAndVisible()
-        } else {
-            let vc = LoginViewController()
-            let nav = UINavigationController(rootViewController: vc)
-            self.window?.rootViewController = nav
-            self.window?.makeKeyAndVisible()
-        }
+//        } else {
+//            let vc = LoginViewController()
+//            let nav = UINavigationController(rootViewController: vc)
+//            self.window?.rootViewController = nav
+//            self.window?.makeKeyAndVisible()
+//        }
       
         return true
     }

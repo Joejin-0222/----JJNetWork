@@ -21,7 +21,7 @@ class ZWOrderViewJoe: UIView {
     weak  var delegate  : OrderWayTypeSelectDelegate?
     
     var dataAarry  : NSArray = []
-    private var selectIndex:Int=1   //    记录点击了第几行
+    private var selectIndex:Int=0   //    记录点击了第几行
     // logo 视图
     lazy var LogoImage : UIImageView = {
         let view = UIImageView()
@@ -56,7 +56,7 @@ class ZWOrderViewJoe: UIView {
     
     //tableview
     lazy var TableView:UITableView = {
-        let tableview = UITableView(frame:.zero)
+        let tableview = UITableView(frame:.zero ,style: .grouped)
         tableview.backgroundColor = UIColor.clear
         tableview.dataSource = self
         tableview.delegate = self
@@ -278,6 +278,8 @@ class ZWOrderViewJoe: UIView {
 //            make.right.equalTo(topView.snp.right)
 //            make.bottom.equalTo(topView.snp.bottom)
 //        }
+    
+        
         //
         self.addSubview(TableView)
         TableView.backgroundColor =  UIColor.white
@@ -289,6 +291,7 @@ class ZWOrderViewJoe: UIView {
             make.width.equalTo(525*WidthW)
             make.bottom.equalTo(self.snp.bottom).offset(-200*WidthW)
         }
+    
         //
         self.addSubview(VipImage)
         VipImage.snp.makeConstraints { make in
@@ -544,15 +547,10 @@ class ZWOrderViewJoe: UIView {
     }
     
 }
-extension ZWOrderViewJoe: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.selectIndex=indexPath.row
-//        self.TableView.reloadData()
-    }
-}
-extension ZWOrderViewJoe : UITableViewDataSource{
+
+extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -566,12 +564,15 @@ extension ZWOrderViewJoe : UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150*WidthW
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        self.selectIndex=indexPath.row
+//        self.TableView.reloadData()
+    }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footview = UIView()
        
         let subView =  UIView()
-        subView.frame = CGRect(x: 24*WidthW, y: 26*HeighH, width: 172*WidthW, height: 56*HeighH)
+        subView.frame = CGRect(x: 24*WidthW, y: 18*HeighH, width: 172*WidthW, height: 52*HeighH)
         footview.addSubview(subView)
         subView.cornerRadius(cornerRadius: 10*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 2*WidthW)
         let Btn = UIButton()
@@ -581,11 +582,28 @@ extension ZWOrderViewJoe : UITableViewDataSource{
         Btn.setTitleColor(UIColor.init(hex: "646566"), for: .normal)
         Btn.frame = subView.bounds
         Btn.titleLabel?.font = UIFont.systemFont(ofSize: 22*WidthW)
+        Btn.addTarget(self, action: #selector(BtnClick), for: .touchUpInside)
         return footview
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        
-        return 75 * HeighH
+        if section == 0{
+            return 75 * HeighH
+        }
+        return 0 * HeighH
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.00
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerview = UIView()
+        return headerview
+    }
+    
+    //整单取消点击
+    @objc func BtnClick(){
+        print("=====整单取消点击")
     }
     
 }
