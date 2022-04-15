@@ -46,6 +46,14 @@
 		043E9AAB2806DBBD000B3BBF /* DRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AA32806DBBD000B3BBF /* DRightView.swift */; };
 		043E9AAC2806DBBD000B3BBF /* DRRightheaderTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AA42806DBBD000B3BBF /* DRRightheaderTCell.swift */; };
 		043E9AAF2807F48B000B3BBF /* ZWSuccessionTCellKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AAE2807F48B000B3BBF /* ZWSuccessionTCellKB.swift */; };
+		043E9AB1280803E0000B3BBF /* ZWMoneyInfoKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AB0280803E0000B3BBF /* ZWMoneyInfoKB.swift */; };
+		043E9AB628080505000B3BBF /* UCollectionViewAlignedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AB428080505000B3BBF /* UCollectionViewAlignedLayout.swift */; };
+		043E9AB728080505000B3BBF /* UCollectionViewSectionBackgroundLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AB528080505000B3BBF /* UCollectionViewSectionBackgroundLayout.swift */; };
+		043E9AB928080601000B3BBF /* ZWBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AB828080601000B3BBF /* ZWBaseCollectionViewCell.swift */; };
+		043E9ABB28080655000B3BBF /* ZWMoneyInfoCCellKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9ABA28080655000B3BBF /* ZWMoneyInfoCCellKB.swift */; };
+		043E9ABD280827CE000B3BBF /* ZWDailySettlementTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9ABC280827CE000B3BBF /* ZWDailySettlementTCell.swift */; };
+		043E9ABF2808314D000B3BBF /* ZWSuccessionPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9ABE2808314D000B3BBF /* ZWSuccessionPopView.swift */; };
+		043E9AC228084B40000B3BBF /* ZWRecordLogViewKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AC128084B40000B3BBF /* ZWRecordLogViewKB.swift */; };
 		0444682627DAED0E000444FD /* header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682527DAED0E000444FD /* header.swift */; };
 		0444682827DB1C7F000444FD /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682727DB1C7F000444FD /* Toast.swift */; };
 		0444682A27DED565000444FD /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682927DED565000444FD /* UserInfo.swift */; };
@@ -187,6 +195,14 @@
 		043E9AA32806DBBD000B3BBF /* DRightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRightView.swift; sourceTree = "<group>"; };
 		043E9AA42806DBBD000B3BBF /* DRRightheaderTCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRRightheaderTCell.swift; sourceTree = "<group>"; };
 		043E9AAE2807F48B000B3BBF /* ZWSuccessionTCellKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWSuccessionTCellKB.swift; sourceTree = "<group>"; };
+		043E9AB0280803E0000B3BBF /* ZWMoneyInfoKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMoneyInfoKB.swift; sourceTree = "<group>"; };
+		043E9AB428080505000B3BBF /* UCollectionViewAlignedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCollectionViewAlignedLayout.swift; sourceTree = "<group>"; };
+		043E9AB528080505000B3BBF /* UCollectionViewSectionBackgroundLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCollectionViewSectionBackgroundLayout.swift; sourceTree = "<group>"; };
+		043E9AB828080601000B3BBF /* ZWBaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWBaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		043E9ABA28080655000B3BBF /* ZWMoneyInfoCCellKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMoneyInfoCCellKB.swift; sourceTree = "<group>"; };
+		043E9ABC280827CE000B3BBF /* ZWDailySettlementTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWDailySettlementTCell.swift; sourceTree = "<group>"; };
+		043E9ABE2808314D000B3BBF /* ZWSuccessionPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWSuccessionPopView.swift; sourceTree = "<group>"; };
+		043E9AC128084B40000B3BBF /* ZWRecordLogViewKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRecordLogViewKB.swift; sourceTree = "<group>"; };
 		0444682527DAED0E000444FD /* header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = header.swift; sourceTree = "<group>"; };
 		0444682727DB1C7F000444FD /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		0444682927DED565000444FD /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -402,6 +418,7 @@
 		042926E42800027600A3D1F8 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				043E9AC028084AF5000B3BBF /* logRecords(交班记录) */,
 				043E9AAD2807F432000B3BBF /* righView */,
 				042926E6280002A400A3D1F8 /* ZWStaffShiftLeftView.swift */,
 				042926E82800051400A3D1F8 /* ZWStaffShiftOneCell.swift */,
@@ -505,6 +522,7 @@
 			children = (
 				043E9A972806DB42000B3BBF /* baseTableViewCell.swift */,
 				043E9A982806DB42000B3BBF /* basePopView.swift */,
+				043E9AB828080601000B3BBF /* ZWBaseCollectionViewCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -535,8 +553,37 @@
 			isa = PBXGroup;
 			children = (
 				043E9AAE2807F48B000B3BBF /* ZWSuccessionTCellKB.swift */,
+				043E9AB0280803E0000B3BBF /* ZWMoneyInfoKB.swift */,
+				043E9ABA28080655000B3BBF /* ZWMoneyInfoCCellKB.swift */,
+				043E9ABC280827CE000B3BBF /* ZWDailySettlementTCell.swift */,
+				043E9ABE2808314D000B3BBF /* ZWSuccessionPopView.swift */,
 			);
 			path = righView;
+			sourceTree = "<group>";
+		};
+		043E9AB2280804F2000B3BBF /* Commponet */ = {
+			isa = PBXGroup;
+			children = (
+				043E9AB328080505000B3BBF /* CollectionViewLayout */,
+			);
+			path = Commponet;
+			sourceTree = "<group>";
+		};
+		043E9AB328080505000B3BBF /* CollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				043E9AB428080505000B3BBF /* UCollectionViewAlignedLayout.swift */,
+				043E9AB528080505000B3BBF /* UCollectionViewSectionBackgroundLayout.swift */,
+			);
+			path = CollectionViewLayout;
+			sourceTree = "<group>";
+		};
+		043E9AC028084AF5000B3BBF /* logRecords(交班记录) */ = {
+			isa = PBXGroup;
+			children = (
+				043E9AC128084B40000B3BBF /* ZWRecordLogViewKB.swift */,
+			);
+			path = "logRecords(交班记录)";
 			sourceTree = "<group>";
 		};
 		0444685227E02469000444FD /* Controller */ = {
@@ -730,6 +777,7 @@
 		0486847A27D833D100D6A878 /* Cashier */ = {
 			isa = PBXGroup;
 			children = (
+				043E9AB2280804F2000B3BBF /* Commponet */,
 				0480B939280506C600C5670B /* JsonSource */,
 				04CA37A927F6E9B600E620E5 /* Cache */,
 				04CA379627F58FFC00E620E5 /* Extension */,
@@ -1239,9 +1287,11 @@
 			files = (
 				0449922827F7EC3500DB5410 /* ZWCheckSementModelJoe.swift in Sources */,
 				048BD21C27FD441D00FFC9FF /* ZWQuDanTanKuangView.swift in Sources */,
+				043E9AB1280803E0000B3BBF /* ZWMoneyInfoKB.swift in Sources */,
 				04E3644027F43B6D0007B91A /* UIImage+Hue.swift in Sources */,
 				0406E1F327FEE80B00E5A948 /* ZWSmallTicketMachineVC.swift in Sources */,
 				046B4E0B27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift in Sources */,
+				043E9AB928080601000B3BBF /* ZWBaseCollectionViewCell.swift in Sources */,
 				0406E1DE27FE84FE00E5A948 /* ZWHeaderViewCell.swift in Sources */,
 				046B4E1127F54BFE00710D02 /* ZWSwitchStoreVCJoe.swift in Sources */,
 				0449923227F84E7400DB5410 /* ZWCashierSettingItemCell.swift in Sources */,
@@ -1275,6 +1325,7 @@
 				0486848227D833D100D6A878 /* Document.swift in Sources */,
 				0486848027D833D100D6A878 /* DocumentViewController.swift in Sources */,
 				043E9AA82806DBBD000B3BBF /* DRRightTCell.swift in Sources */,
+				043E9AB728080505000B3BBF /* UCollectionViewSectionBackgroundLayout.swift in Sources */,
 				043E9AA92806DBBD000B3BBF /* testPopView.swift in Sources */,
 				0444685927E0257A000444FD /* CashierSettingViewController.swift in Sources */,
 				0449922C27F81EBA00DB5410 /* UIbutton+Extension.swift in Sources */,
@@ -1295,6 +1346,7 @@
 				04CA37AD27F6E9B600E620E5 /* Cache.swift in Sources */,
 				0480B94428054FDE00C5670B /* ZWnewLabelAndTextField.swift in Sources */,
 				04E3646D27F467860007B91A /* LTDispatchQueue.swift in Sources */,
+				043E9AC228084B40000B3BBF /* ZWRecordLogViewKB.swift in Sources */,
 				04E3644627F45D8A0007B91A /* ZWCashierViewControllerJoe.swift in Sources */,
 				0406E1FB27FEF17600E5A948 /* ZWLeftTableviewCell.swift in Sources */,
 				0486847E27D833D100D6A878 /* DocumentBrowserViewController.swift in Sources */,
@@ -1313,6 +1365,7 @@
 				04E3643F27F43B6D0007B91A /* UIColor+Hue.swift in Sources */,
 				0406E1E827FEAFD600E5A948 /* ZWContentCell.swift in Sources */,
 				0406E1EC27FEDB2700E5A948 /* ZWCommoditySettingsVC.swift in Sources */,
+				043E9ABF2808314D000B3BBF /* ZWSuccessionPopView.swift in Sources */,
 				046B4E0527F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift in Sources */,
 				0444683C27DEEACE000444FD /* SelectStoreView.swift in Sources */,
 				04E3643627F402040007B91A /* RootModel.swift in Sources */,
@@ -1336,6 +1389,7 @@
 				043C5FD627D878AC00F881CB /* LoginView.swift in Sources */,
 				042926E7280002A400A3D1F8 /* ZWStaffShiftLeftView.swift in Sources */,
 				0431FCDB27D88BFB00778DE6 /* ZHFNetWork.swift in Sources */,
+				043E9ABD280827CE000B3BBF /* ZWDailySettlementTCell.swift in Sources */,
 				043E9AA72806DBBD000B3BBF /* DRHeaderView.swift in Sources */,
 				04E3647627F467860007B91A /* LTFollowMoveView.swift in Sources */,
 				04E3644227F43CCC0007B91A /* ZWLeftItemCellJoe.swift in Sources */,
@@ -1346,6 +1400,8 @@
 				043A5909280423A700E1D607 /* ZWOrderQueryRightView.swift in Sources */,
 				0431FCDA27D88BFB00778DE6 /* API.swift in Sources */,
 				04ACE14528059B71001356D4 /* ZWOrderQuerySearchView.swift in Sources */,
+				043E9AB628080505000B3BBF /* UCollectionViewAlignedLayout.swift in Sources */,
+				043E9ABB28080655000B3BBF /* ZWMoneyInfoCCellKB.swift in Sources */,
 				0444682A27DED565000444FD /* UserInfo.swift in Sources */,
 				046B4E1427F54C4000710D02 /* ZWEnterBackgroundVCJoe.swift in Sources */,
 				04E3644827F45DF20007B91A /* ZWOrderQueryViewControllerJoe.swift in Sources */,

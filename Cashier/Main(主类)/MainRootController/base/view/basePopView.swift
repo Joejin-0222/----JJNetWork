@@ -14,6 +14,7 @@ class basePopView: UIView {
         let view = UIView()
         view.backgroundColor = UIColor.white
         view.layer.cornerRadius  = 10
+        view.clipsToBounds = true
         return view
         
     }()
