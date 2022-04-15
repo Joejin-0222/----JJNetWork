@@ -109,6 +109,8 @@ extension ZWStaffShiftLeftView : UITableViewDataSource{
     }
     @objc func JiaobanBtnClick(){
         print("======点击了交班")
+        
+        let popView = ZWSuccessionPopView().initView()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
