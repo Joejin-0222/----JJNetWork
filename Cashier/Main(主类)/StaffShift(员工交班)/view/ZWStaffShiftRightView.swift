@@ -209,7 +209,8 @@ extension ZWStaffShiftRightView : UITableViewDataSource{
     //明细的点击事件
     @objc func detailBtnClick(_ sender: UIButton){
         print("sender")
-        let view = ZWMoneyInfoKB().initView()
+        let popview:ZWMoneyInfoKB = ZWMoneyInfoKB().initView() as! ZWMoneyInfoKB
+        popview.show()
         
     }
     
