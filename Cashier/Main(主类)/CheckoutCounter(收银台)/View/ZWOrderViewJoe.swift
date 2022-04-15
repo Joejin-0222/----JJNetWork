@@ -13,7 +13,7 @@ enum OrderWayType : Int {
     case 挂单 = 0
     case 取单
     case 整单优惠
-    case 预定
+    case 预订
 }
 
 class ZWOrderViewJoe: UIView {
@@ -141,14 +141,14 @@ class ZWOrderViewJoe: UIView {
         return view
     }()
     
-    //预定
+    //预订
     lazy var YuDingBtn : UIButton = {
         let Btn = UIButton()
         Btn.backgroundColor = UIColor.init(hex: "#ffffff")
-        Btn.setTitle("预定", for: .normal)
+        Btn.setTitle("预订", for: .normal)
         Btn.titleLabel?.font = UIFont.systemFont(ofSize: 22*WidthW)
         Btn.setTitleColor(UIColor.init(hex: "#323233"), for: .normal)
-        let type : Int = OrderWayType.预定.rawValue
+        let type : Int = OrderWayType.预订.rawValue
         Btn.tag = type
         Btn.addTarget(self, action: #selector(orderBtnClick(sender:)), for: .touchUpInside)
         return Btn
@@ -385,7 +385,7 @@ class ZWOrderViewJoe: UIView {
         }
         
         
-        //预定
+        //预订
         YuDingBtn.cornerRadius(cornerRadius: 27*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 1)
         operationView.addSubview(YuDingBtn)
         YuDingBtn.snp.makeConstraints { make in
@@ -512,7 +512,7 @@ class ZWOrderViewJoe: UIView {
         
         print("=======\(numIndex)")
     }
-    // 预定 取单等点击操作
+    // 预订 取单等点击操作
     @objc func orderBtnClick(sender : UIButton){
         
         self.delegate?.SelectOrderWayTypeClick(IndexPath: sender.tag)
@@ -534,7 +534,7 @@ class ZWOrderViewJoe: UIView {
             let popOrderHouHuiView  : ZWOrderYouHuiPopViewJoe =  ZWOrderYouHuiPopViewJoe().initView() as! ZWOrderYouHuiPopViewJoe
             popOrderHouHuiView.show()
             break
-        case .预定:
+        case .预订:
             
             break
         default:
@@ -565,6 +565,27 @@ extension ZWOrderViewJoe : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150*WidthW
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footview = UIView()
+       
+        let subView =  UIView()
+        subView.frame = CGRect(x: 24*WidthW, y: 26*HeighH, width: 172*WidthW, height: 56*HeighH)
+        footview.addSubview(subView)
+        subView.cornerRadius(cornerRadius: 10*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 2*WidthW)
+        let Btn = UIButton()
+        subView.addSubview(Btn)
+        Btn.setImage(UIImage.init(named: "整单取消"), for: .normal)
+        Btn.setTitle("整单取消", for: .normal)
+        Btn.setTitleColor(UIColor.init(hex: "646566"), for: .normal)
+        Btn.frame = subView.bounds
+        Btn.titleLabel?.font = UIFont.systemFont(ofSize: 22*WidthW)
+        return footview
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        return 75 * HeighH
     }
     
 }

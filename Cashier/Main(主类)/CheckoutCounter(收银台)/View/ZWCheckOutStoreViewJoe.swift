@@ -80,8 +80,18 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
             make.left.equalTo(self.snp.left)
             make.top.equalTo(0)
             make.height.equalTo(self.snp.height)
-            make.right.equalTo(self.snp.right)
+            make.right.equalTo(self.snp.right).offset(-80*WidthW)
         }
+        //分段选择 右侧更多按钮
+        let moreBtn = UIButton()
+        moreBtn.setImage(UIImage.init(named: "收银台-分段选择more"), for: .normal)
+        SenmentBottomView.addSubview(moreBtn)
+        moreBtn.snp.makeConstraints { make in
+            make.centerY.equalTo(SenmentBottomView.snp.centerY)
+            make.right.equalTo(SenmentBottomView.snp.right).offset(-20*WidthW)
+            make.width.height.equalTo(36*WidthW)
+        }
+        moreBtn.addTarget(self, action: #selector(moreBtnClick), for: .touchUpInside)
         
        
         //添加底部view
@@ -103,11 +113,19 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
 //           loadingView.show()
         return self
     }
+    //点击了更多分类
+    @objc func moreBtnClick(){
+        
+        let popView : ZWMoreCategoriesPopView = ZWMoreCategoriesPopView().initView() as! ZWMoreCategoriesPopView
+        popView.show()
+    }
+    
+    
     //分类
     func loadFenLeiData(ShopId:Int64){
         let dict = ["shopId":ShopId]
-        //
-//        ProgressHUD.showLoadingHudView(message: "请求中")
+        
+      //    ProgressHUD.showLoadingHudView(message: "请求中")
         ZHFNetwork.request(target: .yesParameters(pathStr: getFindCashier, parameters: dict)) { [self] result in
             
             let dic = result as! NSDictionary
@@ -128,8 +146,8 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
     //基本数据请求和模型转换
     func loadData(ShopId:Int64){
         let dict = ["shopId":ShopId,"tenantId":Cache.user?.tenantId ?? 0,"selectText":"","categoryId":"","searchGoodsType":"1","pageNum":"1","pageSize":"20"] as [String : Any]
-        //
-//        ProgressHUD.showLoadingHudView(message: "请求中")
+
+   //   ProgressHUD.showLoadingHudView(message: "请求中")
         ZHFNetwork.request(target: .yesParameters(pathStr: getFindCashierGoods, parameters: dict)) { [self] result in
             
             let dic = result as! NSDictionary

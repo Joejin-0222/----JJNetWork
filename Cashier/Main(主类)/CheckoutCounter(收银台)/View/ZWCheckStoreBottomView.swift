@@ -56,7 +56,15 @@ class ZWCheckStoreBottomView: UIView {
             make.top.equalTo(self.snp.top)
             make.height.equalTo(2*WidthW)
         }
-        
+        //
+        let moreBtn = UIButton()
+        moreBtn.setImage(UIImage.init(named: "收银台-商品底部more"), for: .normal)
+        self.addSubview(moreBtn)
+        moreBtn.snp.makeConstraints { make in
+            make.right.equalTo(self.snp.right).offset(-24*WidthW)
+            make.top.equalTo(self.snp.top).offset(16*WidthW)
+            make.width.height.equalTo(36*WidthW)
+        }
         
         return self
     }

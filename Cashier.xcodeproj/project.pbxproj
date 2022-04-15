@@ -92,6 +92,7 @@
 		04ACE1522807F0B1001356D4 /* ZWVipCollectionViewJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACE1512807F0B1001356D4 /* ZWVipCollectionViewJoe.swift */; };
 		04ACE1542807F10F001356D4 /* ZWSignCollectionViewJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACE1532807F10F001356D4 /* ZWSignCollectionViewJoe.swift */; };
 		04ACE157280810DE001356D4 /* ZWOrderYouHuiPopViewJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACE156280810DE001356D4 /* ZWOrderYouHuiPopViewJoe.swift */; };
+		04ACE15A280847CD001356D4 /* ZWMoreCategoriesPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACE159280847CD001356D4 /* ZWMoreCategoriesPopView.swift */; };
 		04CA379A27F5B0C400E620E5 /* ZWCheckOutStoreViewJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA379927F5B0C400E620E5 /* ZWCheckOutStoreViewJoe.swift */; };
 		04CA379C27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA379B27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift */; };
 		04CA37A027F5C18400E620E5 /* UIView+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA379F27F5C18400E620E5 /* UIView+Corners.swift */; };
@@ -236,6 +237,7 @@
 		04ACE1512807F0B1001356D4 /* ZWVipCollectionViewJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWVipCollectionViewJoe.swift; sourceTree = "<group>"; };
 		04ACE1532807F10F001356D4 /* ZWSignCollectionViewJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWSignCollectionViewJoe.swift; sourceTree = "<group>"; };
 		04ACE156280810DE001356D4 /* ZWOrderYouHuiPopViewJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderYouHuiPopViewJoe.swift; sourceTree = "<group>"; };
+		04ACE159280847CD001356D4 /* ZWMoreCategoriesPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMoreCategoriesPopView.swift; sourceTree = "<group>"; };
 		04CA379927F5B0C400E620E5 /* ZWCheckOutStoreViewJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckOutStoreViewJoe.swift; sourceTree = "<group>"; };
 		04CA379B27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckOutStoreCellJoe.swift; sourceTree = "<group>"; };
 		04CA379F27F5C18400E620E5 /* UIView+Corners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Corners.swift"; sourceTree = "<group>"; };
@@ -566,6 +568,7 @@
 				04CA37A527F6C76D00E620E5 /* ZWCheckSementCellJoe.swift */,
 				04CA37A727F6D8EE00E620E5 /* ZWCheckStoreBottomView.swift */,
 				0449922D27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift */,
+				04ACE15828084796001356D4 /* MoreCategories(更多分类) */,
 				04ACE1552808109A001356D4 /* OrderYouHui(整单优惠) */,
 				04ACE14A2807C9BF001356D4 /* ShouKuanView(收款视图) */,
 			);
@@ -896,6 +899,14 @@
 				04ACE156280810DE001356D4 /* ZWOrderYouHuiPopViewJoe.swift */,
 			);
 			path = "OrderYouHui(整单优惠)";
+			sourceTree = "<group>";
+		};
+		04ACE15828084796001356D4 /* MoreCategories(更多分类) */ = {
+			isa = PBXGroup;
+			children = (
+				04ACE159280847CD001356D4 /* ZWMoreCategoriesPopView.swift */,
+			);
+			path = "MoreCategories(更多分类)";
 			sourceTree = "<group>";
 		};
 		04CA379627F58FFC00E620E5 /* Extension */ = {
@@ -1305,6 +1316,7 @@
 				0406E1EA27FED5A700E5A948 /* ZWTanKuangTableViewCell.swift in Sources */,
 				043E9AAB2806DBBD000B3BBF /* DRightView.swift in Sources */,
 				043E9AAF2807F48B000B3BBF /* ZWSuccessionTCellKB.swift in Sources */,
+				04ACE15A280847CD001356D4 /* ZWMoreCategoriesPopView.swift in Sources */,
 				043E9AAC2806DBBD000B3BBF /* DRRightheaderTCell.swift in Sources */,
 				0444686227E02E4F000444FD /* iconButtonView.swift in Sources */,
 				04CA37A227F5D0F400E620E5 /* UIView+MDExtension.swift in Sources */,
