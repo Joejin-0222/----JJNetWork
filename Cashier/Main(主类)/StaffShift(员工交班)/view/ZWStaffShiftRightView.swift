@@ -23,6 +23,7 @@ class ZWStaffShiftRightView: UIView, SementSelectClickDelegate {
 //        label.text = "营收数据"
 //        return label
 //    }()
+    let dayArray = ["","","实收金额/元","退款金额/元","优惠金额/元"]
     
     //tableview
     lazy var TableView:UITableView = {
@@ -161,7 +162,7 @@ extension ZWStaffShiftRightView : UITableViewDataSource{
                 let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ZWSuccessionTCellKB.self)
 //                let arr: NSArray = self.dataArray[indexPath.section] as! NSArray
                 
-                cell.leftL.text = "实收金额/元"
+                cell.leftL.text = self.dayArray[indexPath.row] as! String
 //                cell.leftL.text = arr[indexPath.row] as? String
 //                if indexPath.row == 0 {
 //                   cell.backView.backgroundColor = UIColor.init(hex: "#F3F3F5")
@@ -171,6 +172,14 @@ extension ZWStaffShiftRightView : UITableViewDataSource{
                 cell.detailBtn.tag = indexPath.section + 100 + indexPath.row;
                 cell.detailBtn.addTarget(self, action: #selector(detailBtnClick(_:)), for: .touchUpInside)
                 cell.backView.backgroundColor = UIColor.white
+                if indexPath.row == 4{
+                    cell.style = .onelyTow
+                }else{
+                    cell.style = .none
+                }
+                    
+                    
+                    
                 return cell
             }
         }
@@ -197,12 +206,23 @@ extension ZWStaffShiftRightView : UITableViewDataSource{
         
         let headerView: DRHeaderView = DRHeaderView().initView() as! DRHeaderView
         headerView.titleL.text = "营收数据"
-        headerView.rightBtn.setTitle("交班记录", for: .normal)
+        if self.index == 0{
+            headerView.rightBtn.setTitle("交班记录", for: .normal)
+        }else{
+            headerView.rightBtn.setTitle("日结记录", for: .normal)
+        }
         headerView.rightBtn.setImage(UIImage(named: "编组 41"), for: .normal)
         headerView.rightBtn.snp.updateConstraints { make in
             make.width.equalTo(200*WidthW)
         }
         headerView.rightBtn.layer.borderWidth = 0;
+        
+        headerView.rightBtnBlock = {(Int) in
+            let popView:ZWRecordLogViewKB = ZWRecordLogViewKB().initView() as! ZWRecordLogViewKB
+            popView.show()
+            popView.rightTB.index = self.index
+            popView.rightTB.tableView.reloadData()
+        }
         return headerView
     }
     

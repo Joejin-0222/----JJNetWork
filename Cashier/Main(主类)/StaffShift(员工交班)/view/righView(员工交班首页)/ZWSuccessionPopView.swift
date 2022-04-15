@@ -13,7 +13,7 @@ class ZWSuccessionPopView: basePopView {
     lazy var titleL: UILabel = {
         let label = UILabel()
         label.text = "交班确认"
-        label.textColor = UIColor.init(hex: "#323233")
+        label.textColor = Title_color
         label.font = UIFont.systemFont(ofSize: 34*WidthW)
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -30,9 +30,10 @@ class ZWSuccessionPopView: basePopView {
     lazy var contentL: UILabel = {
         let label = UILabel()
         label.text = "确定交班并退出系统？"
-        label.textColor = UIColor.init(hex: "#323233")
+        label.textColor = Title_color
         label.font = UIFont.systemFont(ofSize: 32*WidthW)
         label.textAlignment = .center
+        label.numberOfLines = 0
         return label
     }()
     
@@ -65,7 +66,7 @@ class ZWSuccessionPopView: basePopView {
     }
     @objc func confirmBtnClick(){
         print("确定")
-        
+        self.closeBtnClick()
     }
     
     override func configUI() {
@@ -112,6 +113,20 @@ class ZWSuccessionPopView: basePopView {
         
         
     }
-    
-
+    var contentStr:NSString? {
+        didSet{
+            guard let contentStr = contentStr else {
+                return
+            }
+            self.contentL.text = contentStr as! String
+        }
+    }
+    var imgStr:NSString?{
+        didSet{
+            guard let imgStr = imgStr else {
+                return
+            }
+            centerImg.image = UIImage(named: imgStr as! String)
+        }
+    }
 }

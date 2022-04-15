@@ -7,6 +7,13 @@
 
 import UIKit
 
+enum ZWSuccessionTCellStyle {
+    case none       //全部显示
+    case onlyLeft   //只显示右边
+    case onelyRed   //除了明细都显示
+    case onelyTow   //只显示左右，不显示中间的
+}
+
 class ZWSuccessionTCellKB: baseTableViewCell {
 
     override func awakeFromNib() {
@@ -31,7 +38,7 @@ class ZWSuccessionTCellKB: baseTableViewCell {
     lazy var leftL: UILabel = {
         let label = UILabel()
         label.text = "销售金额/元"
-        label.textColor = UIColor.init(hex: "#323233")
+        label.textColor = Title_color
         label.font = UIFont.systemFont(ofSize: 24*WidthW)
         return label
     }()
@@ -39,7 +46,7 @@ class ZWSuccessionTCellKB: baseTableViewCell {
     lazy var totalL: UILabel = {
         let label = UILabel()
         label.text = "共计100单"
-        label.textColor = UIColor.init(hex: "#323233")
+        label.textColor = Title_color
         label.font = UIFont.systemFont(ofSize: 20*WidthW)
         return label
     }()
@@ -59,7 +66,7 @@ class ZWSuccessionTCellKB: baseTableViewCell {
     lazy var rightL: UILabel = {
         let label = UILabel()
         label.text = "26840.00"
-        label.textColor = UIColor.init(hex: "#323233")
+        label.textColor = Title_color
         label.font = UIFont.systemFont(ofSize: 24*WidthW)
         return label
     }()
@@ -99,6 +106,38 @@ class ZWSuccessionTCellKB: baseTableViewCell {
         }
         
         
+    }
+    
+    var style: ZWSuccessionTCellStyle = .none{
+        didSet{
+            switch style{
+            case .none:
+                totalL.isHidden = false
+                detailBtn.isHidden = false
+                rightL.isHidden = false
+                backView.backgroundColor = UIColor.white
+                leftL.font = UIFont.systemFont(ofSize: 24*WidthW, weight: UIFont.Weight.regular)
+            case .onlyLeft:
+                totalL.isHidden = true
+                detailBtn.isHidden = true
+                rightL.isHidden = true
+                backView.backgroundColor = UIColor.init(hex: "#F3F3F5")
+                leftL.font = UIFont.systemFont(ofSize: 24*WidthW, weight: UIFont.Weight.medium)
+            case .onelyRed:
+                totalL.isHidden = false
+                detailBtn.isHidden = true
+                rightL.isHidden = false
+                backView.backgroundColor = UIColor.white
+                leftL.font = UIFont.systemFont(ofSize: 24*WidthW, weight: UIFont.Weight.regular)
+            case .onelyTow:
+                totalL.isHidden = true
+                detailBtn.isHidden = true
+                rightL.isHidden = false
+                backView.backgroundColor = UIColor.white
+                leftL.font = UIFont.systemFont(ofSize: 24*WidthW, weight: UIFont.Weight.regular)
+            }
+            
+        }
     }
     
     

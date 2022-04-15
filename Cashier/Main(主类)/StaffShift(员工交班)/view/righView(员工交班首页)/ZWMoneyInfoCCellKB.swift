@@ -19,7 +19,7 @@ class ZWMoneyInfoCCellKB: ZWBaseCollectionViewCell {
     lazy var typeL: UILabel = {
         let label = UILabel()
         label.text = "现金（元）"
-        label.textColor = UIColor.init(hex: "#323233")
+        label.textColor = Title_color
         label.font = UIFont.systemFont(ofSize: 24*WidthW)
         return label
     }()
@@ -34,7 +34,7 @@ class ZWMoneyInfoCCellKB: ZWBaseCollectionViewCell {
     lazy var moneyL: UILabel = {
         let label = UILabel()
         label.text = "￥2055"
-        label.textColor = UIColor.init(hex: "#323233")
+        label.textColor = Title_color
         label.font = UIFont.systemFont(ofSize: 32*WidthW)
         return label
     }()

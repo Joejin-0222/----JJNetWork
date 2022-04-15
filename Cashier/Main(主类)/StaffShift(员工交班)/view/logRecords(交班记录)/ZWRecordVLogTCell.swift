@@ -1,31 +1,49 @@
 //
-//  DRLeftTCell.swift
+//  ZWRecordVLogTCell.swift
 //  Cashier
 //
-//  Created by mac on 2022/4/12.
+//  Created by mac on 2022/4/15.
 //
 
 import UIKit
 
-class DRLeftTCell: baseTableViewCell {
-
+class ZWRecordVLogTCell: baseTableViewCell {
+    
     lazy var backView:UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.init(hex: "#FEE6E5")
         return view
     }()
     
-    lazy var imgView: UIImageView = {
-        let img = UIImageView()
-        imageView?.contentMode = .scaleAspectFit
-        return img
-    }()
-    
-    lazy var contentL: UILabel = {
+    lazy var titleL: UILabel = {
         let label = UILabel()
-        label.text = "测试数据"
+        label.text = "总收金额"
         label.textColor = Title_color
         label.font = UIFont.systemFont(ofSize: 24*WidthW)
+        return label
+    }()
+    
+    lazy var moneyL: UILabel = {
+        let label = UILabel()
+        label.text = "¥128.00"
+        label.textColor = Title_color
+        label.font = UIFont.systemFont(ofSize: 24*WidthW)
+        return label
+    }()
+    
+    lazy var companyL: UILabel = {
+        let label = UILabel()
+        label.text = "浮光思锦"
+        label.textColor = SubTitle_color
+        label.font = UIFont.systemFont(ofSize: 18*WidthW)
+        return label
+    }()
+    
+    lazy var timeL: UILabel = {
+        let label = UILabel()
+        label.text = "10-04 14:00 至 10-04"
+        label.textColor = SubTitle_color
+        label.font = UIFont.systemFont(ofSize: 18*WidthW)
         return label
     }()
     
@@ -48,6 +66,7 @@ class DRLeftTCell: baseTableViewCell {
  
     override func configUI() {
         self.backgroundColor = UIColor.init(hex: "#ffffff")
+        
         self.addSubview(backView)
         self.backView.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top).offset(0*WidthW)
@@ -56,19 +75,34 @@ class DRLeftTCell: baseTableViewCell {
             make.bottom.equalTo(self.snp.bottom)
         }
         
-        self.backView.addSubview(imgView)
-        self.imgView.snp.makeConstraints { make in
-            make.centerY.equalTo(self.backView.snp.centerY).offset(0*WidthW)
-            make.left.equalTo(self.backView.snp.left).offset(64*WidthW)
-            make.width.height.equalTo(30*WidthW)
-        }
-        self.backView.addSubview(contentL)
-        contentL.snp.makeConstraints { make in
-            make.centerY.equalTo(self.backView.snp.centerY).offset(0*WidthW)
-            make.left.equalTo(self.imgView.snp.right).offset(20*WidthW)
-            make.right.equalTo(self.backView.snp.right).offset(20*WidthW)
+        self.backView.addSubview(self.titleL)
+        titleL.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(24*WidthW)
+            make.left.equalToSuperview().offset(28*WidthW)
+            make.height.equalTo(24*WidthW)
         }
         
+        self.backView.addSubview(self.moneyL)
+        moneyL.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(24*WidthW)
+            make.right.equalToSuperview().offset(-28*WidthW)
+            make.height.equalTo(24*WidthW)
+        }
+        
+        self.backView.addSubview(self.companyL)
+        companyL.snp.makeConstraints { make in
+            make.top.equalTo(self.titleL.snp.bottom).offset(20*WidthW)
+            make.left.equalToSuperview().offset(28*WidthW)
+            make.height.equalTo(20*WidthW)
+            
+        }
+        self.backView.addSubview(self.timeL)
+        timeL.snp.makeConstraints { make in
+            make.top.equalTo(self.titleL.snp.bottom).offset(20*WidthW)
+            make.right.equalToSuperview().offset(-28*WidthW)
+            make.height.equalTo(20*WidthW)
+        }
+
         self.backView.addSubview(lineView)
         lineView.snp.makeConstraints { make in
             make.bottom.equalTo(self.backView.snp.bottom).offset(0)
@@ -81,14 +115,14 @@ class DRLeftTCell: baseTableViewCell {
     var titleStr: NSString? {
         didSet{
             guard let titleStr = titleStr else { return }
-            contentL.text = titleStr as String
+            
         }
     }
     
     var imgStr: NSString? {
         didSet{
             guard let imgStr = imgStr else { return }
-            imgView.image = UIImage(named: imgStr as String)
+            
             
         }
     }
@@ -103,4 +137,8 @@ class DRLeftTCell: baseTableViewCell {
             }
         }
     }
+    
+
+        
+    
 }

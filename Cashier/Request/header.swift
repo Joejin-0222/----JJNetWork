@@ -44,6 +44,10 @@ let OrderRightViewWidth  : CGFloat  = 152
 let MainColor = UIColor.init(hex: "#FE4B48")//主色
 let StandingPColor = UIColor.init(hex: "#EBEDF0")//站位色
 let LineColor = UIColor.init(hex: "#E4E7E7")//灰色分割线颜色
+let Tab_backColor = UIColor.init(hex: "#FAFAFA")//tableView的背景颜色
+let Title_color = UIColor.init(hex: "#323233")//文字主要的颜色
+let SubTitle_color = UIColor.init(hex: "#646566")//浅灰色文字的颜色
+
 
 // MARK: 字体
 func CN_Medium(_ size:Float)->UIFont{

@@ -28,10 +28,41 @@ class basePopView: UIView {
     let delegate  = UIApplication.shared.delegate as! AppDelegate
     //关闭按钮的方法
     @objc func closeBtnClick(){
+        self.subviews.forEach {$0.removeFromSuperview()}
         self.alpha = 0;
         self.isHidden = true
         self.removeFromSuperview()
+        
 //        delegate.window?.viewWithTag(1012)?.removeFromSuperview()
+    }
+    
+    func initView1()->Void{
+        self.tag = 1012;
+        self.frame = CGRect(x: 0,y: 0,width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
+        
+        self.backgroundColor = UIColor.init(hex: "#131314").alpha(0.65)
+        
+        self.addSubview(self.backView)
+        self.backView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.equalTo(1000*WidthW)
+            make.height.equalTo(824*HeighH)
+        }
+        
+        self.addSubview(self.closeBtn)
+        self.closeBtn.snp.makeConstraints { make in
+            make.top.equalTo(backView.snp.top).offset(-50*HeighH)
+            make.right.equalTo(backView.snp.right).offset(-10*WidthW)
+            make.width.height.equalTo(50*WidthW)
+        }
+       
+        self.configUI()
+        
+        delegate.window?.addSubview(self)
+
+        UIView.animate(withDuration: 0.25, animations: { () -> Void in
+            self.alpha = 1
+        })
     }
     
     func initView()->UIView{

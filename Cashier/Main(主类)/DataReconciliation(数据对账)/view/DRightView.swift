@@ -65,7 +65,7 @@ extension DRightView: UITableViewDataSource{
                 cell.isTopCell = true
                 cell.isShow = true
                 let dataDict = ["leftStr":"名称","middleStr":"金额","rightStr":"对比昨日"]
-                cell.rightL.textColor = UIColor.init(hex: "323233")
+                cell.rightL.textColor = Title_color
                 cell.dataDict = dataDict as NSDictionary
             }else{
                 cell.isTopCell = false
@@ -84,7 +84,7 @@ extension DRightView: UITableViewDataSource{
             if indexPath.row == 0 {
                 cell.isTopCell = true
                 let dataDict = ["leftStr":"名称","middleStr":"出货148","middleRightStr":"销量128","rightStr":"已收金额：1234567元"]
-                cell.rightL.textColor = UIColor.init(hex: "323233")
+                cell.rightL.textColor = Title_color
                 cell.dataDict = dataDict as NSDictionary
             }
                 
@@ -96,7 +96,7 @@ extension DRightView: UITableViewDataSource{
                 cell.isTopCell = true
                 cell.isShow = true
                 let dataDict = ["leftStr":"名称","middleStr":"金额","rightStr":"对比昨日"]
-                cell.rightL.textColor = UIColor.init(hex: "323233")
+                cell.rightL.textColor = Title_color
                 cell.dataDict = dataDict as NSDictionary
             }else{
                 cell.isTopCell = false
