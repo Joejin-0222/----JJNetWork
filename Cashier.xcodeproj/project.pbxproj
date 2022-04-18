@@ -53,7 +53,15 @@
 		043E9ABB28080655000B3BBF /* ZWMoneyInfoCCellKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9ABA28080655000B3BBF /* ZWMoneyInfoCCellKB.swift */; };
 		043E9ABD280827CE000B3BBF /* ZWDailySettlementTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9ABC280827CE000B3BBF /* ZWDailySettlementTCell.swift */; };
 		043E9ABF2808314D000B3BBF /* ZWSuccessionPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9ABE2808314D000B3BBF /* ZWSuccessionPopView.swift */; };
-		043E9AC228084B40000B3BBF /* ZWRecordLogViewKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AC128084B40000B3BBF /* ZWRecordLogViewKB.swift */; };
+		043E9AC228084B40000B3BBF /* ZWBasePopAllScreenViewKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AC128084B40000B3BBF /* ZWBasePopAllScreenViewKB.swift */; };
+		043E9AC428090E39000B3BBF /* ZWRecordLogLeftViewKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AC328090E39000B3BBF /* ZWRecordLogLeftViewKB.swift */; };
+		043E9AC628090E52000B3BBF /* ZWRecordLogRitghtViewKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AC528090E52000B3BBF /* ZWRecordLogRitghtViewKB.swift */; };
+		043E9ACA28091B79000B3BBF /* ZWRecordLogViewKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AC928091B79000B3BBF /* ZWRecordLogViewKB.swift */; };
+		043E9ACC28091C30000B3BBF /* ZWRLLeftTBViewKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9ACB28091C30000B3BBF /* ZWRLLeftTBViewKB.swift */; };
+		043E9ACE28093BDB000B3BBF /* ZWRecordVLogTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9ACD28093BDB000B3BBF /* ZWRecordVLogTCell.swift */; };
+		043E9AD0280942F7000B3BBF /* ZWRecordLogRightViewKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9ACF280942F7000B3BBF /* ZWRecordLogRightViewKB.swift */; };
+		043E9AD228094FBF000B3BBF /* ZWRecordLogHeaderViewKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AD128094FBF000B3BBF /* ZWRecordLogHeaderViewKB.swift */; };
+		043E9AD5280CF9DA000B3BBF /* DropBoxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AD4280CF9DA000B3BBF /* DropBoxTextField.swift */; };
 		0444682627DAED0E000444FD /* header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682527DAED0E000444FD /* header.swift */; };
 		0444682827DB1C7F000444FD /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682727DB1C7F000444FD /* Toast.swift */; };
 		0444682A27DED565000444FD /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682927DED565000444FD /* UserInfo.swift */; };
@@ -205,7 +213,15 @@
 		043E9ABA28080655000B3BBF /* ZWMoneyInfoCCellKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMoneyInfoCCellKB.swift; sourceTree = "<group>"; };
 		043E9ABC280827CE000B3BBF /* ZWDailySettlementTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWDailySettlementTCell.swift; sourceTree = "<group>"; };
 		043E9ABE2808314D000B3BBF /* ZWSuccessionPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWSuccessionPopView.swift; sourceTree = "<group>"; };
-		043E9AC128084B40000B3BBF /* ZWRecordLogViewKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRecordLogViewKB.swift; sourceTree = "<group>"; };
+		043E9AC128084B40000B3BBF /* ZWBasePopAllScreenViewKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWBasePopAllScreenViewKB.swift; sourceTree = "<group>"; };
+		043E9AC328090E39000B3BBF /* ZWRecordLogLeftViewKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRecordLogLeftViewKB.swift; sourceTree = "<group>"; };
+		043E9AC528090E52000B3BBF /* ZWRecordLogRitghtViewKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRecordLogRitghtViewKB.swift; sourceTree = "<group>"; };
+		043E9AC928091B79000B3BBF /* ZWRecordLogViewKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRecordLogViewKB.swift; sourceTree = "<group>"; };
+		043E9ACB28091C30000B3BBF /* ZWRLLeftTBViewKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRLLeftTBViewKB.swift; sourceTree = "<group>"; };
+		043E9ACD28093BDB000B3BBF /* ZWRecordVLogTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRecordVLogTCell.swift; sourceTree = "<group>"; };
+		043E9ACF280942F7000B3BBF /* ZWRecordLogRightViewKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRecordLogRightViewKB.swift; sourceTree = "<group>"; };
+		043E9AD128094FBF000B3BBF /* ZWRecordLogHeaderViewKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRecordLogHeaderViewKB.swift; sourceTree = "<group>"; };
+		043E9AD4280CF9DA000B3BBF /* DropBoxTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropBoxTextField.swift; sourceTree = "<group>"; };
 		0444682527DAED0E000444FD /* header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = header.swift; sourceTree = "<group>"; };
 		0444682727DB1C7F000444FD /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		0444682927DED565000444FD /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -424,8 +440,9 @@
 		042926E42800027600A3D1F8 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				043E9AC8280919C2000B3BBF /* baseView(弹出框有左右) */,
 				043E9AC028084AF5000B3BBF /* logRecords(交班记录) */,
-				043E9AAD2807F432000B3BBF /* righView */,
+				043E9AAD2807F432000B3BBF /* righView(员工交班首页) */,
 				042926E6280002A400A3D1F8 /* ZWStaffShiftLeftView.swift */,
 				042926E82800051400A3D1F8 /* ZWStaffShiftOneCell.swift */,
 				042926EA2800163500A3D1F8 /* ZWStaffHeaderView.swift */,
@@ -555,7 +572,7 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		043E9AAD2807F432000B3BBF /* righView */ = {
+		043E9AAD2807F432000B3BBF /* righView(员工交班首页) */ = {
 			isa = PBXGroup;
 			children = (
 				043E9AAE2807F48B000B3BBF /* ZWSuccessionTCellKB.swift */,
@@ -564,12 +581,13 @@
 				043E9ABC280827CE000B3BBF /* ZWDailySettlementTCell.swift */,
 				043E9ABE2808314D000B3BBF /* ZWSuccessionPopView.swift */,
 			);
-			path = righView;
+			path = "righView(员工交班首页)";
 			sourceTree = "<group>";
 		};
 		043E9AB2280804F2000B3BBF /* Commponet */ = {
 			isa = PBXGroup;
 			children = (
+				043E9AD3280CF9C1000B3BBF /* dorBox */,
 				043E9AB328080505000B3BBF /* CollectionViewLayout */,
 			);
 			path = Commponet;
@@ -587,9 +605,31 @@
 		043E9AC028084AF5000B3BBF /* logRecords(交班记录) */ = {
 			isa = PBXGroup;
 			children = (
-				043E9AC128084B40000B3BBF /* ZWRecordLogViewKB.swift */,
+				043E9AC928091B79000B3BBF /* ZWRecordLogViewKB.swift */,
+				043E9ACB28091C30000B3BBF /* ZWRLLeftTBViewKB.swift */,
+				043E9ACD28093BDB000B3BBF /* ZWRecordVLogTCell.swift */,
+				043E9ACF280942F7000B3BBF /* ZWRecordLogRightViewKB.swift */,
+				043E9AD128094FBF000B3BBF /* ZWRecordLogHeaderViewKB.swift */,
 			);
 			path = "logRecords(交班记录)";
+			sourceTree = "<group>";
+		};
+		043E9AC8280919C2000B3BBF /* baseView(弹出框有左右) */ = {
+			isa = PBXGroup;
+			children = (
+				043E9AC128084B40000B3BBF /* ZWBasePopAllScreenViewKB.swift */,
+				043E9AC328090E39000B3BBF /* ZWRecordLogLeftViewKB.swift */,
+				043E9AC528090E52000B3BBF /* ZWRecordLogRitghtViewKB.swift */,
+			);
+			path = "baseView(弹出框有左右)";
+			sourceTree = "<group>";
+		};
+		043E9AD3280CF9C1000B3BBF /* dorBox */ = {
+			isa = PBXGroup;
+			children = (
+				043E9AD4280CF9DA000B3BBF /* DropBoxTextField.swift */,
+			);
+			path = dorBox;
 			sourceTree = "<group>";
 		};
 		0444685227E02469000444FD /* Controller */ = {
@@ -1311,7 +1351,10 @@
 				043E9AB928080601000B3BBF /* ZWBaseCollectionViewCell.swift in Sources */,
 				0406E1DE27FE84FE00E5A948 /* ZWHeaderViewCell.swift in Sources */,
 				046B4E1127F54BFE00710D02 /* ZWSwitchStoreVCJoe.swift in Sources */,
+				043E9ACC28091C30000B3BBF /* ZWRLLeftTBViewKB.swift in Sources */,
+				043E9AD228094FBF000B3BBF /* ZWRecordLogHeaderViewKB.swift in Sources */,
 				0449923227F84E7400DB5410 /* ZWCashierSettingItemCell.swift in Sources */,
+				043E9ACE28093BDB000B3BBF /* ZWRecordVLogTCell.swift in Sources */,
 				04E3644427F45A4D0007B91A /* ZWOrderViewJoe.swift in Sources */,
 				0480B940280511FF00C5670B /* ZWLoadingHUD.swift in Sources */,
 				04ACE1502807F067001356D4 /* ZWCashCollectionViewJoe.swift in Sources */,
@@ -1331,11 +1374,13 @@
 				043E9AA62806DBBD000B3BBF /* DRLeftView.swift in Sources */,
 				04E3647227F467860007B91A /* LTTableView.swift in Sources */,
 				043A59032803CFE900E1D607 /* ZWMemberManagemenRightView.swift in Sources */,
+				043E9ACA28091B79000B3BBF /* ZWRecordLogViewKB.swift in Sources */,
 				046B5E7427F3FA4A000BB30D /* SelectStoreModelZJ.swift in Sources */,
 				04E3646F27F467860007B91A /* LTVCExtension.swift in Sources */,
 				043E9AA52806DBBD000B3BBF /* ZWDataReconciliationVCJoe.swift in Sources */,
 				0406E1F027FEDDA900E5A948 /* ZWCommoditySettingsCell.swift in Sources */,
 				0444685D27E0263C000444FD /* CashierSettingView.swift in Sources */,
+				043E9AD0280942F7000B3BBF /* ZWRecordLogRightViewKB.swift in Sources */,
 				042926F328004B7600A3D1F8 /* ZWMemberManagemenLeftCell.swift in Sources */,
 				04CA37A827F6D8EE00E620E5 /* ZWCheckStoreBottomView.swift in Sources */,
 				0406E1FD27FEFB3900E5A948 /* ZWLeftTableClickTanKuangView.swift in Sources */,
@@ -1365,7 +1410,7 @@
 				04CA37AD27F6E9B600E620E5 /* Cache.swift in Sources */,
 				0480B94428054FDE00C5670B /* ZWnewLabelAndTextField.swift in Sources */,
 				04E3646D27F467860007B91A /* LTDispatchQueue.swift in Sources */,
-				043E9AC228084B40000B3BBF /* ZWRecordLogViewKB.swift in Sources */,
+				043E9AC228084B40000B3BBF /* ZWBasePopAllScreenViewKB.swift in Sources */,
 				04E3644627F45D8A0007B91A /* ZWCashierViewControllerJoe.swift in Sources */,
 				0406E1FB27FEF17600E5A948 /* ZWLeftTableviewCell.swift in Sources */,
 				0486847E27D833D100D6A878 /* DocumentBrowserViewController.swift in Sources */,
@@ -1379,6 +1424,7 @@
 				04E3647027F467860007B91A /* UIView+LTExtension.swift in Sources */,
 				0480B946280559E700C5670B /* ZWOrderWeighView.swift in Sources */,
 				0431FCDC27D88BFB00778DE6 /* NSString-Extension.swift in Sources */,
+				043E9AD5280CF9DA000B3BBF /* DropBoxTextField.swift in Sources */,
 				04E3647127F467860007B91A /* LTScrollExtension.swift in Sources */,
 				0444682827DB1C7F000444FD /* Toast.swift in Sources */,
 				04E3643F27F43B6D0007B91A /* UIColor+Hue.swift in Sources */,
@@ -1397,6 +1443,7 @@
 				04CA37A227F5D0F400E620E5 /* UIView+MDExtension.swift in Sources */,
 				046B4E1627F560B600710D02 /* ZWOrderCellJoe.swift in Sources */,
 				0444683A27DEEA7F000444FD /* SelectStoreViewController.swift in Sources */,
+				043E9AC428090E39000B3BBF /* ZWRecordLogLeftViewKB.swift in Sources */,
 				04CA37A427F69C8F00E620E5 /* ZWCheckSementViewJoe.swift in Sources */,
 				04ACE1542807F10F001356D4 /* ZWSignCollectionViewJoe.swift in Sources */,
 				04A9DB0A27F30C2E0036C603 /* ProgressHUD.swift in Sources */,
@@ -1410,6 +1457,7 @@
 				042926E7280002A400A3D1F8 /* ZWStaffShiftLeftView.swift in Sources */,
 				0431FCDB27D88BFB00778DE6 /* ZHFNetWork.swift in Sources */,
 				043E9ABD280827CE000B3BBF /* ZWDailySettlementTCell.swift in Sources */,
+				043E9AC628090E52000B3BBF /* ZWRecordLogRitghtViewKB.swift in Sources */,
 				043E9AA72806DBBD000B3BBF /* DRHeaderView.swift in Sources */,
 				04E3647627F467860007B91A /* LTFollowMoveView.swift in Sources */,
 				04E3644227F43CCC0007B91A /* ZWLeftItemCellJoe.swift in Sources */,

@@ -18,7 +18,7 @@ class ZWDailySettlementTCell: baseTableViewCell {
     lazy var contentL: UILabel = {
         let label = UILabel()
         label.text = "#1"
-        label.textColor = UIColor.init(hex: "#323233")
+        label.textColor = Title_color
         label.font = UIFont.systemFont(ofSize: 28*WidthW)
         return label
     }()
@@ -45,15 +45,17 @@ class ZWDailySettlementTCell: baseTableViewCell {
         button.setImage(UIImage(named: "编组 47"), for: .normal)
         button.setTitleColor(UIColor.init(hex: "#FE4B48"), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 24*WidthW)
+        button.imageView?.contentMode = .scaleAspectFit
         return button
     }()
     
     lazy var leftBtn: UIButton = {
        let button = UIButton()
         button.setTitle("fafaf", for: .normal)
-        button.setImage(UIImage(named: "编组 47"), for: .normal)
+        button.setImage(UIImage(named: "aodio"), for: .normal)
         button.setTitleColor(UIColor.init(hex: "#576080"), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18*WidthW)
+        button.imageView?.contentMode = .scaleAspectFit
         return button
     }()
    
@@ -79,19 +81,11 @@ class ZWDailySettlementTCell: baseTableViewCell {
         self.backgroundColor = UIColor.init(hex: "#ffffff")
         self.addSubview(backView)
         self.backView.snp.makeConstraints { make in
-//            make.top.equalTo(self.snp.top).offset(0*WidthW)
-//            make.right.equalTo(self.snp.right).offset(-0*WidthW)
-//            make.left.equalTo(self.snp.left).offset(0*WidthW)
-//            make.bottom.equalTo(self.snp.bottom)
+
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
         }
         
-//        self.backView.addSubview(imgView)
-//        self.imgView.snp.makeConstraints { make in
-//            make.centerY.equalTo(self.backView.snp.centerY).offset(0*WidthW)
-//            make.left.equalTo(self.backView.snp.left).offset(64*WidthW)
-//            make.width.height.equalTo(30*WidthW)
-//        }
+
         self.backView.addSubview(contentL)
         contentL.snp.makeConstraints { make in
             make.centerY.equalTo(self.backView.snp.centerY).offset(0*WidthW)

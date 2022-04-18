@@ -7,6 +7,8 @@
 
 import UIKit
 
+typealias rightBtnBlock = (Int)->Void
+
 class DRHeaderView: UIView {
 
     /*
@@ -16,6 +18,7 @@ class DRHeaderView: UIView {
         // Drawing code
     }
     */
+    var rightBtnBlock:rightBtnBlock?
     
     lazy var redLineView:UIView = {
         let view = UIView()
@@ -47,9 +50,20 @@ class DRHeaderView: UIView {
 //    右边按钮点击事件
     @objc func tapButton(sender: UIButton) {
         print("打印按钮点击事件")
-        let popview: testPopView = testPopView().initView() as! testPopView
-        popview.show()
+//        let popview: testPopView = testPopView().initView() as! testPopView
+//        popview.show()
+//        testPopView().initView1()
+        
+        if self.rightBtnBlock != nil{
+            self.rightBtnBlock!(0)
+        }
     }
+    
+    lazy var lineView:UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.init(hex: "#E6E8EB")
+        return view
+    }()
     func initView() -> UIView{
         //红色的view
         self.addSubview(redLineView)
@@ -74,6 +88,15 @@ class DRHeaderView: UIView {
             make.height.equalTo(40*HeighH)
             make.width.equalTo(150*WidthW)
         }
+        
+        self.addSubview(self.lineView)
+        lineView.snp.makeConstraints { make in
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview().offset(28*WidthW)
+            make.right.equalToSuperview().offset(-28*WidthW)
+            make.height.equalTo(1*WidthW)
+        }
+        
         return self
     }
 

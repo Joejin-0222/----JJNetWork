@@ -28,12 +28,24 @@ class ZWnewCreatBtnTanKuang: UIView {
     //显示和输入框
     var LabelAndTextField :  ZWnewLabelAndTextField = ZWnewLabelAndTextField()
     
-    
+    //选择类型的textfield
+    lazy var typeTextField: UITextField = {
+        let  TF = UITextField()
+        TF.text = "电子会员卡"
+        TF.font = UIFont.systemFont(ofSize: 20*WidthW)
+        TF.textColor = MainColor
+        return TF
+    }()
     
     let bgView = UIView() //白色框动画控件
     
     let cancelBtn = UIButton() //取消按钮
     
+    var titles: [(String, UIImage?)] = [
+        ("第一个 item", UIImage(named: "user")),
+        ("第二个 item", UIImage(named: "user")),
+        ("第三个 item", UIImage(named: "user"))
+    ]
     
     init(title: String?, message: String?, cancelButtonTitle: String?, sureButtonTitle: String?,x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat ) {
         super.init(frame: CGRect(x: x, y: y, width: width, height: height))
@@ -78,17 +90,48 @@ class ZWnewCreatBtnTanKuang: UIView {
         bgView.addSubview(cancelBtn)
         
         //
-        backView.backgroundColor = UIColor.white
-        bgView.addSubview(backView)
-        backView.snp.makeConstraints { make in
-            make.bottom.equalTo(self.bgView.snp.bottom).offset(-482*WidthW)
-            make.top.equalTo(self.titleLabel.snp.top).offset(166*WidthW)
-            make.left.equalTo(self.bgView.snp.left).offset(325*WidthW)
-            make.right.equalTo(self.bgView.snp.right).offset(-325*WidthW)
-        }
+//        backView.backgroundColor = UIColor.white
+//        bgView.addSubview(backView)
+//        backView.snp.makeConstraints { make in
+//            make.bottom.equalTo(self.bgView.snp.bottom).offset(-482*WidthW)
+//            make.top.equalTo(self.titleLabel.snp.top).offset(166*WidthW)
+//            make.left.equalTo(self.bgView.snp.left).offset(325*WidthW)
+//            make.right.equalTo(self.bgView.snp.right).offset(-325*WidthW)
+//        }
         //
 //        backView.addSubview(LabelAndTextField.initView())
-        
+        bgView.addSubview(self.typeTextField)
+        typeTextField.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-325*WidthW)
+            make.top.equalToSuperview().offset(296*WidthW)
+            make.width.equalTo(360*WidthW)
+            make.height.equalTo(64*WidthW)
+        }
+        self.typeTextField.placeholder = "电子卡"
+        let textField = DropBoxTextField(frame: typeTextField.frame, customTextField: self.typeTextField)
+        bgView.addSubview(textField)
+//        textField.snp.makeConstraints { make in
+//            make.right.equalToSuperview().offset(-325*width)
+//            make.top.equalToSuperview().offset(296*WidthW)
+//            make.width.equalTo(360*WidthW)
+//            make.height.equalTo(64*WidthW)
+//        }
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+        /// 设置选项内容
+        textField.count = titles.count
+        textField.itemForRowAt = { [weak self] (index) -> (String, UIImage?) in
+            guard let title = self?.titles[index].0 else {
+                return ("", nil)
+            }
+            return (title, nil);
+        }
+        textField.didSelectedAt = { (index, title, textField) in
+            print("选中第 \(index) 行，标题 \(title)")
+            textField.drawUp()
+        }
+       
+                    
         
     }
     
