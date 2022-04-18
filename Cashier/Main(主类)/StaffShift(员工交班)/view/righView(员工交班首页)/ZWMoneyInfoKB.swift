@@ -16,7 +16,7 @@ class ZWMoneyInfoKB: basePopView {
         // Drawing code
     }
     */
-    var dataArray:NSMutableArray = [["img":"支付宝支付备份 2(1)","type":"现金（元）","money":"￥2000","numnber":"4笔"],["img":"编组 8备份","type":"微信支付（元）","money":"￥2000","numnber":"4笔"],["img":"支付宝支付备份 2(5)","type":"支付宝（元）","money":"￥2000","numnber":"4笔"],["img":"编组 8备份 3","type":"标记支付（元）","money":"￥2000","numnber":"4笔"],["img":"支付宝支付备份 2(2)","type":"刷卡（元）","money":"￥2000","numnber":"4笔"],["img":"支付宝支付备份 2(6)","type":"储值余额（元）","money":"￥2000","numnber":"4笔"],["img":"编组 8备份 3(2)","type":"礼品卡（元）","money":"￥2000","numnber":"4笔"],["img":"支付宝支付备份 2(3)","type":"有赞E卡（元）","money":"￥2000","numnber":"4笔"],["img":"支付宝支付备份 2(4)","type":"组合支付（元）","money":"￥2000","numnber":"4笔"],["img":"支付宝支付备份 2","type":"会员卡（元）","money":"￥2000","numnber":"4笔"],]
+    var dataArray:NSMutableArray = [["img":"支付宝支付备份 2(1)","type":"现金（元）","money":"￥2000","numnber":"4笔"],["img":"编组 8备份","type":"微信支付（元）","money":"￥2000","numnber":"4笔"],["img":"支付宝支付备份 2(5)","type":"支付宝（元）","money":"￥2000","numnber":"4笔"],["img":"编组 8备份 3","type":"标记支付（元）","money":"￥2000","numnber":"4笔"],["img":"支付宝支付备份 2(2)","type":"刷卡（元）","money":"￥2000","numnber":"4笔"],["img":"支付宝支付备份 2(6)","type":"储值余额（元）","money":"￥2000","numnber":"4笔"],["img":"编组 8备份 3(2)","type":"礼品卡（元）","money":"￥2000","numnber":"4笔"],["img":"支付宝支付备份 2(3)","type":"有赞E卡（元）","money":"￥2000","numnber":"4笔"],["img":"支付宝支付备份 2(4)","type":"组合支付（元）","money":"￥2000","numnber":"4笔"],["img":"支付宝支付备份 2","type":"会员卡（元）","money":"￥2000","numnber":"4笔"]]
     private lazy var collectionView: UICollectionView = {
         let lt = UCollectionViewSectionBackgroundLayout()
         lt.minimumInteritemSpacing = 0
@@ -26,6 +26,7 @@ class ZWMoneyInfoKB: basePopView {
         cw.delegate = self
         cw.dataSource = self
         cw.alwaysBounceVertical = true
+        cw.contentInset = UIEdgeInsets(top: 0, left: 20*WidthW, bottom: 0, right: 20*WidthW)
         cw.register(cellType: ZWMoneyInfoCCellKB.self)
 
         return cw
@@ -65,7 +66,7 @@ extension ZWMoneyInfoKB: UCollectionViewSectionBackgroundLayoutDelegateLayout, U
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = floor(Double(1000.0*WidthW - 20.0*WidthW) / 3.0)
+        let width = floor(Double(1000.0*WidthW - 60.0*WidthW) / 3.0)
         return CGSize(width: width, height: 200*WidthW)
     }
 

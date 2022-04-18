@@ -61,6 +61,7 @@
 		043E9ACE28093BDB000B3BBF /* ZWRecordVLogTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9ACD28093BDB000B3BBF /* ZWRecordVLogTCell.swift */; };
 		043E9AD0280942F7000B3BBF /* ZWRecordLogRightViewKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9ACF280942F7000B3BBF /* ZWRecordLogRightViewKB.swift */; };
 		043E9AD228094FBF000B3BBF /* ZWRecordLogHeaderViewKB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AD128094FBF000B3BBF /* ZWRecordLogHeaderViewKB.swift */; };
+		043E9AD5280CF9DA000B3BBF /* DropBoxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E9AD4280CF9DA000B3BBF /* DropBoxTextField.swift */; };
 		0444682627DAED0E000444FD /* header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682527DAED0E000444FD /* header.swift */; };
 		0444682827DB1C7F000444FD /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682727DB1C7F000444FD /* Toast.swift */; };
 		0444682A27DED565000444FD /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444682927DED565000444FD /* UserInfo.swift */; };
@@ -216,6 +217,7 @@
 		043E9ACD28093BDB000B3BBF /* ZWRecordVLogTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRecordVLogTCell.swift; sourceTree = "<group>"; };
 		043E9ACF280942F7000B3BBF /* ZWRecordLogRightViewKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRecordLogRightViewKB.swift; sourceTree = "<group>"; };
 		043E9AD128094FBF000B3BBF /* ZWRecordLogHeaderViewKB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRecordLogHeaderViewKB.swift; sourceTree = "<group>"; };
+		043E9AD4280CF9DA000B3BBF /* DropBoxTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropBoxTextField.swift; sourceTree = "<group>"; };
 		0444682527DAED0E000444FD /* header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = header.swift; sourceTree = "<group>"; };
 		0444682727DB1C7F000444FD /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		0444682927DED565000444FD /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -577,6 +579,7 @@
 		043E9AB2280804F2000B3BBF /* Commponet */ = {
 			isa = PBXGroup;
 			children = (
+				043E9AD3280CF9C1000B3BBF /* dorBox */,
 				043E9AB328080505000B3BBF /* CollectionViewLayout */,
 			);
 			path = Commponet;
@@ -611,6 +614,14 @@
 				043E9AC528090E52000B3BBF /* ZWRecordLogRitghtViewKB.swift */,
 			);
 			path = "baseView(弹出框有左右)";
+			sourceTree = "<group>";
+		};
+		043E9AD3280CF9C1000B3BBF /* dorBox */ = {
+			isa = PBXGroup;
+			children = (
+				043E9AD4280CF9DA000B3BBF /* DropBoxTextField.swift */,
+			);
+			path = dorBox;
 			sourceTree = "<group>";
 		};
 		0444685227E02469000444FD /* Controller */ = {
@@ -1391,6 +1402,7 @@
 				04E3647027F467860007B91A /* UIView+LTExtension.swift in Sources */,
 				0480B946280559E700C5670B /* ZWOrderWeighView.swift in Sources */,
 				0431FCDC27D88BFB00778DE6 /* NSString-Extension.swift in Sources */,
+				043E9AD5280CF9DA000B3BBF /* DropBoxTextField.swift in Sources */,
 				04E3647127F467860007B91A /* LTScrollExtension.swift in Sources */,
 				0444682827DB1C7F000444FD /* Toast.swift in Sources */,
 				04E3643F27F43B6D0007B91A /* UIColor+Hue.swift in Sources */,
