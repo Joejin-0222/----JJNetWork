@@ -120,7 +120,8 @@ extension ZWCheckSementViewJoe:UICollectionViewDataSource ,UICollectionViewDeleg
         }
         //是否显示指示器
         if IsHiddenIndicator {
-            cell.IndicatorView.backgroundColor = UIColor.clear
+//            cell.IndicatorView.backgroundColor = UIColor.clear
+            cell.IndicatorView.image = UIImage.init(named: "")
         }else{
 //            cell.IndicatorView.backgroundColor = MainColor
         }
