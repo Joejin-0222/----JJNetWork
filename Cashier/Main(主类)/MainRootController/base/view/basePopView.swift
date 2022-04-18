@@ -13,8 +13,8 @@ class basePopView: UIView {
     lazy var backView:UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white
-        view.layer.cornerRadius  = 10
-        view.clipsToBounds = true
+//        view.layer.cornerRadius  = 0
+//        view.clipsToBounds = true
         return view
         
     }()

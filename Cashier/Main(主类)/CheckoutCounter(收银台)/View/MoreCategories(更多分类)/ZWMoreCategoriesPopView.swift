@@ -8,7 +8,7 @@
 import UIKit
 
 class ZWMoreCategoriesPopView: basePopView {
-    var dataAarry  : NSArray? = []
+
     //
     lazy var bottomView : UIView = {
        let view = UIView()
@@ -19,15 +19,17 @@ class ZWMoreCategoriesPopView: basePopView {
     lazy var PutAwayBtn : UIButton = {
         let btn = UIButton()
         btn.setTitle("点击收起", for: .normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 20*WidthW)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 26*WidthW)
         btn.setTitleColor(UIColor.init(hex: "#969799"), for: .normal)
         btn.setImage(UIImage.init(named: "分段弹框收起"), for: .normal)
         return btn
     }()
     
+    var dataAarry  : NSArray? = []
+    
     private var selectIndex:Int = 0   //    记录点击了第几行
     
-    let  SelfViewWidth : CGFloat = 640*WidthW //当前view宽
+    let  SelfViewWidth : CGFloat = 840*WidthW //当前view宽
     
     //中间商品列表
     fileprivate let CollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout())
@@ -37,11 +39,12 @@ class ZWMoreCategoriesPopView: basePopView {
         //
         self.closeBtn.isHidden = true
         //
+        self.backView.cornerRadius(cornerRadius: 10*WidthW)
         self.backView.snp.remakeConstraints { make in
             make.top.equalTo(self.snp.top).offset(200*WidthW)
             make.right.equalTo(self.snp.right).offset(-24*WidthW)
             make.width.equalTo(SelfViewWidth)
-            make.height.equalTo(424*HeighH)
+            make.height.equalTo(548*HeighH)
         }
         //
         //
@@ -62,12 +65,12 @@ class ZWMoreCategoriesPopView: basePopView {
             make.top.equalTo(backView.snp.top).offset(24*HeighH)
             make.left.equalTo(backView.snp.left).offset(24*WidthW)
             make.right.equalTo(backView.snp.right).offset(-24*WidthW)
-            make.bottom.equalTo(backView.snp.bottom).offset(-(24+48)*HeighH)
+            make.bottom.equalTo(backView.snp.bottom).offset(-(48)*HeighH)
         }
         //
         self.backView.addSubview(bottomView)
         bottomView.snp.makeConstraints { make in
-            make.height.equalTo(48*WidthW)
+            make.height.equalTo(48*HeighH)
             make.left.equalTo(backView.snp.left).offset(0*WidthW)
             make.right.equalTo(backView.snp.right).offset(0*WidthW)
             make.bottom.equalTo(backView.snp.bottom)
@@ -114,19 +117,19 @@ extension ZWMoreCategoriesPopView:UICollectionViewDataSource ,UICollectionViewDe
     //最小 item 间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 5*WidthW;
+        return 8*WidthW;
     }
     
     //最小行间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 10*WidthW;
+        return 16*WidthW;
     }
     
     //item 的尺寸
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        return CGSize(width:( SelfViewWidth - 68*WidthW) / 4, height: 44*HeighH)
+        return CGSize(width:( SelfViewWidth - 76*WidthW) / 4, height: 44*HeighH)
     }
     
     

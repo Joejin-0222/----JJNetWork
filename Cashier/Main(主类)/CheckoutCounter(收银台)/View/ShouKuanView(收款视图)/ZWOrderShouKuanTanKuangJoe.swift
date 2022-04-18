@@ -71,7 +71,7 @@ class ZWOrderShouKuanTanKuangJoe: basePopView ,SementSelectClickDelegate{
         testSementView.snp.makeConstraints { make in
             make.left.equalTo(bgView.snp.left).offset(30*WidthW)
             make.top.equalTo(124*WidthW)
-            make.height.equalTo(92*WidthW)
+            make.height.equalTo(68*WidthW)
             make.right.equalTo(self.snp.right).offset(-30*WidthW)
         }
         testSementView.dataAarry =  ["扫码收款","现金收款","会员卡收款","标记收款"]
@@ -83,7 +83,7 @@ class ZWOrderShouKuanTanKuangJoe: basePopView ,SementSelectClickDelegate{
             make.left.equalTo(bgView.snp.left)
             make.right.equalTo(bgView.snp.right)
             make.height.equalTo(3*WidthW)
-            make.top.equalTo(testSementView.snp.bottom).offset(-22*WidthW)
+            make.top.equalTo(testSementView.snp.bottom).offset(0*WidthW)
         }
         //
         //取单

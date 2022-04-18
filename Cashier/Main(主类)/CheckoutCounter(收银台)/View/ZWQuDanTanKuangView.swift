@@ -101,6 +101,7 @@ class ZWQuDanTanKuangView: basePopView ,SementSelectClickDelegate{
         cancelBtn.addTarget(self, action: #selector(closeBtnClick), for: .touchUpInside)
         bgView.addSubview(cancelBtn)
         //一级分类
+        testSementView.textFont = 28//设置字体大小
         testSementView.delegate = self//遵守点击分段选择代理
         testSementView.YesNetWork = false //是网络数据
         testSementView.columnNum = 2 //设置为两列
@@ -108,7 +109,7 @@ class ZWQuDanTanKuangView: basePopView ,SementSelectClickDelegate{
         testSementView.snp.makeConstraints { make in
             make.left.equalTo(bgView.snp.left).offset(360*WidthW)
             make.top.equalTo(70*WidthW)
-            make.height.equalTo(92*WidthW)
+            make.height.equalTo(68*WidthW)
             make.right.equalTo(self.snp.right).offset(-360*WidthW)
         }
         testSementView.dataAarry =  ["收银台取单","小程序台取单"]

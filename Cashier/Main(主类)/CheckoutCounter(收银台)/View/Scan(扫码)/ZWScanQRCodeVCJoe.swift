@@ -44,7 +44,6 @@ class ZWScanQRCodeVCJoe: UIViewController{
         setupScanSession()
         
         // 监听屏幕旋转
-        //        NotificationCenter.default.addObserver(self, selector: #selector(receiverNotification), name: UIDevice.orientationDidChangeNotification, object: nil)
         self.receiverNotification()
     }
     

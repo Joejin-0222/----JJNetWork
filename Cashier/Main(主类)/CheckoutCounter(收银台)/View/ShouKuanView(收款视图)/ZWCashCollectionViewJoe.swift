@@ -90,7 +90,6 @@ class ZWCashCollectionViewJoe: UICollectionViewCell {
         
         self.backgroundColor = UIColor.clear
       
-
         //
         self.addSubview(SearchView)
         SearchView.cornerRadius(cornerRadius: 44*WidthW, borderColor: UIColor.init(hex: "#DCDEE0"), borderWidth: 1)

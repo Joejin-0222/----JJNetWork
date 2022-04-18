@@ -6,7 +6,7 @@
 //
 
 import Foundation
-//import PINCache
+
 import HandyJSON
 
 /// 缓存层
@@ -64,9 +64,10 @@ enum Cache: String {
         PINCache.shared.removeObject(forKey: rawValue)
     }
     
-    case userStore = "userStore"
+    case sementData = "sementData"//收银台分段选择数据
+    case userStore = "userStore"//店铺信息数据
     case isLoginKey = "isLoginKey"
-    case userKey = "loginUserKey"
+    case userKey = "loginUserKey"//登录用户数据
     case currentCurrencyKey = "currentCurrencyKey"
     case currencyListKey = "currencyListKey"
     case isAutoSettedCurrencyKey = "isAutoSettedCurrencyKey"

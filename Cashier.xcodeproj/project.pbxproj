@@ -73,6 +73,8 @@
 		0449923227F84E7400DB5410 /* ZWCashierSettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449923127F84E7400DB5410 /* ZWCashierSettingItemCell.swift */; };
 		0469F7E228090A9E0072CD1E /* ZWMoreCategoriesCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7E128090A9E0072CD1E /* ZWMoreCategoriesCellJoe.swift */; };
 		0469F7EF2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7EE2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift */; };
+		0469F7F7280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7F6280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift */; };
+		0469F7F928097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7F828097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift */; };
 		046B4E0527F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0427F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift */; };
 		046B4E0827F54ACC00710D02 /* ZWStaffShiftVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0727F54ACC00710D02 /* ZWStaffShiftVCJoe.swift */; };
 		046B4E0B27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0A27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift */; };
@@ -223,6 +225,8 @@
 		0449923127F84E7400DB5410 /* ZWCashierSettingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCashierSettingItemCell.swift; sourceTree = "<group>"; };
 		0469F7E128090A9E0072CD1E /* ZWMoreCategoriesCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMoreCategoriesCellJoe.swift; sourceTree = "<group>"; };
 		0469F7EE2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWScanQRCodeVCJoe.swift; sourceTree = "<group>"; };
+		0469F7F6280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderYouHuiCollectionCellJoe.swift; sourceTree = "<group>"; };
+		0469F7F828097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderYouHuiHeaderCellJoe.swift; sourceTree = "<group>"; };
 		046B4E0427F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenVCJoe.swift; sourceTree = "<group>"; };
 		046B4E0727F54ACC00710D02 /* ZWStaffShiftVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWStaffShiftVCJoe.swift; sourceTree = "<group>"; };
 		046B4E0A27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCommodityStocksVCJoe.swift; sourceTree = "<group>"; };
@@ -958,6 +962,8 @@
 			isa = PBXGroup;
 			children = (
 				04ACE156280810DE001356D4 /* ZWOrderYouHuiPopViewJoe.swift */,
+				0469F7F6280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift */,
+				0469F7F828097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift */,
 			);
 			path = "OrderYouHui(整单优惠)";
 			sourceTree = "<group>";
@@ -1335,6 +1341,7 @@
 				0406E1FD27FEFB3900E5A948 /* ZWLeftTableClickTanKuangView.swift in Sources */,
 				043E9A992806DB42000B3BBF /* baseTableViewCell.swift in Sources */,
 				0486848227D833D100D6A878 /* Document.swift in Sources */,
+				0469F7F7280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift in Sources */,
 				0486848027D833D100D6A878 /* DocumentViewController.swift in Sources */,
 				043E9AA82806DBBD000B3BBF /* DRRightTCell.swift in Sources */,
 				043E9AB728080505000B3BBF /* UCollectionViewSectionBackgroundLayout.swift in Sources */,
@@ -1395,6 +1402,7 @@
 				04A9DB0A27F30C2E0036C603 /* ProgressHUD.swift in Sources */,
 				0406E1E627FE8F7200E5A948 /* ZWHeaderView.swift in Sources */,
 				0449922A27F7FC3200DB5410 /* ZWCheckOutTopView.swift in Sources */,
+				0469F7F928097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift in Sources */,
 				043E9AAA2806DBBD000B3BBF /* DRLeftTCell.swift in Sources */,
 				043E9A9A2806DB42000B3BBF /* basePopView.swift in Sources */,
 				0480B942280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift in Sources */,
