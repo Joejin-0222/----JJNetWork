@@ -17,4 +17,5 @@ target 'Cashier' do
   pod 'Reusable'
   pod 'Kingfisher' #图片缓存
   pod 'FSCalendar'
+  #pod 'SQLite.swift','~>0.13.3'
 end

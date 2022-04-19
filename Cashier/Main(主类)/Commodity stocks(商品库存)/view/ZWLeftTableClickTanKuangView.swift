@@ -28,7 +28,7 @@ class ZWLeftTableClickTanKuangView: UIView ,SementSelectClickDelegate{
     //tableview
     lazy var TableView:UITableView = {
         let tableview = UITableView(frame:.zero)
-        tableview.backgroundColor = UIColor.clear
+        tableview.backgroundColor = UIColor.init(hex: "#FAFAFA")
         tableview.estimatedRowHeight =  130
         tableview.rowHeight = UITableView.automaticDimension
         tableview.dataSource = self
@@ -158,6 +158,8 @@ class ZWLeftTableClickTanKuangView: UIView ,SementSelectClickDelegate{
             make.right.equalTo(bgView.snp.right).offset(-72*WidthW)
             make.bottom.equalTo(bgView.snp.bottom).offset(-10*WidthW)
         }
+        
+        TableView.register(cellType: ZWCallOutTCell.self)
         TableView.register(UINib.init(nibName: "ZWTanKuangCell", bundle: nil), forCellReuseIdentifier: "ZWTanKuangCell")
         
         
@@ -245,8 +247,8 @@ extension ZWLeftTableClickTanKuangView :UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let  cell:ZWTanKuangTableViewCell =  ZWTanKuangTableViewCell.createWithTableViewCell(tableView: tableView) as! ZWTanKuangTableViewCell
        
-        let cell:ZWTanKuangCell = tableView.dequeueReusableCell(withIdentifier: "ZWTanKuangCell", for: indexPath) as! ZWTanKuangCell
-        cell.selectionStyle = .none
+//        let cell:ZWTanKuangCell = tableView.dequeueReusableCell(withIdentifier: "ZWTanKuangCell", for: indexPath) as! ZWTanKuangCell
+//        cell.selectionStyle = .none
 //        let arr : NSArray = self.dataAarryTableView[indexPath.section] as! NSArray
         
 //        cell.content01.text = arr[indexPath.row] as? String
@@ -258,11 +260,13 @@ extension ZWLeftTableClickTanKuangView :UITableViewDataSource{
 //            cell.IconImage.image = UIImage.init(named: "")
 //            cell.content01.font = UIFont.systemFont(ofSize: 22*WidthW)
 //        }
+//        return cell
+        let cell:ZWCallOutTCell = tableView.dequeueReusableCell(for: indexPath, cellType: ZWCallOutTCell.self)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400*WidthW
+        return 284*WidthW
     }
     
     
