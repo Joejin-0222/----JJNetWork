@@ -8,6 +8,9 @@
 import UIKit
 
 class ZWOrderQueryLeftView: UIView, FSCalendarDataSource, FSCalendarDelegate {
+    
+    let calendar = FSCalendar(frame: CGRect(x: 0, y: 300, width: (OrderTabelViewWidth)*WidthW, height: (OrderTabelViewWidth)*WidthW))
+    
     //
     lazy var topView : UIView = {
         let view = UIView()
@@ -91,8 +94,30 @@ class ZWOrderQueryLeftView: UIView, FSCalendarDataSource, FSCalendarDelegate {
     }()
     //二级分类
     let TwoSementView : ZWCheckSementViewJoe = ZWCheckSementViewJoe()
-    
-    
+    //上个月
+    lazy var LastMouthBtn : UIButton = {
+        let Btn = UIButton()
+        Btn.setImage(UIImage.init(named: "上一个"), for: .normal)
+        return Btn
+    }()
+    //展示时间view
+    lazy var ShowDateView : UIView = {
+        let view = UIView()
+        return view
+    }()
+    lazy var DateImageBtn : UIButton = {
+        let Btn = UIButton()
+        Btn.setImage(UIImage.init(named: "日历"), for: .normal)
+        return Btn
+    }()
+    lazy var ShowDateLabel : UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.init(hex: "#323233")
+        label.font = UIFont.systemFont(ofSize: 22*WidthW)
+        label.text = "\(Date.xj.currentDate.xj.year)-\(Date.xj.currentDate.xj.month)-\(Date.xj.currentDate.xj.day)"
+        label.textAlignment = .left
+        return label
+    }()
     
     func initView()->UIView{
         //
@@ -194,8 +219,9 @@ class ZWOrderQueryLeftView: UIView, FSCalendarDataSource, FSCalendarDelegate {
         }
         TwoSementView.dataAarry =  ["今天","近七天","近30天","其他时间"]
         self.TwoSementView.ReloadData()
-        /// 翻页-日历
-        let calendar = FSCalendar(frame: CGRect(x: 0, y: SementBottomView.bottom  + 300, width: (OrderTabelViewWidth)*WidthW, height: (OrderTabelViewWidth)*WidthW))
+        
+        // 翻页-日历
+        
         calendar.dataSource = self
         calendar.delegate = self
         self.addSubview(calendar)
@@ -212,18 +238,92 @@ class ZWOrderQueryLeftView: UIView, FSCalendarDataSource, FSCalendarDelegate {
         calendar.appearance.headerTitleColor =  UIColor.init(hex: "#000000");
         
         // 设置头部日期格式
-        calendar.appearance.headerDateFormat = "yyyy年MM月dd日";
+        calendar.appearance.headerDateFormat = "yyyy-MM";
         //这个属性控制"上个月"和"下个月"标签在静止时刻的透明度
         calendar.appearance.headerMinimumDissolvedAlpha = 0;
         
-
+        //
+        self.addSubview(LastMouthBtn)
+        LastMouthBtn.snp.makeConstraints { make in
+            make.left.equalTo(topView.snp.left).offset(60*WidthW)
+            make.top.equalTo(calendar.snp.top).offset(15*WidthW)
+            make.width.height.equalTo(40*WidthW)
+        }
+        LastMouthBtn.addTarget(self, action: #selector(LastMouthBtnClick), for: .touchUpInside)
+        
+        //
+        
+        let nextBtn = UIButton()
+        nextBtn.setImage(UIImage.init(named: "下一个"), for: .normal)
+        self.addSubview(nextBtn)
+        nextBtn.snp.makeConstraints { make in
+            make.right.equalTo(topView.snp.right).offset(-60*WidthW)
+            make.top.equalTo(LastMouthBtn.snp.top)
+            make.width.height.equalTo(40*WidthW)
+        }
+        nextBtn.addTarget(self, action: #selector(nextBtnClick), for: .touchUpInside)
+        //
+        ShowDateView.cornerRadius(cornerRadius: 24*HeighH, borderColor: UIColor.init(hex: "#EBEDF0"), borderWidth: 1)
+        self.addSubview(ShowDateView)
+        ShowDateView.snp.makeConstraints { make in
+            make.centerX.equalTo(SementBottomView.snp.centerX)
+            make.top.equalTo(SementBottomView.snp.bottom).offset(53*HeighH)
+            make.width.equalTo(232*WidthW)
+            make.height.equalTo(48*HeighH)
+        }
+        //
+        ShowDateView.addSubview(DateImageBtn)
+        DateImageBtn.snp.makeConstraints { make in
+            make.left.equalTo(ShowDateView.snp.left).offset(21*WidthW)
+            make.centerY.equalTo(ShowDateView.snp.centerY)
+        }
+        //
+        ShowDateView.addSubview(ShowDateLabel)
+        ShowDateLabel.snp.makeConstraints { make in
+            make.left.equalTo(DateImageBtn.snp.right).offset(12*WidthW)
+            make.top.equalTo(DateImageBtn.snp.top)
+            make.bottom.equalTo(DateImageBtn.snp.bottom)
+            make.right.equalTo(ShowDateView.snp.right).offset(-24*WidthW)
+        }
         return self
     }
+    //上一个月
+    @objc func LastMouthBtnClick(){
+        let chineseCalendar = NSCalendar(identifier: .chinese)
+        
+        print("====点击了上一个月")
+        let lastMonth : NSDate = chineseCalendar?.date(byAdding: NSCalendar.Unit.month, value: -1, to: self.calendar.currentPage ) as! NSDate
+        self.calendar.setCurrentPage(lastMonth as Date, animated: false)
+        
+    }
+    //下一个月
+    @objc func nextBtnClick(){
+        let chineseCalendar = NSCalendar(identifier: .chinese)
+        
+        let nextMonth : NSDate = chineseCalendar?.date(byAdding: NSCalendar.Unit.month, value: 2, to: self.calendar.currentPage ) as! NSDate
+        
+        self.calendar.setCurrentPage(nextMonth as Date, animated: false)
+        
+        print("====点击了下一个月")
+        
+        
+        
+    }
+    
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print("=====\(date) \(monthPosition)")
-    }//didDeselectDate
+    
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd";
+        ShowDateLabel.text = dateFormatter.string(from: date)
+        print("=====\(dateFormatter.string(from: date))")
+        
+    }
+    
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("=====\(date) \(monthPosition)")
     }
+    
+    
 }
