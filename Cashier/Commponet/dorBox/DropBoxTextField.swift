@@ -139,7 +139,7 @@ class DropBoxTextField: UIView, UITableViewDelegate, UITableViewDataSource {
         _tableView.layer.shadowOpacity = 0.8
         
         _button.frame = CGRect(x: bounds.width - bounds.height, y: 0, width: bounds.height, height: bounds.height)
-        _textField.frame = CGRect(x: 10*WidthW, y: 0, width: bounds.width - _button.frame.width - 10, height: bounds.height)
+        _textField.frame = CGRect(x: 10, y: 0, width: bounds.width - _button.frame.width - 10, height: bounds.height)
         _tableView.frame = CGRect(x: 0, y: bounds.height, width: bounds.width, height: 0)
         
         addSubview(_textField)

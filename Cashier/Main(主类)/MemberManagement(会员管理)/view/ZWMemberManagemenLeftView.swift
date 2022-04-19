@@ -84,10 +84,6 @@ extension ZWMemberManagemenLeftView : UITableViewDelegate {
     
     func  tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("=====\(indexPath.row)")
-        
-        let VIPView:ZWVIPConsumptionRecordView = ZWVIPConsumptionRecordView().initView() as! ZWVIPConsumptionRecordView
-        
-        VIPView.show()
      
     }
 }

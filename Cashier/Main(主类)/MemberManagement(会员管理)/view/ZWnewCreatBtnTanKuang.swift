@@ -22,6 +22,7 @@ class ZWnewCreatBtnTanKuang: UIView {
     lazy var backView : UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.init(hex: "ffffff")
+        
         return view
     }()
     //显示和输入框
@@ -30,10 +31,9 @@ class ZWnewCreatBtnTanKuang: UIView {
     //选择类型的textfield
     lazy var typeTextField: UITextField = {
         let  TF = UITextField()
-        TF.text = "  电子会员卡"
+        TF.text = "电子会员卡"
         TF.font = UIFont.systemFont(ofSize: 20*WidthW)
-        TF.textColor = Title_color
-        TF.isEnabled = false
+        TF.textColor = MainColor
         return TF
     }()
     
@@ -42,155 +42,14 @@ class ZWnewCreatBtnTanKuang: UIView {
     let cancelBtn = UIButton() //取消按钮
     
     var titles: [(String, UIImage?)] = [
-        ("浮光西安会员卡", UIImage(named: "user")),
-        ("浮光上海会员卡", UIImage(named: "user")),
-        ("浮光城都会员卡", UIImage(named: "user")),
-        ("浮光北京会员卡", UIImage(named: "user")),
-        ("浮光杭州会员卡", UIImage(named: "user")),
-        ("浮光渭南会员卡", UIImage(named: "user"))
+        ("第一个 item", UIImage(named: "user")),
+        ("第二个 item", UIImage(named: "user")),
+        ("第三个 item", UIImage(named: "user"))
     ]
-    
-    
-    lazy var oneL: UILabel = {
-        let label = UILabel()
-        let attrString = NSMutableAttributedString(string: "* 选择卡类型")
-        
-        let strSubAttr1: [NSMutableAttributedString.Key: Any] = [.foregroundColor: UIColor(red: 1, green: 0.29, blue: 0.28,alpha:1.000000)]
-        attrString.addAttributes(strSubAttr1, range: NSRange(location: 0, length: 2))
-
-        let strSubAttr2: [NSMutableAttributedString.Key: Any] = [.foregroundColor: UIColor(red: 0.2, green: 0.2, blue: 0.2,alpha:1.000000)]
-        attrString.addAttributes(strSubAttr2, range: NSRange(location: 2, length: 5))
-
-        label.attributedText = attrString
-        return label
-    }()
-    
-    lazy var towL: UILabel = {
-        let label = UILabel()
-        let attrString = NSMutableAttributedString(string: "* 手机号")
-        
-        let strSubAttr1: [NSMutableAttributedString.Key: Any] = [.foregroundColor: UIColor(red: 1, green: 0.29, blue: 0.28,alpha:1.000000)]
-        attrString.addAttributes(strSubAttr1, range: NSRange(location: 0, length: 2))
-
-        let strSubAttr2: [NSMutableAttributedString.Key: Any] = [.foregroundColor: UIColor(red: 0.2, green: 0.2, blue: 0.2,alpha:1.000000)]
-        attrString.addAttributes(strSubAttr2, range: NSRange(location: 2, length: 3))
-
-        label.attributedText = attrString
-        return label
-    }()
-    
-    lazy var thirdL: UILabel = {
-        let label = UILabel()
-        label.text = "姓名"
-        label.textColor = Title_color
-        label.font = UIFont.systemFont(ofSize: 20*WidthW)
-        return label
-    }()
-    
-    lazy var fourL: UILabel = {
-        let label = UILabel()
-        let attrString = NSMutableAttributedString(string: "* 配送方式")
-        
-        let strSubAttr1: [NSMutableAttributedString.Key: Any] = [.foregroundColor: UIColor(red: 1, green: 0.29, blue: 0.28,alpha:1.000000)]
-        attrString.addAttributes(strSubAttr1, range: NSRange(location: 0, length: 2))
-
-        let strSubAttr2: [NSMutableAttributedString.Key: Any] = [.foregroundColor: UIColor(red: 0.2, green: 0.2, blue: 0.2,alpha:1.000000)]
-        attrString.addAttributes(strSubAttr2, range: NSRange(location: 2, length: 4))
-
-        label.attributedText = attrString
-        return label
-    }()
-    
-    lazy var towView:UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.init(hex: "#ffffff")
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.lightGray.cgColor
-        return view
-    }()
-    lazy var thirdView:UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.init(hex: "ffffff")
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.lightGray.cgColor
-        return view
-    }()
-    
-    lazy var fourView:UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.init(hex: "#FAFAFA")
-        return view
-    }()
-    
-    lazy var phoneTF: UITextField = {
-        let  TF = UITextField()
-        TF.placeholder = "输入手机号"
-        TF.font = UIFont.systemFont(ofSize: 20*WidthW)
-        TF.textColor = Title_color
-        TF.isEnabled = false
-        return TF
-    }()
-    lazy var nameTF: UITextField = {
-        let  TF = UITextField()
-        TF.placeholder = "输入姓名"
-        TF.font = UIFont.systemFont(ofSize: 20*WidthW)
-        TF.textColor = Title_color
-        TF.isEnabled = false
-        return TF
-    }()
-    
-    lazy var manBtn: UIButton = {
-        let button = UIButton()
-        button.setTitle("男", for: .normal)
-        button.setImage(UIImage(named: "路径"), for: .normal)
-        button.setImage(UIImage(named: "图标"), for: .selected)
-        button.setTitleColor(Title_color, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20*WidthW)
-        button.addTarget(self, action: #selector(sexBtnClick(_:)), for: .touchUpInside)
-        button.tag = 110
-        return button
-    }()
-    
-    lazy var womanBtn: UIButton = {
-        let button = UIButton()
-        button.setTitle("女", for: .normal)
-        button.setImage(UIImage(named: "路径"), for: .normal)
-        button.setImage(UIImage(named: "图标"), for: .selected)
-        button.setTitleColor(Title_color, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20*WidthW)
-        button.addTarget(self, action: #selector(sexBtnClick(_:)), for: .touchUpInside)
-        button.tag = 111
-        return button
-    }()
-    
-    lazy var lastBtn: UIButton = {
-        let button = UIButton()
-        button.setTitle("立即开通", for: .normal)
-        button.setTitleColor(UIColor.init(hex: "ffffff"), for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 24*WidthW)
-        button.layer.cornerRadius = 28*WidthW
-        button.backgroundColor = MainColor
-        button.addTarget(self, action: #selector(lastBtnClick(_:)), for: .touchUpInside)
-        return button
-    }()
-    
-    @objc func lastBtnClick(_ sender:UIButton){
-        print("点击了立即开通按钮")
-        let kaSuccessView:ZWKaSucessView = ZWKaSucessView().initView() as! ZWKaSucessView
-        kaSuccessView.show()
-    }
-    
-    @objc func sexBtnClick(_ sender:UIButton){
-        sender.isSelected = !sender.isSelected
-        if sender.tag == 110{
-            womanBtn.isSelected = !sender.isSelected
-        }else{
-            manBtn.isSelected = !sender.isSelected
-        }
-    }
     
     init(title: String?, message: String?, cancelButtonTitle: String?, sureButtonTitle: String?,x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat ) {
         super.init(frame: CGRect(x: x, y: y, width: width, height: height))
+        
         createAlertView()
         
     }
@@ -241,12 +100,22 @@ class ZWnewCreatBtnTanKuang: UIView {
 //        }
         //
 //        backView.addSubview(LabelAndTextField.initView())
-        
-
-
-        let textField = DropBoxTextField(frame: CGRect(x: 465*WidthW, y: 296*WidthW, width: 360*WidthW, height: 64*WidthW), customTextField: self.typeTextField)
+        bgView.addSubview(self.typeTextField)
+        typeTextField.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-325*WidthW)
+            make.top.equalToSuperview().offset(296*WidthW)
+            make.width.equalTo(360*WidthW)
+            make.height.equalTo(64*WidthW)
+        }
+        self.typeTextField.placeholder = "电子卡"
+        let textField = DropBoxTextField(frame: typeTextField.frame, customTextField: self.typeTextField)
         bgView.addSubview(textField)
-        textField.backgroundColor = UIColor.white
+//        textField.snp.makeConstraints { make in
+//            make.right.equalToSuperview().offset(-325*width)
+//            make.top.equalToSuperview().offset(296*WidthW)
+//            make.width.equalTo(360*WidthW)
+//            make.height.equalTo(64*WidthW)
+//        }
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.lightGray.cgColor
         /// 设置选项内容
@@ -261,91 +130,9 @@ class ZWnewCreatBtnTanKuang: UIView {
             print("选中第 \(index) 行，标题 \(title)")
             textField.drawUp()
         }
+       
+                    
         
-        bgView.addSubview(self.oneL)
-        oneL.snp.makeConstraints { make in
-            make.right.equalTo(textField.snp.left).offset(-24*WidthW)
-            make.top.equalToSuperview().offset(296*WidthW)
-            make.height.equalTo(64*WidthW)
-        }
-        
-        bgView.addSubview(self.towView)
-        towView.snp.makeConstraints { make in
-            make.left.right.equalTo(textField)
-            make.height.equalTo(64*WidthW)
-            make.top.equalToSuperview().offset(384*WidthW)
-        }
-        towView.addSubview(self.phoneTF)
-        phoneTF.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(15*WidthW)
-            make.top.right.bottom.equalToSuperview()
-        }
-        
-        bgView.addSubview(self.towL)
-        towL.snp.makeConstraints { make in
-            make.right.equalTo(towView.snp.left).offset(-24*WidthW)
-            make.height.equalTo(64*WidthW)
-            make.centerY.equalTo(towView.snp.centerY)
-
-        }
-
-        bgView.addSubview(self.thirdView)
-        thirdView.snp.makeConstraints { make in
-            make.left.right.equalTo(textField)
-            make.height.equalTo(64*WidthW)
-            make.top.equalTo(towView.snp.bottom).offset(24*WidthW)
-        }
-
-        thirdView.addSubview(self.nameTF)
-        nameTF.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(10*WidthW)
-            make.top.right.bottom.equalToSuperview()
-        }
-
-        bgView.addSubview(self.thirdL)
-        thirdL.snp.makeConstraints { make in
-            make.right.equalTo(thirdView.snp.left).offset(-24*WidthW)
-            make.height.equalTo(64*WidthW)
-            make.centerY.equalTo(thirdView.snp.centerY)
-        }
-
-
-        bgView.addSubview(self.fourView)
-        fourView.snp.makeConstraints { make in
-            make.left.right.equalTo(textField)
-            make.height.equalTo(64*WidthW)
-            make.top.equalTo(thirdView.snp.bottom).offset(24*WidthW)
-        }
-
-        bgView.addSubview(self.fourL)
-        fourL.snp.makeConstraints { make in
-            make.right.equalTo(fourView.snp.left).offset(-24*WidthW)
-            make.height.equalTo(64*WidthW)
-            make.centerY.equalTo(fourView.snp.centerY)
-        }
-
-        fourView.addSubview(self.manBtn)
-        manBtn.snp.makeConstraints { make in
-            make.left.centerY.equalToSuperview()
-            make.width.equalTo(80*WidthW)
-            make.height.equalTo(40*WidthW)
-        }
-        
-        fourView.addSubview(self.womanBtn)
-        womanBtn.snp.makeConstraints { make in
-            make.left.equalTo(self.manBtn.snp.right).offset(24*WidthW)
-            make.height.equalTo(40*WidthW)
-            make.width.equalTo(80*WidthW)
-            make.centerY.equalToSuperview()
-        }
-        
-        bgView.addSubview(self.lastBtn)
-        lastBtn.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-80*WidthW)
-            make.width.equalTo(184*WidthW)
-            make.height.equalTo(56*WidthW)
-        }
     }
     
     
