@@ -75,7 +75,6 @@
 		0444686227E02E4F000444FD /* iconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444686127E02E4F000444FD /* iconButtonView.swift */; };
 		0449922827F7EC3500DB5410 /* ZWCheckSementModelJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922727F7EC3500DB5410 /* ZWCheckSementModelJoe.swift */; };
 		0449922A27F7FC3200DB5410 /* ZWCheckOutTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922927F7FC3200DB5410 /* ZWCheckOutTopView.swift */; };
-		0449922C27F81EBA00DB5410 /* UIbutton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922B27F81EBA00DB5410 /* UIbutton+Extension.swift */; };
 		0449922E27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922D27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift */; };
 		0449923027F842B600DB5410 /* ZWRootViewControllerJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922F27F842B600DB5410 /* ZWRootViewControllerJoe.swift */; };
 		0449923227F84E7400DB5410 /* ZWCashierSettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449923127F84E7400DB5410 /* ZWCashierSettingItemCell.swift */; };
@@ -83,6 +82,9 @@
 		0469F7EF2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7EE2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift */; };
 		0469F7F7280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7F6280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift */; };
 		0469F7F928097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7F828097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift */; };
+		0469F825280D143F0072CD1E /* XJExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F824280D143F0072CD1E /* XJExtension.swift */; };
+		0469F827280D14760072CD1E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F826280D14760072CD1E /* Date+Extension.swift */; };
+		0469F82B280D14D20072CD1E /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F82A280D14D20072CD1E /* UILabel+Extension.swift */; };
 		046B4E0527F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0427F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift */; };
 		046B4E0827F54ACC00710D02 /* ZWStaffShiftVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0727F54ACC00710D02 /* ZWStaffShiftVCJoe.swift */; };
 		046B4E0B27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0A27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift */; };
@@ -103,6 +105,7 @@
 		0486848727D833D200D6A878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0486848627D833D200D6A878 /* Assets.xcassets */; };
 		048BD21A27FD327A00FFC9FF /* APIModelJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BD21927FD327A00FFC9FF /* APIModelJoe.swift */; };
 		048BD21C27FD441D00FFC9FF /* ZWQuDanTanKuangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BD21B27FD441D00FFC9FF /* ZWQuDanTanKuangView.swift */; };
+		04A20623280D3A8D00367FE2 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A20622280D3A8D00367FE2 /* UIButton+Extension.swift */; };
 		04A9DB0A27F30C2E0036C603 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9DB0927F30C2E0036C603 /* ProgressHUD.swift */; };
 		04ACE14528059B71001356D4 /* ZWOrderQuerySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACE14428059B71001356D4 /* ZWOrderQuerySearchView.swift */; };
 		04ACE14728066E5C001356D4 /* ZWOrderQueryLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACE14628066E5C001356D4 /* ZWOrderQueryLeftView.swift */; };
@@ -235,7 +238,6 @@
 		0444686127E02E4F000444FD /* iconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iconButtonView.swift; sourceTree = "<group>"; };
 		0449922727F7EC3500DB5410 /* ZWCheckSementModelJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckSementModelJoe.swift; sourceTree = "<group>"; };
 		0449922927F7FC3200DB5410 /* ZWCheckOutTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckOutTopView.swift; sourceTree = "<group>"; };
-		0449922B27F81EBA00DB5410 /* UIbutton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIbutton+Extension.swift"; sourceTree = "<group>"; };
 		0449922D27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWChooseGoodsClassTanKuangView.swift; sourceTree = "<group>"; };
 		0449922F27F842B600DB5410 /* ZWRootViewControllerJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRootViewControllerJoe.swift; sourceTree = "<group>"; };
 		0449923127F84E7400DB5410 /* ZWCashierSettingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCashierSettingItemCell.swift; sourceTree = "<group>"; };
@@ -243,6 +245,9 @@
 		0469F7EE2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWScanQRCodeVCJoe.swift; sourceTree = "<group>"; };
 		0469F7F6280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderYouHuiCollectionCellJoe.swift; sourceTree = "<group>"; };
 		0469F7F828097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderYouHuiHeaderCellJoe.swift; sourceTree = "<group>"; };
+		0469F824280D143F0072CD1E /* XJExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJExtension.swift; sourceTree = "<group>"; };
+		0469F826280D14760072CD1E /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		0469F82A280D14D20072CD1E /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		046B4E0427F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenVCJoe.swift; sourceTree = "<group>"; };
 		046B4E0727F54ACC00710D02 /* ZWStaffShiftVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWStaffShiftVCJoe.swift; sourceTree = "<group>"; };
 		046B4E0A27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCommodityStocksVCJoe.swift; sourceTree = "<group>"; };
@@ -268,6 +273,7 @@
 		0486849A27D833D200D6A878 /* CashierUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CashierUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		048BD21927FD327A00FFC9FF /* APIModelJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModelJoe.swift; sourceTree = "<group>"; };
 		048BD21B27FD441D00FFC9FF /* ZWQuDanTanKuangView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWQuDanTanKuangView.swift; sourceTree = "<group>"; };
+		04A20622280D3A8D00367FE2 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		04A9DB0927F30C2E0036C603 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		04ACE14428059B71001356D4 /* ZWOrderQuerySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQuerySearchView.swift; sourceTree = "<group>"; };
 		04ACE14628066E5C001356D4 /* ZWOrderQueryLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQueryLeftView.swift; sourceTree = "<group>"; };
@@ -492,6 +498,7 @@
 		043A59062804238E00E1D607 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				0469F7FC280D0E6F0072CD1E /* dateView(日历) */,
 				043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */,
 				0480B941280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift */,
 				04ACE14428059B71001356D4 /* ZWOrderQuerySearchView.swift */,
@@ -715,6 +722,13 @@
 				0469F7EE2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift */,
 			);
 			path = "Scan(扫码)";
+			sourceTree = "<group>";
+		};
+		0469F7FC280D0E6F0072CD1E /* dateView(日历) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "dateView(日历)";
 			sourceTree = "<group>";
 		};
 		046B4E0627F54AB500710D02 /* controller */ = {
@@ -1020,10 +1034,13 @@
 		04CA379627F58FFC00E620E5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0469F824280D143F0072CD1E /* XJExtension.swift */,
+				0469F826280D14760072CD1E /* Date+Extension.swift */,
+				0469F82A280D14D20072CD1E /* UILabel+Extension.swift */,
 				04CA37A127F5D0F400E620E5 /* UIView+MDExtension.swift */,
 				0431FCD927D88BFB00778DE6 /* NSString-Extension.swift */,
 				04CA379F27F5C18400E620E5 /* UIView+Corners.swift */,
-				0449922B27F81EBA00DB5410 /* UIbutton+Extension.swift */,
+				04A20622280D3A8D00367FE2 /* UIButton+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1379,6 +1396,7 @@
 				04E3646F27F467860007B91A /* LTVCExtension.swift in Sources */,
 				043E9AA52806DBBD000B3BBF /* ZWDataReconciliationVCJoe.swift in Sources */,
 				0406E1F027FEDDA900E5A948 /* ZWCommoditySettingsCell.swift in Sources */,
+				04A20623280D3A8D00367FE2 /* UIButton+Extension.swift in Sources */,
 				0444685D27E0263C000444FD /* CashierSettingView.swift in Sources */,
 				043E9AD0280942F7000B3BBF /* ZWRecordLogRightViewKB.swift in Sources */,
 				042926F328004B7600A3D1F8 /* ZWMemberManagemenLeftCell.swift in Sources */,
@@ -1392,9 +1410,9 @@
 				043E9AB728080505000B3BBF /* UCollectionViewSectionBackgroundLayout.swift in Sources */,
 				043E9AA92806DBBD000B3BBF /* testPopView.swift in Sources */,
 				0444685927E0257A000444FD /* CashierSettingViewController.swift in Sources */,
-				0449922C27F81EBA00DB5410 /* UIbutton+Extension.swift in Sources */,
 				04CA379A27F5B0C400E620E5 /* ZWCheckOutStoreViewJoe.swift in Sources */,
 				04ACE157280810DE001356D4 /* ZWOrderYouHuiPopViewJoe.swift in Sources */,
+				0469F827280D14760072CD1E /* Date+Extension.swift in Sources */,
 				04E3646C27F467860007B91A /* LTCollectionFlowLayout.swift in Sources */,
 				0444682627DAED0E000444FD /* header.swift in Sources */,
 				04ACE1522807F0B1001356D4 /* ZWVipCollectionViewJoe.swift in Sources */,
@@ -1435,6 +1453,7 @@
 				0444683C27DEEACE000444FD /* SelectStoreView.swift in Sources */,
 				04E3643627F402040007B91A /* RootModel.swift in Sources */,
 				0406E1EA27FED5A700E5A948 /* ZWTanKuangTableViewCell.swift in Sources */,
+				0469F82B280D14D20072CD1E /* UILabel+Extension.swift in Sources */,
 				043E9AAB2806DBBD000B3BBF /* DRightView.swift in Sources */,
 				043E9AAF2807F48B000B3BBF /* ZWSuccessionTCellKB.swift in Sources */,
 				04ACE15A280847CD001356D4 /* ZWMoreCategoriesPopView.swift in Sources */,
@@ -1470,6 +1489,7 @@
 				04ACE14528059B71001356D4 /* ZWOrderQuerySearchView.swift in Sources */,
 				043E9AB628080505000B3BBF /* UCollectionViewAlignedLayout.swift in Sources */,
 				043E9ABB28080655000B3BBF /* ZWMoneyInfoCCellKB.swift in Sources */,
+				0469F825280D143F0072CD1E /* XJExtension.swift in Sources */,
 				0444682A27DED565000444FD /* UserInfo.swift in Sources */,
 				046B4E1427F54C4000710D02 /* ZWEnterBackgroundVCJoe.swift in Sources */,
 				04E3644827F45DF20007B91A /* ZWOrderQueryViewControllerJoe.swift in Sources */,

@@ -7,22 +7,22 @@
 
 import UIKit
 
-class ZWOrderQueryLeftView: UIView {
-//
+class ZWOrderQueryLeftView: UIView, FSCalendarDataSource, FSCalendarDelegate {
+    //
     lazy var topView : UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = UIColor.init(hex: "#535C7A")
         return view
     }()
-//
+    //
     lazy var SubtopView : UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = UIColor.init(hex: "#5F688A")
         return view
     }()
     //实际营业额
     lazy var YingYeEBtn : UIButton = {
-       let Btn = UIButton()
+        let Btn = UIButton()
         Btn.backgroundColor = UIColor.init(hex: "#5F688A")
         Btn.setImage(UIImage.init(named: "订单查询时间"), for: .normal)
         Btn.setTitle("实际营业额", for: .normal)
@@ -32,7 +32,7 @@ class ZWOrderQueryLeftView: UIView {
     }()
     //金额
     lazy var PriceLabel : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.textColor = UIColor.init(hex: "ffffff")
         label.font = UIFont.systemFont(ofSize: 24*WidthW)
         label.text = "¥1584.75"
@@ -40,7 +40,7 @@ class ZWOrderQueryLeftView: UIView {
     }()
     //订单合计
     lazy var OrderAllLabel : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.textColor = UIColor.init(hex: "ffffff")
         label.font = UIFont.systemFont(ofSize: 18*WidthW)
         label.text = "订单合计:18"
@@ -48,7 +48,7 @@ class ZWOrderQueryLeftView: UIView {
     }()
     //退款合计
     lazy var TuiKuanLabel : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.textColor = UIColor.init(hex: "ffffff")
         label.font = UIFont.systemFont(ofSize: 18*WidthW)
         label.text = "退款合计:7"
@@ -56,18 +56,18 @@ class ZWOrderQueryLeftView: UIView {
     }()
     //预订单底部yellowview
     lazy var yellowview : UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = UIColor.init(hex: "#FFDC52")
         return view
     }()
     lazy var  YuDingDanImage : UIImageView = {
-       let image = UIImageView()
+        let image = UIImageView()
         image.image = UIImage.init(named: "订单查询预订单")
         return image
     }()
     //预订单
     lazy var YuDingDanLabel : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.textColor = UIColor.init(hex: "#5C2B00")
         label.font = UIFont.systemFont(ofSize: 18*WidthW)
         label.text = "预订单"
@@ -76,7 +76,7 @@ class ZWOrderQueryLeftView: UIView {
     }()
     //选择订单时间段
     lazy var SementTitleLabel : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.textColor = UIColor.init(hex: "#323233")
         label.font = UIFont.systemFont(ofSize: 24*WidthW)
         label.text = "选择订单时间段"
@@ -85,13 +85,14 @@ class ZWOrderQueryLeftView: UIView {
     }()
     //分段选择view
     lazy var SementBottomView : UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = UIColor.init(hex: "#ffffff")
         return view
     }()
     //二级分类
     let TwoSementView : ZWCheckSementViewJoe = ZWCheckSementViewJoe()
-  
+    
+    
     
     func initView()->UIView{
         //
@@ -175,7 +176,7 @@ class ZWOrderQueryLeftView: UIView {
             make.height.equalTo(68*WidthW)
         }
         //
-//        TwoSementView.delegate = self//遵守点击分段选择代理
+        //        TwoSementView.delegate = self//遵守点击分段选择代理
         TwoSementView.cornerRadius = 34*WidthW//圆角大小
         TwoSementView.selectBackgroundColor = UIColor.init(hex: "#FE7774")
         TwoSementView.textFont = 23 //字体大小
@@ -193,9 +194,36 @@ class ZWOrderQueryLeftView: UIView {
         }
         TwoSementView.dataAarry =  ["今天","近七天","近30天","其他时间"]
         self.TwoSementView.ReloadData()
+        /// 翻页-日历
+        let calendar = FSCalendar(frame: CGRect(x: 0, y: SementBottomView.bottom  + 300, width: (OrderTabelViewWidth)*WidthW, height: (OrderTabelViewWidth)*WidthW))
+        calendar.dataSource = self
+        calendar.delegate = self
+        self.addSubview(calendar)
+        calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
+        let  locale : NSLocale = NSLocale.init(localeIdentifier: "zh_CN")
+        calendar.locale = locale as Locale;
+        // 设置周(日、一、二、三、四)字体颜色
+        calendar.appearance.weekdayTextColor = UIColor.init(hex: "#000000");
         
+        // 设置今天文字颜色
+        calendar.appearance.titleTodayColor = UIColor.red;
         
+        //设置头部字体颜色
+        calendar.appearance.headerTitleColor =  UIColor.init(hex: "#000000");
         
+        // 设置头部日期格式
+        calendar.appearance.headerDateFormat = "yyyy年MM月dd日";
+        //这个属性控制"上个月"和"下个月"标签在静止时刻的透明度
+        calendar.appearance.headerMinimumDissolvedAlpha = 0;
+        
+
         return self
+    }
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        print("=====\(date) \(monthPosition)")
+    }//didDeselectDate
+    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        print("=====\(date) \(monthPosition)")
     }
 }

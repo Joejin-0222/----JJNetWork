@@ -16,5 +16,5 @@ target 'Cashier' do
   pod 'lottie-ios'
   pod 'Reusable'
   pod 'Kingfisher' #图片缓存
-
+pod 'FSCalendar'
 end
