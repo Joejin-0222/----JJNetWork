@@ -92,12 +92,9 @@
 		0469F7EF2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7EE2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift */; };
 		0469F7F7280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7F6280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift */; };
 		0469F7F928097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7F828097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift */; };
-
 		0469F825280D143F0072CD1E /* XJExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F824280D143F0072CD1E /* XJExtension.swift */; };
 		0469F827280D14760072CD1E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F826280D14760072CD1E /* Date+Extension.swift */; };
 		0469F82B280D14D20072CD1E /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F82A280D14D20072CD1E /* UILabel+Extension.swift */; };
-		046B4E0527F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0427F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift */; };
-
 		046B4E0827F54ACC00710D02 /* ZWStaffShiftVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0727F54ACC00710D02 /* ZWStaffShiftVCJoe.swift */; };
 		046B4E0B27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0A27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift */; };
 		046B4E1127F54BFE00710D02 /* ZWSwitchStoreVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E1027F54BFE00710D02 /* ZWSwitchStoreVCJoe.swift */; };
@@ -266,12 +263,9 @@
 		0469F7EE2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWScanQRCodeVCJoe.swift; sourceTree = "<group>"; };
 		0469F7F6280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderYouHuiCollectionCellJoe.swift; sourceTree = "<group>"; };
 		0469F7F828097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderYouHuiHeaderCellJoe.swift; sourceTree = "<group>"; };
-
 		0469F824280D143F0072CD1E /* XJExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJExtension.swift; sourceTree = "<group>"; };
 		0469F826280D14760072CD1E /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		0469F82A280D14D20072CD1E /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
-		046B4E0427F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenVCJoe.swift; sourceTree = "<group>"; };
-
 		046B4E0727F54ACC00710D02 /* ZWStaffShiftVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWStaffShiftVCJoe.swift; sourceTree = "<group>"; };
 		046B4E0A27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCommodityStocksVCJoe.swift; sourceTree = "<group>"; };
 		046B4E1027F54BFE00710D02 /* ZWSwitchStoreVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWSwitchStoreVCJoe.swift; sourceTree = "<group>"; };
@@ -1241,6 +1235,7 @@
 				0486847427D833D100D6A878 /* Sources */,
 				0486847527D833D100D6A878 /* Frameworks */,
 				0486847627D833D100D6A878 /* Resources */,
+				38E561C2A5AF496412AC8213 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1360,6 +1355,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		38E561C2A5AF496412AC8213 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cashier/Pods-Cashier-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cashier/Pods-Cashier-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cashier/Pods-Cashier-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4807A53F16BB75BFF48C29A5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
