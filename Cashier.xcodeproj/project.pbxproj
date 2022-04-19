@@ -24,13 +24,9 @@
 		042926E92800051400A3D1F8 /* ZWStaffShiftOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042926E82800051400A3D1F8 /* ZWStaffShiftOneCell.swift */; };
 		042926EB2800163500A3D1F8 /* ZWStaffHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042926EA2800163500A3D1F8 /* ZWStaffHeaderView.swift */; };
 		042926ED28001C8A00A3D1F8 /* ZWStaffShiftRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042926EC28001C8A00A3D1F8 /* ZWStaffShiftRightView.swift */; };
-		042926F12800451200A3D1F8 /* ZWMemberManagemenLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042926F02800451200A3D1F8 /* ZWMemberManagemenLeftView.swift */; };
-		042926F328004B7600A3D1F8 /* ZWMemberManagemenLeftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042926F228004B7600A3D1F8 /* ZWMemberManagemenLeftCell.swift */; };
 		0431FCDA27D88BFB00778DE6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD727D88BFB00778DE6 /* API.swift */; };
 		0431FCDB27D88BFB00778DE6 /* ZHFNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD827D88BFB00778DE6 /* ZHFNetWork.swift */; };
 		0431FCDC27D88BFB00778DE6 /* NSString-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD927D88BFB00778DE6 /* NSString-Extension.swift */; };
-		043A59032803CFE900E1D607 /* ZWMemberManagemenRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A59022803CFE900E1D607 /* ZWMemberManagemenRightView.swift */; };
-		043A590528040A1E00E1D607 /* ZWnewCreatBtnTanKuang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A590428040A1E00E1D607 /* ZWnewCreatBtnTanKuang.swift */; };
 		043A5909280423A700E1D607 /* ZWOrderQueryRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */; };
 		043C5FD227D8784600F881CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C5FD127D8784600F881CB /* LoginViewController.swift */; };
 		043C5FD627D878AC00F881CB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C5FD527D878AC00F881CB /* LoginView.swift */; };
@@ -79,11 +75,24 @@
 		0449922E27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922D27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift */; };
 		0449923027F842B600DB5410 /* ZWRootViewControllerJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922F27F842B600DB5410 /* ZWRootViewControllerJoe.swift */; };
 		0449923227F84E7400DB5410 /* ZWCashierSettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449923127F84E7400DB5410 /* ZWCashierSettingItemCell.swift */; };
+		0456A752280E4952003D695E /* ZWMemberManagemenVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456A742280E4952003D695E /* ZWMemberManagemenVCJoe.swift */; };
+		0456A753280E4952003D695E /* ZWVIPConsumptionRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456A745280E4952003D695E /* ZWVIPConsumptionRecordView.swift */; };
+		0456A754280E4952003D695E /* ZWVIPRightOrderTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456A746280E4952003D695E /* ZWVIPRightOrderTCell.swift */; };
+		0456A755280E4952003D695E /* ZWVIPGoodsTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456A747280E4952003D695E /* ZWVIPGoodsTCell.swift */; };
+		0456A756280E4952003D695E /* ZWVIPCRLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456A748280E4952003D695E /* ZWVIPCRLeftView.swift */; };
+		0456A757280E4952003D695E /* ZWVIPCRRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456A749280E4952003D695E /* ZWVIPCRRightView.swift */; };
+		0456A758280E4952003D695E /* ZWVIPLeftTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456A74A280E4952003D695E /* ZWVIPLeftTCell.swift */; };
+		0456A759280E4952003D695E /* ZWnewCreatBtnTanKuang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456A74B280E4952003D695E /* ZWnewCreatBtnTanKuang.swift */; };
+		0456A75A280E4952003D695E /* ZWMemberManagemenLeftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456A74C280E4952003D695E /* ZWMemberManagemenLeftCell.swift */; };
+		0456A75B280E4952003D695E /* ZWMemberManagemenLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456A74D280E4952003D695E /* ZWMemberManagemenLeftView.swift */; };
+		0456A75C280E4952003D695E /* ZWnewLabelAndTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456A74E280E4952003D695E /* ZWnewLabelAndTextField.swift */; };
+		0456A75D280E4952003D695E /* ZWMemberManagemenRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456A74F280E4952003D695E /* ZWMemberManagemenRightView.swift */; };
+		0456A75E280E4952003D695E /* ZWTopupSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456A750280E4952003D695E /* ZWTopupSuccessView.swift */; };
+		0456A75F280E4952003D695E /* ZWKaSucessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456A751280E4952003D695E /* ZWKaSucessView.swift */; };
 		0469F7E228090A9E0072CD1E /* ZWMoreCategoriesCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7E128090A9E0072CD1E /* ZWMoreCategoriesCellJoe.swift */; };
 		0469F7EF2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7EE2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift */; };
 		0469F7F7280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7F6280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift */; };
 		0469F7F928097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F7F828097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift */; };
-		046B4E0527F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0427F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift */; };
 		046B4E0827F54ACC00710D02 /* ZWStaffShiftVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0727F54ACC00710D02 /* ZWStaffShiftVCJoe.swift */; };
 		046B4E0B27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E0A27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift */; };
 		046B4E1127F54BFE00710D02 /* ZWSwitchStoreVCJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B4E1027F54BFE00710D02 /* ZWSwitchStoreVCJoe.swift */; };
@@ -94,7 +103,6 @@
 		0480B93E280508B700C5670B /* ZWLoadingTanKuangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B93D280508B700C5670B /* ZWLoadingTanKuangView.swift */; };
 		0480B940280511FF00C5670B /* ZWLoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B93F280511FF00C5670B /* ZWLoadingHUD.swift */; };
 		0480B942280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B941280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift */; };
-		0480B94428054FDE00C5670B /* ZWnewLabelAndTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B94328054FDE00C5670B /* ZWnewLabelAndTextField.swift */; };
 		0480B946280559E700C5670B /* ZWOrderWeighView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B945280559E700C5670B /* ZWOrderWeighView.swift */; };
 		0486847C27D833D100D6A878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486847B27D833D100D6A878 /* AppDelegate.swift */; };
 		0486847E27D833D100D6A878 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486847D27D833D100D6A878 /* DocumentBrowserViewController.swift */; };
@@ -184,13 +192,9 @@
 		042926E82800051400A3D1F8 /* ZWStaffShiftOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWStaffShiftOneCell.swift; sourceTree = "<group>"; };
 		042926EA2800163500A3D1F8 /* ZWStaffHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWStaffHeaderView.swift; sourceTree = "<group>"; };
 		042926EC28001C8A00A3D1F8 /* ZWStaffShiftRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWStaffShiftRightView.swift; sourceTree = "<group>"; };
-		042926F02800451200A3D1F8 /* ZWMemberManagemenLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenLeftView.swift; sourceTree = "<group>"; };
-		042926F228004B7600A3D1F8 /* ZWMemberManagemenLeftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenLeftCell.swift; sourceTree = "<group>"; };
 		0431FCD727D88BFB00778DE6 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		0431FCD827D88BFB00778DE6 /* ZHFNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHFNetWork.swift; sourceTree = "<group>"; };
 		0431FCD927D88BFB00778DE6 /* NSString-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString-Extension.swift"; sourceTree = "<group>"; };
-		043A59022803CFE900E1D607 /* ZWMemberManagemenRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenRightView.swift; sourceTree = "<group>"; };
-		043A590428040A1E00E1D607 /* ZWnewCreatBtnTanKuang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWnewCreatBtnTanKuang.swift; sourceTree = "<group>"; };
 		043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQueryRightView.swift; sourceTree = "<group>"; };
 		043C5FD127D8784600F881CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		043C5FD527D878AC00F881CB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -239,11 +243,24 @@
 		0449922D27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWChooseGoodsClassTanKuangView.swift; sourceTree = "<group>"; };
 		0449922F27F842B600DB5410 /* ZWRootViewControllerJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWRootViewControllerJoe.swift; sourceTree = "<group>"; };
 		0449923127F84E7400DB5410 /* ZWCashierSettingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCashierSettingItemCell.swift; sourceTree = "<group>"; };
+		0456A742280E4952003D695E /* ZWMemberManagemenVCJoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenVCJoe.swift; sourceTree = "<group>"; };
+		0456A745280E4952003D695E /* ZWVIPConsumptionRecordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWVIPConsumptionRecordView.swift; sourceTree = "<group>"; };
+		0456A746280E4952003D695E /* ZWVIPRightOrderTCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWVIPRightOrderTCell.swift; sourceTree = "<group>"; };
+		0456A747280E4952003D695E /* ZWVIPGoodsTCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWVIPGoodsTCell.swift; sourceTree = "<group>"; };
+		0456A748280E4952003D695E /* ZWVIPCRLeftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWVIPCRLeftView.swift; sourceTree = "<group>"; };
+		0456A749280E4952003D695E /* ZWVIPCRRightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWVIPCRRightView.swift; sourceTree = "<group>"; };
+		0456A74A280E4952003D695E /* ZWVIPLeftTCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWVIPLeftTCell.swift; sourceTree = "<group>"; };
+		0456A74B280E4952003D695E /* ZWnewCreatBtnTanKuang.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWnewCreatBtnTanKuang.swift; sourceTree = "<group>"; };
+		0456A74C280E4952003D695E /* ZWMemberManagemenLeftCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenLeftCell.swift; sourceTree = "<group>"; };
+		0456A74D280E4952003D695E /* ZWMemberManagemenLeftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenLeftView.swift; sourceTree = "<group>"; };
+		0456A74E280E4952003D695E /* ZWnewLabelAndTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWnewLabelAndTextField.swift; sourceTree = "<group>"; };
+		0456A74F280E4952003D695E /* ZWMemberManagemenRightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenRightView.swift; sourceTree = "<group>"; };
+		0456A750280E4952003D695E /* ZWTopupSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWTopupSuccessView.swift; sourceTree = "<group>"; };
+		0456A751280E4952003D695E /* ZWKaSucessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWKaSucessView.swift; sourceTree = "<group>"; };
 		0469F7E128090A9E0072CD1E /* ZWMoreCategoriesCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMoreCategoriesCellJoe.swift; sourceTree = "<group>"; };
 		0469F7EE2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWScanQRCodeVCJoe.swift; sourceTree = "<group>"; };
 		0469F7F6280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderYouHuiCollectionCellJoe.swift; sourceTree = "<group>"; };
 		0469F7F828097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderYouHuiHeaderCellJoe.swift; sourceTree = "<group>"; };
-		046B4E0427F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMemberManagemenVCJoe.swift; sourceTree = "<group>"; };
 		046B4E0727F54ACC00710D02 /* ZWStaffShiftVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWStaffShiftVCJoe.swift; sourceTree = "<group>"; };
 		046B4E0A27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCommodityStocksVCJoe.swift; sourceTree = "<group>"; };
 		046B4E1027F54BFE00710D02 /* ZWSwitchStoreVCJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWSwitchStoreVCJoe.swift; sourceTree = "<group>"; };
@@ -255,7 +272,6 @@
 		0480B93D280508B700C5670B /* ZWLoadingTanKuangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWLoadingTanKuangView.swift; sourceTree = "<group>"; };
 		0480B93F280511FF00C5670B /* ZWLoadingHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWLoadingHUD.swift; sourceTree = "<group>"; };
 		0480B941280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQueryRightCellJoe.swift; sourceTree = "<group>"; };
-		0480B94328054FDE00C5670B /* ZWnewLabelAndTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWnewLabelAndTextField.swift; sourceTree = "<group>"; };
 		0480B945280559E700C5670B /* ZWOrderWeighView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderWeighView.swift; sourceTree = "<group>"; };
 		0486847827D833D100D6A878 /* Cashier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0486847B27D833D100D6A878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -452,25 +468,6 @@
 			sourceTree = "<group>";
 		};
 		042926E52800027B00A3D1F8 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		042926EE2800388A00A3D1F8 /* view */ = {
-			isa = PBXGroup;
-			children = (
-				042926F02800451200A3D1F8 /* ZWMemberManagemenLeftView.swift */,
-				042926F228004B7600A3D1F8 /* ZWMemberManagemenLeftCell.swift */,
-				043A59022803CFE900E1D607 /* ZWMemberManagemenRightView.swift */,
-				043A590428040A1E00E1D607 /* ZWnewCreatBtnTanKuang.swift */,
-				0480B94328054FDE00C5670B /* ZWnewLabelAndTextField.swift */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		042926EF2800388F00A3D1F8 /* model */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -709,6 +706,34 @@
 			path = MainRootController;
 			sourceTree = "<group>";
 		};
+		0456A743280E4952003D695E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				0456A744280E4952003D695E /* VIPConsumptionRecord(会员消费记录) */,
+				0456A74B280E4952003D695E /* ZWnewCreatBtnTanKuang.swift */,
+				0456A74C280E4952003D695E /* ZWMemberManagemenLeftCell.swift */,
+				0456A74D280E4952003D695E /* ZWMemberManagemenLeftView.swift */,
+				0456A74E280E4952003D695E /* ZWnewLabelAndTextField.swift */,
+				0456A74F280E4952003D695E /* ZWMemberManagemenRightView.swift */,
+				0456A750280E4952003D695E /* ZWTopupSuccessView.swift */,
+				0456A751280E4952003D695E /* ZWKaSucessView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		0456A744280E4952003D695E /* VIPConsumptionRecord(会员消费记录) */ = {
+			isa = PBXGroup;
+			children = (
+				0456A745280E4952003D695E /* ZWVIPConsumptionRecordView.swift */,
+				0456A746280E4952003D695E /* ZWVIPRightOrderTCell.swift */,
+				0456A747280E4952003D695E /* ZWVIPGoodsTCell.swift */,
+				0456A748280E4952003D695E /* ZWVIPCRLeftView.swift */,
+				0456A749280E4952003D695E /* ZWVIPCRRightView.swift */,
+				0456A74A280E4952003D695E /* ZWVIPLeftTCell.swift */,
+			);
+			path = "VIPConsumptionRecord(会员消费记录)";
+			sourceTree = "<group>";
+		};
 		0469F7E3280941810072CD1E /* Scan(扫码) */ = {
 			isa = PBXGroup;
 			children = (
@@ -930,9 +955,8 @@
 		048684B427D8362600D6A878 /* MemberManagement(会员管理) */ = {
 			isa = PBXGroup;
 			children = (
-				042926EF2800388F00A3D1F8 /* model */,
-				042926EE2800388A00A3D1F8 /* view */,
-				046B4E0427F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift */,
+				0456A743280E4952003D695E /* view */,
+				0456A742280E4952003D695E /* ZWMemberManagemenVCJoe.swift */,
 			);
 			path = "MemberManagement(会员管理)";
 			sourceTree = "<group>";
@@ -1342,11 +1366,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0456A752280E4952003D695E /* ZWMemberManagemenVCJoe.swift in Sources */,
 				0449922827F7EC3500DB5410 /* ZWCheckSementModelJoe.swift in Sources */,
 				048BD21C27FD441D00FFC9FF /* ZWQuDanTanKuangView.swift in Sources */,
 				043E9AB1280803E0000B3BBF /* ZWMoneyInfoKB.swift in Sources */,
+				0456A753280E4952003D695E /* ZWVIPConsumptionRecordView.swift in Sources */,
 				04E3644027F43B6D0007B91A /* UIImage+Hue.swift in Sources */,
 				0406E1F327FEE80B00E5A948 /* ZWSmallTicketMachineVC.swift in Sources */,
+				0456A757280E4952003D695E /* ZWVIPCRRightView.swift in Sources */,
 				046B4E0B27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift in Sources */,
 				043E9AB928080601000B3BBF /* ZWBaseCollectionViewCell.swift in Sources */,
 				0406E1DE27FE84FE00E5A948 /* ZWHeaderViewCell.swift in Sources */,
@@ -1354,16 +1381,20 @@
 				043E9ACC28091C30000B3BBF /* ZWRLLeftTBViewKB.swift in Sources */,
 				043E9AD228094FBF000B3BBF /* ZWRecordLogHeaderViewKB.swift in Sources */,
 				0449923227F84E7400DB5410 /* ZWCashierSettingItemCell.swift in Sources */,
+				0456A759280E4952003D695E /* ZWnewCreatBtnTanKuang.swift in Sources */,
 				043E9ACE28093BDB000B3BBF /* ZWRecordVLogTCell.swift in Sources */,
 				04E3644427F45A4D0007B91A /* ZWOrderViewJoe.swift in Sources */,
 				0480B940280511FF00C5670B /* ZWLoadingHUD.swift in Sources */,
 				04ACE1502807F067001356D4 /* ZWCashCollectionViewJoe.swift in Sources */,
 				04E3646927F467860007B91A /* LTPageScrollView.swift in Sources */,
+				0456A75A280E4952003D695E /* ZWMemberManagemenLeftCell.swift in Sources */,
 				04E3646B27F467860007B91A /* LTAdvancedManager.swift in Sources */,
 				04E3646727F467860007B91A /* LTLivePlayLoopsListView.swift in Sources */,
 				04CA379C27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift in Sources */,
+				0456A75E280E4952003D695E /* ZWTopupSuccessView.swift in Sources */,
 				043C5FD227D8784600F881CB /* LoginViewController.swift in Sources */,
 				0469F7EF2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift in Sources */,
+				0456A755280E4952003D695E /* ZWVIPGoodsTCell.swift in Sources */,
 				04ACE14E2807CC59001356D4 /* ZWSaoMaShouKuanCollectionCellJoe.swift in Sources */,
 				04E3646827F467860007B91A /* LTPageView.swift in Sources */,
 				04E3646E27F467860007B91A /* LTTableViewProtocal.swift in Sources */,
@@ -1373,7 +1404,6 @@
 				0444686027E02B2E000444FD /* MainRootController.swift in Sources */,
 				043E9AA62806DBBD000B3BBF /* DRLeftView.swift in Sources */,
 				04E3647227F467860007B91A /* LTTableView.swift in Sources */,
-				043A59032803CFE900E1D607 /* ZWMemberManagemenRightView.swift in Sources */,
 				043E9ACA28091B79000B3BBF /* ZWRecordLogViewKB.swift in Sources */,
 				046B5E7427F3FA4A000BB30D /* SelectStoreModelZJ.swift in Sources */,
 				04E3646F27F467860007B91A /* LTVCExtension.swift in Sources */,
@@ -1381,7 +1411,7 @@
 				0406E1F027FEDDA900E5A948 /* ZWCommoditySettingsCell.swift in Sources */,
 				0444685D27E0263C000444FD /* CashierSettingView.swift in Sources */,
 				043E9AD0280942F7000B3BBF /* ZWRecordLogRightViewKB.swift in Sources */,
-				042926F328004B7600A3D1F8 /* ZWMemberManagemenLeftCell.swift in Sources */,
+				0456A75D280E4952003D695E /* ZWMemberManagemenRightView.swift in Sources */,
 				04CA37A827F6D8EE00E620E5 /* ZWCheckStoreBottomView.swift in Sources */,
 				0406E1FD27FEFB3900E5A948 /* ZWLeftTableClickTanKuangView.swift in Sources */,
 				043E9A992806DB42000B3BBF /* baseTableViewCell.swift in Sources */,
@@ -1398,7 +1428,6 @@
 				04E3646C27F467860007B91A /* LTCollectionFlowLayout.swift in Sources */,
 				0444682627DAED0E000444FD /* header.swift in Sources */,
 				04ACE1522807F0B1001356D4 /* ZWVipCollectionViewJoe.swift in Sources */,
-				042926F12800451200A3D1F8 /* ZWMemberManagemenLeftView.swift in Sources */,
 				04CA37A027F5C18400E620E5 /* UIView+Corners.swift in Sources */,
 				04E3647427F467860007B91A /* LTPageTitleView.swift in Sources */,
 				0449922E27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift in Sources */,
@@ -1408,7 +1437,6 @@
 				04ACE1492806BAC7001356D4 /* ZWOrderShouKuanTanKuangJoe.swift in Sources */,
 				046B4E0827F54ACC00710D02 /* ZWStaffShiftVCJoe.swift in Sources */,
 				04CA37AD27F6E9B600E620E5 /* Cache.swift in Sources */,
-				0480B94428054FDE00C5670B /* ZWnewLabelAndTextField.swift in Sources */,
 				04E3646D27F467860007B91A /* LTDispatchQueue.swift in Sources */,
 				043E9AC228084B40000B3BBF /* ZWBasePopAllScreenViewKB.swift in Sources */,
 				04E3644627F45D8A0007B91A /* ZWCashierViewControllerJoe.swift in Sources */,
@@ -1431,11 +1459,11 @@
 				0406E1E827FEAFD600E5A948 /* ZWContentCell.swift in Sources */,
 				0406E1EC27FEDB2700E5A948 /* ZWCommoditySettingsVC.swift in Sources */,
 				043E9ABF2808314D000B3BBF /* ZWSuccessionPopView.swift in Sources */,
-				046B4E0527F54AAC00710D02 /* ZWMemberManagemenVCJoe.swift in Sources */,
 				0444683C27DEEACE000444FD /* SelectStoreView.swift in Sources */,
 				04E3643627F402040007B91A /* RootModel.swift in Sources */,
 				0406E1EA27FED5A700E5A948 /* ZWTanKuangTableViewCell.swift in Sources */,
 				043E9AAB2806DBBD000B3BBF /* DRightView.swift in Sources */,
+				0456A756280E4952003D695E /* ZWVIPCRLeftView.swift in Sources */,
 				043E9AAF2807F48B000B3BBF /* ZWSuccessionTCellKB.swift in Sources */,
 				04ACE15A280847CD001356D4 /* ZWMoreCategoriesPopView.swift in Sources */,
 				043E9AAC2806DBBD000B3BBF /* DRRightheaderTCell.swift in Sources */,
@@ -1448,12 +1476,15 @@
 				04ACE1542807F10F001356D4 /* ZWSignCollectionViewJoe.swift in Sources */,
 				04A9DB0A27F30C2E0036C603 /* ProgressHUD.swift in Sources */,
 				0406E1E627FE8F7200E5A948 /* ZWHeaderView.swift in Sources */,
+				0456A758280E4952003D695E /* ZWVIPLeftTCell.swift in Sources */,
 				0449922A27F7FC3200DB5410 /* ZWCheckOutTopView.swift in Sources */,
 				0469F7F928097E3D0072CD1E /* ZWOrderYouHuiHeaderCellJoe.swift in Sources */,
 				043E9AAA2806DBBD000B3BBF /* DRLeftTCell.swift in Sources */,
 				043E9A9A2806DB42000B3BBF /* basePopView.swift in Sources */,
 				0480B942280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift in Sources */,
+				0456A75B280E4952003D695E /* ZWMemberManagemenLeftView.swift in Sources */,
 				043C5FD627D878AC00F881CB /* LoginView.swift in Sources */,
+				0456A754280E4952003D695E /* ZWVIPRightOrderTCell.swift in Sources */,
 				042926E7280002A400A3D1F8 /* ZWStaffShiftLeftView.swift in Sources */,
 				0431FCDB27D88BFB00778DE6 /* ZHFNetWork.swift in Sources */,
 				043E9ABD280827CE000B3BBF /* ZWDailySettlementTCell.swift in Sources */,
@@ -1473,10 +1504,11 @@
 				0444682A27DED565000444FD /* UserInfo.swift in Sources */,
 				046B4E1427F54C4000710D02 /* ZWEnterBackgroundVCJoe.swift in Sources */,
 				04E3644827F45DF20007B91A /* ZWOrderQueryViewControllerJoe.swift in Sources */,
+				0456A75C280E4952003D695E /* ZWnewLabelAndTextField.swift in Sources */,
 				04CA37A627F6C76D00E620E5 /* ZWCheckSementCellJoe.swift in Sources */,
 				0486847C27D833D100D6A878 /* AppDelegate.swift in Sources */,
+				0456A75F280E4952003D695E /* ZWKaSucessView.swift in Sources */,
 				04CA37AC27F6E9B600E620E5 /* Cache+User.swift in Sources */,
-				043A590528040A1E00E1D607 /* ZWnewCreatBtnTanKuang.swift in Sources */,
 				042926EB2800163500A3D1F8 /* ZWStaffHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
