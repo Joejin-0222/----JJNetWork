@@ -69,7 +69,6 @@
 		0444685B27E02624000444FD /* CashierSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444685A27E02624000444FD /* CashierSettingModel.swift */; };
 		0444685D27E0263C000444FD /* CashierSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444685C27E0263C000444FD /* CashierSettingView.swift */; };
 		0444686027E02B2E000444FD /* MainRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444685F27E02B2E000444FD /* MainRootController.swift */; };
-		0444686227E02E4F000444FD /* iconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444686127E02E4F000444FD /* iconButtonView.swift */; };
 		0449922827F7EC3500DB5410 /* ZWCheckSementModelJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922727F7EC3500DB5410 /* ZWCheckSementModelJoe.swift */; };
 		0449922A27F7FC3200DB5410 /* ZWCheckOutTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922927F7FC3200DB5410 /* ZWCheckOutTopView.swift */; };
 		0449922E27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922D27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift */; };
@@ -241,7 +240,6 @@
 		0444685A27E02624000444FD /* CashierSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashierSettingModel.swift; sourceTree = "<group>"; };
 		0444685C27E0263C000444FD /* CashierSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashierSettingView.swift; sourceTree = "<group>"; };
 		0444685F27E02B2E000444FD /* MainRootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootController.swift; sourceTree = "<group>"; };
-		0444686127E02E4F000444FD /* iconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iconButtonView.swift; sourceTree = "<group>"; };
 		0449922727F7EC3500DB5410 /* ZWCheckSementModelJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckSementModelJoe.swift; sourceTree = "<group>"; };
 		0449922927F7FC3200DB5410 /* ZWCheckOutTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckOutTopView.swift; sourceTree = "<group>"; };
 		0449922D27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWChooseGoodsClassTanKuangView.swift; sourceTree = "<group>"; };
@@ -537,22 +535,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		043E9A952806DB42000B3BBF /* base */ = {
-			isa = PBXGroup;
-			children = (
-				043E9A962806DB42000B3BBF /* view */,
-			);
-			path = base;
-			sourceTree = "<group>";
-		};
-		043E9A962806DB42000B3BBF /* view */ = {
+		043E9A952806DB42000B3BBF /* baseView */ = {
 			isa = PBXGroup;
 			children = (
 				043E9A972806DB42000B3BBF /* baseTableViewCell.swift */,
 				043E9A982806DB42000B3BBF /* basePopView.swift */,
 				043E9AB828080601000B3BBF /* ZWBaseCollectionViewCell.swift */,
 			);
-			path = view;
+			path = baseView;
 			sourceTree = "<group>";
 		};
 		043E9A9B2806DBBD000B3BBF /* controller */ = {
@@ -705,12 +695,11 @@
 		0444685E27E02AE9000444FD /* MainRootController */ = {
 			isa = PBXGroup;
 			children = (
-				043E9A952806DB42000B3BBF /* base */,
+				043E9A952806DB42000B3BBF /* baseView */,
 				04E3644D27F467860007B91A /* Lib */,
 				04E3643827F437670007B91A /* controller */,
 				04E3643727F437620007B91A /* view */,
 				04E3643927F437720007B91A /* model */,
-				0444686127E02E4F000444FD /* iconButtonView.swift */,
 			);
 			path = MainRootController;
 			sourceTree = "<group>";
@@ -1482,7 +1471,6 @@
 				043E9AAF2807F48B000B3BBF /* ZWSuccessionTCellKB.swift in Sources */,
 				04ACE15A280847CD001356D4 /* ZWMoreCategoriesPopView.swift in Sources */,
 				043E9AAC2806DBBD000B3BBF /* DRRightheaderTCell.swift in Sources */,
-				0444686227E02E4F000444FD /* iconButtonView.swift in Sources */,
 				04CA37A227F5D0F400E620E5 /* UIView+MDExtension.swift in Sources */,
 				046B4E1627F560B600710D02 /* ZWOrderCellJoe.swift in Sources */,
 				0444683A27DEEA7F000444FD /* SelectStoreViewController.swift in Sources */,

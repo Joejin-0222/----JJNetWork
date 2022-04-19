@@ -45,15 +45,14 @@ class ZWRootViewControllerJoe: UIViewController {
     //
     lazy var headImageBtn : UIButton = {
         let image = UIButton()
-        image.setImage(UIImage.init(named: "vip"), for: .normal)
+        image.setImage(UIImage.init(named: "aodio"), for: .normal)
         return image
     }()
     //
     lazy var nameLabel : UILabel = {
         let label = UILabel()
-        label.text =  "My nickname"
-     
-        label.font = UIFont.systemFont(ofSize: 20*WidthW)
+        label.text = "My nickname"
+        label.font = UIFont.init(name: "PingFangSC-Medium", size: 22*WidthW)//UIFont.systemFont(ofSize: 20*WidthW)
         label.textColor = UIColor.init(hex: "#232733")
         return label
     }()
@@ -127,10 +126,12 @@ class ZWRootViewControllerJoe: UIViewController {
         self.view.addSubview(headImageBtn)
         headImageBtn.addTarget(self, action: #selector(headImageBtnClick), for: .touchUpInside)
         headImageBtn.snp.makeConstraints { make in
-            make.right.equalTo(self.view.snp.right).offset(-32*WidthW)
-            make.width.height.equalTo(48*WidthW)
+            make.right.equalTo(self.view.snp.right).offset(-24*WidthW)
+            make.width.height.equalTo(56*WidthW)
             make.top.equalTo(self.view.snp.top).offset(24*WidthW)
         }
+      
+//        headImageBtn.kf.setImage(with: URL.init(string: Cache.user?.avatar ), for: .normal)
         //用户名
         self.view.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { make in

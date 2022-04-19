@@ -12,7 +12,7 @@ class ZWSwitchStoreVCJoe: ZWRootViewControllerJoe {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+      print("============\(Cache.userSto)")
     }
     
 
