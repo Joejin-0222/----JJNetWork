@@ -27,6 +27,7 @@
 		0431FCDA27D88BFB00778DE6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD727D88BFB00778DE6 /* API.swift */; };
 		0431FCDB27D88BFB00778DE6 /* ZHFNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD827D88BFB00778DE6 /* ZHFNetWork.swift */; };
 		0431FCDC27D88BFB00778DE6 /* NSString-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD927D88BFB00778DE6 /* NSString-Extension.swift */; };
+		043824F3280EAD71003A51C2 /* ZWCheckOutStoreModelJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043824F2280EAD71003A51C2 /* ZWCheckOutStoreModelJoe.swift */; };
 		043A5909280423A700E1D607 /* ZWOrderQueryRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */; };
 		043C5FD227D8784600F881CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C5FD127D8784600F881CB /* LoginViewController.swift */; };
 		043C5FD627D878AC00F881CB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C5FD527D878AC00F881CB /* LoginView.swift */; };
@@ -198,6 +199,7 @@
 		0431FCD727D88BFB00778DE6 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		0431FCD827D88BFB00778DE6 /* ZHFNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHFNetWork.swift; sourceTree = "<group>"; };
 		0431FCD927D88BFB00778DE6 /* NSString-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString-Extension.swift"; sourceTree = "<group>"; };
+		043824F2280EAD71003A51C2 /* ZWCheckOutStoreModelJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckOutStoreModelJoe.swift; sourceTree = "<group>"; };
 		043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQueryRightView.swift; sourceTree = "<group>"; };
 		043C5FD127D8784600F881CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		043C5FD527D878AC00F881CB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -495,7 +497,6 @@
 		043A59062804238E00E1D607 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				0469F7FC280D0E6F0072CD1E /* dateView(日历) */,
 				043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */,
 				0480B941280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift */,
 				04ACE14428059B71001356D4 /* ZWOrderQuerySearchView.swift */,
@@ -648,6 +649,7 @@
 			isa = PBXGroup;
 			children = (
 				0449922727F7EC3500DB5410 /* ZWCheckSementModelJoe.swift */,
+				043824F2280EAD71003A51C2 /* ZWCheckOutStoreModelJoe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -747,13 +749,6 @@
 				0469F7EE2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift */,
 			);
 			path = "Scan(扫码)";
-			sourceTree = "<group>";
-		};
-		0469F7FC280D0E6F0072CD1E /* dateView(日历) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "dateView(日历)";
 			sourceTree = "<group>";
 		};
 		046B4E0627F54AB500710D02 /* controller */ = {
@@ -1462,6 +1457,7 @@
 				0486847E27D833D100D6A878 /* DocumentBrowserViewController.swift in Sources */,
 				0444685B27E02624000444FD /* CashierSettingModel.swift in Sources */,
 				04ACE14728066E5C001356D4 /* ZWOrderQueryLeftView.swift in Sources */,
+				043824F3280EAD71003A51C2 /* ZWCheckOutStoreModelJoe.swift in Sources */,
 				0406E1E127FE893D00E5A948 /* ZWStoreManagementVC.swift in Sources */,
 				04E3647327F467860007B91A /* LTPageTitleItemType.swift in Sources */,
 				04E3646A27F467860007B91A /* LTLayout.swift in Sources */,

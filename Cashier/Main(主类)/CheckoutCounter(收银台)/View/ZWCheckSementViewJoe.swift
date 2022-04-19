@@ -31,7 +31,7 @@ class ZWCheckSementViewJoe: UIView {
     weak var delegate: SementSelectClickDelegate?
     var selectIndexPathBlock : selectIndexPathBlock?
     
-    private var selectIndex:Int = 0   //    记录点击了第几行
+    var selectIndex:Int = 0   //    记录点击了第几行
     fileprivate let CollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout())
     
     
