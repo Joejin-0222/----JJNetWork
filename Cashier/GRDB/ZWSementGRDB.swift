@@ -204,4 +204,11 @@ extension ZWSementGRDB:MutablePersistableRecord, FetchableRecord {
             }
         }
     }
+    
+    static func deleteAll() ->Void {
+        // 是否有数据库表
+        try! self.dbQueue.inDatabase { (db) -> Void in
+            try! ZWSementGRDB.deleteAll(db)
+        }
+    }
 }
