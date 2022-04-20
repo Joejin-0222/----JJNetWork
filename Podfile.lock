@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (5.5.0)
   - FSCalendar (2.8.4)
+  - GRDB.swift (5.11.0):
+    - GRDB.swift/standard (= 5.11.0)
+  - GRDB.swift/standard (5.11.0)
   - HandyJSON (5.0.2)
   - IQKeyboardManagerSwift (6.5.9)
   - JKCategories (1.9.3):
@@ -165,9 +168,11 @@ PODS:
   - Reusable/View (4.1.2)
   - SkeletonView (1.29.2)
   - SnapKit (5.0.1)
+  - ZHCodable (1.0.0)
 
 DEPENDENCIES:
   - FSCalendar
+  - GRDB.swift
   - HandyJSON
   - IQKeyboardManagerSwift (~> 6.5.9)
   - JKCategories (~> 1.9.3)
@@ -181,11 +186,13 @@ DEPENDENCIES:
   - Reusable
   - SkeletonView
   - SnapKit (~> 5.0.1)
+  - ZHCodable (from `https://github.com/haoburongyi/ZHCodable.git`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - FSCalendar
+    - GRDB.swift
     - HandyJSON
     - IQKeyboardManagerSwift
     - JKCategories
@@ -201,9 +208,19 @@ SPEC REPOS:
     - SkeletonView
     - SnapKit
 
+EXTERNAL SOURCES:
+  ZHCodable:
+    :git: https://github.com/haoburongyi/ZHCodable.git
+
+CHECKOUT OPTIONS:
+  ZHCodable:
+    :commit: 392304b680cc83cfc4a1c3e572d4b9cb2c91c7c6
+    :git: https://github.com/haoburongyi/ZHCodable.git
+
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
+  GRDB.swift: 9a33d9680cd3c870c82f48a6cbc73d3cfbb235eb
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   JKCategories: c995567f04ff98680313f56544e6cb62d3152733
@@ -218,7 +235,8 @@ SPEC CHECKSUMS:
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   SkeletonView: 915a80ecc2b6421ab7ac0f0212321c0cc1406472
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  ZHCodable: 7f23673018ddcdf7da5641abc001caa7afe2eece
 
-PODFILE CHECKSUM: 005c1ea27f707bf4783b2c6f787180918661497d
+PODFILE CHECKSUM: ccdf4b086a4f600f65b635b07691482f4ac3f7ae
 
 COCOAPODS: 1.11.2

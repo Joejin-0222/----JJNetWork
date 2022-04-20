@@ -6,53 +6,53 @@
 //
 
 import UIKit
+import ZHCodable
 
-class ZWCheckOutStoreModelJoe: RootModel {
-
-
-        let pages : Int = 0
-
-        let pageSize : Int = 0
-
-       let pageData : [PagedataModel] = []
-
-        let total : Int = 0
-
-        let pageNum : Int = 0
+struct ZWCheckOutStoreModelJoe: ZHCodable {
+    
+    
+    var pages : Int = 0
+    
+    var pageSize : Int = 0
+    
+    var pageData : [PagedataModel] = []
+    
+    var total : Int = 0
+    
+    var pageNum : Int = 0
 
 }
 
-class PagedataModel: RootModel  {
-
-    let specBarcode : String = ""
-
-    let skuViewId : String = ""
-
-    let spuViewId : String = ""
-
-    let specs : String = ""
-
-    let imageUrl : String = ""
-
-    let categoryId : Int = 0
-
-    let spuDirectoryParams : String = ""
-
-    let currentStock : Int = 0
-
-    let skuBaseViewId : String = ""
-
-    let originalPrice : Int = 0
-
-    let customCode : String = ""
-
-    let goodsName : String = ""
-
-    let name : String = ""
-
-    let salePrice : Int = 0
-
-    let isItGspGoods : Int = 0
-
+struct PagedataModel: ZHCodable  {
+    
+    var specBarcode : String = ""
+    
+    var skuViewId : String = ""
+    
+    var spuViewId : String = ""
+    
+    var specs : String = ""
+    
+    var imageUrl : String = ""
+    
+    var categoryId : Int = 0
+    
+    var spuDirectoryParams : String = ""
+    
+    var currentStock : Int = 0
+    
+    var skuBaseViewId : String = ""
+    
+    var originalPrice : Int = 0
+    
+    var customCode : String = ""
+    
+    var goodsName : String = ""
+    
+    var name : String = ""
+    
+    var salePrice : Int = 0
+    
+    var isItGspGoods : Int = 0
 }
 

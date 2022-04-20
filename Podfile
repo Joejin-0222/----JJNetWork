@@ -16,5 +16,11 @@ target 'Cashier' do
   pod 'lottie-ios'
   pod 'Reusable'
   pod 'Kingfisher' #加载网络图 图片缓存
-  pod 'FSCalendar'
+  pod 'FSCalendar' #日历
+  pod 'GRDB.swift' #数据库
+  pod 'ZHCodable',:git =>"https://github.com/haoburongyi/ZHCodable.git"
+#  pod 'ZHCodable', :path => '../'
+
+
+
 end

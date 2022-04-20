@@ -157,6 +157,8 @@
 		04E3647427F467860007B91A /* LTPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3646227F467860007B91A /* LTPageTitleView.swift */; };
 		04E3647527F467860007B91A /* LTSimpleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3646427F467860007B91A /* LTSimpleManager.swift */; };
 		04E3647627F467860007B91A /* LTFollowMoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3646627F467860007B91A /* LTFollowMoveView.swift */; };
+		04F19C4E280FDE2500D9DF94 /* goodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F19C4C280FDE2500D9DF94 /* goodsModel.swift */; };
+		04F19C4F280FDE2500D9DF94 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F19C4D280FDE2500D9DF94 /* DBManager.swift */; };
 		5A6A5FB0344A2B110E8C12FD /* libPods-Cashier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 709C4F189E2E7995D54A4400 /* libPods-Cashier.a */; };
 /* End PBXBuildFile section */
 
@@ -333,6 +335,8 @@
 		04E3646227F467860007B91A /* LTPageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTPageTitleView.swift; sourceTree = "<group>"; };
 		04E3646427F467860007B91A /* LTSimpleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTSimpleManager.swift; sourceTree = "<group>"; };
 		04E3646627F467860007B91A /* LTFollowMoveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTFollowMoveView.swift; sourceTree = "<group>"; };
+		04F19C4C280FDE2500D9DF94 /* goodsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goodsModel.swift; sourceTree = "<group>"; };
+		04F19C4D280FDE2500D9DF94 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		5416062036BD2689E7573FBD /* Pods-Cashier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashier.debug.xcconfig"; path = "Target Support Files/Pods-Cashier/Pods-Cashier.debug.xcconfig"; sourceTree = "<group>"; };
 		709C4F189E2E7995D54A4400 /* libPods-Cashier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cashier.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9912E4D14BBD7B296AF08220 /* Pods-Cashier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashier.release.xcconfig"; path = "Target Support Files/Pods-Cashier/Pods-Cashier.release.xcconfig"; sourceTree = "<group>"; };
@@ -855,6 +859,7 @@
 		0486847A27D833D100D6A878 /* Cashier */ = {
 			isa = PBXGroup;
 			children = (
+				04E90D95280EE15100CE2FAD /* GRDB */,
 				043E9AB2280804F2000B3BBF /* Commponet */,
 				0480B939280506C600C5670B /* JsonSource */,
 				04CA37A927F6E9B600E620E5 /* Cache */,
@@ -1191,6 +1196,15 @@
 			path = LTFollowMove;
 			sourceTree = "<group>";
 		};
+		04E90D95280EE15100CE2FAD /* GRDB */ = {
+			isa = PBXGroup;
+			children = (
+				04F19C4D280FDE2500D9DF94 /* DBManager.swift */,
+				04F19C4C280FDE2500D9DF94 /* goodsModel.swift */,
+			);
+			path = GRDB;
+			sourceTree = "<group>";
+		};
 		AF229AFF53294C47F83774ED /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1389,6 +1403,7 @@
 				04ACE1502807F067001356D4 /* ZWCashCollectionViewJoe.swift in Sources */,
 				04E3646927F467860007B91A /* LTPageScrollView.swift in Sources */,
 				0456A75A280E4952003D695E /* ZWMemberManagemenLeftCell.swift in Sources */,
+				04F19C4F280FDE2500D9DF94 /* DBManager.swift in Sources */,
 				04E3646B27F467860007B91A /* LTAdvancedManager.swift in Sources */,
 				04E3646727F467860007B91A /* LTLivePlayLoopsListView.swift in Sources */,
 				04CA379C27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift in Sources */,
@@ -1459,6 +1474,7 @@
 				04E3647127F467860007B91A /* LTScrollExtension.swift in Sources */,
 				0444682827DB1C7F000444FD /* Toast.swift in Sources */,
 				04E3643F27F43B6D0007B91A /* UIColor+Hue.swift in Sources */,
+				04F19C4E280FDE2500D9DF94 /* goodsModel.swift in Sources */,
 				0406E1E827FEAFD600E5A948 /* ZWContentCell.swift in Sources */,
 				0406E1EC27FEDB2700E5A948 /* ZWCommoditySettingsVC.swift in Sources */,
 				043E9ABF2808314D000B3BBF /* ZWSuccessionPopView.swift in Sources */,

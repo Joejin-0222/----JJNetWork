@@ -64,6 +64,7 @@ enum Cache: String {
         PINCache.shared.removeObject(forKey: rawValue)
     }
     
+    
     case sementData = "sementData"//收银台分段选择数据
     case userStore = "userStore"//店铺信息数据
     case isLoginKey = "isLoginKey"
