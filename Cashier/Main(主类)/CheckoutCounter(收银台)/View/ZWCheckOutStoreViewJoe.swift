@@ -190,9 +190,12 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
         self.CategoriesDataAarry = tempArray//更多分类弹框数据
         
         //默认 选中第一个 去查询本地数据库更新 CollectionView 显示
-        let model : ZWSementGRDB = tempArray[0] as! ZWSementGRDB
-        self.dataAarry = goodsModel.queryAll(categoryId:"\(model.id)") as NSArray //本地数据 查询显示
-        self.CollectionView.reloadData()
+        if tempArray.count > 0 {
+            let model : ZWSementGRDB = tempArray[0] as! ZWSementGRDB
+            self.dataAarry = goodsModel.queryAll(categoryId:"\(model.id)") as NSArray //本地数据 查询显示
+            self.CollectionView.reloadData()
+        }
+        
         
     }
     
