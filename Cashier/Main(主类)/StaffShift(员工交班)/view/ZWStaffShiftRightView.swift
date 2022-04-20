@@ -95,7 +95,7 @@ class ZWStaffShiftRightView: UIView, SementSelectClickDelegate {
         
         return self
     }
-    func SelectIndexPathClick(IndexPath: Int, model: ZWCheckSementModelJoe) {
+    func SelectIndexPathClick(IndexPath: Int, model: ZWSementGRDB) {
         
     }
 }

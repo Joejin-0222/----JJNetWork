@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SementSelectClickDelegate : NSObjectProtocol{
-    func SelectIndexPathClick(IndexPath:Int,model:ZWCheckSementModelJoe)
+    func SelectIndexPathClick(IndexPath:Int,model:ZWSementGRDB)
 }
 typealias selectIndexPathBlock = (_ index: Int) -> Void
 
@@ -158,12 +158,12 @@ extension ZWCheckSementViewJoe:UICollectionViewDataSource ,UICollectionViewDeleg
         self.CollectionView.reloadData()
         if self.dataAarry?.count ?? 0 > 0 {
             if YesNetWork == true {
-                let model : ZWCheckSementModelJoe =  self.dataAarry![indexPath.row] as! ZWCheckSementModelJoe;
+                let model : ZWSementGRDB =  self.dataAarry![indexPath.row] as! ZWSementGRDB;
                 
                 // 04. 执行代理
                 delegate?.SelectIndexPathClick(IndexPath: indexPath.row,model: model)
             }else {
-                let model : ZWCheckSementModelJoe  = ZWCheckSementModelJoe()
+                let model : ZWSementGRDB  = ZWSementGRDB()
                 // 04. 执行代理
                 delegate?.SelectIndexPathClick(IndexPath: indexPath.row,model: model)
 

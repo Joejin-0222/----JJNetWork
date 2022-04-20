@@ -256,7 +256,7 @@ class ZWQuDanTanKuangView: basePopView ,SementSelectClickDelegate{
         
     }
     
-    func SelectIndexPathClick(IndexPath: Int, model: ZWCheckSementModelJoe) {
+    func SelectIndexPathClick(IndexPath: Int, model: ZWSementGRDB) {
         
     }
     

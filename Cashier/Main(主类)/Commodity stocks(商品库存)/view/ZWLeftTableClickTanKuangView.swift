@@ -182,7 +182,7 @@ class ZWLeftTableClickTanKuangView: UIView ,SementSelectClickDelegate{
     }
     
     
-    func SelectIndexPathClick(IndexPath: Int, model: ZWCheckSementModelJoe) {
+    func SelectIndexPathClick(IndexPath: Int, model: ZWSementGRDB) {
         
     }
     

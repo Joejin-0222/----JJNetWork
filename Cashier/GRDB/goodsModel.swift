@@ -40,8 +40,8 @@ class goodsModel: RootModel, Codable {
     
     var isItGspGoods : Int? = 0
     
-//    required init() {
-//    }
+    //    required init() {
+    //    }
     
     /// 设置行名
     private enum Columns: String, CodingKey, ColumnExpression {
@@ -173,6 +173,18 @@ extension goodsModel:MutablePersistableRecord, FetchableRecord {
         })
     }
     
+    
+    /// MARK: 查询 根据分类id  查询
+    static func queryAll(categoryId: String) -> [goodsModel] {
+        // 创建数据库
+        self.createTable()
+        // 返回查询结果
+        return try! self.dbQueue.unsafeRead({ (db) -> [goodsModel] in
+            
+            return try goodsModel.filter(Column(Columns.categoryId.rawValue) == categoryId).fetchAll(db)
+            
+        })
+    }
     
     /// 查询所有
     static func queryAll() -> [goodsModel] {

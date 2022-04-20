@@ -123,7 +123,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             make.bottom.equalTo(BottomView.snp.top).offset(0*HeighH)
         }
         
-     
+        
         return self
     }
     //点击了更多分类
@@ -156,14 +156,14 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             
             let dic = result as! NSDictionary
             let tempAarry : NSArray = dic["data"] as! NSArray
-//            let tempArray1 = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
-//            self.SementView.dataAarry = tempArray1
-//            self.SementView.ReloadData()
-//            self.CategoriesDataAarry = tempArray1//更多分类数据
-//            //默认选择第一个分类
-//            let model : ZWCheckSementModelJoe = tempArray1[0] as! ZWCheckSementModelJoe
-//            
-//            loadGoodsData(categoryId: model.id)//
+            //            let tempArray1 = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
+            //            self.SementView.dataAarry = tempArray1
+            //            self.SementView.ReloadData()
+            //            self.CategoriesDataAarry = tempArray1//更多分类数据
+            //            //默认选择第一个分类
+            //            let model : ZWCheckSementModelJoe = tempArray1[0] as! ZWCheckSementModelJoe
+            //
+            //            loadGoodsData(categoryId: model.id)//
             
             let tempArrayGRDB  = [ZWSementGRDB].deserialize(from: tempAarry)
             
@@ -183,11 +183,16 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
         ZWSementGRDB.insertAllArrData(ArrData: array)
         // 查询数据
         debugPrint("======查询分类所有数据:", ZWSementGRDB.queryAll())
-         let  tempArray = ZWSementGRDB.queryAll() as NSArray
+        let  tempArray = ZWSementGRDB.queryAll() as NSArray
         //传值
         self.SementView.dataAarry =  tempArray
         self.SementView.ReloadData()
         self.CategoriesDataAarry = tempArray//更多分类弹框数据
+        
+        //默认 选中第一个 去查询本地数据库更新 CollectionView 显示
+        let model : ZWSementGRDB = tempArray[0] as! ZWSementGRDB
+        self.dataAarry = goodsModel.queryAll(categoryId:"\(model.id)") as NSArray //本地数据 查询显示
+        self.CollectionView.reloadData()
         
     }
     
@@ -204,18 +209,10 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             let dic = result as! NSDictionary
             let dataDic : NSDictionary = dic["data"] as! NSDictionary
             let tempAarry  : NSArray = dataDic["pageData"] as! NSArray
-         
             
-            let tempArray1  = [goodsModel].deserialize(from: tempAarry)
-            
-            goodsModel.insertAllArrData(ArrData: tempArray1! )
-            
-            // 查询数据
-            debugPrint("查询所有数据:", goodsModel.queryAll())
-            
-            dataAarry = tempArray1 as! NSArray//goodsModel.queryAll() as NSArray
-            
-            self.CollectionView.reloadData()
+            let tempArrayGrdb  = [goodsModel].deserialize(from: tempAarry)
+            //保存数据至数据库
+            SaveGoodsGRDBData(array: tempArrayGrdb!)
             
             ProgressHUD.showSuccesshTips(message: "请求成功!")
         } error1: { statusCode in
@@ -226,10 +223,27 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
         }
     }
     // 06. 实现代理方法
-    func SelectIndexPathClick(IndexPath: Int,model:ZWCheckSementModelJoe) {
+    func SelectIndexPathClick(IndexPath: Int,model:ZWSementGRDB) {
         print("======分段选择点击了第几\(IndexPath)")
         self.SementViewSelectIndex = IndexPath
-        loadGoodsData(categoryId: model.id)//
+        
+        // loadGoodsData(categoryId: model.id)//网络请求
+        
+        self.dataAarry = goodsModel.queryAll(categoryId:"\(model.id)") as NSArray //本地数据 查询显示
+        
+        self.CollectionView.reloadData()
+    }
+    //收银台 商品 数据 保存本地数据库
+    func SaveGoodsGRDBData(array:[goodsModel?]){
+        goodsModel.insertAllArrData(ArrData: array)
+        // 查询数据
+        debugPrint("======查询商品 所有数据:", goodsModel.queryAll())
+        
+        //传值
+        dataAarry = goodsModel.queryAll() as NSArray
+        
+        self.CollectionView.reloadData()
+        
     }
     
 }

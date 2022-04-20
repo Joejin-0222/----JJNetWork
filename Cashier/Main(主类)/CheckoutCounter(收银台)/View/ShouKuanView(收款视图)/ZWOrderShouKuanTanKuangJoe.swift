@@ -127,7 +127,7 @@ class ZWOrderShouKuanTanKuangJoe: basePopView ,SementSelectClickDelegate{
         
     }
     
-    func SelectIndexPathClick(IndexPath: Int, model: ZWCheckSementModelJoe) {
+    func SelectIndexPathClick(IndexPath: Int, model: ZWSementGRDB) {
         self.scrollcollview(index: IndexPath)
     }
     
