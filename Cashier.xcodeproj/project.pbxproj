@@ -108,6 +108,7 @@
 		0480B946280559E700C5670B /* ZWOrderWeighView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B945280559E700C5670B /* ZWOrderWeighView.swift */; };
 		04829542280FFA6500415D7C /* goodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04829540280FFA6500415D7C /* goodsModel.swift */; };
 		04829543280FFA6500415D7C /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04829541280FFA6500415D7C /* DBManager.swift */; };
+		04829545281002B400415D7C /* ZWSementGRDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04829544281002B400415D7C /* ZWSementGRDB.swift */; };
 		0486847C27D833D100D6A878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486847B27D833D100D6A878 /* AppDelegate.swift */; };
 		0486847E27D833D100D6A878 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486847D27D833D100D6A878 /* DocumentBrowserViewController.swift */; };
 		0486848027D833D100D6A878 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486847F27D833D100D6A878 /* DocumentViewController.swift */; };
@@ -282,6 +283,7 @@
 		0480B945280559E700C5670B /* ZWOrderWeighView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderWeighView.swift; sourceTree = "<group>"; };
 		04829540280FFA6500415D7C /* goodsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goodsModel.swift; sourceTree = "<group>"; };
 		04829541280FFA6500415D7C /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		04829544281002B400415D7C /* ZWSementGRDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWSementGRDB.swift; sourceTree = "<group>"; };
 		0486847827D833D100D6A878 /* Cashier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0486847B27D833D100D6A878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0486847D27D833D100D6A878 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -859,8 +861,6 @@
 		0486847A27D833D100D6A878 /* Cashier */ = {
 			isa = PBXGroup;
 			children = (
-				04829541280FFA6500415D7C /* DBManager.swift */,
-				04829540280FFA6500415D7C /* goodsModel.swift */,
 				04E90D95280EE15100CE2FAD /* GRDB */,
 				043E9AB2280804F2000B3BBF /* Commponet */,
 				0480B939280506C600C5670B /* JsonSource */,
@@ -1201,6 +1201,9 @@
 		04E90D95280EE15100CE2FAD /* GRDB */ = {
 			isa = PBXGroup;
 			children = (
+				04829541280FFA6500415D7C /* DBManager.swift */,
+				04829540280FFA6500415D7C /* goodsModel.swift */,
+				04829544281002B400415D7C /* ZWSementGRDB.swift */,
 			);
 			path = GRDB;
 			sourceTree = "<group>";
@@ -1390,6 +1393,7 @@
 				0406E1F327FEE80B00E5A948 /* ZWSmallTicketMachineVC.swift in Sources */,
 				0456A757280E4952003D695E /* ZWVIPCRRightView.swift in Sources */,
 				046B4E0B27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift in Sources */,
+				04829545281002B400415D7C /* ZWSementGRDB.swift in Sources */,
 				043E9AB928080601000B3BBF /* ZWBaseCollectionViewCell.swift in Sources */,
 				0406E1DE27FE84FE00E5A948 /* ZWHeaderViewCell.swift in Sources */,
 				046B4E1127F54BFE00710D02 /* ZWSwitchStoreVCJoe.swift in Sources */,

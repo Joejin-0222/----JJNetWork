@@ -10,7 +10,7 @@ import Accelerate
 
 class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategoriesPopViewDelegate{
     
-    
+    var IsUpData : Bool = false // 是否更新请求网路数据
     
     var CategoriesDataAarry  : NSArray = []//分段选择数据
     var dataAarry  : NSArray = []
@@ -39,8 +39,15 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
     
     
     func initView() -> UIView {
+        
         //
-        self.loadFenLeiData(ShopId: (Cache.userSto?.sid ?? 0))
+        if IsUpData == true {//更新网络数据
+            self.loadFenLeiData(ShopId: (Cache.userSto?.sid ?? 0))
+        }else{
+            self.saveGRDBData(array: [])
+        }
+        
+        
         //
         let myflowLayout = UICollectionViewFlowLayout()
         myflowLayout.sectionHeadersPinToVisibleBounds = false // 头部悬浮
@@ -116,7 +123,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             make.bottom.equalTo(BottomView.snp.top).offset(0*HeighH)
         }
         
-        //           loadingView.show()
+     
         return self
     }
     //点击了更多分类
@@ -149,19 +156,18 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             
             let dic = result as! NSDictionary
             let tempAarry : NSArray = dic["data"] as! NSArray
-            let tempArray1 = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
-            self.SementView.dataAarry = tempArray1
-            self.SementView.ReloadData()
-            self.CategoriesDataAarry = tempArray1//更多分类数据
-            //默认选择第一个分类
-            let model : ZWCheckSementModelJoe = tempArray1[0] as! ZWCheckSementModelJoe
+//            let tempArray1 = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
+//            self.SementView.dataAarry = tempArray1
+//            self.SementView.ReloadData()
+//            self.CategoriesDataAarry = tempArray1//更多分类数据
+//            //默认选择第一个分类
+//            let model : ZWCheckSementModelJoe = tempArray1[0] as! ZWCheckSementModelJoe
+//            
+//            loadGoodsData(categoryId: model.id)//
             
-            loadGoodsData(categoryId: model.id)//
+            let tempArrayGRDB  = [ZWSementGRDB].deserialize(from: tempAarry)
             
-            
-            self.SementView.dataAarry =  tempArray1
-            self.SementView.ReloadData()
-            self.CategoriesDataAarry = tempArray1//更多分类数据
+            self.saveGRDBData(array: tempArrayGRDB!)
             
             ProgressHUD.showSuccesshTips(message: "请求成功!")
         } error1: { statusCode in
@@ -171,6 +177,21 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             print("====reeor \(error)")
         }
     }
+    
+    //收银台 分类 数据 保存本地数据库
+    func saveGRDBData(array:[ZWSementGRDB?]){
+        ZWSementGRDB.insertAllArrData(ArrData: array)
+        // 查询数据
+        debugPrint("======查询分类所有数据:", ZWSementGRDB.queryAll())
+         let  tempArray = ZWSementGRDB.queryAll() as NSArray
+        //传值
+        self.SementView.dataAarry =  tempArray
+        self.SementView.ReloadData()
+        self.CategoriesDataAarry = tempArray//更多分类弹框数据
+        
+    }
+    
+    
     //商品数据
     func loadGoodsData(categoryId:Int64){
         
@@ -192,7 +213,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             // 查询数据
             debugPrint("查询所有数据:", goodsModel.queryAll())
             
-            dataAarry = goodsModel.queryAll() as NSArray
+            dataAarry = tempArray1 as! NSArray//goodsModel.queryAll() as NSArray
             
             self.CollectionView.reloadData()
             
@@ -211,58 +232,6 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
         loadGoodsData(categoryId: model.id)//
     }
     
-    /// JSON字符串转模型
-    func toModel<T>(_ type: T.Type, value: String) -> T? where T : Decodable {
-        let decoder = JSONDecoder()
-        decoder.nonConformingFloatDecodingStrategy = .convertFromString(positiveInfinity: "+Infinity", negativeInfinity: "-Infinity", nan: "NaN")
-        guard let t = try? decoder.decode(T.self, from: value.data(using: .utf8)!) else { return nil }
-        return t
-    }
-    
-    // 1数组转json
-    func getJSONStringFromArray(array:NSArray) -> String {
-        if (!JSONSerialization.isValidJSONObject(array)){
-            print("无法解析出JSONString")
-            return ""
-        }
-        let data : NSData! = try? JSONSerialization.data(withJSONObject: array, options: []) as NSData?
-        let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
-        
-        return JSONString! as String
-        
-    }
-    // JSONString转换为字典
-    
-    func getDictionaryFromJSONString(jsonString:String) ->NSDictionary{
-    
-        let jsonData:Data = jsonString.data(using: .utf8)!
-        
-        let dict = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
-        if dict != nil {
-            return dict as! NSDictionary
-            
-        }
-        return NSDictionary()
-        
-    }
-    
-    /**
-     字典转换为JSONString
-     
-     - parameter dictionary: 字典参数
-     
-     - returns: JSONString
-     */
-    static  func getJSONStringFromDictionary(dictionary:NSDictionary) -> String {
-        if (!JSONSerialization.isValidJSONObject(dictionary)) {
-            print("无法解析出JSONString")
-            return ""
-        }
-        let data : NSData! = try? JSONSerialization.data(withJSONObject: dictionary, options: []) as NSData?
-        let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
-        return JSONString! as String
-        
-    }
 }
 extension ZWCheckOutStoreViewJoe:UICollectionViewDataSource ,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

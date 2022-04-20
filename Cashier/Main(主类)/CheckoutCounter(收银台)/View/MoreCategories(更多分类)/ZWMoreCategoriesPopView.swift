@@ -114,7 +114,7 @@ extension ZWMoreCategoriesPopView:UICollectionViewDataSource ,UICollectionViewDe
             cell.backView.backgroundColor = UIColor.init(hex: "#ffffff")
             cell.TitleLabel.textColor = UIColor.init(hex: "#323233")
         }
-        let model : ZWCheckSementModelJoe =  self.dataAarry![indexPath.row] as! ZWCheckSementModelJoe;
+        let model : ZWSementGRDB =  self.dataAarry![indexPath.row] as! ZWSementGRDB;
         cell.TitleLabel.text =  model.name
         
         return cell

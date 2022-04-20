@@ -14,6 +14,8 @@ struct DataBaseName {
     static let test = "student.db"
     ///商品
     static let good = "goods.db"
+    ///商品
+    static let sementList = "sementList.db"
 
 }
 
@@ -23,6 +25,9 @@ struct TableName {
     static let student = "student"
     ///商品
     static let goodsModel = "goodsModel"
+    ///收银台分类
+    static let ZWSementGRDB = "ZWSementGRDB"
+    
 }
 
 

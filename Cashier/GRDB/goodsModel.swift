@@ -132,7 +132,7 @@ extension goodsModel:MutablePersistableRecord, FetchableRecord {
     /// 插入单个数据
     static func insert(goods: goodsModel) -> Void {
         // 判断是否存在
-        guard goodsModel.query(name: goods.name!) == nil else {
+        guard goodsModel.query(name: goods.skuViewId!) == nil else {
             debugPrint("插入学生 内容重复")
             // 更新
             self.update(goods: goods)

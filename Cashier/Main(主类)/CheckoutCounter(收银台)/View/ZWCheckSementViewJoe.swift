@@ -87,7 +87,7 @@ extension ZWCheckSementViewJoe:UICollectionViewDataSource ,UICollectionViewDeleg
         //
         if self.dataAarry?.count ?? 0 > 0 {
         if YesNetWork == true {
-            let model : ZWCheckSementModelJoe =  self.dataAarry![indexPath.row] as! ZWCheckSementModelJoe;
+            let model : ZWSementGRDB =  self.dataAarry![indexPath.row] as! ZWSementGRDB;
             cell.TitleLabel.text =  model.name
         }else{
             cell.TitleLabel.text =  self.dataAarry![indexPath.row] as? String
