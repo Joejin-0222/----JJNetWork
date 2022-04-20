@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Accelerate
 
 class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategoriesPopViewDelegate{
     
@@ -148,19 +149,19 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             
             let dic = result as! NSDictionary
             let tempAarry : NSArray = dic["data"] as! NSArray
-            let tempArray = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
-            self.SementView.dataAarry = tempArray
+            let tempArray1 = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
+            self.SementView.dataAarry = tempArray1
             self.SementView.ReloadData()
-            self.CategoriesDataAarry = tempArray//更多分类数据
+            self.CategoriesDataAarry = tempArray1//更多分类数据
             //默认选择第一个分类
-            let model : ZWCheckSementModelJoe = tempArray[0] as! ZWCheckSementModelJoe
+            let model : ZWCheckSementModelJoe = tempArray1[0] as! ZWCheckSementModelJoe
             
             loadGoodsData(categoryId: model.id)//
             
             
-            self.SementView.dataAarry =  tempArray
+            self.SementView.dataAarry =  tempArray1
             self.SementView.ReloadData()
-            self.CategoriesDataAarry = tempArray//更多分类数据
+            self.CategoriesDataAarry = tempArray1//更多分类数据
             
             ProgressHUD.showSuccesshTips(message: "请求成功!")
         } error1: { statusCode in
@@ -181,17 +182,19 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             
             let dic = result as! NSDictionary
             let dataDic : NSDictionary = dic["data"] as! NSDictionary
-            let tempAarry  :NSArray = dataDic["pageData"] as! NSArray
+            let tempAarry  : NSArray = dataDic["pageData"] as! NSArray
+         
             
-
-       
+            let tempArray1  = [goodsModel].deserialize(from: tempAarry)
             
-//            goodsModel.insertAllArrData(ArrData: <#T##[goodsModel]#>)
-            
-            
+            goodsModel.insertAllArrData(ArrData: tempArray1! )
             
             // 查询数据
             debugPrint("查询所有数据:", goodsModel.queryAll())
+            
+            dataAarry = goodsModel.queryAll() as NSArray
+            
+            self.CollectionView.reloadData()
             
             ProgressHUD.showSuccesshTips(message: "请求成功!")
         } error1: { statusCode in
@@ -208,21 +211,40 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
         loadGoodsData(categoryId: model.id)//
     }
     
+    /// JSON字符串转模型
+    func toModel<T>(_ type: T.Type, value: String) -> T? where T : Decodable {
+        let decoder = JSONDecoder()
+        decoder.nonConformingFloatDecodingStrategy = .convertFromString(positiveInfinity: "+Infinity", negativeInfinity: "-Infinity", nan: "NaN")
+        guard let t = try? decoder.decode(T.self, from: value.data(using: .utf8)!) else { return nil }
+        return t
+    }
+    
     // 1数组转json
     func getJSONStringFromArray(array:NSArray) -> String {
         if (!JSONSerialization.isValidJSONObject(array)){
             print("无法解析出JSONString")
             return ""
-            
         }
-        
         let data : NSData! = try? JSONSerialization.data(withJSONObject: array, options: []) as NSData?
         let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
         
         return JSONString! as String
         
     }
+    // JSONString转换为字典
     
+    func getDictionaryFromJSONString(jsonString:String) ->NSDictionary{
+    
+        let jsonData:Data = jsonString.data(using: .utf8)!
+        
+        let dict = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
+        if dict != nil {
+            return dict as! NSDictionary
+            
+        }
+        return NSDictionary()
+        
+    }
     
     /**
      字典转换为JSONString
@@ -244,13 +266,14 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
 }
 extension ZWCheckOutStoreViewJoe:UICollectionViewDataSource ,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //
         return  self.dataAarry.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ZWCheckOutStoreCellJoe", for: indexPath) as! ZWCheckOutStoreCellJoe
         //
-        let model : PagedataModel =   self.dataAarry[indexPath.row] as! PagedataModel;
+        let model : goodsModel =   self.dataAarry[indexPath.row] as! goodsModel;
         cell.setModel(model: model)
         
         //        let arr : NSArray = ["蛋糕1","蛋糕2","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕1","蛋糕2","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕1","蛋糕2","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕1"]

@@ -8,7 +8,7 @@
 import UIKit
 import ZHCodable
 
-struct ZWCheckOutStoreModelJoe: ZHCodable {
+class ZWCheckOutStoreModelJoe: RootModel {
     
     
     var pages : Int = 0
@@ -23,7 +23,7 @@ struct ZWCheckOutStoreModelJoe: ZHCodable {
 
 }
 
-struct PagedataModel: ZHCodable  {
+class PagedataModel: RootModel  {
     
     var specBarcode : String = ""
     

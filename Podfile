@@ -19,7 +19,6 @@ target 'Cashier' do
   pod 'FSCalendar' #日历
   pod 'GRDB.swift' #数据库
   pod 'ZHCodable',:git =>"https://github.com/haoburongyi/ZHCodable.git"
-#  pod 'ZHCodable', :path => '../'
 
 
 

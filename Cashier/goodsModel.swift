@@ -8,7 +8,7 @@
 import GRDB
 
 
-class goodsModel: Codable {
+class goodsModel: RootModel, Codable {
     
     var specBarcode : String? = ""
     
@@ -155,9 +155,9 @@ extension goodsModel:MutablePersistableRecord, FetchableRecord {
     }
     
     /// 插入商品数据所有
-    static func insertAllArrData(ArrData:[goodsModel]) -> Void {
-        for mod : goodsModel in ArrData {
-            goodsModel.insert(goods: mod)
+    static func insertAllArrData(ArrData:[goodsModel?]) -> Void {
+        for mod : goodsModel? in ArrData {
+            goodsModel.insert(goods: mod!)
         }
         
     }
