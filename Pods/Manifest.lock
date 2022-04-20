@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (5.5.0)
   - FSCalendar (2.8.4)
+  - GRDB.swift (5.11.0):
+    - GRDB.swift/standard (= 5.11.0)
+  - GRDB.swift/standard (5.11.0)
   - HandyJSON (5.0.2)
   - IQKeyboardManagerSwift (6.5.9)
   - JKCategories (1.9.3):
@@ -168,6 +171,7 @@ PODS:
 
 DEPENDENCIES:
   - FSCalendar
+  - GRDB.swift
   - HandyJSON
   - IQKeyboardManagerSwift (~> 6.5.9)
   - JKCategories (~> 1.9.3)
@@ -186,6 +190,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - FSCalendar
+    - GRDB.swift
     - HandyJSON
     - IQKeyboardManagerSwift
     - JKCategories
@@ -204,6 +209,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
+  GRDB.swift: 9a33d9680cd3c870c82f48a6cbc73d3cfbb235eb
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   JKCategories: c995567f04ff98680313f56544e6cb62d3152733
@@ -219,6 +225,10 @@ SPEC CHECKSUMS:
   SkeletonView: 915a80ecc2b6421ab7ac0f0212321c0cc1406472
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
+<<<<<<< HEAD
 PODFILE CHECKSUM: 0ef0a80e4f7f67ee37547c3532253d969d928622
+=======
+PODFILE CHECKSUM: 2d663649acc0f58bc0168ef1a8c67f011992e5a8
+>>>>>>> 62448d5ae40e9a24545a76e6b77f270aab1e41d7
 
 COCOAPODS: 1.11.3

@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Accelerate
 
 class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategoriesPopViewDelegate{
- 
     
+    var IsUpData : Bool = false // 是否更新请求网路数据
     
     var CategoriesDataAarry  : NSArray = []//分段选择数据
     var dataAarry  : NSArray = []
@@ -38,8 +39,15 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
     
     
     func initView() -> UIView {
+        
         //
-        self.loadFenLeiData(ShopId: (Cache.userSto?.sid ?? 0))
+        if IsUpData == true {//更新网络数据
+            self.loadFenLeiData(ShopId: (Cache.userSto?.sid ?? 0))
+        }else{
+            self.saveGRDBData(array: [])
+        }
+        
+        
         //
         let myflowLayout = UICollectionViewFlowLayout()
         myflowLayout.sectionHeadersPinToVisibleBounds = false // 头部悬浮
@@ -115,13 +123,13 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             make.bottom.equalTo(BottomView.snp.top).offset(0*HeighH)
         }
         
-        //           loadingView.show()
+     
         return self
     }
     //点击了更多分类
     @objc func moreBtnClick(){
         //更多分类弹框
-      
+        
         popMoreCategoriesView = ZWMoreCategoriesPopView().initView() as! ZWMoreCategoriesPopView
         popMoreCategoriesView.show()
         popMoreCategoriesView.dataAarry = self.CategoriesDataAarry
@@ -148,13 +156,18 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             
             let dic = result as! NSDictionary
             let tempAarry : NSArray = dic["data"] as! NSArray
-            let tempArray = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
-            self.SementView.dataAarry = tempArray
-            self.SementView.ReloadData()
-            self.CategoriesDataAarry = tempArray//更多分类数据
-            //默认选择第一个分类
-            let model : ZWCheckSementModelJoe = tempArray[0] as! ZWCheckSementModelJoe
-            loadGoodsData(categoryId: model.id)//
+//            let tempArray1 = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
+//            self.SementView.dataAarry = tempArray1
+//            self.SementView.ReloadData()
+//            self.CategoriesDataAarry = tempArray1//更多分类数据
+//            //默认选择第一个分类
+//            let model : ZWCheckSementModelJoe = tempArray1[0] as! ZWCheckSementModelJoe
+//            
+//            loadGoodsData(categoryId: model.id)//
+            
+            let tempArrayGRDB  = [ZWSementGRDB].deserialize(from: tempAarry)
+            
+            self.saveGRDBData(array: tempArrayGRDB!)
             
             ProgressHUD.showSuccesshTips(message: "请求成功!")
         } error1: { statusCode in
@@ -164,7 +177,22 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             print("====reeor \(error)")
         }
     }
-    //基本数据请求和模型转换
+    
+    //收银台 分类 数据 保存本地数据库
+    func saveGRDBData(array:[ZWSementGRDB?]){
+        ZWSementGRDB.insertAllArrData(ArrData: array)
+        // 查询数据
+        debugPrint("======查询分类所有数据:", ZWSementGRDB.queryAll())
+         let  tempArray = ZWSementGRDB.queryAll() as NSArray
+        //传值
+        self.SementView.dataAarry =  tempArray
+        self.SementView.ReloadData()
+        self.CategoriesDataAarry = tempArray//更多分类弹框数据
+        
+    }
+    
+    
+    //商品数据
     func loadGoodsData(categoryId:Int64){
         
         
@@ -175,9 +203,20 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             
             let dic = result as! NSDictionary
             let dataDic : NSDictionary = dic["data"] as! NSDictionary
-            let tempAarry  :NSArray = dataDic["pageData"] as! NSArray
-            self.dataAarry = [PagedataModel].deserialize(from: tempAarry)! as NSArray
+            let tempAarry  : NSArray = dataDic["pageData"] as! NSArray
+         
+            
+            let tempArray1  = [goodsModel].deserialize(from: tempAarry)
+            
+            goodsModel.insertAllArrData(ArrData: tempArray1! )
+            
+            // 查询数据
+            debugPrint("查询所有数据:", goodsModel.queryAll())
+            
+            dataAarry = tempArray1 as! NSArray//goodsModel.queryAll() as NSArray
+            
             self.CollectionView.reloadData()
+            
             ProgressHUD.showSuccesshTips(message: "请求成功!")
         } error1: { statusCode in
             print("====statusCode \(statusCode)")
@@ -193,17 +232,17 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
         loadGoodsData(categoryId: model.id)//
     }
     
-    
 }
 extension ZWCheckOutStoreViewJoe:UICollectionViewDataSource ,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return   self.dataAarry.count
+        //
+        return  self.dataAarry.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ZWCheckOutStoreCellJoe", for: indexPath) as! ZWCheckOutStoreCellJoe
         //
-        let model : PagedataModel =  self.dataAarry[indexPath.row] as! PagedataModel;
+        let model : goodsModel =   self.dataAarry[indexPath.row] as! goodsModel;
         cell.setModel(model: model)
         
         //        let arr : NSArray = ["蛋糕1","蛋糕2","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕1","蛋糕2","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕1","蛋糕2","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕1"]
