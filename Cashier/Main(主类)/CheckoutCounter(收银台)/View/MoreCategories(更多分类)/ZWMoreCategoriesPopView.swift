@@ -7,7 +7,7 @@
 
 import UIKit
 protocol ZWMoreCategoriesPopViewDelegate : NSObjectProtocol{
-    func MoreCategoriesSelectIndexPathClick(IndexPath:Int,model:ZWCheckSementModelJoe)
+    func MoreCategoriesSelectIndexPathClick(IndexPath:Int,model:ZWSementGRDB)
 }
 class ZWMoreCategoriesPopView: basePopView {
     
@@ -143,7 +143,7 @@ extension ZWMoreCategoriesPopView:UICollectionViewDataSource ,UICollectionViewDe
         
         self.selectIndex=indexPath.row
         self.CollectionView.reloadData()
-        let model : ZWCheckSementModelJoe =  self.dataAarry![indexPath.row] as! ZWCheckSementModelJoe;
+        let model : ZWSementGRDB =  self.dataAarry![indexPath.row] as! ZWSementGRDB;
         // 04. 执行代理
         Delegate?.MoreCategoriesSelectIndexPathClick(IndexPath: indexPath.row,model: model)
         

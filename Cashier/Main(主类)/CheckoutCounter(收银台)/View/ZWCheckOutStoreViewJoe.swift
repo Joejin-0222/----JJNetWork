@@ -10,6 +10,9 @@ import Accelerate
 
 class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategoriesPopViewDelegate{
     
+    
+     var pageNum:Int = 0   //    请求商品页数
+    
     var IsUpData : Bool = false // 是否更新请求网路数据
     
     var CategoriesDataAarry  : NSArray = []//分段选择数据
@@ -40,9 +43,14 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
     
     func initView() -> UIView {
         
+//        goodsModel.deleteAll()
         //
         if IsUpData == true {//更新网络数据
-            self.loadFenLeiData(ShopId: (Cache.userSto?.sid ?? 0))
+            
+            self.loadFenLeiData(ShopId: (Cache.userSto?.sid ?? 0))//分类
+            
+            loadGoodsData(categoryId: 0, pageNum: pageNum )//商品 所有商品 网络请求
+            
         }else{
             self.saveGRDBData(array: [])
         }
@@ -126,6 +134,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
         
         return self
     }
+    
     //点击了更多分类
     @objc func moreBtnClick(){
         //更多分类弹框
@@ -137,8 +146,8 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
         popMoreCategoriesView.selectIndex =  self.SementViewSelectIndex //默认进去选择第几个
     }
     //popMoreCategoriesView.Delegate = self 协议 点击方法
-    func MoreCategoriesSelectIndexPathClick(IndexPath: Int, model: ZWCheckSementModelJoe) {
-        self.loadGoodsData(categoryId: model.id)
+    func MoreCategoriesSelectIndexPathClick(IndexPath: Int, model: ZWSementGRDB) {
+        self.loadGoodsData(categoryId: model.id ,pageNum:1)
         popMoreCategoriesView.closeBtnClick()
         self.SementViewSelectIndex = IndexPath
         
@@ -195,29 +204,46 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             self.dataAarry = goodsModel.queryAll(categoryId:"\(model.id)") as NSArray //本地数据 查询显示
             self.CollectionView.reloadData()
         }
+    }
+    // 06. 实现代理方法
+    func SelectIndexPathClick(IndexPath: Int,model:ZWSementGRDB) {
+        print("======分段选择点击了第几\(IndexPath)")
+        self.SementViewSelectIndex = IndexPath
         
+        self.dataAarry = goodsModel.queryAll(categoryId:"\(model.id)") as NSArray //本地数据 查询显示
         
+        self.CollectionView.reloadData()
     }
     
-    
     //商品数据
-    func loadGoodsData(categoryId:Int64){
+    func loadGoodsData(categoryId:Int64,pageNum:Int){
+        var dict : [String : Any]
+        if categoryId == 0 {
+            dict = ["shopId":Cache.userSto?.sid ?? "156207556","tenantId":Cache.user?.tenantId ?? 6917,"selectText":"","categoryId":"","searchGoodsType":"1","pageNum":self.pageNum,"pageSize":"50"] as [String : Any]
+        }else{
+            dict = ["shopId":Cache.userSto?.sid ?? "156207556","tenantId":Cache.user?.tenantId ?? 6917,"selectText":"","categoryId":categoryId,"searchGoodsType":"1","pageNum":"1","pageSize":"20"] as [String : Any]
+        }
         
-        
-        let dict = ["shopId":Cache.userSto?.sid ?? "156207556","tenantId":Cache.user?.tenantId ?? 6917,"selectText":"","categoryId":categoryId,"searchGoodsType":"1","pageNum":"1","pageSize":"20"] as [String : Any]
-        
-        //   ProgressHUD.showLoadingHudView(message: "请求中")
+        ProgressHUD.showLoadingHudView(message: "请求中\(pageNum)页")
         ZHFNetwork.request(target: .yesParameters(pathStr: getFindCashierGoods, parameters: dict)) { [self] result in
             
             let dic = result as! NSDictionary
             let dataDic : NSDictionary = dic["data"] as! NSDictionary
             let tempAarry  : NSArray = dataDic["pageData"] as! NSArray
             
-            let tempArrayGrdb  = [goodsModel].deserialize(from: tempAarry)
-            //保存数据至数据库
-            SaveGoodsGRDBData(array: tempArrayGrdb!)
+            if tempAarry.count > 0{
+                
+                let tempArrayGrdb  = [goodsModel].deserialize(from: tempAarry)
+                //保存数据至数据库
+                SaveGoodsGRDBData(array: tempArrayGrdb!)
+                self.pageNum = self.pageNum + 1
+                loadGoodsData(categoryId: 0, pageNum: self.pageNum)
+            }else{
+                
+                ProgressHUD.showSuccesshTips(message: "请求商品数据over!")
+            }
             
-            ProgressHUD.showSuccesshTips(message: "请求成功!")
+            
         } error1: { statusCode in
             print("====statusCode \(statusCode)")
         } failure: { error in
@@ -225,17 +251,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             print("====reeor \(error)")
         }
     }
-    // 06. 实现代理方法
-    func SelectIndexPathClick(IndexPath: Int,model:ZWSementGRDB) {
-        print("======分段选择点击了第几\(IndexPath)")
-        self.SementViewSelectIndex = IndexPath
-        
-        // loadGoodsData(categoryId: model.id)//网络请求
-        
-        self.dataAarry = goodsModel.queryAll(categoryId:"\(model.id)") as NSArray //本地数据 查询显示
-        
-        self.CollectionView.reloadData()
-    }
+    
     //收银台 商品 数据 保存本地数据库
     func SaveGoodsGRDBData(array:[goodsModel?]){
         goodsModel.insertAllArrData(ArrData: array)

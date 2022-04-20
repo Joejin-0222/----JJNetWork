@@ -121,8 +121,8 @@ class ZWCheckOutStoreCellJoe: UICollectionViewCell {
         self.storeIcon.kf.indicatorType = .activity
         self.storeIcon.kf.setImage(with: URL.init(string: model.imageUrl!))
         self.TitleLabel.text = model.name
-        self.KuCunLabel.text = "库存:\(model.currentStock)" ?? ""
-        self.PriceLabel.text = "￥\(model.salePrice)" ?? ""
+        self.KuCunLabel.text = "库存:\(model.currentStock ?? 0)"
+        self.PriceLabel.text = "￥\(model.salePrice ?? 0 )"
         
     }
     
