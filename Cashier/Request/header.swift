@@ -10,7 +10,6 @@ import UIKit
 import SkeletonView
 import Lottie
 import Kingfisher
-import ZHCodable
 
 let userDefault = UserDefaults.standard
 

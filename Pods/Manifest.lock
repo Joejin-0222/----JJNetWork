@@ -168,7 +168,6 @@ PODS:
   - Reusable/View (4.1.2)
   - SkeletonView (1.29.2)
   - SnapKit (5.0.1)
-  - ZHCodable (1.0.0)
 
 DEPENDENCIES:
   - FSCalendar
@@ -186,7 +185,6 @@ DEPENDENCIES:
   - Reusable
   - SkeletonView
   - SnapKit (~> 5.0.1)
-  - ZHCodable (from `https://github.com/haoburongyi/ZHCodable.git`)
 
 SPEC REPOS:
   trunk:
@@ -208,15 +206,6 @@ SPEC REPOS:
     - SkeletonView
     - SnapKit
 
-EXTERNAL SOURCES:
-  ZHCodable:
-    :git: https://github.com/haoburongyi/ZHCodable.git
-
-CHECKOUT OPTIONS:
-  ZHCodable:
-    :commit: 392304b680cc83cfc4a1c3e572d4b9cb2c91c7c6
-    :git: https://github.com/haoburongyi/ZHCodable.git
-
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
@@ -235,8 +224,7 @@ SPEC CHECKSUMS:
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   SkeletonView: 915a80ecc2b6421ab7ac0f0212321c0cc1406472
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  ZHCodable: 7f23673018ddcdf7da5641abc001caa7afe2eece
 
-PODFILE CHECKSUM: e83b42932c16b8aa36af27c03e7309fa43091a09
+PODFILE CHECKSUM: 2d663649acc0f58bc0168ef1a8c67f011992e5a8
 
 COCOAPODS: 1.11.2

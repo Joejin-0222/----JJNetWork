@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import ZHCodable
 
 class ZWCheckOutStoreModelJoe: RootModel {
     
