@@ -6,12 +6,17 @@
 //
 
 import UIKit
-
+protocol ZWMoreCategoriesPopViewDelegate : NSObjectProtocol{
+    func MoreCategoriesSelectIndexPathClick(IndexPath:Int,model:ZWCheckSementModelJoe)
+}
 class ZWMoreCategoriesPopView: basePopView {
-
+    
+    // 03. 声明代理属性 (注:使用weak修饰, 该协议需要继承NSObjectProtocol基协议, 且注意代理名称是否重复)
+    weak var Delegate: ZWMoreCategoriesPopViewDelegate?
+    
     //
     lazy var bottomView : UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = UIColor.init(hex: "#F3F3F5")
         return view
     }()
@@ -27,7 +32,7 @@ class ZWMoreCategoriesPopView: basePopView {
     
     var dataAarry  : NSArray? = []
     
-    private var selectIndex:Int = 0   //    记录点击了第几行
+    var selectIndex:Int = 0   //    记录点击了第几行
     
     let  SelfViewWidth : CGFloat = 840*WidthW //当前view宽
     
@@ -84,14 +89,14 @@ class ZWMoreCategoriesPopView: basePopView {
             make.height.equalTo(48*WidthW)
         }
         PutAwayBtn.addTarget(self, action: #selector(closeBtnClick), for: .touchUpInside)
-
+        
     }
-  
+    
     
     override func layoutSubviews() {
         bottomView.setRoundCorners(corners: [.bottomLeft,.bottomRight], with: 10)
     }
- 
+    
     
 }
 extension ZWMoreCategoriesPopView:UICollectionViewDataSource ,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
@@ -102,14 +107,14 @@ extension ZWMoreCategoriesPopView:UICollectionViewDataSource ,UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ZWMoreCategoriesCellJoe", for: indexPath) as! ZWMoreCategoriesCellJoe
         
-            if  self.selectIndex == indexPath.row {
-                cell.backView.backgroundColor = UIColor.init(hex: "#FEEBEA")
-                cell.TitleLabel.textColor = MainColor
-            }else{
-                cell.backView.backgroundColor = UIColor.init(hex: "#ffffff")
-                cell.TitleLabel.textColor = UIColor.init(hex: "#323233")
-            }
-        let model : ZWCheckSementModelJoe =  self.dataAarry![indexPath.row] as! ZWCheckSementModelJoe;
+        if  self.selectIndex == indexPath.row {
+            cell.backView.backgroundColor = UIColor.init(hex: "#FEEBEA")
+            cell.TitleLabel.textColor = MainColor
+        }else{
+            cell.backView.backgroundColor = UIColor.init(hex: "#ffffff")
+            cell.TitleLabel.textColor = UIColor.init(hex: "#323233")
+        }
+        let model : ZWSementGRDB =  self.dataAarry![indexPath.row] as! ZWSementGRDB;
         cell.TitleLabel.text =  model.name
         
         return cell
@@ -136,9 +141,12 @@ extension ZWMoreCategoriesPopView:UICollectionViewDataSource ,UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("=============点击了 第 \(indexPath.row) 商品")
         
-            self.selectIndex=indexPath.row
-            self.CollectionView.reloadData()
-            
+        self.selectIndex=indexPath.row
+        self.CollectionView.reloadData()
+        let model : ZWCheckSementModelJoe =  self.dataAarry![indexPath.row] as! ZWCheckSementModelJoe;
+        // 04. 执行代理
+        Delegate?.MoreCategoriesSelectIndexPathClick(IndexPath: indexPath.row,model: model)
+        
     }
     
     

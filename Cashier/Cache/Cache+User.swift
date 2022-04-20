@@ -9,6 +9,7 @@ import Foundation
 
 extension Cache {
     
+
     
     
     /// 收银台分段选择数据

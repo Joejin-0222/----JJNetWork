@@ -18,9 +18,9 @@ class ZWOrderCellJoe: UITableViewCell {
         label.text = "小溪柏油蛋糕"
         return label
     }()
-    lazy var closeIcon: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage.init(named: "首页删除")
+    lazy var closeIcon: UIButton = {
+        let view = UIButton()
+        view.setImage(UIImage.init(named: "首页删除"), for: .normal)
         view.isUserInteractionEnabled = true
         view.contentMode = .scaleAspectFill
         return view

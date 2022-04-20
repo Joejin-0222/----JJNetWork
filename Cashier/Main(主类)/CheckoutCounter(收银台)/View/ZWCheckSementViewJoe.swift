@@ -31,7 +31,7 @@ class ZWCheckSementViewJoe: UIView {
     weak var delegate: SementSelectClickDelegate?
     var selectIndexPathBlock : selectIndexPathBlock?
     
-    private var selectIndex:Int = 0   //    记录点击了第几行
+    var selectIndex:Int = 0   //    记录点击了第几行
     fileprivate let CollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout())
     
     
@@ -87,7 +87,7 @@ extension ZWCheckSementViewJoe:UICollectionViewDataSource ,UICollectionViewDeleg
         //
         if self.dataAarry?.count ?? 0 > 0 {
         if YesNetWork == true {
-            let model : ZWCheckSementModelJoe =  self.dataAarry![indexPath.row] as! ZWCheckSementModelJoe;
+            let model : ZWSementGRDB =  self.dataAarry![indexPath.row] as! ZWSementGRDB;
             cell.TitleLabel.text =  model.name
         }else{
             cell.TitleLabel.text =  self.dataAarry![indexPath.row] as? String

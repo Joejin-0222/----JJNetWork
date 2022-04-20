@@ -556,11 +556,13 @@ extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let  cell:ZWOrderCellJoe =  ZWOrderCellJoe.createWithTableViewCell(tableView: tableView) as! ZWOrderCellJoe
         cell.selectionStyle = .none
-//        cell.closeIcon.add
+        cell.closeIcon.addTarget(self, action: #selector(closeIconClick), for: .touchUpInside)
         
         return cell
     }
-    
+    @objc func closeIconClick(){
+        print("======点击了删除")
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150*WidthW
     }

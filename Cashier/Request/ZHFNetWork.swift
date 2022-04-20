@@ -43,9 +43,11 @@ struct ZHFNetwork {
             case let .success(moyaResponse):
                 do {
                     let dic = try! moyaResponse.mapJSON() as! NSDictionary
+                    
+                    let data = getJSONStringFromDictionary(dictionary:dic)
                     print("======succeed data = \(dic)")
                     let model : APIModelJoe = APIModelJoe.deserialize(from: dic, designatedPath: "")!
-                   
+                    
                     let code : NSInteger = NSInteger(model.code )// dic["code"] as! NSInteger
                     if code == 200 {
                         //如果数据返回成功则直接将结果转为JSON
@@ -65,6 +67,24 @@ struct ZHFNetwork {
             }
             print("*****************************end ***********************")
         }
+    }
+ 
+    /**
+     字典转换为JSONString
+     
+     - parameter dictionary: 字典参数
+     
+     - returns: JSONString
+     */
+    static  func getJSONStringFromDictionary(dictionary:NSDictionary) -> String {
+        if (!JSONSerialization.isValidJSONObject(dictionary)) {
+            print("无法解析出JSONString")
+            return ""
+        }
+        let data : NSData! = try? JSONSerialization.data(withJSONObject: dictionary, options: []) as NSData?
+        let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
+        return JSONString! as String
+        
     }
     //上传文件
     static func upload(

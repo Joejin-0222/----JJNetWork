@@ -76,7 +76,7 @@ class LoginView: UIView {
     lazy var userTextfield : UITextField = {
         let textfield = UITextField.init()
         textfield.placeholder = "请输入登录账号"
-        textfield.text = "fgzj"
+        textfield.text = "fgwq"//fgzj
         textfield.font = UIFont(name: "CN Regular", size: CGFloat(30))
         textfield.delegate = self
         textfield.addTarget(self, action: #selector(textDidChanged), for: .editingChanged)

@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Accelerate
 
-class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
-   
+class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategoriesPopViewDelegate{
+    
+    var IsUpData : Bool = false // 是否更新请求网路数据
     
     var CategoriesDataAarry  : NSArray = []//分段选择数据
     var dataAarry  : NSArray = []
@@ -16,7 +18,6 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
     var popMoreCategoriesView = ZWMoreCategoriesPopView()
     //loading
     let loadingView = ZWLoadingTanKuangView(x:0, y: 0, width:( ScreenWidth), height: ScreenHeight)
- 
     
     //顶部搜索和个人信息view
     var TopSeachAndUserView : ZWCheckOutTopView = ZWCheckOutTopView()
@@ -29,6 +30,8 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
     }()
     //分段选择器
     var SementView : ZWCheckSementViewJoe = ZWCheckSementViewJoe()//右半边商品view
+    
+    private var SementViewSelectIndex:Int = 0   //    记录点击了第几行
     //中间商品列表
     fileprivate let CollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout())
     //底部view
@@ -36,8 +39,15 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
     
     
     func initView() -> UIView {
+        
         //
-        self.loadFenLeiData(ShopId: (Cache.userSto?.sid ?? 0))
+        if IsUpData == true {//更新网络数据
+            self.loadFenLeiData(ShopId: (Cache.userSto?.sid ?? 0))
+        }else{
+            self.saveGRDBData(array: [])
+        }
+        
+        
         //
         let myflowLayout = UICollectionViewFlowLayout()
         myflowLayout.sectionHeadersPinToVisibleBounds = false // 头部悬浮
@@ -72,6 +82,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
             make.top.equalTo(self.snp.top).offset(112*WidthW)
             make.height.equalTo(68*WidthW)
         }
+        
         SementView.IsScrollEnabled = true //可滚动
         SementView.IsHiddenIndicator = false //是否显示指示器
         SementView.delegate = self//遵守点击分段选择代理
@@ -95,7 +106,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
         }
         moreBtn.addTarget(self, action: #selector(moreBtnClick), for: .touchUpInside)
         
-       
+        
         //添加底部view
         self.addSubview(BottomView.initView())
         BottomView.snp.makeConstraints { make in
@@ -111,16 +122,28 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
             make.right.equalTo(SenmentBottomView.snp.right)
             make.bottom.equalTo(BottomView.snp.top).offset(0*HeighH)
         }
-
-//           loadingView.show()
+        
+     
         return self
     }
     //点击了更多分类
     @objc func moreBtnClick(){
         //更多分类弹框
+        
         popMoreCategoriesView = ZWMoreCategoriesPopView().initView() as! ZWMoreCategoriesPopView
         popMoreCategoriesView.show()
         popMoreCategoriesView.dataAarry = self.CategoriesDataAarry
+        popMoreCategoriesView.Delegate = self //遵守协议
+        popMoreCategoriesView.selectIndex =  self.SementViewSelectIndex //默认进去选择第几个
+    }
+    //popMoreCategoriesView.Delegate = self 协议 点击方法
+    func MoreCategoriesSelectIndexPathClick(IndexPath: Int, model: ZWCheckSementModelJoe) {
+        self.loadGoodsData(categoryId: model.id)
+        popMoreCategoriesView.closeBtnClick()
+        self.SementViewSelectIndex = IndexPath
+        
+        SementView.selectIndex = self.SementViewSelectIndex //
+        SementView.ReloadData()
     }
     
     
@@ -128,15 +151,23 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
     func loadFenLeiData(ShopId:Int64){
         let dict = ["shopId":ShopId]
         
-      //    ProgressHUD.showLoadingHudView(message: "请求中")
+        //    ProgressHUD.showLoadingHudView(message: "请求中")
         ZHFNetwork.request(target: .yesParameters(pathStr: getFindCashier, parameters: dict)) { [self] result in
             
             let dic = result as! NSDictionary
             let tempAarry : NSArray = dic["data"] as! NSArray
-            let tempArray = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
-            self.SementView.dataAarry = tempArray
-            self.SementView.ReloadData()
-            self.CategoriesDataAarry = tempArray//更多分类数据
+//            let tempArray1 = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
+//            self.SementView.dataAarry = tempArray1
+//            self.SementView.ReloadData()
+//            self.CategoriesDataAarry = tempArray1//更多分类数据
+//            //默认选择第一个分类
+//            let model : ZWCheckSementModelJoe = tempArray1[0] as! ZWCheckSementModelJoe
+//            
+//            loadGoodsData(categoryId: model.id)//
+            
+            let tempArrayGRDB  = [ZWSementGRDB].deserialize(from: tempAarry)
+            
+            self.saveGRDBData(array: tempArrayGRDB!)
             
             ProgressHUD.showSuccesshTips(message: "请求成功!")
         } error1: { statusCode in
@@ -146,18 +177,46 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
             print("====reeor \(error)")
         }
     }
-    //基本数据请求和模型转换
-    func loadData(ShopId:Int64){
-        let dict = ["shopId":ShopId,"tenantId":Cache.user?.tenantId ?? 0,"selectText":"","categoryId":"","searchGoodsType":"1","pageNum":"1","pageSize":"20"] as [String : Any]
-
-   //   ProgressHUD.showLoadingHudView(message: "请求中")
+    
+    //收银台 分类 数据 保存本地数据库
+    func saveGRDBData(array:[ZWSementGRDB?]){
+        ZWSementGRDB.insertAllArrData(ArrData: array)
+        // 查询数据
+        debugPrint("======查询分类所有数据:", ZWSementGRDB.queryAll())
+         let  tempArray = ZWSementGRDB.queryAll() as NSArray
+        //传值
+        self.SementView.dataAarry =  tempArray
+        self.SementView.ReloadData()
+        self.CategoriesDataAarry = tempArray//更多分类弹框数据
+        
+    }
+    
+    
+    //商品数据
+    func loadGoodsData(categoryId:Int64){
+        
+        
+        let dict = ["shopId":Cache.userSto?.sid ?? "156207556","tenantId":Cache.user?.tenantId ?? 6917,"selectText":"","categoryId":categoryId,"searchGoodsType":"1","pageNum":"1","pageSize":"20"] as [String : Any]
+        
+        //   ProgressHUD.showLoadingHudView(message: "请求中")
         ZHFNetwork.request(target: .yesParameters(pathStr: getFindCashierGoods, parameters: dict)) { [self] result in
             
             let dic = result as! NSDictionary
             let dataDic : NSDictionary = dic["data"] as! NSDictionary
-            let tempAarry  :NSArray = dataDic["pageData"] as! NSArray
-            self.dataAarry = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
+            let tempAarry  : NSArray = dataDic["pageData"] as! NSArray
+         
+            
+            let tempArray1  = [goodsModel].deserialize(from: tempAarry)
+            
+            goodsModel.insertAllArrData(ArrData: tempArray1! )
+            
+            // 查询数据
+            debugPrint("查询所有数据:", goodsModel.queryAll())
+            
+            dataAarry = tempArray1 as! NSArray//goodsModel.queryAll() as NSArray
+            
             self.CollectionView.reloadData()
+            
             ProgressHUD.showSuccesshTips(message: "请求成功!")
         } error1: { statusCode in
             print("====statusCode \(statusCode)")
@@ -169,23 +228,25 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate {
     // 06. 实现代理方法
     func SelectIndexPathClick(IndexPath: Int,model:ZWCheckSementModelJoe) {
         print("======分段选择点击了第几\(IndexPath)")
-        loadData(ShopId:model.id )//
+        self.SementViewSelectIndex = IndexPath
+        loadGoodsData(categoryId: model.id)//
     }
-    
     
 }
 extension ZWCheckOutStoreViewJoe:UICollectionViewDataSource ,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  28
+        //
+        return  self.dataAarry.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ZWCheckOutStoreCellJoe", for: indexPath) as! ZWCheckOutStoreCellJoe
         //
-        //        let model : SelectStoreModelZJ =  self.dataAarry[indexPath.row] as! SelectStoreModelZJ;
-        //        cell.storeLabel.text =  model.sname
-        let arr : NSArray = ["蛋糕1","蛋糕2","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕1","蛋糕2","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕1","蛋糕2","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕1"]
-        cell.storeIcon.image = UIImage.init(named: arr[indexPath.row] as! String)
+        let model : goodsModel =   self.dataAarry[indexPath.row] as! goodsModel;
+        cell.setModel(model: model)
+        
+        //        let arr : NSArray = ["蛋糕1","蛋糕2","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕1","蛋糕2","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕1","蛋糕2","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕2","蛋糕1","蛋糕3","蛋糕1"]
+        //        cell.storeIcon.image = UIImage.init(named: arr[indexPath.row] as! String)
         
         return cell
     }

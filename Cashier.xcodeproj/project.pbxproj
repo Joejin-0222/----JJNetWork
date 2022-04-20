@@ -27,6 +27,7 @@
 		0431FCDA27D88BFB00778DE6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD727D88BFB00778DE6 /* API.swift */; };
 		0431FCDB27D88BFB00778DE6 /* ZHFNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD827D88BFB00778DE6 /* ZHFNetWork.swift */; };
 		0431FCDC27D88BFB00778DE6 /* NSString-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD927D88BFB00778DE6 /* NSString-Extension.swift */; };
+		043824F3280EAD71003A51C2 /* ZWCheckOutStoreModelJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043824F2280EAD71003A51C2 /* ZWCheckOutStoreModelJoe.swift */; };
 		043A5909280423A700E1D607 /* ZWOrderQueryRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */; };
 		043C5FD227D8784600F881CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C5FD127D8784600F881CB /* LoginViewController.swift */; };
 		043C5FD627D878AC00F881CB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C5FD527D878AC00F881CB /* LoginView.swift */; };
@@ -68,7 +69,6 @@
 		0444685B27E02624000444FD /* CashierSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444685A27E02624000444FD /* CashierSettingModel.swift */; };
 		0444685D27E0263C000444FD /* CashierSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444685C27E0263C000444FD /* CashierSettingView.swift */; };
 		0444686027E02B2E000444FD /* MainRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444685F27E02B2E000444FD /* MainRootController.swift */; };
-		0444686227E02E4F000444FD /* iconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444686127E02E4F000444FD /* iconButtonView.swift */; };
 		0449922827F7EC3500DB5410 /* ZWCheckSementModelJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922727F7EC3500DB5410 /* ZWCheckSementModelJoe.swift */; };
 		0449922A27F7FC3200DB5410 /* ZWCheckOutTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922927F7FC3200DB5410 /* ZWCheckOutTopView.swift */; };
 		0449922E27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449922D27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift */; };
@@ -107,6 +107,9 @@
 		0480B940280511FF00C5670B /* ZWLoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B93F280511FF00C5670B /* ZWLoadingHUD.swift */; };
 		0480B942280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B941280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift */; };
 		0480B946280559E700C5670B /* ZWOrderWeighView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B945280559E700C5670B /* ZWOrderWeighView.swift */; };
+		04829542280FFA6500415D7C /* goodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04829540280FFA6500415D7C /* goodsModel.swift */; };
+		04829543280FFA6500415D7C /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04829541280FFA6500415D7C /* DBManager.swift */; };
+		04829545281002B400415D7C /* ZWSementGRDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04829544281002B400415D7C /* ZWSementGRDB.swift */; };
 		0486847C27D833D100D6A878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486847B27D833D100D6A878 /* AppDelegate.swift */; };
 		0486847E27D833D100D6A878 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486847D27D833D100D6A878 /* DocumentBrowserViewController.swift */; };
 		0486848027D833D100D6A878 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486847F27D833D100D6A878 /* DocumentViewController.swift */; };
@@ -199,6 +202,7 @@
 		0431FCD727D88BFB00778DE6 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		0431FCD827D88BFB00778DE6 /* ZHFNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHFNetWork.swift; sourceTree = "<group>"; };
 		0431FCD927D88BFB00778DE6 /* NSString-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString-Extension.swift"; sourceTree = "<group>"; };
+		043824F2280EAD71003A51C2 /* ZWCheckOutStoreModelJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckOutStoreModelJoe.swift; sourceTree = "<group>"; };
 		043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQueryRightView.swift; sourceTree = "<group>"; };
 		043C5FD127D8784600F881CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		043C5FD527D878AC00F881CB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -240,7 +244,6 @@
 		0444685A27E02624000444FD /* CashierSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashierSettingModel.swift; sourceTree = "<group>"; };
 		0444685C27E0263C000444FD /* CashierSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashierSettingView.swift; sourceTree = "<group>"; };
 		0444685F27E02B2E000444FD /* MainRootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootController.swift; sourceTree = "<group>"; };
-		0444686127E02E4F000444FD /* iconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iconButtonView.swift; sourceTree = "<group>"; };
 		0449922727F7EC3500DB5410 /* ZWCheckSementModelJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckSementModelJoe.swift; sourceTree = "<group>"; };
 		0449922927F7FC3200DB5410 /* ZWCheckOutTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckOutTopView.swift; sourceTree = "<group>"; };
 		0449922D27F82EB500DB5410 /* ZWChooseGoodsClassTanKuangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWChooseGoodsClassTanKuangView.swift; sourceTree = "<group>"; };
@@ -280,6 +283,9 @@
 		0480B93F280511FF00C5670B /* ZWLoadingHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWLoadingHUD.swift; sourceTree = "<group>"; };
 		0480B941280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQueryRightCellJoe.swift; sourceTree = "<group>"; };
 		0480B945280559E700C5670B /* ZWOrderWeighView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderWeighView.swift; sourceTree = "<group>"; };
+		04829540280FFA6500415D7C /* goodsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goodsModel.swift; sourceTree = "<group>"; };
+		04829541280FFA6500415D7C /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		04829544281002B400415D7C /* ZWSementGRDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWSementGRDB.swift; sourceTree = "<group>"; };
 		0486847827D833D100D6A878 /* Cashier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0486847B27D833D100D6A878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0486847D27D833D100D6A878 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -498,7 +504,6 @@
 		043A59062804238E00E1D607 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				0469F7FC280D0E6F0072CD1E /* dateView(日历) */,
 				043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */,
 				0480B941280525AD00C5670B /* ZWOrderQueryRightCellJoe.swift */,
 				04ACE14428059B71001356D4 /* ZWOrderQuerySearchView.swift */,
@@ -539,22 +544,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		043E9A952806DB42000B3BBF /* base */ = {
-			isa = PBXGroup;
-			children = (
-				043E9A962806DB42000B3BBF /* view */,
-			);
-			path = base;
-			sourceTree = "<group>";
-		};
-		043E9A962806DB42000B3BBF /* view */ = {
+		043E9A952806DB42000B3BBF /* baseView */ = {
 			isa = PBXGroup;
 			children = (
 				043E9A972806DB42000B3BBF /* baseTableViewCell.swift */,
 				043E9A982806DB42000B3BBF /* basePopView.swift */,
 				043E9AB828080601000B3BBF /* ZWBaseCollectionViewCell.swift */,
 			);
-			path = view;
+			path = baseView;
 			sourceTree = "<group>";
 		};
 		043E9A9B2806DBBD000B3BBF /* controller */ = {
@@ -651,6 +648,7 @@
 			isa = PBXGroup;
 			children = (
 				0449922727F7EC3500DB5410 /* ZWCheckSementModelJoe.swift */,
+				043824F2280EAD71003A51C2 /* ZWCheckOutStoreModelJoe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -706,12 +704,11 @@
 		0444685E27E02AE9000444FD /* MainRootController */ = {
 			isa = PBXGroup;
 			children = (
-				043E9A952806DB42000B3BBF /* base */,
+				043E9A952806DB42000B3BBF /* baseView */,
 				04E3644D27F467860007B91A /* Lib */,
 				04E3643827F437670007B91A /* controller */,
 				04E3643727F437620007B91A /* view */,
 				04E3643927F437720007B91A /* model */,
-				0444686127E02E4F000444FD /* iconButtonView.swift */,
 			);
 			path = MainRootController;
 			sourceTree = "<group>";
@@ -750,13 +747,6 @@
 				0469F7EE2809493A0072CD1E /* ZWScanQRCodeVCJoe.swift */,
 			);
 			path = "Scan(扫码)";
-			sourceTree = "<group>";
-		};
-		0469F7FC280D0E6F0072CD1E /* dateView(日历) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "dateView(日历)";
 			sourceTree = "<group>";
 		};
 		046B4E0627F54AB500710D02 /* controller */ = {
@@ -874,6 +864,7 @@
 		0486847A27D833D100D6A878 /* Cashier */ = {
 			isa = PBXGroup;
 			children = (
+				04E90D95280EE15100CE2FAD /* GRDB */,
 				043E9AB2280804F2000B3BBF /* Commponet */,
 				0480B939280506C600C5670B /* JsonSource */,
 				04CA37A927F6E9B600E620E5 /* Cache */,
@@ -1210,6 +1201,16 @@
 			path = LTFollowMove;
 			sourceTree = "<group>";
 		};
+		04E90D95280EE15100CE2FAD /* GRDB */ = {
+			isa = PBXGroup;
+			children = (
+				04829541280FFA6500415D7C /* DBManager.swift */,
+				04829540280FFA6500415D7C /* goodsModel.swift */,
+				04829544281002B400415D7C /* ZWSementGRDB.swift */,
+			);
+			path = GRDB;
+			sourceTree = "<group>";
+		};
 		AF229AFF53294C47F83774ED /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1395,6 +1396,7 @@
 				0406E1F327FEE80B00E5A948 /* ZWSmallTicketMachineVC.swift in Sources */,
 				0456A757280E4952003D695E /* ZWVIPCRRightView.swift in Sources */,
 				046B4E0B27F54B8B00710D02 /* ZWCommodityStocksVCJoe.swift in Sources */,
+				04829545281002B400415D7C /* ZWSementGRDB.swift in Sources */,
 				043E9AB928080601000B3BBF /* ZWBaseCollectionViewCell.swift in Sources */,
 				0406E1DE27FE84FE00E5A948 /* ZWHeaderViewCell.swift in Sources */,
 				046B4E1127F54BFE00710D02 /* ZWSwitchStoreVCJoe.swift in Sources */,
@@ -1408,6 +1410,7 @@
 				04ACE1502807F067001356D4 /* ZWCashCollectionViewJoe.swift in Sources */,
 				04E3646927F467860007B91A /* LTPageScrollView.swift in Sources */,
 				0456A75A280E4952003D695E /* ZWMemberManagemenLeftCell.swift in Sources */,
+				04829543280FFA6500415D7C /* DBManager.swift in Sources */,
 				04E3646B27F467860007B91A /* LTAdvancedManager.swift in Sources */,
 				04E3646727F467860007B91A /* LTLivePlayLoopsListView.swift in Sources */,
 				04CA379C27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift in Sources */,
@@ -1465,6 +1468,7 @@
 				0486847E27D833D100D6A878 /* DocumentBrowserViewController.swift in Sources */,
 				0444685B27E02624000444FD /* CashierSettingModel.swift in Sources */,
 				04ACE14728066E5C001356D4 /* ZWOrderQueryLeftView.swift in Sources */,
+				043824F3280EAD71003A51C2 /* ZWCheckOutStoreModelJoe.swift in Sources */,
 				0406E1E127FE893D00E5A948 /* ZWStoreManagementVC.swift in Sources */,
 				0456A761280E5E1C003D695E /* ZWCallOutTCell.swift in Sources */,
 				04E3647327F467860007B91A /* LTPageTitleItemType.swift in Sources */,
@@ -1478,6 +1482,7 @@
 				04E3647127F467860007B91A /* LTScrollExtension.swift in Sources */,
 				0444682827DB1C7F000444FD /* Toast.swift in Sources */,
 				04E3643F27F43B6D0007B91A /* UIColor+Hue.swift in Sources */,
+				04829542280FFA6500415D7C /* goodsModel.swift in Sources */,
 				0406E1E827FEAFD600E5A948 /* ZWContentCell.swift in Sources */,
 				0406E1EC27FEDB2700E5A948 /* ZWCommoditySettingsVC.swift in Sources */,
 				043E9ABF2808314D000B3BBF /* ZWSuccessionPopView.swift in Sources */,
@@ -1490,7 +1495,6 @@
 				043E9AAF2807F48B000B3BBF /* ZWSuccessionTCellKB.swift in Sources */,
 				04ACE15A280847CD001356D4 /* ZWMoreCategoriesPopView.swift in Sources */,
 				043E9AAC2806DBBD000B3BBF /* DRRightheaderTCell.swift in Sources */,
-				0444686227E02E4F000444FD /* iconButtonView.swift in Sources */,
 				04CA37A227F5D0F400E620E5 /* UIView+MDExtension.swift in Sources */,
 				046B4E1627F560B600710D02 /* ZWOrderCellJoe.swift in Sources */,
 				0444683A27DEEA7F000444FD /* SelectStoreViewController.swift in Sources */,

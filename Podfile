@@ -15,7 +15,16 @@ target 'Cashier' do
 #    pod 'Spring' #git => ‘https://github.com/MengTo/Spring.git’
   pod 'lottie-ios'
   pod 'Reusable'
+<<<<<<< HEAD
   pod 'Kingfisher' #图片缓存
   pod 'FSCalendar'
   #pod 'SQLite.swift','~>0.13.3'
+=======
+  pod 'Kingfisher' #加载网络图 图片缓存
+  pod 'FSCalendar' #日历
+  pod 'GRDB.swift' #数据库
+
+
+
+>>>>>>> master
 end

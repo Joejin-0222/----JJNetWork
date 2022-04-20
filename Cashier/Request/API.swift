@@ -10,15 +10,15 @@ import UIKit
 
 //测试环境
 //let BASE_SERVER_URL = "http://47.93.54.18:19200/"
-let BASE_SERVER_URL = "https://test.api.igoodsale.com/"
+//let BASE_SERVER_URL = "https://test.api.igoodsale.com/"
 //正式环境
 //let BASE_SERVER_URL = "https://api.igoodsale.com/"
 //预发布环境
-// let BASE_SERVER_URL = "https://api.prerelease.igoodsale.com/"
+ let BASE_SERVER_URL = "https://api.prerelease.igoodsale.com/"
 
 
 
-let getBoxRecommendUrl = "uc/admin/PClogin"//登录uc/admin/PClogin
+let getBoxRecommendUrl = "uc/admin/login"//登录uc/admin/PClogin
 
 let getUrlSetShop = "cashier/shop/getShop"//获取门店列表
 //收银台

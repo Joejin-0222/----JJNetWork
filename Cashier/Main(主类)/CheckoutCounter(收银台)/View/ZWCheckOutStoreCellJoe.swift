@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class ZWCheckOutStoreCellJoe: UICollectionViewCell {
     
     lazy var storeView: UIView = {
@@ -23,7 +23,7 @@ class ZWCheckOutStoreCellJoe: UICollectionViewCell {
         let view = UIImageView()
         view.image = UIImage.init(named: "login_store")
         view.isUserInteractionEnabled = true
-        view.contentMode = .scaleAspectFill
+//        view.contentMode = .scaleAspectFill
         return view
     }()
     
@@ -88,8 +88,7 @@ class ZWCheckOutStoreCellJoe: UICollectionViewCell {
         storeIcon.snp.makeConstraints { make in
             make.left.equalTo(0)
             make.top.equalTo(self.snp.top)
-            make.height.equalTo(self.snp.width)
-            make.width.equalTo(self.snp.width)
+            make.width.height.equalTo(self.snp.width)
         }
         
         //
@@ -111,11 +110,19 @@ class ZWCheckOutStoreCellJoe: UICollectionViewCell {
         //
         self.addSubview(PriceLabel)
         PriceLabel.snp.makeConstraints { make in
-            //            make.left.equalTo(storeIcon.snp.left).offset(10*WidthW)
+
             make.right.equalTo(storeIcon.snp.right).offset(-10*WidthW)
             make.height.equalTo(25*HeighH)
             make.top.equalTo(TitleLabel.snp.bottom).offset(6*WidthW)
         }
+        
+    }
+    func setModel(model:goodsModel){
+        self.storeIcon.kf.indicatorType = .activity
+        self.storeIcon.kf.setImage(with: URL.init(string: model.imageUrl!))
+        self.TitleLabel.text = model.name
+        self.KuCunLabel.text = "库存:\(model.currentStock)" ?? ""
+        self.PriceLabel.text = "￥\(model.salePrice)" ?? ""
         
     }
     
