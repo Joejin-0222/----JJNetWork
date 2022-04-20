@@ -1,0 +1,22 @@
+{
+  "name": "ZHCodable",
+  "version": "1.0.0",
+  "summary": "A short description of ZHCodable.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/haoburongyi/ZHCodable",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hao": "manonghao@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/haoburongyi/ZHCodable.git",
+    "tag": "1.0.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "ZHCodable/Classes/**/*"
+}

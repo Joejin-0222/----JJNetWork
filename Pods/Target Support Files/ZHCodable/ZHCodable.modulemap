@@ -1,0 +1,6 @@
+module ZHCodable {
+  umbrella header "ZHCodable-umbrella.h"
+
+  export *
+  module * { export * }
+}
