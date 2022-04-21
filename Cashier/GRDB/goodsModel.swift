@@ -10,6 +10,9 @@ import GRDB
 
 class goodsModel: RootModel, Codable {
     
+    
+    var goodsNum : Int? = 1 //添加到购物车的商品数量
+    
     var specBarcode : String? = ""
     
     var skuViewId : String? = ""
@@ -40,11 +43,13 @@ class goodsModel: RootModel, Codable {
     
     var isItGspGoods : Int? = 0
     
-    //    required init() {
-    //    }
+        required init() {
+        }
+ 
     
     /// 设置行名
     private enum Columns: String, CodingKey, ColumnExpression {
+        case goodsNum
         
         case specBarcode
         
@@ -93,6 +98,8 @@ extension goodsModel:MutablePersistableRecord, FetchableRecord {
             }
             // 创建数据库表
             try db.create(table: TableName.goodsModel, temporary: false, ifNotExists: true, body: { (t) in
+                
+                t.column(Columns.goodsNum.rawValue, Database.ColumnType.integer)
                 
                 t.column(Columns.specBarcode.rawValue, Database.ColumnType.text)
                 

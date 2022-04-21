@@ -169,6 +169,7 @@ extension SelectStoreView {
             
             print("====reeor \(error)")
         }
+        ProgressHUD.hideHud()
     }
     
     func getRemoteKeyboardWindow()->UIView?{

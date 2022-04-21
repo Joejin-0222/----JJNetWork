@@ -20,7 +20,8 @@ class ZWOrderViewJoe: UIView {
     // 03. 声明代理属性 (注:使用weak修饰, 该协议需要继承NSObjectProtocol基协议, 且注意代理名称是否重复)
     weak  var delegate  : OrderWayTypeSelectDelegate?
     
-    var dataAarry  : NSArray = []
+    var OrderListDataAarry  = [goodsModel]()//: NSMutableArray? = []//订单列表数组
+    var dataAarry  : NSArray = []//分类标题数据
     private var selectIndex:Int=0   //    记录点击了第几行
     // logo 视图
     lazy var LogoImage : UIImageView = {
@@ -483,8 +484,9 @@ class ZWOrderViewJoe: UIView {
         //默认选中第一行
         DispatchQueue.main.async {
             let indexpath = IndexPath.init(row: self.selectIndex , section: 0)
-            self.TableView.selectRow(at: indexpath, animated: false, scrollPosition: UITableView.ScrollPosition.top
-            )
+            if self.OrderListDataAarry.count  > 0{
+                self.TableView.selectRow(at: indexpath, animated: false, scrollPosition: UITableView.ScrollPosition.top)
+            }
         }
         return self
     }
@@ -550,14 +552,22 @@ class ZWOrderViewJoe: UIView {
 
 extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.OrderListDataAarry.count ?? 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let  cell:ZWOrderCellJoe =  ZWOrderCellJoe.createWithTableViewCell(tableView: tableView) as! ZWOrderCellJoe
         cell.selectionStyle = .none
-        cell.closeIcon.addTarget(self, action: #selector(closeIconClick), for: .touchUpInside)
+        if self.OrderListDataAarry.count > 0{
+            let model : goodsModel =   self.OrderListDataAarry[indexPath.row] ;
+            cell.closeIcon.addTarget(self, action: #selector(closeIconClick), for: .touchUpInside)
+            cell.content01.text = model.name
+            cell.content02.text = "￥\(model.salePrice ?? 0 )"
+            cell.content03.text = "x\(model.goodsNum ?? 1)"
+            cell.content05.text = "￥\((model.goodsNum ?? 0 ) * model.salePrice! )"
         
+        }
+      
         return cell
     }
     @objc func closeIconClick(){
@@ -606,6 +616,8 @@ extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
     //整单取消点击
     @objc func BtnClick(){
         print("=====整单取消点击")
+//        self.OrderListDataAarry.
+        self.TableView.reloadData()
     }
     
 }

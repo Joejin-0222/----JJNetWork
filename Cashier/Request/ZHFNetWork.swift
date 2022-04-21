@@ -57,14 +57,19 @@ struct ZHFNetwork {
                 } catch let error{
                     //服务器报错等问题 (常见问题404 ，地址错误)
                     error1((error as! MoyaError).response!.statusCode)
+                    if ProgressHUD.hud != nil{
+                        ProgressHUD.hideHud()
+                    }
                 }
             case let .failure(error):
                 //没有网络等问题 （网络超时，没有网）（必要时还可以将尝试重新发起请求）
                 failure(error)
+                if ProgressHUD.hud != nil{
+                    ProgressHUD.hideHud()
+                }
+                
             }
-            if ProgressHUD.hud != nil{
-                ProgressHUD.hideHud()
-            }
+          
             print("*****************************end ***********************")
         }
     }

@@ -110,6 +110,7 @@
 		04829542280FFA6500415D7C /* goodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04829540280FFA6500415D7C /* goodsModel.swift */; };
 		04829543280FFA6500415D7C /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04829541280FFA6500415D7C /* DBManager.swift */; };
 		04829545281002B400415D7C /* ZWSementGRDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04829544281002B400415D7C /* ZWSementGRDB.swift */; };
+		0482954B2811424500415D7C /* ZWOrderListGRDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482954A2811424500415D7C /* ZWOrderListGRDB.swift */; };
 		0486847C27D833D100D6A878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486847B27D833D100D6A878 /* AppDelegate.swift */; };
 		0486847E27D833D100D6A878 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486847D27D833D100D6A878 /* DocumentBrowserViewController.swift */; };
 		0486848027D833D100D6A878 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486847F27D833D100D6A878 /* DocumentViewController.swift */; };
@@ -286,6 +287,7 @@
 		04829540280FFA6500415D7C /* goodsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goodsModel.swift; sourceTree = "<group>"; };
 		04829541280FFA6500415D7C /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		04829544281002B400415D7C /* ZWSementGRDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWSementGRDB.swift; sourceTree = "<group>"; };
+		0482954A2811424500415D7C /* ZWOrderListGRDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderListGRDB.swift; sourceTree = "<group>"; };
 		0486847827D833D100D6A878 /* Cashier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0486847B27D833D100D6A878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0486847D27D833D100D6A878 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -1207,6 +1209,7 @@
 				04829541280FFA6500415D7C /* DBManager.swift */,
 				04829540280FFA6500415D7C /* goodsModel.swift */,
 				04829544281002B400415D7C /* ZWSementGRDB.swift */,
+				0482954A2811424500415D7C /* ZWOrderListGRDB.swift */,
 			);
 			path = GRDB;
 			sourceTree = "<group>";
@@ -1443,6 +1446,7 @@
 				0469F7F7280974F80072CD1E /* ZWOrderYouHuiCollectionCellJoe.swift in Sources */,
 				0486848027D833D100D6A878 /* DocumentViewController.swift in Sources */,
 				043E9AA82806DBBD000B3BBF /* DRRightTCell.swift in Sources */,
+				0482954B2811424500415D7C /* ZWOrderListGRDB.swift in Sources */,
 				043E9AB728080505000B3BBF /* UCollectionViewSectionBackgroundLayout.swift in Sources */,
 				043E9AA92806DBBD000B3BBF /* testPopView.swift in Sources */,
 				0444685927E0257A000444FD /* CashierSettingViewController.swift in Sources */,
