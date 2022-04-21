@@ -17,6 +17,8 @@ enum OrderWayType : Int {
 }
 
 class ZWOrderViewJoe: UIView {
+    
+    
     // 03. 声明代理属性 (注:使用weak修饰, 该协议需要继承NSObjectProtocol基协议, 且注意代理名称是否重复)
     weak  var delegate  : OrderWayTypeSelectDelegate?
     
@@ -552,7 +554,7 @@ class ZWOrderViewJoe: UIView {
 
 extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.OrderListDataAarry.count ?? 5
+        return self.OrderListDataAarry.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -616,8 +618,10 @@ extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
     //整单取消点击
     @objc func BtnClick(){
         print("=====整单取消点击")
-//        self.OrderListDataAarry.
+        self.OrderListDataAarry.removeAll()
         self.TableView.reloadData()
+        /// 发送一个通知 来清除 订单列表数据
+        NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "RemoveOrderListDataAarry"), object: nil)
     }
     
 }

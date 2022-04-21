@@ -50,14 +50,14 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
     
     
     func initView() -> UIView {
-        //删除 商品 表
-        //        goodsModel.deleteAll()
-        //        //删除 分类 表
-        //        ZWSementGRDB.deleteAll()
         
+     
         //更新网络数据
         if IsUpData == true {
-            
+            //删除 商品 表
+            goodsModel.deleteAll()
+            //删除 分类 表
+            ZWSementGRDB.deleteAll()
             
             self.loadFenLeiData(ShopId: (Cache.userSto?.sid ?? 0))//分类
             
@@ -345,11 +345,18 @@ extension ZWCheckOutStoreViewJoe:UICollectionViewDataSource ,UICollectionViewDel
         
         self.GoodsDelegate?.GoodsSelectIndexPathClick(IndexPath: indexPath.item, GoodsArray: self.OrderDataAarry)
         
+        /// 注册 通知
+        NotificationCenter.default.addObserver(self, selector: #selector(RemoveOrderListDataAarry), name: NSNotification.Name(rawValue: "RemoveOrderListDataAarry"), object: nil)
         
         
     }
-    
-    
-    
+    //收到通知移除 订单列表数据
+    @objc func RemoveOrderListDataAarry(noti: NSNotification){
+        debugPrint("=====RemoveOrderListDataAarry 通知")
+        self.OrderDataAarry.removeAll()
+        /// 移除通知
+        NotificationCenter.default.removeObserver(self)
+    }
+ 
     
 }
