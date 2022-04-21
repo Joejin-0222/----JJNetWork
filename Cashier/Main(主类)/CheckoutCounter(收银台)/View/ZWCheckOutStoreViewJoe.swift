@@ -147,16 +147,19 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
     }
     //popMoreCategoriesView.Delegate = self 协议 点击方法
     func MoreCategoriesSelectIndexPathClick(IndexPath: Int, model: ZWSementGRDB) {
-        self.loadGoodsData(categoryId: model.id ,pageNum:1)
-        popMoreCategoriesView.closeBtnClick()
+        self.dataAarry = goodsModel.queryAll(categoryId:"\(model.id)") as NSArray //本地数据 查询显示
+        self.CollectionView.reloadData()
+        
         self.SementViewSelectIndex = IndexPath
+        popMoreCategoriesView.closeBtnClick()
         
         SementView.selectIndex = self.SementViewSelectIndex //
         SementView.ReloadData()
+      
     }
     
     
-    //分类
+    //load  分类 数据
     func loadFenLeiData(ShopId:Int64){
         let dict = ["shopId":ShopId]
         
