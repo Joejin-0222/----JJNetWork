@@ -17,6 +17,10 @@ class ZWStaffShiftVCJoe: ZWRootViewControllerJoe {
         self.sehzhiUI()
     }
     
+    func loadData(){
+//        ZHFNetwork.request(target: <#T##ZHFService#>, success: <#T##ZHFNetwork.successCallback##ZHFNetwork.successCallback##(_ result: Any) -> Void#>, error1: <#T##ZHFNetwork.errorCallback##ZHFNetwork.errorCallback##(_ statusCode: Int) -> Void#>, failure: <#T##ZHFNetwork.failureCallback##ZHFNetwork.failureCallback##(_ error: MoyaError) -> Void#>)
+    }
+    
     func sehzhiUI(){
         //
         self.view.addSubview(leftTableView.initView())
