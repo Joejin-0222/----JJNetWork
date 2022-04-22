@@ -9,6 +9,8 @@ import UIKit
 import IQKeyboardManagerSwift
 
 class SelectStoreViewController: UIViewController {
+    
+    var userModel = LoginModel()
     var adminUserId:Int64 = 0
     var selectStoreView: SelectStoreView = SelectStoreView()
     
@@ -32,6 +34,7 @@ class SelectStoreViewController: UIViewController {
   extension SelectStoreViewController {
       func setUI(viewId:Int64){
             self.view.addSubview(selectStoreView.initView(viewId: viewId))
+          selectStoreView.userModel = userModel
     }
 }
 

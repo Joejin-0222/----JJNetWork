@@ -9,21 +9,8 @@ import Foundation
 
 extension Cache {
     
-
     
     
-    /// 收银台分段选择数据
-    static var SementData: ZWCheckSementModelJoe? {
-        get {
-            guard isLogin else { return nil }
-            return self.sementData.get(type: ZWCheckSementModelJoe.self)
-        }
-        set {
-           
-            self.sementData.save(item: newValue)
-        }
-    }
-   
     
     
     /// 登录保存店铺数据

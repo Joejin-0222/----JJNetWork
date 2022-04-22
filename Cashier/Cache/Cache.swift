@@ -62,8 +62,8 @@ enum Cache: String {
     /// 清理缓存
     func clear() {
         PINCache.shared.removeObject(forKey: rawValue)
+        PINCache.shared.removeAllObjects()
     }
-    
     
     case sementData = "sementData"//收银台分段选择数据
     case userStore = "userStore"//店铺信息数据

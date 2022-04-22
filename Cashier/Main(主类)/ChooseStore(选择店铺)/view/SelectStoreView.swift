@@ -9,6 +9,7 @@ import UIKit
 
 class SelectStoreView: UIView {
     
+    var userModel = LoginModel()//登录
     var SelectModel = SelectStoreModelZJ()
     var dataAarry  : NSArray = []
     lazy var bgImageView:UIImageView = {
@@ -169,7 +170,6 @@ extension SelectStoreView {
             
             print("====reeor \(error)")
         }
-        ProgressHUD.hideHud()
     }
     
     func getRemoteKeyboardWindow()->UIView?{
@@ -206,6 +206,7 @@ extension SelectStoreView: UICollectionViewDelegate{
         let mainRootVC = MainRootController()
         mainRootVC.StoreId = model.sid
         Cache.userSto = model
+        Cache.user =  self.userModel
         print("===cache=\(Cache.userSto?.sid ?? 0) ==== model = \(model.sid)");
         nextResponder(currentView: self).navigationController?.pushViewController(mainRootVC, animated: true)
     }

@@ -17,7 +17,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
     // 03. 声明代理属性 (注:使用weak修饰, 该协议需要继承NSObjectProtocol基协议, 且注意代理名称是否重复)
     weak var GoodsDelegate: GoodsSelectDelegate?
     
-    var OrderDataAarry   = [goodsModel]()//订单列表 数据
+    var OrderDataAarry  = [goodsModel]()//订单列表 数据
     
     var pageNum:Int = 0   //    请求商品页数
     
@@ -51,9 +51,9 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
     
     func initView() -> UIView {
         
-     
-        //更新网络数据
-        if IsUpData == true {
+        
+        //是否 更新 网络数据
+        if IsUpData == false {
             //删除 商品 表
             goodsModel.deleteAll()
             //删除 分类 表
@@ -229,6 +229,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
         // 查询数据
         debugPrint("======查询商品 所有数据:", goodsModel.queryAll())
         
+        debugPrint("======查询商品 所选分类 数据:",goodsModel.queryAll(categoryId:"\(model.id)") as NSArray)
         self.dataAarry = goodsModel.queryAll(categoryId:"\(model.id)") as NSArray //本地数据 查询显示
         
         self.CollectionView.reloadData()
@@ -338,6 +339,7 @@ extension ZWCheckOutStoreViewJoe:UICollectionViewDataSource ,UICollectionViewDel
         }
         
         if Num == 0{
+            model.goodsNum = 1
             tempArray.add(model)
         }
         
@@ -353,10 +355,11 @@ extension ZWCheckOutStoreViewJoe:UICollectionViewDataSource ,UICollectionViewDel
     //收到通知移除 订单列表数据
     @objc func RemoveOrderListDataAarry(noti: NSNotification){
         debugPrint("=====RemoveOrderListDataAarry 通知")
+        
         self.OrderDataAarry.removeAll()
         /// 移除通知
         NotificationCenter.default.removeObserver(self)
     }
- 
+    
     
 }
