@@ -19,17 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = .white
     
 //        let token =  userDefault.value(forKey: "token") ?? ""
-//        if token as! String != "" {
+        
+        if Cache.user?.token?.isEmpty == false {
             let vc = MainRootController()
             let nav = UINavigationController(rootViewController: vc)
             self.window?.rootViewController = nav
             self.window?.makeKeyAndVisible()
-//        } else {
-//            let vc = LoginViewController()
-//            let nav = UINavigationController(rootViewController: vc)
-//            self.window?.rootViewController = nav
-//            self.window?.makeKeyAndVisible()
-//        }
+        } else {
+            let vc = LoginViewController()
+            let nav = UINavigationController(rootViewController: vc)
+            self.window?.rootViewController = nav
+            self.window?.makeKeyAndVisible()
+        }
       
         return true
     }

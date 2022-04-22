@@ -120,11 +120,11 @@ struct ZHFNetwork {
 // 定义请求方法
 enum ZHFService {
     //没有参数
-    case NoParameters(pathStr:String)
+    case GetNoParameters(pathStr:String)
     //有参数
-    case yesParameters(pathStr:String,parameters: [String : Any])
+    case GetYesParameters(pathStr:String,parameters: [String : Any])
     
-    case HaveParameters(pathStr:String,parameters: [String : Any])
+    case PostParameters(pathStr:String,parameters: [String : Any])
     //上传头像图片
     case uploadPortraitImage(pathStr:String,parameters: [String : Any],imageData: Data)
     //上传文件
@@ -138,11 +138,11 @@ extension ZHFService: TargetType {
     // 每个API对应的具体路径
     var path: String {
         switch self {
-        case .NoParameters(let pathStr):
+        case .GetNoParameters(let pathStr):
             return pathStr
-        case .yesParameters(let pathStr, _):
+        case .GetYesParameters(let pathStr, _):
             return pathStr
-        case .HaveParameters(let pathStr, _):
+        case .PostParameters(let pathStr, _):
             return pathStr
         case .uploadPortraitImage(let pathStr, _, _):
             return pathStr
@@ -154,11 +154,11 @@ extension ZHFService: TargetType {
     // 各个接口的请求方式，get或post
     var method: Moya.Method {
         switch self {
-        case .NoParameters:
+        case .GetNoParameters:
             return .get
-        case .yesParameters:
+        case .GetYesParameters:
             return .get
-        case .HaveParameters:
+        case .PostParameters:
             return .post
         case .uploadPortraitImage:
             return .post
@@ -169,12 +169,12 @@ extension ZHFService: TargetType {
     // 请求是否携带参数，
     var task: Task {
         switch self {
-        case .NoParameters:
+        case .GetNoParameters:
             return .requestPlain // 无参数
-        case .yesParameters(_,let parameters):
+        case .GetYesParameters(_,let parameters):
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
             
-        case .HaveParameters(_,let parameters): // 带有参数,注意前面的let
+        case .PostParameters(_,let parameters): // 带有参数,注意前面的let
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
             //上传头像
         case .uploadPortraitImage(_, _,let imageData):
@@ -194,11 +194,11 @@ extension ZHFService: TargetType {
     //这个就是做单元测试模拟的数据，只会在单元测试文件中有作用
     var sampleData: Data {
         switch self {
-        case .NoParameters:
+        case .GetNoParameters:
             return "just for test".utf8Encoded
-        case .yesParameters(let parameters):
+        case .GetYesParameters(let parameters):
             return "{\"parameters\": \(parameters)\"}".utf8Encoded
-        case .HaveParameters(let parameters):
+        case .PostParameters(let parameters):
             return "{\"parameters\": \(parameters)\"}".utf8Encoded
         case .uploadPortraitImage(_,let parameters, _):
             return "{\"parameters\": \(parameters)\"}".utf8Encoded
@@ -212,11 +212,11 @@ extension ZHFService: TargetType {
     //    userDefault.set(model.tenantId, forKey: "tenantId")
     var headers: [String : String]? {
         switch self {
-        case .NoParameters:
+        case .GetNoParameters:
             return ["adminToken": "\(userDefault.value(forKey: "token") ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Accept": "application/json"]
-        case .yesParameters(_):
+        case .GetYesParameters(_):
             return ["adminToken": "\(userDefault.value(forKey: "token") ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Accept": "application/json"]
-        case .HaveParameters(_):
+        case .PostParameters(_):
             return ["adminToken": "\(userDefault.value(forKey: "token") ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Content-type" :"application/x-www-form-urlencoded"]
         case .uploadPortraitImage(_,_ , _):
             return ["adminToken": "\(userDefault.value(forKey: "token") ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Content-type" :"application/json; charset=utf-8"]

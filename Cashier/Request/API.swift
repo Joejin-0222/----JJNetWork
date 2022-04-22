@@ -26,6 +26,7 @@ let getUrlSetShop = "cashier/shop/getShop"//获取门店列表
 //收银台
 let getFindCashier = "cashier/goods/findCashier" //查询收银商品分类
 let getFindCashierGoods = "cashier/goods/findCashierGoods" //查询收银商品
+let getOrderConfirm = "/cashier/orders/getOrderConfirm" //订单列表 ，购物车
 
 //let changeUserMessageUrl = "users/userInfoSave"//用户资料保存
 

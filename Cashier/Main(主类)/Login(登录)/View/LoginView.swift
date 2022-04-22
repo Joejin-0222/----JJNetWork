@@ -367,7 +367,7 @@ extension LoginView:UITextFieldDelegate{
     func loadData(page:NSInteger,userText:String,passwordText:String){
         let dict = ["username":userText,"password":passwordText]
         ProgressHUD.showLoadingHudView(message: "Loading")
-        ZHFNetwork.request(target: .HaveParameters(pathStr: getBoxRecommendUrl, parameters:dict), success: { [self] (result) in
+        ZHFNetwork.request(target: .PostParameters(pathStr: getBoxRecommendUrl, parameters:dict), success: { [self] (result) in
             let dic = result as! NSDictionary
             let code : NSInteger = dic["code"] as! NSInteger
             print("code************\(code)")
@@ -387,21 +387,22 @@ extension LoginView:UITextFieldDelegate{
                 userDefault.set(model.token, forKey: "token")
                 userDefault.set(model.viewId, forKey: "viewId")
                 userDefault.set(model.tenantId, forKey: "tenantId")
-//                Cache.user 
+//                Cache.user
                 print("===succeed data =\(adicAs)")
-                Cache.user =  model
-                print("====login= \(model.nickname ?? "") ===model= \(model.nickname ?? "" )")
+         
+                print("====login= \(Cache.user?.tenantId ?? 0) ===model= \(model.tenantId )")
                 let selectStoreVC = SelectStoreViewController()
                 selectStoreVC.adminUserId = model.id
+                selectStoreVC.userModel = model
                 nextResponder(currentView: self).navigationController?.pushViewController(selectStoreVC, animated: true)
                 ProgressHUD.showSuccesshTips(message: "")
-           
+                ProgressHUD.hideHud()
             }
             else{
                 //请求成功，没有找到对应数据(常见问题传参错误，传参加密问题，后台定义的code)
                 if let view = self.getRemoteKeyboardWindow() {
                     view.makeToast("\(dic["msg"]!)code=\(code)")
-                }                
+                }
             }
         }, error1: { (statusCode) in
             //服务器报错等问题 (常见问题404 ，地址错误)
@@ -415,7 +416,6 @@ extension LoginView:UITextFieldDelegate{
                 view.makeToast("请求失败！错误信息：\(error.errorDescription!)")
             }
         }
-        ProgressHUD.hideHud()
   }
     
     func getRemoteKeyboardWindow()->UIView?{

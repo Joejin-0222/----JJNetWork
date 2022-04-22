@@ -18,11 +18,13 @@ enum OrderWayType : Int {
 
 class ZWOrderViewJoe: UIView {
     
-    
     // 03. 声明代理属性 (注:使用weak修饰, 该协议需要继承NSObjectProtocol基协议, 且注意代理名称是否重复)
     weak  var delegate  : OrderWayTypeSelectDelegate?
     
     var OrderListDataAarry  = [goodsModel]()//: NSMutableArray? = []//订单列表数组
+    
+    var OrderGoodsmodel = goodsModel() //列表商品
+    
     var dataAarry  : NSArray = []//分类标题数据
     private var selectIndex:Int=0   //    记录点击了第几行
     // logo 视图
@@ -59,7 +61,7 @@ class ZWOrderViewJoe: UIView {
     
     //tableview
     lazy var TableView:UITableView = {
-        let tableview = UITableView(frame:.zero ,style: .grouped)
+        let tableview = UITableView(frame:.zero ,style: .plain)
         tableview.backgroundColor = UIColor.clear
         tableview.dataSource = self
         tableview.delegate = self
@@ -223,7 +225,7 @@ class ZWOrderViewJoe: UIView {
     //加
     lazy var addBtn : UIButton = {
         let Btn = UIButton()
-//        Btn.setTitle("+", for: .normal)
+        //        Btn.setTitle("+", for: .normal)
         Btn.setImage(UIImage.init(named: "订单加"), for: .normal)
         Btn.titleLabel?.font = UIFont.systemFont(ofSize: 38*WidthW)
         Btn.setTitleColor(UIColor.init(hex: "#323233"), for: .normal)
@@ -241,7 +243,7 @@ class ZWOrderViewJoe: UIView {
     //减
     lazy var ReduceBtn : UIButton = {
         let Btn = UIButton()
-//        Btn.setTitle("-", for: .normal)
+        //        Btn.setTitle("-", for: .normal)
         Btn.setImage(UIImage.init(named: "订单减"), for: .normal)
         Btn.titleLabel?.font = UIFont.systemFont(ofSize: 38*WidthW)
         Btn.setTitleColor(UIColor.init(hex: "#323233"), for: .normal)
@@ -267,21 +269,21 @@ class ZWOrderViewJoe: UIView {
             make.width.equalTo(OrderTabelViewWidth*WidthW)
         }
         //称重底部view
-//        self.addSubview(topView)
-//        topView.snp.makeConstraints { make in
-//            make.top.equalTo(topLineView.snp.bottom).offset(0*WidthW)
-//            make.left.equalTo(self.snp.left)
-//            make.right.equalTo(self.snp.right)
-//            make.height.equalTo(127*WidthW)
-//        }
-//        topView.addSubview(weighView.initView())
-//        weighView.snp.makeConstraints { make in
-//            make.top.equalTo(topView.snp.top).offset(0*WidthW)
-//            make.left.equalTo(topView.snp.left)
-//            make.right.equalTo(topView.snp.right)
-//            make.bottom.equalTo(topView.snp.bottom)
-//        }
-    
+        //        self.addSubview(topView)
+        //        topView.snp.makeConstraints { make in
+        //            make.top.equalTo(topLineView.snp.bottom).offset(0*WidthW)
+        //            make.left.equalTo(self.snp.left)
+        //            make.right.equalTo(self.snp.right)
+        //            make.height.equalTo(127*WidthW)
+        //        }
+        //        topView.addSubview(weighView.initView())
+        //        weighView.snp.makeConstraints { make in
+        //            make.top.equalTo(topView.snp.top).offset(0*WidthW)
+        //            make.left.equalTo(topView.snp.left)
+        //            make.right.equalTo(topView.snp.right)
+        //            make.bottom.equalTo(topView.snp.bottom)
+        //        }
+        
         
         //
         self.addSubview(TableView)
@@ -294,7 +296,7 @@ class ZWOrderViewJoe: UIView {
             make.width.equalTo(525*WidthW)
             make.bottom.equalTo(self.snp.bottom).offset(-200*WidthW)
         }
-    
+        
         //
         self.addSubview(VipImage)
         VipImage.snp.makeConstraints { make in
@@ -313,7 +315,7 @@ class ZWOrderViewJoe: UIView {
             make.width.equalTo(368*WidthW)
             make.bottom.equalTo(self.snp.bottom).offset(-24*WidthW)
         }
-
+        
         //
         BottomView.addSubview(AllOrderView)
         AllOrderView.snp.makeConstraints { make in
@@ -321,10 +323,10 @@ class ZWOrderViewJoe: UIView {
             make.left.equalTo(BottomView.snp.left).offset(0*WidthW)
             make.width.equalTo(232*WidthW)
         }
-      
+        
         AllOrderView.addSubview(Label01)
         Label01.snp.makeConstraints { make in
-//            make.top.equalTo(5*WidthW)
+            //            make.top.equalTo(5*WidthW)
             make.left.equalTo(AllOrderView.snp.left).offset(25*WidthW)
             make.width.equalTo(18*WidthW)
             make.height.equalTo(40*WidthW)
@@ -336,6 +338,8 @@ class ZWOrderViewJoe: UIView {
             make.right.equalTo(AllOrderView.snp.right).offset(-24*WidthW)
             make.bottom.equalTo(Label01.snp.bottom)
         }
+        
+        
         AllOrderView.addSubview(Label03)
         Label03.snp.makeConstraints { make in
             make.top.equalTo(Label02.snp.bottom)
@@ -361,8 +365,8 @@ class ZWOrderViewJoe: UIView {
             make.right.equalTo(TableView.snp.right).offset(-8*WidthW)
         }
         allOrderCancelBtn.cornerRadius(cornerRadius: 16*WidthW)
-
-
+        
+        
         
         //右边操作加减 等view
         self.addSubview(operationView)
@@ -373,7 +377,7 @@ class ZWOrderViewJoe: UIView {
             make.height.equalTo(self.snp.height)
         }
         //左边线
-//        operationline01.backgroundColor = UIColor.red
+        //        operationline01.backgroundColor = UIColor.red
         operationView.addSubview(operationline01)
         operationline01.snp.makeConstraints { make in
             make.top.equalTo(operationView.snp.top)
@@ -483,13 +487,7 @@ class ZWOrderViewJoe: UIView {
         }
         ReduceBtn.addTarget(self, action: #selector(ReduceBtnClick), for: .touchUpInside)
         
-        //默认选中第一行
-        DispatchQueue.main.async {
-            let indexpath = IndexPath.init(row: self.selectIndex , section: 0)
-            if self.OrderListDataAarry.count  > 0{
-                self.TableView.selectRow(at: indexpath, animated: false, scrollPosition: UITableView.ScrollPosition.top)
-            }
-        }
+        
         return self
     }
     //收款点击方法
@@ -501,16 +499,21 @@ class ZWOrderViewJoe: UIView {
     
     
     @objc func addBtnClick(){
+        let num : String = self.shownumLabel.text ?? ""
+        numIndex = Int(num) ?? 1
         numIndex += 1
         self.shownumLabel.text = "\(numIndex)"
         print("=======\(numIndex)")
         self.ReduceBtn.isEnabled = true
+        
+        self.addAndReduceUptableView(numIndex: numIndex)
+      
     }
     
     @objc func ReduceBtnClick(){
         numIndex -= 1
-        if numIndex == 0{
-            numIndex = 0
+        if numIndex == 1{
+            numIndex = 1
             self.ReduceBtn.isEnabled = false
         }else{
             self.ReduceBtn.isEnabled = true
@@ -518,7 +521,26 @@ class ZWOrderViewJoe: UIView {
         self.shownumLabel.text = "\(numIndex)"
         
         print("=======\(numIndex)")
+        self.addAndReduceUptableView(numIndex: numIndex)
     }
+    //MARK: //点击加减 刷新
+    func addAndReduceUptableView(numIndex:Int){
+       
+          let tempArray : NSMutableArray = []
+          for obj  in self.OrderListDataAarry {
+              if  obj.skuViewId == self.OrderGoodsmodel.skuViewId{
+               
+                  obj.goodsNum = numIndex
+                  tempArray.add(obj)
+              }else{
+                  tempArray.add(obj)
+              }
+          }
+          self.OrderListDataAarry = tempArray as! [goodsModel]
+          self.OrerListReloadData()
+    }
+    
+    
     // 预订 取单等点击操作
     @objc func orderBtnClick(sender : UIButton){
         
@@ -535,7 +557,7 @@ class ZWOrderViewJoe: UIView {
             let alertView : ZWQuDanTanKuangView = ZWQuDanTanKuangView().initView() as! ZWQuDanTanKuangView
             alertView.dataAarry =   ["收银台取单","小程序取单"]
             alertView.show()
-           
+            
             break
         case .整单优惠:
             let popOrderHouHuiView  : ZWOrderYouHuiPopViewJoe =  ZWOrderYouHuiPopViewJoe().initView() as! ZWOrderYouHuiPopViewJoe
@@ -548,6 +570,53 @@ class ZWOrderViewJoe: UIView {
             break
         }
         
+    }
+    // MARK: -刷新 列表
+    func OrerListReloadData(){
+        //默认选中第一行
+        DispatchQueue.main.async {
+        
+            let indexpath = IndexPath.init(row: self.selectIndex , section: 0)
+            if self.OrderListDataAarry.count  > 0{
+                self.TableView.selectRow(at: indexpath, animated: false, scrollPosition: UITableView.ScrollPosition.top)
+            }
+        }
+        //计算总价格
+        var oldPrice : CGFloat = 0.00
+        for model in self.OrderListDataAarry {
+            let NewPrice = CGFloat(((model.goodsNum ?? 0 ) * (model.salePrice ?? 0)))
+            oldPrice = oldPrice + NewPrice
+            Label02.text  = "\(oldPrice)"
+        }
+        
+        self.TableView.reloadData()
+    }
+    
+    //load 订单列表 数据
+    func loadOrderListData(ShopId:Int64){
+        let dict = ["shopId":ShopId]
+        
+        ZHFNetwork.request(target: .GetYesParameters(pathStr: getFindCashier, parameters: dict)) { [self] result in
+            
+            let dic = result as! NSDictionary
+            let tempAarry : NSArray = dic["data"] as! NSArray
+            //            let tempArray1 = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
+            //            self.SementView.dataAarry = tempArray1
+            //            self.SementView.ReloadData()
+            //            self.CategoriesDataAarry = tempArray1//更多分类数据
+            //            //默认选择第一个分类
+            //            let model : ZWCheckSementModelJoe = tempArray1[0] as! ZWCheckSementModelJoe
+            //
+            //            loadGoodsData(categoryId: model.id)//
+            
+        
+            
+        } error1: { statusCode in
+            print("====statusCode \(statusCode)")
+        } failure: { error in
+            
+            print("====reeor \(error)")
+        }
     }
     
 }
@@ -566,25 +635,31 @@ extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
             cell.content01.text = model.name
             cell.content02.text = "￥\(model.salePrice ?? 0 )"
             cell.content03.text = "x\(model.goodsNum ?? 1)"
-            cell.content05.text = "￥\((model.goodsNum ?? 0 ) * model.salePrice! )"
-        
+            cell.content05.text = "￥\((model.goodsNum ?? 0 ) * (model.salePrice ?? 0) )"
+            
         }
-      
+        
         return cell
     }
     @objc func closeIconClick(){
         print("======点击了删除")
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectIndex = indexPath.row
+        
+        let model : goodsModel =   self.OrderListDataAarry[indexPath.row] ;
+        self.OrderGoodsmodel = model 
+        shownumLabel.text = "\(model.goodsNum ?? 1)"
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150*WidthW
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.selectIndex=indexPath.row
-//        self.TableView.reloadData()
-    }
+    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footview = UIView()
-       
+        footview.backgroundColor = UIColor.white
+        
         let subView =  UIView()
         subView.frame = CGRect(x: 24*WidthW, y: 18*HeighH, width: 172*WidthW, height: 52*HeighH)
         footview.addSubview(subView)
@@ -618,6 +693,10 @@ extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
     //整单取消点击
     @objc func BtnClick(){
         print("=====整单取消点击")
+        Label02.text = "0:00" //总价格
+        self.selectIndex = 0 //列表选了那个
+        shownumLabel.text = "0"//加减 数字显示
+        
         self.OrderListDataAarry.removeAll()
         self.TableView.reloadData()
         /// 发送一个通知 来清除 订单列表数据

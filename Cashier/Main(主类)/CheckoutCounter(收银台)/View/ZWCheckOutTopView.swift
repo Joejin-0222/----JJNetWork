@@ -51,8 +51,8 @@ class ZWCheckOutTopView: UIView {
     //
     lazy var goodNameBtn : UIButton = {
         let btn = UIButton()
-//        btn.backgroundColor = UIColor.init(hex: "#DEDFE5")
-//        btn.setTitle("商品名称", for: .normal)
+        //        btn.backgroundColor = UIColor.init(hex: "#DEDFE5")
+        //        btn.setTitle("商品名称", for: .normal)
         btn.setImage(UIImage.init(named: "首页搜索"), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18*WidthW)
         btn.setTitleColor(UIColor.init(hex: "#3B4152"), for: .normal)
@@ -129,7 +129,7 @@ class ZWCheckOutTopView: UIView {
             make.centerY.equalTo(self.snp.centerY)
         }
         //
-//        goodNameBtn.setImageAndTitle(imageName: "down", title: "商品名称", type: .PositionRight, Space: 1)
+        //        goodNameBtn.setImageAndTitle(imageName: "down", title: "商品名称", type: .PositionRight, Space: 1)
         SearchView.addSubview(goodNameBtn)
         goodNameBtn.snp.makeConstraints { make in
             make.left.equalTo(SearchView.snp.left).offset(6*WidthW)
@@ -177,10 +177,12 @@ class ZWCheckOutTopView: UIView {
         Cache(rawValue: "currentCurrencyKey")?.clear()
         Cache(rawValue: "isAutoSettedCurrencyKey")?.clear()
         Cache(rawValue: "cookieKey")?.clear()
+        Cache.userKey.clear()
+        
     }
     
     @objc func goodNameBtnClick(){
-    
+        
         
     }
     
