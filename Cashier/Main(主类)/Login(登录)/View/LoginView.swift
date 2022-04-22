@@ -407,7 +407,7 @@ extension LoginView:UITextFieldDelegate{
                 selectStoreVC.userModel = model
                 nextResponder(currentView: self).navigationController?.pushViewController(selectStoreVC, animated: true)
                 ProgressHUD.showSuccesshTips(message: "")
-                ProgressHUD.hideHud()
+              
             }
             else{
                 //请求成功，没有找到对应数据(常见问题传参错误，传参加密问题，后台定义的code)
@@ -415,17 +415,21 @@ extension LoginView:UITextFieldDelegate{
                     view.makeToast("\(dic["msg"]!)code=\(code)")
                 }
             }
+            ProgressHUD.hideHud()
+            
         }, error1: { (statusCode) in
             //服务器报错等问题 (常见问题404 ，地址错误)
             if let view = self.getRemoteKeyboardWindow() {
                 view.makeToast("请求错误！错误码：\(statusCode)")
             }
+            ProgressHUD.hideHud()
         }) { (error) in
             ProgressHUD.showErrorMessage(message: "\(error)")
             //没有网络等问题 （网络超时，没有网）
             if let view = self.getRemoteKeyboardWindow() {
                 view.makeToast("请求失败！错误信息：\(error.errorDescription!)")
             }
+            ProgressHUD.hideHud()
         }
     }
     

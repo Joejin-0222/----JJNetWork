@@ -23,7 +23,7 @@ class ZWCheckOutStoreCellJoe: UICollectionViewCell {
         let view = UIImageView()
         view.image = UIImage.init(named: "login_store")
         view.isUserInteractionEnabled = true
-//        view.contentMode = .scaleAspectFill
+        view.contentMode = .scaleAspectFill
         return view
     }()
     

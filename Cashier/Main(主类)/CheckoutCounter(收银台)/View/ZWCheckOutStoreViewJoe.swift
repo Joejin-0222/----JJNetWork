@@ -52,7 +52,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
     func initView() -> UIView {
         
         //是否 更新 网络数据
-        if IsUpData == false {
+        if IsUpData == true {
             //删除 商品 表
             goodsModel.deleteAll()
             //删除 分类 表

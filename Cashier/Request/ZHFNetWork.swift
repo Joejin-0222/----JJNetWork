@@ -119,6 +119,8 @@ struct ZHFNetwork {
 }
 // 定义请求方法
 enum ZHFService {
+    //baby请求
+    case PostBabyParameters(pathStr:String,Babyparameters: [String : Any])
     //没有参数
     case GetNoParameters(pathStr:String)
     //有参数
@@ -138,6 +140,8 @@ extension ZHFService: TargetType {
     // 每个API对应的具体路径
     var path: String {
         switch self {
+        case .PostBabyParameters(let pathStr,_):
+            return pathStr
         case .GetNoParameters(let pathStr):
             return pathStr
         case .GetYesParameters(let pathStr, _):
@@ -154,6 +158,8 @@ extension ZHFService: TargetType {
     // 各个接口的请求方式，get或post
     var method: Moya.Method {
         switch self {
+        case .PostBabyParameters:
+            return .post
         case .GetNoParameters:
             return .get
         case .GetYesParameters:
@@ -176,6 +182,10 @@ extension ZHFService: TargetType {
             
         case .PostParameters(_,let parameters): // 带有参数,注意前面的let
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+            
+        case .PostBabyParameters(_,let Babyparameters)://
+            return .requestCompositeParameters(bodyParameters: Babyparameters, bodyEncoding: JSONEncoding.default, urlParameters: [:])
+            
             //上传头像
         case .uploadPortraitImage(_, _,let imageData):
             print(imageData)
@@ -185,6 +195,7 @@ extension ZHFService: TargetType {
             return .uploadMultipart(multipartData)
         case .uploadFileURL(_, _, let fileURL):
             return .uploadFile(fileURL)
+            
         }
     }
     //是否执行Alamofire验证
@@ -194,11 +205,13 @@ extension ZHFService: TargetType {
     //这个就是做单元测试模拟的数据，只会在单元测试文件中有作用
     var sampleData: Data {
         switch self {
+        case .PostBabyParameters(_,let babyparameters):
+            return "{\"parameters\": \(babyparameters)\"}".utf8Encoded
         case .GetNoParameters:
             return "just for test".utf8Encoded
-        case .GetYesParameters(let parameters):
+        case .GetYesParameters(_,let parameters):
             return "{\"parameters\": \(parameters)\"}".utf8Encoded
-        case .PostParameters(let parameters):
+        case .PostParameters(_,let parameters):
             return "{\"parameters\": \(parameters)\"}".utf8Encoded
         case .uploadPortraitImage(_,let parameters, _):
             return "{\"parameters\": \(parameters)\"}".utf8Encoded
@@ -207,21 +220,21 @@ extension ZHFService: TargetType {
         }
     }
     // 请求头
-    //    userDefault.set(model.token, forKey: "token")
-    //    userDefault.set(model.viewId, forKey: "viewId")
-    //    userDefault.set(model.tenantId, forKey: "tenantId")
     var headers: [String : String]? {
         switch self {
+        case .PostBabyParameters:
+            return ["adminToken": "\(Cache.user?.token ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Accept": "application/json"]
         case .GetNoParameters:
-            return ["adminToken": "\(userDefault.value(forKey: "token") ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Accept": "application/json"]
-        case .GetYesParameters(_):
-            return ["adminToken": "\(userDefault.value(forKey: "token") ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Accept": "application/json"]
-        case .PostParameters(_):
+            return ["adminToken": "\(Cache.user?.token ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Accept": "application/json"]
+        case .GetYesParameters(pathStr: _, parameters: _):
+            return ["adminToken": "\(Cache.user?.token ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Accept": "application/json"]
+        case .PostParameters(pathStr: _, parameters: _):
             return ["adminToken": "\(userDefault.value(forKey: "token") ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Content-type" :"application/x-www-form-urlencoded"]
         case .uploadPortraitImage(_,_ , _):
-            return ["adminToken": "\(userDefault.value(forKey: "token") ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Content-type" :"application/json; charset=utf-8"]
+            return ["adminToken": "\(Cache.user?.token ?? "") ","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Content-type" :"application/json; charset=utf-8"]
         case .uploadFileURL(_,_, _):
-            return ["adminToken": "\(userDefault.value(forKey: "token") ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Content-type" :"application/json; charset=utf-8"]
+            return ["adminToken": "\(Cache.user?.token ?? "") ","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Content-type" : "application/json; text/html;text/json;text/javascript;text/plain;charset=utf-8"]//"application/json; charset=utf-8"]
+            
             
         }
     }

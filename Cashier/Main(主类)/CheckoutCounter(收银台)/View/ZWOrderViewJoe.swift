@@ -18,6 +18,8 @@ enum OrderWayType : Int {
 
 class ZWOrderViewJoe: UIView {
     
+    var IsUpData : Bool = false // 是否更新请求网路数据
+    
     // 03. 声明代理属性 (注:使用weak修饰, 该协议需要继承NSObjectProtocol基协议, 且注意代理名称是否重复)
     weak  var delegate  : OrderWayTypeSelectDelegate?
     
@@ -487,6 +489,7 @@ class ZWOrderViewJoe: UIView {
         }
         ReduceBtn.addTarget(self, action: #selector(ReduceBtnClick), for: .touchUpInside)
         
+        self.loadOrderListData(ShopId: 0)
         
         return self
     }
@@ -507,7 +510,7 @@ class ZWOrderViewJoe: UIView {
         self.ReduceBtn.isEnabled = true
         
         self.addAndReduceUptableView(numIndex: numIndex)
-      
+        
     }
     
     @objc func ReduceBtnClick(){
@@ -525,19 +528,19 @@ class ZWOrderViewJoe: UIView {
     }
     //MARK: //点击加减 刷新
     func addAndReduceUptableView(numIndex:Int){
-       
-          let tempArray : NSMutableArray = []
-          for obj  in self.OrderListDataAarry {
-              if  obj.skuViewId == self.OrderGoodsmodel.skuViewId{
-               
-                  obj.goodsNum = numIndex
-                  tempArray.add(obj)
-              }else{
-                  tempArray.add(obj)
-              }
-          }
-          self.OrderListDataAarry = tempArray as! [goodsModel]
-          self.OrerListReloadData()
+        
+        let tempArray : NSMutableArray = []
+        for obj  in self.OrderListDataAarry {
+            if  obj.skuViewId == self.OrderGoodsmodel.skuViewId{
+                
+                obj.goodsNum = numIndex
+                tempArray.add(obj)
+            }else{
+                tempArray.add(obj)
+            }
+        }
+        self.OrderListDataAarry = tempArray as! [goodsModel]
+        self.OrerListReloadData()
     }
     
     
@@ -575,7 +578,7 @@ class ZWOrderViewJoe: UIView {
     func OrerListReloadData(){
         //默认选中第一行
         DispatchQueue.main.async {
-        
+            
             let indexpath = IndexPath.init(row: self.selectIndex , section: 0)
             if self.OrderListDataAarry.count  > 0{
                 self.TableView.selectRow(at: indexpath, animated: false, scrollPosition: UITableView.ScrollPosition.top)
@@ -594,12 +597,18 @@ class ZWOrderViewJoe: UIView {
     
     //load 订单列表 数据
     func loadOrderListData(ShopId:Int64){
-        let dict = ["shopId":ShopId]
+      
+
+        let dict = ["channelId":"11","deliveryType":2,"discountLimit":"","discountType":"-1","districtCode":"","goodsType":"1","majorUserId":"aa","provinceCode":"","requestTag":"","shopId":"156208472","tenantId":"","goodsVoList":[["discountPrice":"45.00","goodsId":"4235838119284737","nature":"","num":"1","orderId":"","price":"45.00","remake":"","totalPrice":"0"],["discountPrice":"23.00","goodsId":"4235838119284736","nature":"","num":"1","orderId":"","price":"23.00","remake":"","totalPrice":"0"]]] as [String : Any]
         
-        ZHFNetwork.request(target: .GetYesParameters(pathStr: getFindCashier, parameters: dict)) { [self] result in
+        
+        ZHFNetwork.request(target: .PostBabyParameters(pathStr: getOrderConfirm, Babyparameters: dict)) { [self] result in
             
             let dic = result as! NSDictionary
-            let tempAarry : NSArray = dic["data"] as! NSArray
+            
+            debugPrint("======dic = \(dic)")
+            
+            //            let tempAarry : NSArray = dic["data"] as! NSArray
             //            let tempArray1 = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
             //            self.SementView.dataAarry = tempArray1
             //            self.SementView.ReloadData()
@@ -609,7 +618,7 @@ class ZWOrderViewJoe: UIView {
             //
             //            loadGoodsData(categoryId: model.id)//
             
-        
+            
             
         } error1: { statusCode in
             print("====statusCode \(statusCode)")
@@ -636,6 +645,11 @@ extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
             cell.content02.text = "￥\(model.salePrice ?? 0 )"
             cell.content03.text = "x\(model.goodsNum ?? 1)"
             cell.content05.text = "￥\((model.goodsNum ?? 0 ) * (model.salePrice ?? 0) )"
+            if IsUpData == false {//不是网络
+                cell.content04.isHidden = true
+            }else{
+                cell.content04.isHidden = false
+            }
             
         }
         
@@ -648,7 +662,7 @@ extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
         self.selectIndex = indexPath.row
         
         let model : goodsModel =   self.OrderListDataAarry[indexPath.row] ;
-        self.OrderGoodsmodel = model 
+        self.OrderGoodsmodel = model
         shownumLabel.text = "\(model.goodsNum ?? 1)"
     }
     
