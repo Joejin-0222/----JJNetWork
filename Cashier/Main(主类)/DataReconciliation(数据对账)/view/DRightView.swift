@@ -11,6 +11,7 @@ class DRightView: UIView {
 
     var headerArray: NSArray = ["日结经营报告","门店经营报告"]
     
+    //0 经营数据  财务报表  商品报表  会员报表
     var indexType: Int = 0
     
     lazy var tableView: UITableView = {
@@ -31,6 +32,7 @@ class DRightView: UIView {
         tableView.separatorStyle = .none
         tableView.register(cellType: DRRightTCell.self)
         tableView.register(cellType: DRRightheaderTCell.self)
+        tableView.register(cellType: ZWFinancialTCell.self)
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: 30*WidthW, left: 0, bottom: -84*WidthW, right: -68*width))
         }
@@ -48,6 +50,9 @@ extension DRightView :UITableViewDelegate{
 }
 extension DRightView: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
+        if indexType == 1{
+            return 3
+        }
         if indexType == 2{
             return 1
         }
@@ -55,6 +60,9 @@ extension DRightView: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if indexType == 1{
+            return 1
+        }
         return 10
     }
     
@@ -79,7 +87,12 @@ extension DRightView: UITableViewDataSource{
                 cell.dataDict = dataDict as NSDictionary
             }
             return cell
-        }else if indexType == 2{
+        }else if indexType == 1{
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ZWFinancialTCell.self)
+            
+            return cell
+        }
+        else if indexType == 2{
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: DRRightheaderTCell.self)
             if indexPath.row == 0 {
                 cell.isTopCell = true
@@ -116,6 +129,9 @@ extension DRightView: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if self.indexType == 1{
+            return 150*WidthW
+        }
         return 70*WidthW
     }
  
@@ -131,13 +147,24 @@ extension DRightView: UITableViewDataSource{
         if indexType == 0  || indexType == 2{
             return 80
         }
+        if indexType == 1 && section == 0{
+            return 80
+        }
         return 0.01
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if indexType == 0 || indexType == 2 {
             let hederView: DRHeaderView = DRHeaderView()
-            hederView.initView();
+            hederView.initView()
+            return hederView
+        }
+        if indexType == 1 && section == 0{
+            let hederView: DRHeaderView = DRHeaderView()
+            hederView.initView()
+            hederView.redLineView.snp.updateConstraints { make in
+                make.left.equalTo(hederView.snp.left).offset(72*WidthW)
+            }
             return hederView
         }
        return UIView()

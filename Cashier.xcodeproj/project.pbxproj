@@ -27,6 +27,7 @@
 		0431FCDA27D88BFB00778DE6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD727D88BFB00778DE6 /* API.swift */; };
 		0431FCDB27D88BFB00778DE6 /* ZHFNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD827D88BFB00778DE6 /* ZHFNetWork.swift */; };
 		0431FCDC27D88BFB00778DE6 /* NSString-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FCD927D88BFB00778DE6 /* NSString-Extension.swift */; };
+		04347BE02812A7030089FF90 /* ZWFinancialTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04347BDF2812A7030089FF90 /* ZWFinancialTCell.swift */; };
 		043824F3280EAD71003A51C2 /* ZWCheckOutStoreModelJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043824F2280EAD71003A51C2 /* ZWCheckOutStoreModelJoe.swift */; };
 		043A5909280423A700E1D607 /* ZWOrderQueryRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */; };
 		043C5FD227D8784600F881CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C5FD127D8784600F881CB /* LoginViewController.swift */; };
@@ -203,6 +204,7 @@
 		0431FCD727D88BFB00778DE6 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		0431FCD827D88BFB00778DE6 /* ZHFNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHFNetWork.swift; sourceTree = "<group>"; };
 		0431FCD927D88BFB00778DE6 /* NSString-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString-Extension.swift"; sourceTree = "<group>"; };
+		04347BDF2812A7030089FF90 /* ZWFinancialTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWFinancialTCell.swift; sourceTree = "<group>"; };
 		043824F2280EAD71003A51C2 /* ZWCheckOutStoreModelJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckOutStoreModelJoe.swift; sourceTree = "<group>"; };
 		043A5908280423A700E1D607 /* ZWOrderQueryRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderQueryRightView.swift; sourceTree = "<group>"; };
 		043C5FD127D8784600F881CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -503,6 +505,13 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		04347BDE2812A34C0089FF90 /* 员工管理 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "员工管理";
+			sourceTree = "<group>";
+		};
 		043A59062804238E00E1D607 /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -573,6 +582,7 @@
 				043E9AA02806DBBD000B3BBF /* DRRightTCell.swift */,
 				043E9A9F2806DBBD000B3BBF /* DRHeaderView.swift */,
 				043E9AA42806DBBD000B3BBF /* DRRightheaderTCell.swift */,
+				04347BDF2812A7030089FF90 /* ZWFinancialTCell.swift */,
 				043E9AA12806DBBD000B3BBF /* testPopView.swift */,
 			);
 			path = view;
@@ -915,6 +925,7 @@
 		048684AF27D8347700D6A878 /* CashierSettings(收银设置) */ = {
 			isa = PBXGroup;
 			children = (
+				04347BDE2812A34C0089FF90 /* 员工管理 */,
 				0406E1F127FEE7C700E5A948 /* smallTicketMachine(小票机管理) */,
 				0406E1E427FE8A2200E5A948 /* CommoditySettings(商品设置) */,
 				0406E1DF27FE890A00E5A948 /* StoreManagement（门店管理） */,
@@ -1424,6 +1435,7 @@
 				04ACE14E2807CC59001356D4 /* ZWSaoMaShouKuanCollectionCellJoe.swift in Sources */,
 				04E3646827F467860007B91A /* LTPageView.swift in Sources */,
 				04E3646E27F467860007B91A /* LTTableViewProtocal.swift in Sources */,
+				04347BE02812A7030089FF90 /* ZWFinancialTCell.swift in Sources */,
 				042926E227FFD83500A3D1F8 /* ZWTanKuangCell.swift in Sources */,
 				0444683E27DF0C38000444FD /* SelectStoreCollectionViewCell.swift in Sources */,
 				043C5FD827D878D900F881CB /* LoginModel.swift in Sources */,

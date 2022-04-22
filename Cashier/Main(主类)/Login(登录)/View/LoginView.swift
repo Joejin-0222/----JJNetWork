@@ -76,7 +76,8 @@ class LoginView: UIView {
     lazy var userTextfield : UITextField = {
         let textfield = UITextField.init()
         textfield.placeholder = "请输入登录账号"
-        textfield.text = "fgwq"//fgzj
+//        textfield.text = "fgwq"//fgzj
+        textfield.text = "fgxb"//预发布账号
         textfield.font = UIFont(name: "CN Regular", size: CGFloat(30))
         textfield.delegate = self
         textfield.addTarget(self, action: #selector(textDidChanged), for: .editingChanged)
@@ -110,7 +111,7 @@ class LoginView: UIView {
     lazy var passwordTextfield : UITextField = {
         let textfield = UITextField.init()
         textfield.placeholder = "请输入登录密码"
-        textfield.text = "Admin123"
+        textfield.text = "admin123"
         textfield.font = UIFont(name: "CN Regular", size: CGFloat(30))
         textfield.delegate = self
         textfield.isSecureTextEntry = true
@@ -137,7 +138,6 @@ class LoginView: UIView {
         button.setTitleColor(UIColor.white, for: .normal)
         button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
         return button
-
    }()
     
     func initView() -> UIView {
@@ -267,6 +267,15 @@ class LoginView: UIView {
             make.centerX.equalToSuperview()
             make.height.equalTo(88*HeighH)
             make.width.equalTo(576*WidthW)
+        }
+        if let userCount = self.userTextfield.text?.count , userCount > 0 {
+            if let passwordCount = self.passwordTextfield.text?.count , passwordCount > 0  {
+                loginButton.backgroundColor =  UIColor(red: 254/255, green: 75/255, blue: 72/255, alpha: 1)
+                loginButton.isUserInteractionEnabled = true
+            } else {
+                loginButton.backgroundColor = UIColor(red: 254/255, green: 195/255, blue: 194/255, alpha: 1)
+                loginButton.isUserInteractionEnabled = false
+            }
         }
       return self
     }
@@ -400,9 +409,10 @@ extension LoginView:UITextFieldDelegate{
             }
             else{
                 //请求成功，没有找到对应数据(常见问题传参错误，传参加密问题，后台定义的code)
-                if let view = self.getRemoteKeyboardWindow() {
-                    view.makeToast("\(dic["msg"]!)code=\(code)")
-                }
+//                if let view = self.getRemoteKeyboardWindow() {
+                    self.makeToast("\(dic["msg"]!)code=\(code)")
+//                }
+                ProgressHUD.hideHud()
             }
         }, error1: { (statusCode) in
             //服务器报错等问题 (常见问题404 ，地址错误)

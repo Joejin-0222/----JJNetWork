@@ -14,6 +14,10 @@ class ZWStaffShiftLeftView: UIView {
     
     var dataArray : NSArray = [["上班时间","系统时间"],["上班时长","首单时间","尾单时间","订单笔数","预订单笔数"]]
     
+    var timer      : Timer!
+    var currentTimer : String = ""
+    
+    
     //tableview
     lazy var TableView:UITableView = {
         let tableview = UITableView(frame: .zero, style: .grouped)//UITableView(frame:.zero)
@@ -37,10 +41,35 @@ class ZWStaffShiftLeftView: UIView {
             make.width.equalTo(525*WidthW)
             make.bottom.equalTo(self.snp.bottom).offset(0*WidthW)
         }
-      
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerEvent), userInfo: nil, repeats: true)
+        
+        let date = NSDate()
+
+        let dateformatter = DateFormatter()
+
+        dateformatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+        let strNowTime = dateformatter.string(from: date as Date) as String
+
+        currentTimer = strNowTime as String
+        
         return self
     }
+    @objc func timerEvent() {
+        let date = NSDate()
 
+        let dateformatter = DateFormatter()
+
+        dateformatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+        let strNowTime = dateformatter.string(from: date as Date) as String
+
+        currentTimer = strNowTime as String
+        
+        TableView.reloadData()
+    }
+    
+    
 }
 
 extension ZWStaffShiftLeftView : UITableViewDelegate {
@@ -71,10 +100,17 @@ extension ZWStaffShiftLeftView : UITableViewDataSource{
             
         cell.content1.text = arr[indexPath.row] as? String
         
+        
         if indexPath.section == 0 {
             cell.BackView.backgroundColor = UIColor.init(hex: "#FFDA47")
+            if indexPath.row == 1{
+                cell.content2.text = currentTimer;
+            }else{
+                cell.content2.text = "123"
+            }
         }else{//#FEF9D5
             cell.BackView.backgroundColor = UIColor.init(hex: "#FEF9D5")
+            cell.content2.text = "123"
         }
         cell.selectionStyle = .none
         return cell

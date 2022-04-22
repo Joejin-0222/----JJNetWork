@@ -15,10 +15,19 @@ class ZWStaffShiftVCJoe: ZWRootViewControllerJoe {
         super.viewDidLoad()
 
         self.sehzhiUI()
+        self.loadData()
     }
     
     func loadData(){
-//        ZHFNetwork.request(target: <#T##ZHFService#>, success: <#T##ZHFNetwork.successCallback##ZHFNetwork.successCallback##(_ result: Any) -> Void#>, error1: <#T##ZHFNetwork.errorCallback##ZHFNetwork.errorCallback##(_ statusCode: Int) -> Void#>, failure: <#T##ZHFNetwork.failureCallback##ZHFNetwork.failureCallback##(_ error: MoyaError) -> Void#>)
+        let  dict:NSDictionary = ["shopId":Cache.userSto?.sid ?? "156207556"]
+        
+        ZHFNetwork.request(target: .GetYesParameters(pathStr: getCurrentDaily, parameters: dict as! [String : Any])) { result in
+            
+        } error1: { statusCode in
+            
+        } failure: { error in
+            
+        }
     }
     
     func sehzhiUI(){

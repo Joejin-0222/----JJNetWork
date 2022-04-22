@@ -64,6 +64,7 @@ class DRHeaderView: UIView {
         view.backgroundColor = UIColor.init(hex: "#E6E8EB")
         return view
     }()
+    @discardableResult
     func initView() -> UIView{
         //红色的view
         self.addSubview(redLineView)
