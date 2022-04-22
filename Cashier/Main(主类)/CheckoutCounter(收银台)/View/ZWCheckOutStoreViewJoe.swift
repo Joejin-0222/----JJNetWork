@@ -177,7 +177,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
     func loadFenLeiData(ShopId:Int64){
         let dict = ["shopId":ShopId]
         
-        ZHFNetwork.request(target: .yesParameters(pathStr: getFindCashier, parameters: dict)) { [self] result in
+        ZHFNetwork.request(target: .GetYesParameters(pathStr: getFindCashier, parameters: dict)) { [self] result in
             
             let dic = result as! NSDictionary
             let tempAarry : NSArray = dic["data"] as! NSArray
@@ -243,7 +243,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
             dict = ["shopId":Cache.userSto?.sid ?? "156207556","tenantId":Cache.user?.tenantId ?? 6917,"selectText":"","categoryId":categoryId,"searchGoodsType":"1","pageNum":"1","pageSize":"20"] as [String : Any]
         }
         
-        ZHFNetwork.request(target: .yesParameters(pathStr: getFindCashierGoods, parameters: dict)) { [self] result in
+        ZHFNetwork.request(target: .GetYesParameters(pathStr: getFindCashierGoods, parameters: dict)) { [self] result in
             
             let dic = result as! NSDictionary
             let dataDic : NSDictionary = dic["data"] as! NSDictionary

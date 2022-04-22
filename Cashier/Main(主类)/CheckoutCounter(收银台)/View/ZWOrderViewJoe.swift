@@ -18,9 +18,6 @@ enum OrderWayType : Int {
 
 class ZWOrderViewJoe: UIView {
     
-    
-    
-    
     // 03. 声明代理属性 (注:使用weak修饰, 该协议需要继承NSObjectProtocol基协议, 且注意代理名称是否重复)
     weak  var delegate  : OrderWayTypeSelectDelegate?
     
@@ -595,6 +592,33 @@ class ZWOrderViewJoe: UIView {
         self.TableView.reloadData()
     }
     
+    //load 订单列表 数据
+    func loadOrderListData(ShopId:Int64){
+        let dict = ["shopId":ShopId]
+        
+        ZHFNetwork.request(target: .GetYesParameters(pathStr: getFindCashier, parameters: dict)) { [self] result in
+            
+            let dic = result as! NSDictionary
+            let tempAarry : NSArray = dic["data"] as! NSArray
+            //            let tempArray1 = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
+            //            self.SementView.dataAarry = tempArray1
+            //            self.SementView.ReloadData()
+            //            self.CategoriesDataAarry = tempArray1//更多分类数据
+            //            //默认选择第一个分类
+            //            let model : ZWCheckSementModelJoe = tempArray1[0] as! ZWCheckSementModelJoe
+            //
+            //            loadGoodsData(categoryId: model.id)//
+            
+        
+            
+        } error1: { statusCode in
+            print("====statusCode \(statusCode)")
+        } failure: { error in
+            
+            print("====reeor \(error)")
+        }
+    }
+    
 }
 
 extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
@@ -669,8 +693,9 @@ extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
     //整单取消点击
     @objc func BtnClick(){
         print("=====整单取消点击")
-        Label02.text = "0:00"
-        self.selectIndex = 0
+        Label02.text = "0:00" //总价格
+        self.selectIndex = 0 //列表选了那个
+        shownumLabel.text = "0"//加减 数字显示
         
         self.OrderListDataAarry.removeAll()
         self.TableView.reloadData()

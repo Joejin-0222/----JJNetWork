@@ -367,7 +367,7 @@ extension LoginView:UITextFieldDelegate{
     func loadData(page:NSInteger,userText:String,passwordText:String){
         let dict = ["username":userText,"password":passwordText]
         ProgressHUD.showLoadingHudView(message: "Loading")
-        ZHFNetwork.request(target: .HaveParameters(pathStr: getBoxRecommendUrl, parameters:dict), success: { [self] (result) in
+        ZHFNetwork.request(target: .PostParameters(pathStr: getBoxRecommendUrl, parameters:dict), success: { [self] (result) in
             let dic = result as! NSDictionary
             let code : NSInteger = dic["code"] as! NSInteger
             print("code************\(code)")
