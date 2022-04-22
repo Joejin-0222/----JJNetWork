@@ -509,26 +509,14 @@ class ZWOrderViewJoe: UIView {
         print("=======\(numIndex)")
         self.ReduceBtn.isEnabled = true
         
+        self.addAndReduceUptableView(numIndex: numIndex)
       
-        let tempArray : NSMutableArray = []
-        
-        for obj  in self.OrderListDataAarry {
-            if  obj.skuViewId == self.OrderGoodsmodel.skuViewId{
-             
-                obj.goodsNum = numIndex
-                tempArray.add(obj)
-            }else{
-                tempArray.add(obj)
-            }
-        }
-        self.OrderListDataAarry = tempArray as! [goodsModel]
-        self.TableView.reloadData()
     }
     
     @objc func ReduceBtnClick(){
         numIndex -= 1
-        if numIndex == 0{
-            numIndex = 0
+        if numIndex == 1{
+            numIndex = 1
             self.ReduceBtn.isEnabled = false
         }else{
             self.ReduceBtn.isEnabled = true
@@ -536,7 +524,26 @@ class ZWOrderViewJoe: UIView {
         self.shownumLabel.text = "\(numIndex)"
         
         print("=======\(numIndex)")
+        self.addAndReduceUptableView(numIndex: numIndex)
     }
+    //MARK: //点击加减 刷新
+    func addAndReduceUptableView(numIndex:Int){
+       
+          let tempArray : NSMutableArray = []
+          for obj  in self.OrderListDataAarry {
+              if  obj.skuViewId == self.OrderGoodsmodel.skuViewId{
+               
+                  obj.goodsNum = numIndex
+                  tempArray.add(obj)
+              }else{
+                  tempArray.add(obj)
+              }
+          }
+          self.OrderListDataAarry = tempArray as! [goodsModel]
+          self.OrerListReloadData()
+    }
+    
+    
     // 预订 取单等点击操作
     @objc func orderBtnClick(sender : UIButton){
         
@@ -617,7 +624,7 @@ extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
         self.selectIndex = indexPath.row
         
         let model : goodsModel =   self.OrderListDataAarry[indexPath.row] ;
-        
+        self.OrderGoodsmodel = model 
         shownumLabel.text = "\(model.goodsNum ?? 1)"
     }
     
