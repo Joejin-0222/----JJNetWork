@@ -31,9 +31,6 @@ class ZWRecordLogRightViewKB: UIView {
         tw.separatorStyle = .none
         tw.register(cellType: ZWSuccessionTCellKB.self)
         tw.register(cellType: ZWDailySettlementTCell.self)
-        
-//        tw.uHead = URefreshHeader{ [weak self] in self?.loadData() }
-//        tw.uempty = UEmptyView { [weak self] in self?.loadData() }
         return tw
     }()
     

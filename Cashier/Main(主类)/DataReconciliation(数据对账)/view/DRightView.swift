@@ -130,6 +130,12 @@ extension DRightView: UITableViewDataSource{
                 cell.titleL.text = vipTitileArr[indexPath.row] as? String
                 if indexPath.row == 0{
                     cell.cellType = .backColor
+//                    cell.backView.drawFullLine(strokeColor: LineColor, lineWidth: 1*WidthW, corners: UIRectSide.left)
+//                    cell.backView.drawFullLine(strokeColor: LineColor, lineWidth: 1*WidthW, corners: UIRectSide.top)
+//                    cell.backView.drawFullLine(strokeColor: LineColor, lineWidth: 1*WidthW, corners: UIRectSide.right)
+//                    cell.backView.roundCorners(corners: UIRectCorner.topLeft, radius: 10*WidthW)
+//                    cell.backView.roundCorners(corners: UIRectCorner.topRight, radius: 10*WidthW)
+                   
                 }else if indexPath.row == 4{
                     cell.cellType = .hasRightL
                 }else {

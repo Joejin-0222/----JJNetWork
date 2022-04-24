@@ -14,10 +14,11 @@ import UIKit
 //正式环境
 //let BASE_SERVER_URL = "https://api.igoodsale.com/"
 //预发布环境
- let BASE_SERVER_URL = "https://api.prerelease.igoodsale.com/"
+// let BASE_SERVER_URL = "https://api.prerelease.igoodsale.com/"
 //李维强
 //let BASE_SERVER_URL = "http://47.95.212.72:9200/"
-
+//测试地址浮光测试地址
+let BASE_SERVER_URL = "http://test.api.igoodsale.com/"
 
 
 let getBoxRecommendUrl = "uc/admin/login"//登录uc/admin/PClogin
@@ -31,7 +32,13 @@ let getOrderConfirm = "/cashier/orders/getOrderConfirm" //订单列表 ，购物
 //let changeUserMessageUrl = "users/userInfoSave"//用户资料保存
 
 //**********************  员工交班start ************************
+///员工交班首页第一个接口
+let getCurrentDaily = "cashier/succession/currentDaily"
 
-let getCurrentDaily = "cashier/succession/currentDaily"//员工交班第一个接口
+
+///获取当日日结列表
+let getDailyList = "cashier/succession/dailyList"
+///日结记录列表
+let getDailyRecordList = "cashier/succession/dailyRecordList"
 
 //**********************  员工交班end ************************

@@ -99,7 +99,6 @@ class ZWVIPInfoTCellKB: baseTableViewCell {
             make.top.bottom.equalToSuperview()
         }
         
-        
     }
     
     var cellType :cellType?{

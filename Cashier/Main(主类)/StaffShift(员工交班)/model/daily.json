@@ -1,0 +1,66 @@
+{
+    "code": 200,
+    "msg": "成功",
+    "data": {
+        "nickNime": "骑着蜗牛上高速",
+        "headPortrait": "",
+        "account": "fgwq",
+        "roleName": "店长",
+        "viewId": "7322881468600320",
+        "firstWorkTime": "2022-04-22 10:02:20",
+        "workTime": null,
+        "cashierTopUpDataVo": {
+            "payAmount": 0,
+            "giveAmount": 0,
+            "num": 0,
+            "cashierPaymentDataVo": []
+        },
+        "cashierSalesDataVo": {
+            "totalPrice": 196.00,
+            "actualIncome": 196.00,
+            "discountAmount": 0.00,
+            "salesSingular": 2,
+            "refundAmount": 0,
+            "refundSingular": 0,
+            "firstSingleTime": "2022-04-22 10:04:05",
+            "tailSingleTime": "2022-04-22 10:05:00",
+            "preorderCount": 0,
+            "cashSalePrice": 98.00,
+            "cashActualPrice": 98.00,
+            "cashActualNum": 1,
+            "returnCashPrice": 0,
+            "returnCashNum": 0,
+            "malingAmount": 0.00,
+            "refundTagAmount": 0,
+            "tagOrderSum": 0,
+            "tagTotalMoney": 0,
+            "tagActualTotalMoney": 0,
+            "biaojiOrderPayList": null,
+            "refundTagData": null,
+            "cashierGatheringData": [{
+                "payCode": 6,
+                "payName": "聚合支付",
+                "sumPayPrice": 98.00,
+                "num": 1
+            }, {
+                "payCode": 7,
+                "payName": "现金",
+                "sumPayPrice": 98.00,
+                "num": 1
+            }],
+            "returnCashierData": []
+        },
+        "cancelCouponSum": {
+            "meituan": 0,
+            "meiling": 0,
+            "koubei": 0
+        },
+        "notCouponCodeCount": 0,
+        "handoverStatus": 0,
+        "endTime": null,
+        "cashierGatheringDataVoList": null,
+        "tagOrderSum": 0,
+        "tagTotalMoney": 0,
+        "biaojiOrderPayList": []
+    }
+}

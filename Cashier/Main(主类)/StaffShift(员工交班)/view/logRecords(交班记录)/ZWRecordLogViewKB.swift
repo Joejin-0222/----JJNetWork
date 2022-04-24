@@ -35,7 +35,6 @@ class ZWRecordLogViewKB: ZWBasePopAllScreenViewKB {
             make.left.right.bottom.equalToSuperview()
             make.top.equalTo(self.rightView.backBtn.snp.bottom).offset(10*WidthW)
         }
-       
     }
     
 }

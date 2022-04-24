@@ -17,6 +17,15 @@ class ZWStaffShiftLeftView: UIView {
     var timer      : Timer!
     var currentTimer : String = ""
     
+    var model:ZWDailyModel?{
+        didSet{
+            guard let model = model else {
+                return
+            }
+            self.TableView.reloadData()
+        }
+    }
+    
     
     //tableview
     lazy var TableView:UITableView = {
@@ -109,7 +118,7 @@ extension ZWStaffShiftLeftView : UITableViewDataSource{
             if indexPath.row == 1{
                 cell.content2.text = currentTimer;
             }else{
-                cell.content2.text = "123"
+                cell.content2.text = model?.firstWorkTime ?? ""
             }
         }else{//#FEF9D5
             cell.BackView.backgroundColor = UIColor.init(hex: "#FEF9D5")

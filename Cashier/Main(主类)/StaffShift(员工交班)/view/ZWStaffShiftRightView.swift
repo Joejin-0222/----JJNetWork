@@ -10,20 +10,18 @@ import UIKit
 class ZWStaffShiftRightView: UIView, SementSelectClickDelegate {
    
     var index:Int = 0
-//    lazy var lineView : UIView = {
-//       let view = UIView()
-//        view.backgroundColor = MainColor
-//        return view
-//    }()
-//
-//    lazy var titleLabel : UILabel = {
-//      let label = UILabel()
-//        label.textColor = UIColor.init(hex: "#323233")
-//        label.font = UIFont.systemFont(ofSize: 24*WidthW)
-//        label.text = "营收数据"
-//        return label
-//    }()
+
     let dayArray = ["","","实收金额/元","退款金额/元","优惠金额/元"]
+    
+    var model: ZWDailyModel?{
+        didSet{
+            guard let model = model else {
+                return
+            }
+            self.TableView.reloadData()
+        }
+    }
+    
     
     //tableview
     lazy var TableView:UITableView = {
@@ -54,24 +52,7 @@ class ZWStaffShiftRightView: UIView, SementSelectClickDelegate {
        
         sementView.dataAarry =  ["交班","日结"]
         self.sementView.ReloadData()
-     //
-//        self.addSubview(lineView)
-//        lineView.snp.makeConstraints { make in
-//            make.left.equalTo(self.snp.left).offset(68*WidthW)
-//            make.width.equalTo(4*WidthW)
-//            make.height.equalTo(22*WidthW)
-//            make.top.equalTo(self.sementView.snp.bottom).offset(46*WidthW)
-//        }
-//        //
-//        self.addSubview(titleLabel)
-//        titleLabel.snp.makeConstraints { make in
-//            make.left.equalTo(lineView.snp.right).offset(9*WidthW)
-//            make.centerY.equalTo(lineView.snp.centerY)
-//            make.right.equalTo(self.snp.right).offset(-30*WidthW)
-//            make.height.equalTo(26*WidthW)
-//        }
-//       //
-        //
+
         self.addSubview(TableView)
         TableView.estimatedRowHeight =  130
         TableView.rowHeight = UITableView.automaticDimension
