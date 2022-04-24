@@ -50,11 +50,13 @@ struct ZHFNetwork {
                     print("======succeed data = \(dic)")
                     let model : APIModelJoe = APIModelJoe.deserialize(from: dic, designatedPath: "")!
                     
-//                    let code : NSInteger = NSInteger(model.code )// dic["code"] as! NSInteger
-//                    if code == 200 {
+                    let code : NSInteger = NSInteger(model.code )// dic["code"] as! NSInteger
+                    if code == 200 {
                         //如果数据返回成功则直接将结果转为JSON
                         try success(moyaResponse.mapJSON())
-//                    }
+                    }else if code == 500 {
+                        ProgressHUD.showErrorMessage(message: model.msg)
+                    }
                     
                 } catch let error{
                     //服务器报错等问题 (常见问题404 ，地址错误)

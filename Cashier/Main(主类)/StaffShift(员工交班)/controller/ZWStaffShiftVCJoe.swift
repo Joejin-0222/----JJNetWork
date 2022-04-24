@@ -48,15 +48,15 @@ class ZWStaffShiftVCJoe: ZWRootViewControllerJoe {
 
         
         
-//        let  dict:NSDictionary = ["shopId":Cache.userSto?.sid ?? "156207556"]
-//
-//        ZHFNetwork.request(target: .GetYesParameters(pathStr: getCurrentDaily, parameters: dict as! [String : Any])) { result in
-//
-//        } error1: { statusCode in
-//
-//        } failure: { error in
-//
-//        }
+        let  dict:NSDictionary = ["shopId":Cache.userSto?.sid ?? "156207556"]
+
+        ZHFNetwork.request(target: .GetYesParameters(pathStr: getCurrentDaily, parameters: dict as! [String : Any])) { result in
+
+        } error1: { statusCode in
+
+        } failure: { error in
+
+        }
     }
     
     

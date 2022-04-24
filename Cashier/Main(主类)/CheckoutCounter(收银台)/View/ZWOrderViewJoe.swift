@@ -615,8 +615,10 @@ class ZWOrderViewJoe: UIView {
         ZHFNetwork.request(target: .PostBabyParameters(pathStr: getOrderConfirm, Babyparameters: dict)) { [self] result in
             
             let dic = result as! NSDictionary
-            
             let DataDic : NSDictionary = dic["data"] as! NSDictionary
+            if  DataDic.isEqual(to: [:]){
+                return
+            }
             self.orderListmodel = ZWOrderListNetModelJoe.deserialize(from: DataDic)!
          
             var oldNum : Int = 0 //数量
