@@ -45,7 +45,7 @@ struct ZHFNetwork {
                     let dic = try! moyaResponse.mapJSON() as! NSDictionary
                     
                     let data = getJSONStringFromDictionary(dictionary:dic)
-                    print("======succeed data = \(dic)")
+                    print("======succeed data = \(data)")
                     let model : APIModelJoe = APIModelJoe.deserialize(from: dic, designatedPath: "")!
                     
                     let code : NSInteger = NSInteger(model.code )// dic["code"] as! NSInteger
@@ -229,7 +229,7 @@ extension ZHFService: TargetType {
         case .GetYesParameters(pathStr: _, parameters: _):
             return ["adminToken": "\(Cache.user?.token ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Accept": "application/json"]
         case .PostParameters(pathStr: _, parameters: _):
-            return ["adminToken": "\(userDefault.value(forKey: "token") ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Content-type" :"application/x-www-form-urlencoded"]
+            return ["adminToken": "\(Cache.user?.token ?? "")","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Content-type" :"application/x-www-form-urlencoded"]
         case .uploadPortraitImage(_,_ , _):
             return ["adminToken": "\(Cache.user?.token ?? "") ","adminViewId": "\(userDefault.value(forKey: "viewId") ?? "")","tenantId": "\(userDefault.value(forKey: "tenantId") ?? "")","platform": "ios","Content-type" :"application/json; charset=utf-8"]
         case .uploadFileURL(_,_, _):

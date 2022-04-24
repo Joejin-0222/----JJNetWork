@@ -129,6 +129,7 @@
 		04ACE1542807F10F001356D4 /* ZWSignCollectionViewJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACE1532807F10F001356D4 /* ZWSignCollectionViewJoe.swift */; };
 		04ACE157280810DE001356D4 /* ZWOrderYouHuiPopViewJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACE156280810DE001356D4 /* ZWOrderYouHuiPopViewJoe.swift */; };
 		04ACE15A280847CD001356D4 /* ZWMoreCategoriesPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACE159280847CD001356D4 /* ZWMoreCategoriesPopView.swift */; };
+		04BF3AF12814F81200A9B5CE /* ZWOrderListNetModelJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF3AF02814F81200A9B5CE /* ZWOrderListNetModelJoe.swift */; };
 		04CA379A27F5B0C400E620E5 /* ZWCheckOutStoreViewJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA379927F5B0C400E620E5 /* ZWCheckOutStoreViewJoe.swift */; };
 		04CA379C27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA379B27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift */; };
 		04CA37A027F5C18400E620E5 /* UIView+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA379F27F5C18400E620E5 /* UIView+Corners.swift */; };
@@ -310,6 +311,7 @@
 		04ACE1532807F10F001356D4 /* ZWSignCollectionViewJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWSignCollectionViewJoe.swift; sourceTree = "<group>"; };
 		04ACE156280810DE001356D4 /* ZWOrderYouHuiPopViewJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderYouHuiPopViewJoe.swift; sourceTree = "<group>"; };
 		04ACE159280847CD001356D4 /* ZWMoreCategoriesPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWMoreCategoriesPopView.swift; sourceTree = "<group>"; };
+		04BF3AF02814F81200A9B5CE /* ZWOrderListNetModelJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWOrderListNetModelJoe.swift; sourceTree = "<group>"; };
 		04CA379927F5B0C400E620E5 /* ZWCheckOutStoreViewJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckOutStoreViewJoe.swift; sourceTree = "<group>"; };
 		04CA379B27F5BEE600E620E5 /* ZWCheckOutStoreCellJoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCheckOutStoreCellJoe.swift; sourceTree = "<group>"; };
 		04CA379F27F5C18400E620E5 /* UIView+Corners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Corners.swift"; sourceTree = "<group>"; };
@@ -651,6 +653,7 @@
 			children = (
 				0449922727F7EC3500DB5410 /* ZWCheckSementModelJoe.swift */,
 				043824F2280EAD71003A51C2 /* ZWCheckOutStoreModelJoe.swift */,
+				04BF3AF02814F81200A9B5CE /* ZWOrderListNetModelJoe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1491,6 +1494,7 @@
 				0406E1EC27FEDB2700E5A948 /* ZWCommoditySettingsVC.swift in Sources */,
 				043E9ABF2808314D000B3BBF /* ZWSuccessionPopView.swift in Sources */,
 				0444683C27DEEACE000444FD /* SelectStoreView.swift in Sources */,
+				04BF3AF12814F81200A9B5CE /* ZWOrderListNetModelJoe.swift in Sources */,
 				04E3643627F402040007B91A /* RootModel.swift in Sources */,
 				0406E1EA27FED5A700E5A948 /* ZWTanKuangTableViewCell.swift in Sources */,
 				0469F82B280D14D20072CD1E /* UILabel+Extension.swift in Sources */,

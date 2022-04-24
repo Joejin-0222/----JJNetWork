@@ -13,7 +13,7 @@ target 'Cashier' do
   pod 'PINCache'              # https://github.com/pinterest/PINCache
   pod 'JXSegmentedView' #分段选择
 #    pod 'Spring' #git => ‘https://github.com/MengTo/Spring.git’
-  pod 'lottie-ios'
+  pod 'lottie-ios' 
   pod 'Reusable'
 
   pod 'Kingfisher' #加载网络图 图片缓存

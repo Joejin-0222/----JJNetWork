@@ -606,7 +606,7 @@ class ZWOrderViewJoe: UIView {
             
             let dic = result as! NSDictionary
             
-            debugPrint("======dic = \(dic)")
+            debugPrint("======dic = \(result)")
             
             //            let tempAarry : NSArray = dic["data"] as! NSArray
             //            let tempArray1 = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
