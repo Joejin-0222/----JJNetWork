@@ -24,6 +24,7 @@ struct ZHFNetwork {
             print("显示loading")
         case .ended:
             print("隐藏loading")
+            
         }
     }])
     // 发送网络请求
@@ -45,7 +46,7 @@ struct ZHFNetwork {
                     let dic = try! moyaResponse.mapJSON() as! NSDictionary
                     
                     let data = getJSONStringFromDictionary(dictionary:dic)
-                    print("======succeed data = \(data)")
+                    print("======succeed data = \(dic)")
                     let model : APIModelJoe = APIModelJoe.deserialize(from: dic, designatedPath: "")!
                     
                     let code : NSInteger = NSInteger(model.code )// dic["code"] as! NSInteger

@@ -407,7 +407,7 @@ extension LoginView:UITextFieldDelegate{
                 selectStoreVC.userModel = model
                 nextResponder(currentView: self).navigationController?.pushViewController(selectStoreVC, animated: true)
                 ProgressHUD.showSuccesshTips(message: "")
-              
+                ProgressHUD.hideHud()
             }
             else{
                 //请求成功，没有找到对应数据(常见问题传参错误，传参加密问题，后台定义的code)

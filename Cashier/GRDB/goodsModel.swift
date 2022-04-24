@@ -15,7 +15,7 @@ class goodsModel: RootModel, Codable {
     
     var specBarcode : String? = ""
     
-    var skuViewId : String? = ""
+    var skuViewId : String? = ""//goodsID、
     
     var spuViewId : String? = ""
     
@@ -25,13 +25,13 @@ class goodsModel: RootModel, Codable {
     
     var categoryId : Int? = 0
     
-    var spuDirectoryParams : String? = ""
+//    var spuDirectoryParams : String? = ""
     
     var currentStock : Int? = 0
     
     var skuBaseViewId : String? = ""
     
-    var originalPrice : Int? = 0
+    var originalPrice : Double? = 0
     
     var customCode : String? = ""
     
@@ -39,7 +39,7 @@ class goodsModel: RootModel, Codable {
     
     var name : String? = ""
     
-    var salePrice : Int? = 0
+    var salePrice : Double? = 0.00
     
     var isItGspGoods : Int? = 0
     
