@@ -16,6 +16,7 @@ class ZWStaffShiftVCJoe: ZWRootViewControllerJoe {
 
         self.sehzhiUI()
         self.loadData()
+        
     }
     
     func loadData(){

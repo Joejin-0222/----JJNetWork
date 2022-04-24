@@ -43,6 +43,8 @@ class ZWStaffShiftLeftView: UIView {
         }
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerEvent), userInfo: nil, repeats: true)
         
+        RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
+        
         let date = NSDate()
 
         let dateformatter = DateFormatter()
@@ -65,6 +67,7 @@ class ZWStaffShiftLeftView: UIView {
         let strNowTime = dateformatter.string(from: date as Date) as String
 
         currentTimer = strNowTime as String
+        
         
         TableView.reloadData()
     }
