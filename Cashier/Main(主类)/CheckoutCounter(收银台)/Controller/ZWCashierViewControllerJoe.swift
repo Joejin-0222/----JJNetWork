@@ -52,7 +52,7 @@ class ZWCashierViewControllerJoe: ZWRootViewControllerJoe ,OrderWayTypeSelectDel
     //商品 点击 传到 订单页面数据协议
     func GoodsSelectIndexPathClick(IndexPath: Int, GoodsArray: [goodsModel]) {
         orderView.OrderListDataAarry = GoodsArray 
-        orderView.OrerListReloadData()//刷新
+        orderView.OrerListReloadData(isNetWork: false)//刷新
     }
     
     

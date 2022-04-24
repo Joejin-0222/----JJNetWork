@@ -14,24 +14,24 @@ class LoginView: UIView {
     var loginItems:LoginModel = LoginModel()
     
     lazy var bgImageView:UIImageView = {
-           let headerImageView:UIImageView = UIImageView()
-           headerImageView.image = UIImage.init(named: "login_bg_image")
-           headerImageView.contentMode = .scaleAspectFill
-           return headerImageView
-       }()
+        let headerImageView:UIImageView = UIImageView()
+        headerImageView.image = UIImage.init(named: "login_bg_image")
+        headerImageView.contentMode = .scaleAspectFill
+        return headerImageView
+    }()
     
     lazy var whiteView: UIView = {
-          let view = UIView()
-          view.backgroundColor = UIColor.white
-          view.layer.masksToBounds = true
-          view.layer.cornerRadius = 8
-          return view
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 8
+        return view
     }()
-
+    
     lazy var logoView: UIImageView = {
-          let view = UIImageView()
-          view.image = UIImage.init(named: "login_logo")
-          view.contentMode = .scaleAspectFill
+        let view = UIImageView()
+        view.image = UIImage.init(named: "login_logo")
+        view.contentMode = .scaleAspectFill
         return view;
     }()
     
@@ -45,32 +45,32 @@ class LoginView: UIView {
     }()
     
     lazy var lineRedView: UIImageView = {
-          let view = UIImageView()
-          view.image = UIImage.init(named: "login_line_red")
+        let view = UIImageView()
+        view.image = UIImage.init(named: "login_line_red")
         return view;
     }()
     //账户view
     lazy var accountNumberView: UIView = {
-          let view = UIView()
-          view.backgroundColor = UIColor.clear
-          view.layer.masksToBounds = true
-          view.layer.cornerRadius = 32
-          view.layer.borderWidth = 2
-          view.layer.borderColor = UIColor (red: 235/255, green: 237/255, blue: 240/255, alpha: 1).cgColor
-          return view
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 32
+        view.layer.borderWidth = 2
+        view.layer.borderColor = UIColor (red: 235/255, green: 237/255, blue: 240/255, alpha: 1).cgColor
+        return view
     }()
     
     lazy var userIcon: UIImageView = {
-          let view = UIImageView()
-          view.image = UIImage.init(named: "login_user_icon")
-          view.contentMode = .scaleAspectFill
+        let view = UIImageView()
+        view.image = UIImage.init(named: "login_user_icon")
+        view.contentMode = .scaleAspectFill
         return view;
     }()
     
     lazy var userLineView: UIView = {
-          let view = UIView()
-          view.backgroundColor = UIColor(red: 200/255, green: 201/255, blue: 204/255, alpha: 1)
-          return view
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 200/255, green: 201/255, blue: 204/255, alpha: 1)
+        return view
     }()
     
     lazy var userTextfield : UITextField = {
@@ -85,27 +85,27 @@ class LoginView: UIView {
     }()
     //密码view rgba(235, 237, 240, 1)
     lazy var passwordView: UIView = {
-          let view = UIView()
-          view.backgroundColor = UIColor.clear
-          view.layer.masksToBounds = true
-          view.layer.cornerRadius = 32
-          view.layer.borderWidth = 2
-          //view.layer.borderColor = UIColor (red: 254/255, green: 159/255, blue: 157/255, alpha: 1).cgColor
-          view.layer.borderColor = UIColor (red: 235/255, green: 237/255, blue: 240/255, alpha: 1).cgColor
-          return view
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 32
+        view.layer.borderWidth = 2
+        //view.layer.borderColor = UIColor (red: 254/255, green: 159/255, blue: 157/255, alpha: 1).cgColor
+        view.layer.borderColor = UIColor (red: 235/255, green: 237/255, blue: 240/255, alpha: 1).cgColor
+        return view
     }()
     
     lazy var passwordIcon: UIImageView = {
-          let view = UIImageView()
-          view.image = UIImage.init(named: "login_password_icon")
-          view.contentMode = .scaleAspectFill
+        let view = UIImageView()
+        view.image = UIImage.init(named: "login_password_icon")
+        view.contentMode = .scaleAspectFill
         return view;
     }()
     
     lazy var passwordLineView: UIView = {
-          let view = UIView()
-          view.backgroundColor = UIColor(red: 200/255, green: 201/255, blue: 204/255, alpha: 1)
-          return view
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 200/255, green: 201/255, blue: 204/255, alpha: 1)
+        return view
     }()
     
     lazy var passwordTextfield : UITextField = {
@@ -125,7 +125,7 @@ class LoginView: UIView {
         button.setBackgroundImage(UIImage(named: "login_lose_eyes"), for: .normal)
         button.addTarget(self, action: #selector(isHidenButton), for: .touchUpInside)
         return button
-   }()
+    }()
     
     //登录按钮
     @objc lazy var loginButton: UIButton = {
@@ -138,7 +138,9 @@ class LoginView: UIView {
         button.setTitleColor(UIColor.white, for: .normal)
         button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
         return button
+
    }()
+
     
     func initView() -> UIView {
         self.frame = CGRect.init(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight)
@@ -268,6 +270,7 @@ class LoginView: UIView {
             make.height.equalTo(88*HeighH)
             make.width.equalTo(576*WidthW)
         }
+
         if let userCount = self.userTextfield.text?.count , userCount > 0 {
             if let passwordCount = self.passwordTextfield.text?.count , passwordCount > 0  {
                 loginButton.backgroundColor =  UIColor(red: 254/255, green: 75/255, blue: 72/255, alpha: 1)
@@ -277,9 +280,12 @@ class LoginView: UIView {
                 loginButton.isUserInteractionEnabled = false
             }
         }
-      return self
-    }
 
+      return self
+
+
+    }
+    
 }
 
 extension LoginView:UITextFieldDelegate{
@@ -291,7 +297,7 @@ extension LoginView:UITextFieldDelegate{
         passwordView.layer.borderColor = UIColor (red: 254/255, green: 159/255, blue: 157/255, alpha: 1).cgColor
         accountNumberView.layer.borderColor = UIColor (red: 235/255, green: 237/255, blue: 240/255, alpha: 1).cgColor
     }
-  
+    
     @objc func textDidChanged(){
         guard userTextfield.text != nil else{
             return
@@ -384,21 +390,21 @@ extension LoginView:UITextFieldDelegate{
                 guard  let adicts : NSDictionary = dic["data"] as? NSDictionary,
                        let adicAs : NSDictionary = adicts["adminUser"] as? NSDictionary,
                        let model = LoginModel.deserialize(from: adicAs, designatedPath: "") else {
-                           print("解析失败")
-                           return
-                      }
+                    print("解析失败")
+                    return
+                }
                 
                 //将实例对象转data
-//                let modelData = NSKeyedArchiver.archivedData(withRootObject: model)
+                //                let modelData = NSKeyedArchiver.archivedData(withRootObject: model)
                 guard let data = try? NSKeyedArchiver.archivedData(withRootObject: adicAs, requiringSecureCoding: false) else { return }
                 //存储data对象
                 userDefault.set(data, forKey: "UserInfo")
                 userDefault.set(model.token, forKey: "token")
                 userDefault.set(model.viewId, forKey: "viewId")
                 userDefault.set(model.tenantId, forKey: "tenantId")
-//                Cache.user
+                //                Cache.user
                 print("===succeed data =\(adicAs)")
-         
+                
                 print("====login= \(Cache.user?.tenantId ?? 0) ===model= \(model.tenantId )")
                 let selectStoreVC = SelectStoreViewController()
                 selectStoreVC.adminUserId = model.id
@@ -414,19 +420,23 @@ extension LoginView:UITextFieldDelegate{
 //                }
                 ProgressHUD.hideHud()
             }
+            ProgressHUD.hideHud()
+            
         }, error1: { (statusCode) in
             //服务器报错等问题 (常见问题404 ，地址错误)
             if let view = self.getRemoteKeyboardWindow() {
                 view.makeToast("请求错误！错误码：\(statusCode)")
             }
+            ProgressHUD.hideHud()
         }) { (error) in
             ProgressHUD.showErrorMessage(message: "\(error)")
             //没有网络等问题 （网络超时，没有网）
             if let view = self.getRemoteKeyboardWindow() {
                 view.makeToast("请求失败！错误信息：\(error.errorDescription!)")
             }
+            ProgressHUD.hideHud()
         }
-  }
+    }
     
     func getRemoteKeyboardWindow()->UIView?{
         let windows = UIApplication.shared.windows

@@ -52,7 +52,9 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
     func initView() -> UIView {
         
         //是否 更新 网络数据
+
         if IsUpData == true {
+
             //删除 商品 表
             goodsModel.deleteAll()
             //删除 分类 表
@@ -238,7 +240,7 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
     func loadGoodsData(categoryId:Int64,pageNum:Int){
         var dict : [String : Any]
         if categoryId == 0 {
-            dict = ["shopId":Cache.userSto?.sid ?? "156207556","tenantId":Cache.user?.tenantId ?? 6917,"selectText":"","categoryId":"","searchGoodsType":"1","pageNum":self.pageNum,"pageSize":"50"] as [String : Any]
+            dict = ["shopId":Cache.userSto?.sid ?? "156207556","tenantId":Cache.user?.tenantId ?? 6917,"selectText":"","categoryId":"","searchGoodsType":"1","pageNum":self.pageNum,"pageSize":"20"] as [String : Any]
         }else{
             dict = ["shopId":Cache.userSto?.sid ?? "156207556","tenantId":Cache.user?.tenantId ?? 6917,"selectText":"","categoryId":categoryId,"searchGoodsType":"1","pageNum":"1","pageSize":"20"] as [String : Any]
         }
@@ -277,6 +279,8 @@ class ZWCheckOutStoreViewJoe: UIView, SementSelectClickDelegate ,ZWMoreCategorie
         debugPrint("======查询商品 所有数据:", goodsModel.queryAll())
         
         //传值
+        self.dataAarry = []
+        
         dataAarry = goodsModel.queryAll() as NSArray
         
         self.CollectionView.reloadData()

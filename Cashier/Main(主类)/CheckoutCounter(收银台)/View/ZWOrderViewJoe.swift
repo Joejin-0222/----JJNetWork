@@ -18,12 +18,16 @@ enum OrderWayType : Int {
 
 class ZWOrderViewJoe: UIView {
     
+    var orderListmodel = ZWOrderListNetModelJoe() //
+    
+    var IsUpData : Bool = false // 是否更新请求网路数据
+    
     // 03. 声明代理属性 (注:使用weak修饰, 该协议需要继承NSObjectProtocol基协议, 且注意代理名称是否重复)
     weak  var delegate  : OrderWayTypeSelectDelegate?
     
     var OrderListDataAarry  = [goodsModel]()//: NSMutableArray? = []//订单列表数组
     
-    var OrderGoodsmodel = goodsModel() //列表商品
+    var OrderGoodsmodel = goodsModel() //商品 列表
     
     var dataAarry  : NSArray = []//分类标题数据
     private var selectIndex:Int=0   //    记录点击了第几行
@@ -109,7 +113,7 @@ class ZWOrderViewJoe: UIView {
     lazy var Label03 : UILabel = {
         let label = UILabel()
         label.text = "共107件,优惠:-1000.00"
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 16*WidthW)
         label.textColor = UIColor.init(hex: "#ffffff")
         return label
@@ -507,7 +511,7 @@ class ZWOrderViewJoe: UIView {
         self.ReduceBtn.isEnabled = true
         
         self.addAndReduceUptableView(numIndex: numIndex)
-      
+        
     }
     
     @objc func ReduceBtnClick(){
@@ -525,19 +529,19 @@ class ZWOrderViewJoe: UIView {
     }
     //MARK: //点击加减 刷新
     func addAndReduceUptableView(numIndex:Int){
-       
-          let tempArray : NSMutableArray = []
-          for obj  in self.OrderListDataAarry {
-              if  obj.skuViewId == self.OrderGoodsmodel.skuViewId{
-               
-                  obj.goodsNum = numIndex
-                  tempArray.add(obj)
-              }else{
-                  tempArray.add(obj)
-              }
-          }
-          self.OrderListDataAarry = tempArray as! [goodsModel]
-          self.OrerListReloadData()
+        
+        let tempArray : NSMutableArray = []
+        for obj  in self.OrderListDataAarry {
+            if  obj.skuViewId == self.OrderGoodsmodel.skuViewId{
+                
+                obj.goodsNum = numIndex
+                tempArray.add(obj)
+            }else{
+                tempArray.add(obj)
+            }
+        }
+        self.OrderListDataAarry = tempArray as! [goodsModel]
+        self.OrerListReloadData(isNetWork: false)
     }
     
     
@@ -572,44 +576,76 @@ class ZWOrderViewJoe: UIView {
         
     }
     // MARK: -刷新 列表
-    func OrerListReloadData(){
+    func OrerListReloadData(isNetWork:Bool){
         //默认选中第一行
         DispatchQueue.main.async {
-        
+            
             let indexpath = IndexPath.init(row: self.selectIndex , section: 0)
             if self.OrderListDataAarry.count  > 0{
                 self.TableView.selectRow(at: indexpath, animated: false, scrollPosition: UITableView.ScrollPosition.top)
             }
         }
+        if isNetWork == false{
         //计算总价格
-        var oldPrice : CGFloat = 0.00
+        var oldPrice : Double = 0.00
         for model in self.OrderListDataAarry {
-            let NewPrice = CGFloat(((model.goodsNum ?? 0 ) * (model.salePrice ?? 0)))
+            let NewPrice =  (Double(model.goodsNum ?? 0) * (model.salePrice ?? 0.00))
             oldPrice = oldPrice + NewPrice
             Label02.text  = "\(oldPrice)"
         }
-        
+        }
         self.TableView.reloadData()
+        
+        self.loadOrderListData(ShopId: 0)
     }
+    
     
     //load 订单列表 数据
     func loadOrderListData(ShopId:Int64){
-        let dict = ["shopId":ShopId]
+     
         
-        ZHFNetwork.request(target: .GetYesParameters(pathStr: getFindCashier, parameters: dict)) { [self] result in
+        let temparray : NSMutableArray = []
+        for mod in self.OrderListDataAarry {
+            let dic =   ["discountPrice":mod.salePrice ?? 0,"goodsId":mod.skuViewId  ?? 0,"nature":"","num":mod.goodsNum  ?? 0,"orderId":"","price":mod.salePrice  ?? 0,"remake":"","totalPrice":"0"] as [String : Any]
+            temparray.add(dic as Any)
+        }
+        
+        let dict = ["channelId":"11","deliveryType":2,"discountLimit":"","discountType":"-1","districtCode":"","goodsType":"1","majorUserId":"aa","provinceCode":"","requestTag":"","shopId":Cache.userSto?.sid ?? 0,"tenantId":Cache.user?.tenantId ?? 0,"goodsVoList":temparray] as [String : Any]
+        
+        ZHFNetwork.request(target: .PostBabyParameters(pathStr: getOrderConfirm, Babyparameters: dict)) { [self] result in
             
             let dic = result as! NSDictionary
-            let tempAarry : NSArray = dic["data"] as! NSArray
-            //            let tempArray1 = [ZWCheckSementModelJoe].deserialize(from: tempAarry)! as NSArray
-            //            self.SementView.dataAarry = tempArray1
-            //            self.SementView.ReloadData()
-            //            self.CategoriesDataAarry = tempArray1//更多分类数据
-            //            //默认选择第一个分类
-            //            let model : ZWCheckSementModelJoe = tempArray1[0] as! ZWCheckSementModelJoe
-            //
-            //            loadGoodsData(categoryId: model.id)//
             
-        
+            let DataDic : NSDictionary = dic["data"] as! NSDictionary
+            self.orderListmodel = ZWOrderListNetModelJoe.deserialize(from: DataDic)!
+         
+            var oldNum : Int = 0 //数量
+            var oldPrice : Float = 0.00 //优惠价格
+            for mod in self.orderListmodel.goodsVoList {
+                let NewNum =   mod.num
+                let NewPrice = mod.totalPromotionPrice
+                oldNum = oldNum + NewNum
+                oldPrice = oldPrice + Float(NewPrice)
+                Label03.text  = "共\(oldNum)件,优惠-\(oldPrice)"
+                Label02.text = "\(self.orderListmodel.totalPrice - oldPrice)"//实际收款金额
+                
+            }
+            
+            
+            //默认选中第一行
+            DispatchQueue.main.async {
+                
+                let indexpath = IndexPath.init(row: self.selectIndex , section: 0)
+                if self.OrderListDataAarry.count  > 0{
+                    self.TableView.selectRow(at: indexpath, animated: false, scrollPosition: UITableView.ScrollPosition.top)
+                }
+            }
+         
+            self.TableView.reloadData()
+            
+            
+//            debugPrint("======请求 succeed = \(tempArray1?.goodsVoList.count)")
+            
             
         } error1: { statusCode in
             print("====statusCode \(statusCode)")
@@ -617,6 +653,27 @@ class ZWOrderViewJoe: UIView {
             
             print("====reeor \(error)")
         }
+    }
+    
+    /// 直接将Struct或Class转成Dictionary
+    func convertToDict(array:[goodsModel]) -> Dictionary<String, Any>? {
+        
+        var dict: Dictionary<String, Any>? = nil
+        
+        do {
+            print("init student")
+            let encoder = JSONEncoder()
+            
+            let data = try encoder.encode(array)//encoder.encode(self)
+            print("struct convert to data")
+            
+            dict = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Dictionary<String, Any>
+            
+        } catch {
+            print(error)
+        }
+        
+        return dict
     }
     
 }
@@ -635,7 +692,20 @@ extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
             cell.content01.text = model.name
             cell.content02.text = "￥\(model.salePrice ?? 0 )"
             cell.content03.text = "x\(model.goodsNum ?? 1)"
-            cell.content05.text = "￥\((model.goodsNum ?? 0 ) * (model.salePrice ?? 0) )"
+            cell.content05.text = "￥\(Double((model.goodsNum ?? 0 )) * (model.salePrice ?? 0) )"
+            if IsUpData == false {//不是网络
+                cell.content04.isHidden = true
+            }else{
+                cell.content04.isHidden = false
+            }
+           
+            // 显示优惠金额
+            for mod in self.orderListmodel.goodsVoList {
+                if mod.totalPromotionPrice > 0 && mod.goodsId == model.skuViewId {
+                    cell.content04.isHidden = false
+                    cell.content04.text = "-￥\(mod.totalPromotionPrice)"
+                }
+            }
             
         }
         
@@ -648,7 +718,7 @@ extension ZWOrderViewJoe : UITableViewDataSource,UITableViewDelegate{
         self.selectIndex = indexPath.row
         
         let model : goodsModel =   self.OrderListDataAarry[indexPath.row] ;
-        self.OrderGoodsmodel = model 
+        self.OrderGoodsmodel = model
         shownumLabel.text = "\(model.goodsNum ?? 1)"
     }
     
