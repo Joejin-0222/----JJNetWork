@@ -55,7 +55,8 @@ struct ZHFNetwork {
                         //如果数据返回成功则直接将结果转为JSON
                         try success(moyaResponse.mapJSON())
                     }else  {
-                        ProgressHUD.showErrorMessage(message:"\( model.msg)\(model.code)")
+                        ProgressHUD.hideHud()
+                        ProgressHUD.showErrorMessage(message:"\( model.msg) code=\(model.code)")
                     }
                     
                 } catch let error{

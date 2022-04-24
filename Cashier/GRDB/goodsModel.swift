@@ -252,9 +252,9 @@ extension goodsModel:MutablePersistableRecord, FetchableRecord {
 
         try! self.dbQueue.inDatabase { (db) -> Void in
             // 判断是否存在数据库
-            if try db.tableExists(TableName.ZWSementGRDB) {
+            if try db.tableExists(TableName.goodsModel) {
                 debugPrint("表已经存在")
-                try! ZWSementGRDB.deleteAll(db)
+                try! goodsModel.deleteAll(db)
                 return
             }
         }

@@ -386,6 +386,7 @@ extension LoginView:UITextFieldDelegate{
             let dic = result as! NSDictionary
             let code : NSInteger = dic["code"] as! NSInteger
             print("code************\(code)")
+          
             if code == 200 {
                 guard  let adicts : NSDictionary = dic["data"] as? NSDictionary,
                        let adicAs : NSDictionary = adicts["adminUser"] as? NSDictionary,
@@ -420,7 +421,8 @@ extension LoginView:UITextFieldDelegate{
 //                }
                 ProgressHUD.hideHud()
             }
-            ProgressHUD.hideHud()
+            
+        
             
         }, error1: { (statusCode) in
             //服务器报错等问题 (常见问题404 ，地址错误)
