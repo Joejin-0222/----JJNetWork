@@ -10,6 +10,8 @@ import UIKit
 class DRightView: UIView {
 
     var headerArray: NSArray = ["日结经营报告","门店经营报告"]
+    var vipTitileArr: NSArray = ["会员明细","会员消费频次/月","会员平均客单价/元","会员平均充值金额/元","会员性别"]
+    
     
     //0 经营数据  财务报表  商品报表  会员报表
     var indexType: Int = 0
@@ -27,12 +29,14 @@ class DRightView: UIView {
         self.addSubview(tableView)
         tableView.estimatedRowHeight =  130
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.backgroundColor =  UIColor.white
+        tableView.backgroundColor =  Tab_backColor
         tableView.isScrollEnabled = true
         tableView.separatorStyle = .none
         tableView.register(cellType: DRRightTCell.self)
         tableView.register(cellType: DRRightheaderTCell.self)
         tableView.register(cellType: ZWFinancialTCell.self)
+        tableView.register(cellType: ZWVIPTableViewCellKB.self)
+        tableView.register(cellType: ZWVIPInfoTCellKB.self)
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: 30*WidthW, left: 0, bottom: -84*WidthW, right: -68*width))
         }
@@ -56,12 +60,25 @@ extension DRightView: UITableViewDataSource{
         if indexType == 2{
             return 1
         }
+        
+        if indexType == 3{
+            return 2
+        }
+        
         return  2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if indexType == 1{
             return 1
+        }
+        if indexType == 3{
+            if section == 0{
+                return 1
+            }else{
+                return 5
+            }
+           
         }
         return 10
     }
@@ -104,25 +121,24 @@ extension DRightView: UITableViewDataSource{
             return cell
             
         }else{
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: DRRightTCell.self)
-            if indexPath.row == 0 {
-                cell.isTopCell = true
-                cell.isShow = true
-                let dataDict = ["leftStr":"名称","middleStr":"金额","rightStr":"对比昨日"]
-                cell.rightL.textColor = Title_color
-                cell.dataDict = dataDict as NSDictionary
+            if indexPath.section == 0  {
+                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ZWVIPTableViewCellKB.self)
+               
+                return cell
             }else{
-                cell.isTopCell = false
-                if indexPath.row == 1 {
-                    cell.isShow = false
-                }else{
-                    cell.isShow = true
+                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ZWVIPInfoTCellKB.self)
+                cell.titleL.text = vipTitileArr[indexPath.row] as? String
+                if indexPath.row == 0{
+                    cell.cellType = .backColor
+                }else if indexPath.row == 4{
+                    cell.cellType = .hasRightL
+                }else {
+                    cell.cellType = .normal
                 }
-                cell.rightL.textColor = UIColor.init(hex: "FE4B48")
-                let dataDict = ["leftStr":"应收营业额","middleStr":"200000","rightStr":"67%"]
-                cell.dataDict = dataDict as NSDictionary
+               
+                return cell
             }
-            return cell
+          
         }
        
   
@@ -131,6 +147,13 @@ extension DRightView: UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if self.indexType == 1{
             return 150*WidthW
+        }
+        if self.indexType == 3{
+            if indexPath.section == 0{
+                return 200*WidthW
+            }else{
+                return 72*WidthW
+            }
         }
         return 70*WidthW
     }
@@ -150,22 +173,40 @@ extension DRightView: UITableViewDataSource{
         if indexType == 1 && section == 0{
             return 80
         }
+        if indexType == 3 && section == 0{
+            return 80
+        }
         return 0.01
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if indexType == 0 || indexType == 2 {
-            let hederView: DRHeaderView = DRHeaderView()
-            hederView.initView()
-            return hederView
+            let headerView: DRHeaderView = DRHeaderView()
+            headerView.initView()
+            return headerView
         }
         if indexType == 1 && section == 0{
-            let hederView: DRHeaderView = DRHeaderView()
-            hederView.initView()
-            hederView.redLineView.snp.updateConstraints { make in
-                make.left.equalTo(hederView.snp.left).offset(72*WidthW)
+            let headerView: DRHeaderView = DRHeaderView()
+            headerView.initView()
+            headerView.redLineView.snp.updateConstraints { make in
+                make.left.equalTo(headerView.snp.left).offset(72*WidthW)
             }
-            return hederView
+            headerView.rightBtn.setTitle("2022-02-21", for: .normal)
+            headerView.rightBtn.setTitleColor(Title_color, for: .normal)
+            headerView.rightBtn.layer.borderWidth = 0
+            return headerView
+        }
+        if indexType == 3 && section == 0{
+            let headerView: DRHeaderView = DRHeaderView()
+            headerView.initView()
+            headerView.redLineView.snp.updateConstraints { make in
+                make.left.equalTo(headerView.snp.left).offset(72*WidthW)
+            }
+            headerView.titleL.text = "会员报表"
+            headerView.rightBtn.setTitle("2022-02-21", for: .normal)
+            headerView.rightBtn.setTitleColor(Title_color, for: .normal)
+            headerView.rightBtn.layer.borderWidth = 0
+            return headerView
         }
        return UIView()
     }
