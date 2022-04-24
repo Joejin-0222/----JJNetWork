@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let dict = ["username":"fgxb","password":"admin123"]
-        ZHFNetwork.request(target: .PostParameters(pathStr: getBoxRecommendUrl, parameters:dict), success: { [self] (result) in
+        JJNetWork.request(target: .PostParameters(pathStr: getBoxRecommendUrl, parameters:dict), success: { [self] (result) in
             let dic = result as! NSDictionary
             let code : NSInteger = dic["code"] as! NSInteger
             print("code************\(code)")

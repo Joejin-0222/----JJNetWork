@@ -1,0 +1,6 @@
+module Pods_JJNetWorkDemo {
+  umbrella header "Pods-JJNetWorkDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
