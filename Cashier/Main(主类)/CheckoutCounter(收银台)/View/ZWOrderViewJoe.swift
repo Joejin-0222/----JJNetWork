@@ -616,9 +616,7 @@ class ZWOrderViewJoe: UIView {
             
             let dic = result as! NSDictionary
             let DataDic : NSDictionary = dic["data"] as! NSDictionary
-            if  DataDic.isEqual(to: [:]){
-                return
-            }
+            
             self.orderListmodel = ZWOrderListNetModelJoe.deserialize(from: DataDic)!
          
             var oldNum : Int = 0 //数量
@@ -632,7 +630,6 @@ class ZWOrderViewJoe: UIView {
                 Label02.text = "\(self.orderListmodel.totalPrice - oldPrice)"//实际收款金额
                 
             }
-            
             
             //默认选中第一行
             DispatchQueue.main.async {

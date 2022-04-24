@@ -10,12 +10,12 @@ import UIKit
 
 //测试环境
 //let BASE_SERVER_URL = "http://47.93.54.18:19200/"
-let BASE_SERVER_URL = "https://test.api.igoodsale.com/"
+//let BASE_SERVER_URL = "https://test.api.igoodsale.com/"
 //let BASE_SERVER_URL = "http://47.95.212.72:9200"
 //正式环境
 //let BASE_SERVER_URL = "https://api.igoodsale.com/"
 //预发布环境
-// let BASE_SERVER_URL = "https://api.prerelease.igoodsale.com/"
+ let BASE_SERVER_URL = "https://api.prerelease.igoodsale.com/"
 //李维强
 //let BASE_SERVER_URL = "http://47.95.212.72:9200/"
 

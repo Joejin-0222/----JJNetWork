@@ -54,8 +54,8 @@ struct ZHFNetwork {
                     if code == 200 {
                         //如果数据返回成功则直接将结果转为JSON
                         try success(moyaResponse.mapJSON())
-                    }else if code == 500 {
-                        ProgressHUD.showErrorMessage(message: model.msg)
+                    }else  {
+                        ProgressHUD.showErrorMessage(message:"\( model.msg)\(model.code)")
                     }
                     
                 } catch let error{
